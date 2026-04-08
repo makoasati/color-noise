@@ -15,56 +15,6 @@ const CATEGORIES = ["review", "news", "spotlight"];
 const CATEGORY_LABELS = { review: "Heard", news: "Around", spotlight: "Seen" };
 const CATEGORY_COLOR = { review: "#E73B2F", news: "#C95C2B", spotlight: "#2D4DFF" };
 
-const SAMPLE_ARTICLES = [
-  {
-    id: "sample-1",
-    title: "OSEES TURNED THE EMPTY BOTTLE INSIDE OUT",
-    category: "review",
-    author: "M. Kvlashvili",
-    date: "2026-03-18",
-    venue: "Empty Bottle",
-    neighborhood: "Ukrainian Village",
-    image: "",
-    excerpt: "Thee Oh Sees — or whatever John Dwyer is calling them this week — brought a double-drummer assault that literally shook plaster off the ceiling. The pit opened up before the first chord even finished ringing.",
-    body: "Thee Oh Sees — or whatever John Dwyer is calling them this week — brought a double-drummer assault that literally shook plaster off the ceiling. The pit opened up before the first chord even finished ringing.\n\nThe setlist leaned heavy on Protean Threat and Face Stabber material, which meant long, krautrock-influenced jams that turned the crowd into one heaving organism. Dwyer's guitar tone was absolutely disgusting in the best way — fuzzed out beyond recognition, feeding back into the monitors until the sound guy just gave up and let it ride.\n\nOpener Friko proved they belong on every bill in this city. Their angular post-punk has gotten tighter since the last time I caught them at Schubas, and the new material hints at something bigger coming.\n\nVerdict: If you missed this one, I genuinely feel sorry for you."
-  },
-  {
-    id: "sample-2",
-    title: "CHICAGO'S DIY PRINT SCENE IS HAVING A MOMENT",
-    category: "news",
-    author: "R. Santos",
-    date: "2026-03-15",
-    venue: "",
-    neighborhood: "Pilsen",
-    image: "",
-    excerpt: "Between Sector 2337's latest residency program and the explosion of risograph zines coming out of Pilsen, Chicago's independent print community is thriving in ways that feel genuinely unprecedented.",
-    body: "Between Sector 2337's latest residency program and the explosion of risograph zines coming out of Pilsen, Chicago's independent print community is thriving in ways that feel genuinely unprecedented.\n\nThe catalyst seems to be a combination of cheap rent (by coastal standards), a deep tradition of community organizing through print, and a new generation of artists who see physical media as radical in itself.\n\nSpaces like Spudnik Press, Hoofprint Workshop, and the newly opened Tinta Collective are running at full capacity. Wait lists for press time are months long. And the work being produced — from hand-bound artist books to large-format screen prints — is finding audiences both locally and internationally.\n\nThis isn't a trend. It's an ecosystem."
-  },
-  {
-    id: "sample-3",
-    title: "VENUE SPOTLIGHT: THE HIDEOUT",
-    category: "spotlight",
-    author: "M. Kvlashvili",
-    date: "2026-03-10",
-    venue: "The Hideout",
-    neighborhood: "Bucktown",
-    image: "",
-    excerpt: "Tucked behind an industrial stretch off Wabansia, The Hideout has been Chicago's best-kept open secret for three decades. We talked to the people who keep it alive.",
-    body: "Tucked behind an industrial stretch off Wabansia, The Hideout has been Chicago's best-kept open secret for three decades. We talked to the people who keep it alive.\n\nThe Hideout doesn't try to be cool. It just is. The wood-paneled walls are covered in decades of stickers and handbills. The sound system is modest but perfectly tuned to the room. The booking philosophy is simple: if it's interesting, it belongs here.\n\nFrom alt-country to experimental noise, from literary readings to burlesque, The Hideout programs like no other venue in the city. On any given week you might see a touring indie band, a local hip-hop showcase, and a comedy night all sharing the same tiny stage.\n\nCo-owner Tim Tuten puts it simply: 'We book what we'd want to see. That's it. That's the whole philosophy.'\n\nIn a city where beloved venues close every year, The Hideout endures. Long may it run."
-  },
-  {
-    id: "sample-4",
-    title: "NONAME'S SURPRISE SET AT RADIUS WAS A MASTERCLASS",
-    category: "review",
-    author: "D. Washington",
-    date: "2026-03-08",
-    venue: "Radius Chicago",
-    neighborhood: "Pilsen",
-    excerpt: "Nobody knew she was coming. That's what made it perfect. Noname walked out to a crowd that had gathered for an entirely different artist and proceeded to deliver forty minutes of the sharpest lyricism Chicago has heard all year.",
-    body: "Nobody knew she was coming. That's what made it perfect. Noname walked out to a crowd that had gathered for an entirely different artist and proceeded to deliver forty minutes of the sharpest lyricism Chicago has heard all year.\n\nThe set drew heavily from Sundial and Room 25, weaving between introspective poetry and biting social commentary without ever losing the groove. Her band was locked in — the jazz-inflected arrangements gave every track room to breathe and mutate.\n\nThe crowd went from confused to captivated to completely losing it over the course of those forty minutes. By the end, phones were down. People were just present.\n\nThat's the Noname effect. She makes you pay attention."
-  }
-];
-
 // ── Noise texture as inline SVG data URI ──
 const NOISE_SVG = `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E")`;
 
