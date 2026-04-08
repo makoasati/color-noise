@@ -4,14 +4,41 @@ import { STYLES } from '@/lib/styles'
 export default function Masthead() {
   return (
     <header style={STYLES.header}>
-      <Link href="/" style={{ ...STYLES.mastheadWrapper, textDecoration: 'none' }}>
-        <div style={STYLES.mastheadLine1}>COLOR</div>
-        <div style={STYLES.mastheadLine2Outer}>
-          <span style={STYLES.mastheadAmpersand}>&amp;</span>
-          <span style={STYLES.mastheadNoise}>Noise</span>
-        </div>
+      <Link href="/" style={{ textDecoration: 'none' }}>
+        <h1 style={STYLES.masthead}>
+          <span style={{
+            fontFamily: "'Outfit', sans-serif",
+            fontWeight: 1000,
+            color: '#4A6CF7',
+            fontSize: 'clamp(41px, 7.95vw, 70px)',
+            letterSpacing: '0',
+          }}>COLOR</span>
+          <span style={{ display: 'block', marginTop: '-0.2em' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
+              <span style={{
+                fontFamily: "'Playfair Display', serif",
+                fontStyle: 'italic',
+                fontWeight: 1000,
+                fontSize: 'clamp(0px, 3.8vw, 45px)',
+                color: '#E73B2F',
+                lineHeight: 1,
+                marginRight: '-0.25em',
+                zIndex: 2,
+                position: 'relative',
+              }}>&amp;</span>
+              <span style={{
+                fontFamily: "'Outfit', sans-serif",
+                fontWeight: 1000,
+                fontStyle: 'italic',
+                color: '#F5F1E8',
+                fontSize: 'clamp(35px, 7.95vw, 60px)',
+                letterSpacing: '0',
+              }}>NOISE</span>
+            </span>
+          </span>
+        </h1>
       </Link>
-      <div style={STYLES.tagline}>Sight, sound, scene</div>
+      <div style={STYLES.tagline}>Sight · Sound · Scene </div>
     </header>
   )
 }
