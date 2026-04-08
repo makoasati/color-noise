@@ -149,6 +149,7 @@ export default function RichTextEditor({ value, onChange }) {
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: 'Start writing…' }),
     ],
+    immediatelyRender: false,
     content: value || '',
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
     editorProps: { attributes: { class: 'cn-editor-body' } },

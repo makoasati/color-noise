@@ -42,6 +42,7 @@ create table if not exists articles (
   excerpt      text not null,
   body         text,
   cover_image  text,
+  featured     boolean not null default false,
   status       text not null default 'draft' check (status in ('draft', 'published')),
   created_at   timestamptz default now(),
   updated_at   timestamptz default now()
@@ -125,3 +126,6 @@ create policy "Admins delete articles" on articles
 drop policy if exists "Authors delete own articles" on articles;
 create policy "Authors delete own articles" on articles
   for delete using (auth.uid() = author_id);
+
+-- ── Migration: add featured column (run if table already exists) ──────────
+-- alter table articles add column if not exists featured boolean not null default false;

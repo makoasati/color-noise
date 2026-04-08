@@ -23,6 +23,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
     excerpt:       article?.excerpt || '',
     body:          article ? legacyBodyToHtml(article.body || '') : '',
     cover_image:   article?.cover_image || '',
+    featured:      article?.featured || false,
   })
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
@@ -46,6 +47,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
       excerpt:      form.excerpt,
       body:         form.body,
       cover_image:  form.cover_image || null,
+      featured:     form.featured,
       status,
       updated_at:   new Date().toISOString(),
     }
@@ -92,6 +94,16 @@ export default function ArticleEditor({ article, userId, authorName }) {
         <select style={STYLES.cmsSelect} value={form.category} onChange={setField('category')}>
           {CATEGORIES.map(c => <option key={c} value={c}>{CATEGORY_LABELS[c]}</option>)}
         </select>
+
+        <label style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 20, cursor: 'pointer' }}>
+          <input
+            type="checkbox"
+            checked={form.featured}
+            onChange={e => setForm(f => ({ ...f, featured: e.target.checked }))}
+            style={{ width: 16, height: 16, accentColor: '#E73B2F', cursor: 'pointer' }}
+          />
+          <span style={{ ...STYLES.cmsLabel, margin: 0 }}>Feature on homepage</span>
+        </label>
 
         <div style={{ display: 'flex', gap: 16 }}>
           <div style={{ flex: 1 }}>

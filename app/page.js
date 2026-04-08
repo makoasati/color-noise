@@ -1,8 +1,8 @@
 import { createClient } from '@/lib/supabase/server'
 import Masthead from '@/components/Masthead'
 import PublicNav from '@/components/PublicNav'
-import ArticleCard from '@/components/ArticleCard'
-import { NOISE_OVERLAY, DARK_ZONE, LIGHT_ZONE, NOISE_SVG } from '@/lib/styles'
+import ArticleCard, { ArticleHero } from '@/components/ArticleCard'
+import { NOISE_OVERLAY, DARK_ZONE } from '@/lib/styles'
 
 export const metadata = {
   title: 'Color&Noise — Chicago',
@@ -16,7 +16,7 @@ export default async function HomePage({ searchParams }) {
   const supabase = await createClient()
   let query = supabase
     .from('articles')
-    .select('id, slug, title, category, author_name, date, venue, neighborhood, excerpt, cover_image')
+    .select('id, slug, title, category, author_name, date, venue, neighborhood, excerpt, cover_image, featured')
     .eq('status', 'published')
     .order('date', { ascending: false })
 
@@ -24,7 +24,12 @@ export default async function HomePage({ searchParams }) {
     query = query.eq('category', cat)
   }
 
-  const { data: articles = [] } = await query
+  const { data: articlesData } = await query
+  const articles = articlesData || []
+
+  // Show hero only on unfiltered view, using the most recent featured article
+  const featured = cat === 'all' ? articles.find(a => a.featured) : null
+  const gridArticles = featured ? articles.filter(a => a.id !== featured.id) : articles
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: '#111111', color: '#F5F1E8', minHeight: '100vh' }}>
@@ -38,19 +43,21 @@ export default async function HomePage({ searchParams }) {
         </div>
       </div>
 
-      {/* ── Light reading zone ── */}
-      <div style={LIGHT_ZONE}>
-        <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px 48px' }}>
-          {articles.length === 0 ? (
-            <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 14, color: '#8A8A8A', textAlign: 'center', padding: '80px 0', textTransform: 'uppercase', letterSpacing: '2px' }}>
-              No articles found.
-            </div>
-          ) : (
-            articles.map(article => (
+      {/* ── Article feed ── */}
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px 24px 80px' }}>
+        {featured && <ArticleHero article={featured} />}
+
+        {gridArticles.length === 0 ? (
+          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 14, color: '#8A8A8A', textAlign: 'center', padding: '80px 0', textTransform: 'uppercase', letterSpacing: '2px' }}>
+            No articles found.
+          </div>
+        ) : (
+          <div className="cn-article-grid">
+            {gridArticles.map(article => (
               <ArticleCard key={article.id} article={article} />
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* ── Dark footer ── */}

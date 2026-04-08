@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import Masthead from '@/components/Masthead'
+import PublicNav from '@/components/PublicNav'
 import { DARK_ZONE, LIGHT_ZONE, NOISE_OVERLAY, STYLES, CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
 import { legacyBodyToHtml } from '@/lib/utils'
 
@@ -45,6 +46,7 @@ export default async function ArticlePage({ params }) {
         <div style={NOISE_OVERLAY} />
         <div style={{ position: 'relative', zIndex: 1, maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
           <Masthead />
+          <PublicNav activeCategory={null} />
         </div>
       </div>
 
