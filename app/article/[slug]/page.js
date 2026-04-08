@@ -66,9 +66,9 @@ export default async function ArticlePage({ params }) {
           )}
 
           <div style={{ ...STYLES.cardCategory(article.category), display: 'flex', alignItems: 'center', gap: 6 }}>
-            <span style={{ display: 'inline-block', width: 8, height: 8, background: catColor, flexShrink: 0 }} />
             {CATEGORY_LABELS[article.category]}
-            {article.neighborhood ? ` — ${article.neighborhood}` : ''}
+            <span style={{ display: 'inline-block', width: 8, height: 8, background: catColor, flexShrink: 0 }} />
+            {article.neighborhood && <span style={{ color: catColor }}>{article.neighborhood}</span>}
           </div>
 
           <h1 style={STYLES.articleTitle}>{article.title}</h1>

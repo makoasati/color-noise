@@ -1,16 +1,36 @@
 'use client'
 import { useState, useRef } from 'react'
+import { createClient } from '@/lib/supabase/client'
 import { STYLES } from '@/lib/styles'
+
+async function uploadToStorage(file) {
+  const supabase = createClient()
+  const ext = file.name.split('.').pop()
+  const path = `covers/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
+  const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
+  if (error) throw error
+  const { data } = supabase.storage.from('article-images').getPublicUrl(path)
+  return data.publicUrl
+}
 
 export default function CoverImageField({ value, onChange }) {
   const [dragging, setDragging] = useState(false)
+  const [uploading, setUploading] = useState(false)
+  const [uploadError, setUploadError] = useState(null)
   const fileInputRef = useRef(null)
 
-  const handleFile = (file) => {
+  const handleFile = async (file) => {
     if (!file || !file.type.startsWith('image/')) return
-    const reader = new FileReader()
-    reader.onload = (e) => onChange(e.target.result)
-    reader.readAsDataURL(file)
+    setUploading(true)
+    setUploadError(null)
+    try {
+      const url = await uploadToStorage(file)
+      onChange(url)
+    } catch (err) {
+      setUploadError('Upload failed. Please try again.')
+    } finally {
+      setUploading(false)
+    }
   }
 
   return (
@@ -33,18 +53,21 @@ export default function CoverImageField({ value, onChange }) {
         </div>
       ) : (
         <div
-          onClick={() => fileInputRef.current?.click()}
+          onClick={() => !uploading && fileInputRef.current?.click()}
           onDragOver={(e) => { e.preventDefault(); setDragging(true) }}
           onDragLeave={() => setDragging(false)}
           onDrop={(e) => { e.preventDefault(); setDragging(false); handleFile(e.dataTransfer.files[0]) }}
-          style={{ border: `2px dashed ${dragging ? '#E73B2F' : '#CCC5B8'}`, padding: '40px 24px', textAlign: 'center', cursor: 'pointer', background: dragging ? '#fff5f4' : '#F5F1E8', transition: 'all 0.15s' }}
+          style={{ border: `2px dashed ${dragging ? '#E73B2F' : '#CCC5B8'}`, padding: '40px 24px', textAlign: 'center', cursor: uploading ? 'wait' : 'pointer', background: dragging ? '#fff5f4' : '#F5F1E8', transition: 'all 0.15s' }}
         >
           <div style={{ fontSize: 24, color: '#CCC5B8', marginBottom: 8 }}>⊞</div>
-          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>Add cover image</div>
+          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>
+            {uploading ? 'Uploading…' : 'Add cover image'}
+          </div>
           <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#CCC5B8', marginTop: 4 }}>Drop here or click to browse · JPG, PNG, WebP</div>
         </div>
       )}
       <input ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files[0])} />
+      {uploadError && <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: '#E73B2F', marginTop: 8 }}>{uploadError}</div>}
     </div>
   )
 }

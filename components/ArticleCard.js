@@ -3,8 +3,16 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
 
-function CategoryBadge({ category }) {
+function CategoryBadge({ category, neighborhood }) {
   const color = CATEGORY_COLOR[category] || '#8A8A8A'
+  const labelStyle = {
+    fontFamily: "'Archivo Narrow', sans-serif",
+    fontSize: 10,
+    textTransform: 'uppercase',
+    letterSpacing: '2px',
+    fontWeight: 700,
+    lineHeight: 1,
+  }
   return (
     <div style={{
       position: 'absolute',
@@ -12,23 +20,14 @@ function CategoryBadge({ category }) {
       left: 8,
       display: 'inline-flex',
       alignItems: 'center',
-      gap: 5,
+      gap: 6,
       background: 'rgba(0,0,0,0.72)',
       padding: '4px 8px',
       backdropFilter: 'blur(2px)',
     }}>
+      <span style={{ ...labelStyle, color }}>{CATEGORY_LABELS[category]}</span>
       <span style={{ display: 'inline-block', width: 7, height: 7, background: color, flexShrink: 0 }} />
-      <span style={{
-        fontFamily: "'Archivo Narrow', sans-serif",
-        fontSize: 10,
-        textTransform: 'uppercase',
-        letterSpacing: '2px',
-        color,
-        fontWeight: 700,
-        lineHeight: 1,
-      }}>
-        {CATEGORY_LABELS[category]}
-      </span>
+      {neighborhood && <span style={{ ...labelStyle, color }}>{neighborhood}</span>}
     </div>
   )
 }
@@ -62,7 +61,7 @@ export function ArticleHero({ article }) {
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
             />
           )}
-          <CategoryBadge category={article.category} />
+          <CategoryBadge category={article.category} neighborhood={article.neighborhood} />
         </div>
         <div style={{
           fontFamily: "'Outfit', sans-serif",
@@ -91,7 +90,7 @@ export default function ArticleCard({ article }) {
       <div onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
         <div style={{ position: 'relative', overflow: 'hidden' }}>
           <ArticleImage src={article.cover_image} />
-          <CategoryBadge category={article.category} />
+          <CategoryBadge category={article.category} neighborhood={article.neighborhood} />
         </div>
         <div style={{
           fontFamily: "'Outfit', sans-serif",
