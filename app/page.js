@@ -5,6 +5,8 @@ import ArticleCard, { ArticleHero } from '@/components/ArticleCard'
 import { NOISE_OVERLAY, DARK_ZONE } from '@/lib/styles'
 import Footer from '@/components/Footer'
 
+export const revalidate = 60
+
 export const metadata = {
   title: 'Color&Noise — Chicago',
   description: 'Sight, sound, scene — the visual and sonic life of Chicago',

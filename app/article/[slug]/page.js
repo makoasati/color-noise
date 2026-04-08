@@ -7,6 +7,8 @@ import Footer from '@/components/Footer'
 import { DARK_ZONE, LIGHT_ZONE, NOISE_OVERLAY, STYLES, CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
 import { legacyBodyToHtml } from '@/lib/utils'
 
+export const revalidate = 60
+
 export async function generateMetadata({ params }) {
   const { slug } = await params
   const supabase = await createClient()
