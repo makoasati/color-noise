@@ -3,30 +3,17 @@ import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { STYLES } from '@/lib/styles'
 
-function NeighborhoodPill({ neighborhood, active, cat }) {
-  const router = useRouter()
+function NeighborhoodPill({ neighborhood, active, onActivate, onDeactivate }) {
   const [hovered, setHovered] = useState(false)
-
   const base = active ? STYLES.neighborhoodPillActive : STYLES.neighborhoodPill
   const hover = !active && hovered ? { background: '#1E1E1E', color: '#F5F1E8', border: '1px solid #555' } : {}
 
-  const handleClick = () => {
-    if (active) {
-      router.push(cat && cat !== 'all' ? `/?cat=${cat}` : '/')
-    } else {
-      router.push(cat && cat !== 'all'
-        ? `/?cat=${cat}&neighborhood=${neighborhood.slug}`
-        : `/?neighborhood=${neighborhood.slug}`
-      )
-    }
-  }
-
   return (
     <button
-      style={{ ...base, ...hover, border: 'none', outline: 'none' }}
+      style={{ ...base, ...hover, outline: 'none' }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={handleClick}
+      onClick={active ? onDeactivate : onActivate}
     >
       {neighborhood.name}
     </button>
@@ -34,6 +21,8 @@ function NeighborhoodPill({ neighborhood, active, cat }) {
 }
 
 export default function NeighborhoodBar({ neighborhoods, activeNeighborhood, cat }) {
+  const router = useRouter()
+
   if (!neighborhoods?.length) return null
 
   return (
@@ -50,7 +39,12 @@ export default function NeighborhoodBar({ neighborhoods, activeNeighborhood, cat
           key={n.slug}
           neighborhood={n}
           active={activeNeighborhood === n.slug}
-          cat={cat}
+          onActivate={() => router.push(
+            cat && cat !== 'all' ? `/?cat=${cat}&neighborhood=${n.slug}` : `/?neighborhood=${n.slug}`
+          )}
+          onDeactivate={() => router.push(
+            cat && cat !== 'all' ? `/?cat=${cat}` : '/'
+          )}
         />
       ))}
     </div>
