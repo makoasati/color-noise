@@ -62,6 +62,8 @@ a { color: inherit; }
 .cn-article-body li p { margin: 0; }
 .cn-article-body img { max-width: 100%; height: auto; display: block; margin: 1em 0; border-radius: 4px; }
 .cn-article-body a { color: #2D4DFF; text-decoration: none; }
+.cn-article-body span[style] { font-size: inherit; }
+.cn-editor-body span[style] { font-size: inherit; }
 .cn-article-body a:hover { text-decoration: underline; }
 .cn-article-body hr { border: none; border-top: 2px solid #CCC5B8; }
 .cn-article-body code { font-family: 'Courier New', monospace; background: #f0ece4; padding: 0.1em 0.35em; border-radius: 3px; font-size: 0.88em; }

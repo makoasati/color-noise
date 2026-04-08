@@ -1,13 +1,74 @@
 'use client'
 import { useState, useCallback, useRef } from 'react'
-import { useEditor, EditorContent } from '@tiptap/react'
+import { useEditor, EditorContent, Extension } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
 import Link from '@tiptap/extension-link'
 import Placeholder from '@tiptap/extension-placeholder'
 import Underline from '@tiptap/extension-underline'
+import TextStyle from '@tiptap/extension-text-style'
+import FontFamily from '@tiptap/extension-font-family'
 
-function ToolbarBtn({ active, onClick, title, children }) {
+// Custom FontSize extension using TextStyle
+const FontSize = Extension.create({
+  name: 'fontSize',
+  addOptions() { return { types: ['textStyle'] } },
+  addGlobalAttributes() {
+    return [{
+      types: this.options.types,
+      attributes: {
+        fontSize: {
+          default: null,
+          parseHTML: el => el.style.fontSize || null,
+          renderHTML: attrs => attrs.fontSize ? { style: `font-size: ${attrs.fontSize}` } : {},
+        },
+      },
+    }]
+  },
+  addCommands() {
+    return {
+      setFontSize: (size) => ({ chain }) =>
+        chain().setMark('textStyle', { fontSize: size }).run(),
+      unsetFontSize: () => ({ chain }) =>
+        chain().setMark('textStyle', { fontSize: null }).removeEmptyTextStyle().run(),
+    }
+  },
+})
+
+// Image extension with resizable width attribute
+const ResizableImage = Image.extend({
+  addAttributes() {
+    return {
+      ...this.parent?.(),
+      width: {
+        default: null,
+        parseHTML: el => el.getAttribute('width') || el.style.width || null,
+        renderHTML: attrs => attrs.width ? { width: attrs.width, style: `width: ${attrs.width}` } : {},
+      },
+    }
+  },
+})
+
+const FONT_FAMILIES = [
+  { label: 'Default', value: '' },
+  { label: 'DM Sans', value: "'DM Sans', sans-serif" },
+  { label: 'Outfit', value: "'Outfit', sans-serif" },
+  { label: 'Archivo Narrow', value: "'Archivo Narrow', sans-serif" },
+  { label: 'Playfair Display', value: "'Playfair Display', serif" },
+  { label: 'Georgia', value: 'Georgia, serif' },
+  { label: 'Courier New', value: "'Courier New', monospace" },
+]
+
+const FONT_SIZES = ['12px', '14px', '16px', '18px', '20px', '24px', '28px', '32px', '36px', '48px']
+
+const IMAGE_WIDTHS = [
+  { label: '25%', value: '25%' },
+  { label: '50%', value: '50%' },
+  { label: '75%', value: '75%' },
+  { label: '100%', value: '100%' },
+]
+
+function ToolbarBtn({ active, onClick, title, children, style: extraStyle }) {
   const [hovered, setHovered] = useState(false)
   return (
     <button
@@ -17,7 +78,7 @@ function ToolbarBtn({ active, onClick, title, children }) {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{
-        width: 30, height: 30,
+        minWidth: 30, height: 30,
         border: 'none',
         background: active ? 'rgba(231,59,47,0.12)' : hovered ? 'rgba(0,0,0,0.06)' : 'transparent',
         color: active ? '#E73B2F' : '#111111',
@@ -28,6 +89,8 @@ function ToolbarBtn({ active, onClick, title, children }) {
         borderRadius: 2,
         transition: 'background 0.1s, color 0.1s',
         flexShrink: 0, userSelect: 'none',
+        padding: '0 4px',
+        ...extraStyle,
       }}
     >
       {children}
@@ -36,11 +99,26 @@ function ToolbarBtn({ active, onClick, title, children }) {
 }
 
 function ToolbarDivider() {
+  return <div style={{ width: 1, background: '#CCC5B8', margin: '4px 3px', alignSelf: 'stretch', flexShrink: 0 }} />
+}
+
+function ToolbarSelect({ value, onChange, title, children, width = 110 }) {
   return (
-    <div style={{
-      width: 1, background: '#CCC5B8',
-      margin: '4px 3px', alignSelf: 'stretch', flexShrink: 0,
-    }} />
+    <select
+      title={title}
+      value={value}
+      onChange={e => onChange(e.target.value)}
+      onMouseDown={e => e.stopPropagation()}
+      style={{
+        height: 26, fontSize: 11, border: '1px solid #CCC5B8',
+        background: '#fff', color: '#111', cursor: 'pointer',
+        fontFamily: "'Archivo Narrow', sans-serif",
+        padding: '0 4px', borderRadius: 2, width,
+        flexShrink: 0,
+      }}
+    >
+      {children}
+    </select>
   )
 }
 
@@ -145,7 +223,10 @@ export default function RichTextEditor({ value, onChange }) {
     extensions: [
       StarterKit.configure({ heading: { levels: [2, 3, 4] } }),
       Underline,
-      Image.configure({ inline: false, allowBase64: true }),
+      TextStyle,
+      FontFamily,
+      FontSize,
+      ResizableImage.configure({ inline: false, allowBase64: true }),
       Link.configure({ openOnClick: false }),
       Placeholder.configure({ placeholder: 'Start writing…' }),
     ],
@@ -162,8 +243,22 @@ export default function RichTextEditor({ value, onChange }) {
 
   if (!editor) return null
 
+  // Detect if cursor is inside/on an image node
+  const { selection } = editor.state
+  const selectedNode = selection.$anchor.nodeAfter || selection.$from.nodeAfter
+  const isImageSelected = selectedNode?.type?.name === 'image' ||
+    editor.state.doc.nodeAt(selection.from)?.type?.name === 'image'
+
+  const currentImageWidth = isImageSelected
+    ? (editor.state.doc.nodeAt(selection.from) || selectedNode)?.attrs?.width || '100%'
+    : '100%'
+
+  const currentFont = editor.getAttributes('textStyle').fontFamily || ''
+  const currentSize = editor.getAttributes('textStyle').fontSize || ''
+
   return (
     <div style={{ border: '1px solid #CCC5B8', background: '#fff' }}>
+      {/* Main toolbar */}
       <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 1, padding: '5px 8px', background: '#F5F1E8', borderBottom: '1px solid #CCC5B8', position: 'sticky', top: 0, zIndex: 10 }}>
         <ToolbarBtn active={editor.isActive('bold')} onClick={() => editor.chain().focus().toggleBold().run()} title="Bold"><b>B</b></ToolbarBtn>
         <ToolbarBtn active={editor.isActive('italic')} onClick={() => editor.chain().focus().toggleItalic().run()} title="Italic"><i>I</i></ToolbarBtn>
@@ -185,6 +280,59 @@ export default function RichTextEditor({ value, onChange }) {
         <ToolbarDivider />
         <ToolbarBtn active={false} onClick={() => editor.chain().focus().clearNodes().unsetAllMarks().run()} title="Clear formatting">×</ToolbarBtn>
       </div>
+
+      {/* Typography toolbar row */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 6, padding: '4px 8px', background: '#FAFAF8', borderBottom: '1px solid #CCC5B8', flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 10, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A', marginRight: 2 }}>Font</span>
+        <ToolbarSelect
+          title="Font family"
+          value={currentFont}
+          onChange={(val) => {
+            if (!val) editor.chain().focus().unsetFontFamily().run()
+            else editor.chain().focus().setFontFamily(val).run()
+          }}
+          width={140}
+        >
+          {FONT_FAMILIES.map(f => <option key={f.value} value={f.value}>{f.label}</option>)}
+        </ToolbarSelect>
+
+        <ToolbarSelect
+          title="Font size"
+          value={currentSize}
+          onChange={(val) => {
+            if (!val) editor.chain().focus().unsetFontSize().run()
+            else editor.chain().focus().setFontSize(val).run()
+          }}
+          width={72}
+        >
+          <option value="">Size</option>
+          {FONT_SIZES.map(s => <option key={s} value={s}>{s}</option>)}
+        </ToolbarSelect>
+
+        {isImageSelected && (
+          <>
+            <ToolbarDivider />
+            <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 10, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A', marginRight: 2 }}>Image width</span>
+            {IMAGE_WIDTHS.map(({ label, value }) => (
+              <ToolbarBtn
+                key={value}
+                active={currentImageWidth === value}
+                title={`Set image width to ${label}`}
+                onClick={() => {
+                  const pos = selection.from
+                  const node = editor.state.doc.nodeAt(pos) || selectedNode
+                  if (node?.type?.name === 'image') {
+                    editor.chain().focus().updateAttributes('image', { width: value }).run()
+                  }
+                }}
+              >
+                {label}
+              </ToolbarBtn>
+            ))}
+          </>
+        )}
+      </div>
+
       <EditorContent editor={editor} />
       {imageModalOpen && <ImageModal onInsert={handleInsertImage} onClose={() => setImageModalOpen(false)} />}
       {linkModalOpen && <LinkModal editor={editor} onClose={() => setLinkModalOpen(false)} />}
