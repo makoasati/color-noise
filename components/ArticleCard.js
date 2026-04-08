@@ -1,7 +1,9 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import { CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
+import { useRouter } from 'next/navigation'
+import { CATEGORY_COLOR, CATEGORY_LABELS, STYLES } from '@/lib/styles'
+import { slugify } from '@/lib/utils'
 
 function CategoryBadge({ category, neighborhood }) {
   const color = CATEGORY_COLOR[category] || '#8A8A8A'
@@ -46,6 +48,34 @@ function ArticleImage({ src }) {
   )
 }
 
+function NeighborhoodTag({ name, dark = true }) {
+  const router = useRouter()
+  const [hovered, setHovered] = useState(false)
+  if (!name) return null
+
+  const base = STYLES.neighborhoodPill
+  const hoverStyle = hovered
+    ? dark
+      ? { background: '#F5F1E8', color: '#111111', border: '1px solid #F5F1E8' }
+      : { background: '#111111', color: '#F5F1E8', border: '1px solid #111111' }
+    : {}
+
+  return (
+    <button
+      style={{ ...base, ...hoverStyle, border: `1px solid ${dark ? '#333' : '#CCC5B8'}` }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={(e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        router.push(`/?neighborhood=${slugify(name)}`)
+      }}
+    >
+      {name}
+    </button>
+  )
+}
+
 export function ArticleHero({ article }) {
   const [hovered, setHovered] = useState(false)
   const catColor = CATEGORY_COLOR[article.category] || '#8A8A8A'
@@ -76,6 +106,11 @@ export function ArticleHero({ article }) {
         }}>
           {article.title}
         </div>
+        {article.neighborhood && (
+          <div style={{ marginTop: 10 }}>
+            <NeighborhoodTag name={article.neighborhood} dark={true} />
+          </div>
+        )}
       </div>
     </Link>
   )
@@ -105,6 +140,11 @@ export default function ArticleCard({ article }) {
         }}>
           {article.title}
         </div>
+        {article.neighborhood && (
+          <div style={{ marginTop: 8 }}>
+            <NeighborhoodTag name={article.neighborhood} dark={true} />
+          </div>
+        )}
       </div>
     </Link>
   )

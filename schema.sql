@@ -129,3 +129,28 @@ create policy "Authors delete own articles" on articles
 
 -- ── Migration: add featured column (run if table already exists) ──────────
 -- alter table articles add column if not exists featured boolean not null default false;
+
+-- ── Neighborhoods table ───────────────────────────────────────
+create table if not exists neighborhoods (
+  id   uuid primary key default gen_random_uuid(),
+  name text unique not null,
+  slug text unique not null
+);
+
+alter table neighborhoods enable row level security;
+
+drop policy if exists "Neighborhoods are public" on neighborhoods;
+create policy "Neighborhoods are public" on neighborhoods
+  for select using (true);
+
+drop policy if exists "Authenticated users insert neighborhoods" on neighborhoods;
+create policy "Authenticated users insert neighborhoods" on neighborhoods
+  for insert with check (auth.uid() is not null);
+
+-- ── Neighborhood seed data ────────────────────────────────────
+insert into neighborhoods (name, slug) values
+  ('Ukrainian Village', 'ukrainian-village'),
+  ('Pilsen',            'pilsen'),
+  ('Bucktown',          'bucktown'),
+  ('Ravenswood',        'ravenswood')
+on conflict (slug) do nothing;

@@ -5,7 +5,7 @@ import Masthead from '@/components/Masthead'
 import PublicNav from '@/components/PublicNav'
 import Footer from '@/components/Footer'
 import { DARK_ZONE, LIGHT_ZONE, NOISE_OVERLAY, STYLES, CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
-import { legacyBodyToHtml } from '@/lib/utils'
+import { legacyBodyToHtml, slugify } from '@/lib/utils'
 
 export const revalidate = 60
 
@@ -67,10 +67,17 @@ export default async function ArticlePage({ params }) {
             />
           )}
 
-          <div style={{ ...STYLES.cardCategory(article.category), display: 'flex', alignItems: 'center', gap: 6 }}>
+          <div style={{ ...STYLES.cardCategory(article.category), display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap' }}>
             {CATEGORY_LABELS[article.category]}
             <span style={{ display: 'inline-block', width: 8, height: 8, background: catColor, flexShrink: 0 }} />
-            {article.neighborhood && <span style={{ color: catColor }}>{article.neighborhood}</span>}
+            {article.neighborhood && (
+              <Link
+                href={`/?neighborhood=${slugify(article.neighborhood)}`}
+                style={{ color: catColor, textDecoration: 'none', borderBottom: `1px solid ${catColor}` }}
+              >
+                {article.neighborhood}
+              </Link>
+            )}
           </div>
 
           <h1 style={STYLES.articleTitle}>{article.title}</h1>

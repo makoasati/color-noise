@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { createClient } from '@/lib/supabase/client'
@@ -27,6 +27,14 @@ export default function ArticleEditor({ article, userId, authorName }) {
   })
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
+  const [neighborhoods, setNeighborhoods] = useState([])
+
+  useEffect(() => {
+    const supabase = createClient()
+    supabase.from('neighborhoods').select('name, slug').order('name').then(({ data }) => {
+      if (data) setNeighborhoods(data)
+    })
+  }, [])
 
   const handleSave = async (status) => {
     if (!form.title.trim() || !form.excerpt.trim()) {
@@ -67,6 +75,14 @@ export default function ArticleEditor({ article, userId, authorName }) {
       setError(err.message)
       setSaving(false)
       return
+    }
+
+    // Auto-create neighborhood if it doesn't exist yet
+    if (form.neighborhood.trim()) {
+      await supabase.from('neighborhoods').upsert(
+        { name: form.neighborhood.trim(), slug: slugify(form.neighborhood.trim()) },
+        { onConflict: 'slug', ignoreDuplicates: true }
+      ).catch(() => {})
     }
 
     router.push('/dashboard')
@@ -123,7 +139,16 @@ export default function ArticleEditor({ article, userId, authorName }) {
           </div>
           <div style={{ flex: 1 }}>
             <label style={STYLES.cmsLabel}>Neighborhood</label>
-            <input style={STYLES.cmsInput} value={form.neighborhood} onChange={setField('neighborhood')} />
+            <input
+              style={STYLES.cmsInput}
+              value={form.neighborhood}
+              onChange={setField('neighborhood')}
+              list="neighborhoods-list"
+              autoComplete="off"
+            />
+            <datalist id="neighborhoods-list">
+              {neighborhoods.map(n => <option key={n.slug} value={n.name} />)}
+            </datalist>
           </div>
         </div>
 

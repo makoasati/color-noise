@@ -42,8 +42,9 @@ function NavTab({ tab, active, onClick }) {
   )
 }
 
-export default function PublicNav({ activeCategory }) {
+export default function PublicNav({ activeCategory, activeNeighborhood }) {
   const router = useRouter()
+  const nbhd = activeNeighborhood ? `&neighborhood=${activeNeighborhood}` : ''
   return (
     <nav style={STYLES.nav}>
       {PUBLIC_NAV_TABS.map(tab => (
@@ -52,8 +53,8 @@ export default function PublicNav({ activeCategory }) {
           tab={tab}
           active={tab.key === activeCategory}
           onClick={() => {
-            if (tab.key === 'all') router.push('/')
-            else router.push(`/?cat=${tab.key}`)
+            if (tab.key === 'all') router.push(activeNeighborhood ? `/?neighborhood=${activeNeighborhood}` : '/')
+            else router.push(`/?cat=${tab.key}${nbhd}`)
           }}
         />
       ))}
