@@ -30,18 +30,20 @@ export default function LoginPage() {
     <div style={{ background: '#111111', minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
 
       {/* Masthead */}
-      <div style={{ marginBottom: 48, textAlign: 'left' }}>
-        <Link href="/" style={{ textDecoration: 'none', display: 'block' }}>
-          <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 900, fontSize: 'clamp(40px, 8vw, 68px)', letterSpacing: '-3px', lineHeight: 0.92, color: '#2D4DFF', textTransform: 'uppercase' }}>
-            COLOR
-          </div>
-          <div style={{ lineHeight: 0.95 }}>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontStyle: 'italic', color: '#E73B2F', fontSize: 'clamp(40px, 8vw, 68px)' }}>&amp;</span>
-            <span style={{ fontFamily: "'Playfair Display', serif", fontWeight: 700, fontStyle: 'italic', color: '#F5F1E8', fontSize: 'clamp(40px, 8vw, 68px)' }}>Noise</span>
-          </div>
+      <div style={{ marginBottom: 48 }}>
+        <Link href="/" style={{ textDecoration: 'none' }}>
+          <h1 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 900, fontSize: 'clamp(48px, 9.35vw, 82px)', letterSpacing: '0.012em', lineHeight: 0.78, textTransform: 'uppercase', margin: 0, padding: 0, cursor: 'pointer', userSelect: 'none', display: 'inline-block', textAlign: 'left' }}>
+            <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 1000, color: '#4A6CF7', fontSize: 'clamp(41px, 7.95vw, 70px)', letterSpacing: '0' }}>COLOR</span>
+            <span style={{ display: 'block', marginTop: '-0.2em' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'baseline' }}>
+                <span style={{ fontFamily: "'Playfair Display', serif", fontStyle: 'italic', fontWeight: 1000, fontSize: 'clamp(0px, 3.8vw, 45px)', color: '#E73B2F', lineHeight: 1, marginRight: '-0.25em', zIndex: 2, position: 'relative' }}>&amp;</span>
+                <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 1000, fontStyle: 'italic', color: '#F5F1E8', fontSize: 'clamp(35px, 7.95vw, 60px)', letterSpacing: '0' }}>NOISE</span>
+              </span>
+            </span>
+          </h1>
         </Link>
         <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '3px', color: '#8A8A8A', marginTop: 14 }}>
-          Sight, sound, scene
+          Sight · Sound · Scene
         </div>
       </div>
 
