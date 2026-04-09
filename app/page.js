@@ -11,7 +11,7 @@ import Link from 'next/link'
 export const revalidate = 60
 
 export const metadata = {
-  title: 'Color&Noise — Chicago',
+  title: 'Color&Noise',
   description: 'Sight, sound, scene — the visual and sonic life of Chicago',
 }
 
