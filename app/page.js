@@ -29,9 +29,13 @@ export default async function HomePage({ searchParams }) {
     supabase.from('articles').select('neighborhood').eq('status', 'published').not('neighborhood', 'is', null),
   ])
   const tableNeighborhoods = neighborhoodsData || []
-  const tableSlugSet = new Set(tableNeighborhoods.map(n => n.slug))
+  // Build a set of all slugs already represented in the table (both stored slug AND slugify(name))
+  const tableSlugSet = new Set([
+    ...tableNeighborhoods.map(n => n.slug),
+    ...tableNeighborhoods.map(n => slugify(n.name)),
+  ])
 
-  // Build a deduplicated set of neighborhoods from articles that aren't already in the table
+  // Add any neighborhoods that exist on articles but aren't in the table at all
   const extraNames = new Map()
   for (const row of (articleNeighborhoodData || [])) {
     const name = row.neighborhood?.trim()
