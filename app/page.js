@@ -41,15 +41,27 @@ export default async function HomePage({ searchParams }) {
   }
 
   // Match neighborhood by exact slug OR by slugifying the name (handles mismatches like "loop" vs "the-loop")
-  const matchedNeighborhood = neighborhood
-    ? neighborhoods.find(n => n.slug === neighborhood) || neighborhoods.find(n => slugify(n.name) === neighborhood)
-    : null
+  let matchedNeighborhood =
+    neighborhood
+      ? neighborhoods.find(n => n.slug === neighborhood) ||
+        neighborhoods.find(n => slugify(n.name) === neighborhood)
+      : null
 
-  if (matchedNeighborhood) {
-    query = query.eq('neighborhood', matchedNeighborhood.name)
-  } else if (neighborhood) {
-    // No match in neighborhoods table — still try filtering by the raw param value
-    query = query.eq('neighborhood', neighborhood)
+  // If still not found in the neighborhoods table, look up the real name from articles
+  // so the filter works even for neighborhoods that haven't been added to the table yet
+  let neighborhoodNameForFilter = matchedNeighborhood?.name || null
+  if (neighborhood && !neighborhoodNameForFilter) {
+    const { data: sample } = await supabase
+      .from('articles')
+      .select('neighborhood')
+      .eq('status', 'published')
+      .not('neighborhood', 'is', null)
+    const found = (sample || []).find(a => a.neighborhood && slugify(a.neighborhood) === neighborhood)
+    if (found) neighborhoodNameForFilter = found.neighborhood
+  }
+
+  if (neighborhoodNameForFilter) {
+    query = query.eq('neighborhood', neighborhoodNameForFilter)
   }
 
   const { data: articlesData } = await query
@@ -60,7 +72,7 @@ export default async function HomePage({ searchParams }) {
   const gridArticles = featured ? articles.filter(a => a.id !== featured.id) : articles
 
   // Active neighborhood display name for filter indicator
-  const activeNeighborhoodName = matchedNeighborhood?.name || (neighborhood ? neighborhood : null)
+  const activeNeighborhoodName = neighborhoodNameForFilter || null
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: '#111111', color: '#F5F1E8', minHeight: '100vh' }}>
