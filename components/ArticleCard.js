@@ -106,11 +106,6 @@ export function ArticleHero({ article }) {
         }}>
           {article.title}
         </div>
-        {article.neighborhood && (
-          <div style={{ marginTop: 10 }}>
-            <NeighborhoodTag name={article.neighborhood} dark={true} />
-          </div>
-        )}
       </div>
     </Link>
   )
@@ -140,11 +135,6 @@ export default function ArticleCard({ article }) {
         }}>
           {article.title}
         </div>
-        {article.neighborhood && (
-          <div style={{ marginTop: 8 }}>
-            <NeighborhoodTag name={article.neighborhood} dark={true} />
-          </div>
-        )}
       </div>
     </Link>
   )

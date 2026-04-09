@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server'
 import Masthead from '@/components/Masthead'
 import PublicNav from '@/components/PublicNav'
 import Footer from '@/components/Footer'
+import CommentsSection from '@/components/CommentsSection'
 import { DARK_ZONE, LIGHT_ZONE, NOISE_OVERLAY, STYLES, CATEGORY_COLOR, CATEGORY_LABELS } from '@/lib/styles'
 import { legacyBodyToHtml, slugify } from '@/lib/utils'
 
@@ -92,6 +93,8 @@ export default async function ArticlePage({ params }) {
             style={{ maxWidth: 640 }}
             dangerouslySetInnerHTML={{ __html: htmlBody }}
           />
+
+          <CommentsSection articleId={article.id} />
 
         </div>
       </div>

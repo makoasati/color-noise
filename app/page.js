@@ -1,4 +1,5 @@
 import { createClient } from '@/lib/supabase/server'
+import { slugify } from '@/lib/utils'
 import Masthead from '@/components/Masthead'
 import PublicNav from '@/components/PublicNav'
 import NeighborhoodBar from '@/components/NeighborhoodBar'
@@ -39,9 +40,16 @@ export default async function HomePage({ searchParams }) {
     query = query.eq('category', cat)
   }
 
-  if (neighborhood) {
-    const neighborhoodName = neighborhoods.find(n => n.slug === neighborhood)?.name || neighborhood
-    query = query.eq('neighborhood', neighborhoodName)
+  // Match neighborhood by exact slug OR by slugifying the name (handles mismatches like "loop" vs "the-loop")
+  const matchedNeighborhood = neighborhood
+    ? neighborhoods.find(n => n.slug === neighborhood) || neighborhoods.find(n => slugify(n.name) === neighborhood)
+    : null
+
+  if (matchedNeighborhood) {
+    query = query.eq('neighborhood', matchedNeighborhood.name)
+  } else if (neighborhood) {
+    // No match in neighborhoods table — still try filtering by the raw param value
+    query = query.eq('neighborhood', neighborhood)
   }
 
   const { data: articlesData } = await query
@@ -52,9 +60,7 @@ export default async function HomePage({ searchParams }) {
   const gridArticles = featured ? articles.filter(a => a.id !== featured.id) : articles
 
   // Active neighborhood display name for filter indicator
-  const activeNeighborhoodName = neighborhood
-    ? neighborhoods.find(n => n.slug === neighborhood)?.name || neighborhood
-    : null
+  const activeNeighborhoodName = matchedNeighborhood?.name || (neighborhood ? neighborhood : null)
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: '#111111', color: '#F5F1E8', minHeight: '100vh' }}>

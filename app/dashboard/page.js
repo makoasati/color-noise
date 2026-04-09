@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import DashboardArticleList from '@/components/DashboardArticleList'
+import DashboardComments from '@/components/DashboardComments'
 import { STYLES } from '@/lib/styles'
 
 export default async function DashboardPage() {
@@ -38,6 +39,8 @@ export default async function DashboardPage() {
       </div>
 
       <DashboardArticleList articles={articles} />
+
+      {isAdmin && <DashboardComments />}
     </div>
   )
 }

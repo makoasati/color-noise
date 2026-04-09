@@ -147,6 +147,48 @@ drop policy if exists "Authenticated users insert neighborhoods" on neighborhood
 create policy "Authenticated users insert neighborhoods" on neighborhoods
   for insert with check (auth.uid() is not null);
 
+-- ── Comments table ───────────────────────────────────────────
+create table if not exists comments (
+  id          uuid primary key default gen_random_uuid(),
+  article_id  uuid references articles(id) on delete cascade not null,
+  parent_id   uuid references comments(id) on delete cascade,
+  author_name text not null check (char_length(author_name) between 2 and 50),
+  body        text not null check (char_length(body) between 2 and 2000),
+  status      text not null default 'visible' check (status in ('visible', 'hidden')),
+  ip_hash     text,
+  created_at  timestamptz default now()
+);
+
+create index if not exists comments_article_id_idx on comments(article_id);
+create index if not exists comments_ip_hash_idx    on comments(ip_hash);
+
+alter table comments enable row level security;
+
+-- Anyone can read visible comments
+drop policy if exists "Visible comments are public" on comments;
+create policy "Visible comments are public" on comments
+  for select using (status = 'visible');
+
+-- Admins can read all comments (including hidden)
+drop policy if exists "Admins read all comments" on comments;
+create policy "Admins read all comments" on comments
+  for select using (is_admin());
+
+-- Anyone can post comments (rate limiting and filtering handled in API)
+drop policy if exists "Anyone can post comments" on comments;
+create policy "Anyone can post comments" on comments
+  for insert with check (true);
+
+-- Admins can update comment status
+drop policy if exists "Admins update comments" on comments;
+create policy "Admins update comments" on comments
+  for update using (is_admin());
+
+-- Admins can delete comments
+drop policy if exists "Admins delete comments" on comments;
+create policy "Admins delete comments" on comments
+  for delete using (is_admin());
+
 -- ── Neighborhood seed data ────────────────────────────────────
 insert into neighborhoods (name, slug) values
   ('Ukrainian Village', 'ukrainian-village'),
