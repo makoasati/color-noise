@@ -22,12 +22,28 @@ export default async function HomePage({ searchParams }) {
 
   const supabase = await createClient()
 
-  // Fetch neighborhoods for the bar
-  const { data: neighborhoodsData } = await supabase
-    .from('neighborhoods')
-    .select('id, name, slug')
-    .order('name', { ascending: true })
-  const neighborhoods = neighborhoodsData || []
+  // Fetch neighborhoods table + all distinct neighborhood values on published articles,
+  // then merge so the bar always shows every neighborhood that has at least one article.
+  const [{ data: neighborhoodsData }, { data: articleNeighborhoodData }] = await Promise.all([
+    supabase.from('neighborhoods').select('id, name, slug').order('name', { ascending: true }),
+    supabase.from('articles').select('neighborhood').eq('status', 'published').not('neighborhood', 'is', null),
+  ])
+  const tableNeighborhoods = neighborhoodsData || []
+  const tableSlugSet = new Set(tableNeighborhoods.map(n => n.slug))
+
+  // Build a deduplicated set of neighborhoods from articles that aren't already in the table
+  const extraNames = new Map()
+  for (const row of (articleNeighborhoodData || [])) {
+    const name = row.neighborhood?.trim()
+    if (!name) continue
+    const slug = slugify(name)
+    if (!tableSlugSet.has(slug) && !extraNames.has(slug)) {
+      extraNames.set(slug, name)
+    }
+  }
+  const extraNeighborhoods = Array.from(extraNames.entries()).map(([slug, name]) => ({ id: slug, name, slug }))
+  const neighborhoods = [...tableNeighborhoods, ...extraNeighborhoods]
+    .sort((a, b) => a.name.localeCompare(b.name))
 
   // Build article query
   let query = supabase
@@ -48,16 +64,13 @@ export default async function HomePage({ searchParams }) {
       : null
 
   // If still not found in the neighborhoods table, look up the real name from articles
-  // so the filter works even for neighborhoods that haven't been added to the table yet
+  // (reuse the articleNeighborhoodData already fetched above)
   let neighborhoodNameForFilter = matchedNeighborhood?.name || null
   if (neighborhood && !neighborhoodNameForFilter) {
-    const { data: sample } = await supabase
-      .from('articles')
-      .select('neighborhood')
-      .eq('status', 'published')
-      .not('neighborhood', 'is', null)
-    const found = (sample || []).find(a => a.neighborhood && slugify(a.neighborhood) === neighborhood)
-    if (found) neighborhoodNameForFilter = found.neighborhood
+    const found = (articleNeighborhoodData || []).find(
+      a => a.neighborhood && slugify(a.neighborhood) === neighborhood
+    )
+    if (found) neighborhoodNameForFilter = found.neighborhood?.trim() || null
   }
 
   if (neighborhoodNameForFilter) {
