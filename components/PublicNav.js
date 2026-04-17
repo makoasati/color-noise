@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
+import Link from 'next/link'
 import { STYLES } from '@/lib/styles'
 
 const PUBLIC_NAV_TABS = [
@@ -42,22 +43,45 @@ function NavTab({ tab, active, onClick }) {
   )
 }
 
+function CalendarTab({ active }) {
+  const [hovered, setHovered] = useState(false)
+  return (
+    <Link
+      href="/calendar"
+      style={{
+        ...STYLES.navItem(active),
+        color: active ? '#111111' : hovered ? '#F5F1E8' : '#8A8A8A',
+        display: 'flex',
+        alignItems: 'center',
+        textDecoration: 'none',
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      Calendar
+    </Link>
+  )
+}
+
 export default function PublicNav({ activeCategory, activeNeighborhood }) {
-  const router = useRouter()
+  const router   = useRouter()
+  const pathname = usePathname()
   const nbhd = activeNeighborhood ? `&neighborhood=${activeNeighborhood}` : ''
+  const isCalendar = pathname === '/calendar'
   return (
     <nav style={STYLES.nav}>
       {PUBLIC_NAV_TABS.map(tab => (
         <NavTab
           key={tab.key}
           tab={tab}
-          active={tab.key === activeCategory}
+          active={!isCalendar && tab.key === activeCategory}
           onClick={() => {
             if (tab.key === 'all') router.push(activeNeighborhood ? `/?neighborhood=${activeNeighborhood}` : '/')
             else router.push(`/?cat=${tab.key}${nbhd}`)
           }}
         />
       ))}
+      <CalendarTab active={isCalendar} />
     </nav>
   )
 }

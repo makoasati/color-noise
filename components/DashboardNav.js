@@ -42,6 +42,7 @@ export default function DashboardNav({ role, username }) {
       <DashboardNavLink href="/" active={false}>← Site</DashboardNavLink>
       <DashboardNavLink href="/dashboard" active={pathname === '/dashboard'}>Articles</DashboardNavLink>
       <DashboardNavLink href="/dashboard/new" active={pathname === '/dashboard/new'}>+ New</DashboardNavLink>
+      <DashboardNavLink href="/dashboard/events" active={pathname === '/dashboard/events'}>Events</DashboardNavLink>
       <button
         style={{
           ...STYLES.navItem(false),
