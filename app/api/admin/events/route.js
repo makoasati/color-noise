@@ -29,7 +29,7 @@ export async function GET(request) {
   const db = createAdminClient()
   let query = db
     .from('events')
-    .select('*', { count: 'exact' })
+    .select('id,title,date,time,end_date,venue,neighborhood,category,description,primary_source_url,primary_source_name,status', { count: 'exact' })
     .order('date', { ascending: false })
     .order('title', { ascending: true })
     .range(from, to)

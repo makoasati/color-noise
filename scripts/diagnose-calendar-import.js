@@ -99,9 +99,32 @@ function normalize(value) {
 function matchKey(event) {
   return [
     event.title || event['Event Name'],
-    event.date || normalizeDate(event['Date Start']),
+    event.date || normalizeDate(event['Date Start'] || event.date),
     event.venue || event.Venue,
   ].map(normalize).join('|')
+}
+
+function isGeneratedBadEvent(row) {
+  const title = clean(row['Event Name']) || clean(row.title) || ''
+  return /^CIVL Fest 2026: Venue Show \d+$/i.test(title)
+    || /^Local Maker\/Trinket Pop-up Event \d+$/i.test(title)
+}
+
+async function fetchExistingEvents(supabase) {
+  const all = []
+  const pageSize = 1000
+  for (let from = 0; ; from += pageSize) {
+    const to = from + pageSize - 1
+    const { data, error } = await supabase
+      .from('events')
+      .select('id,title,date,venue,primary_source_url,created_at')
+      .range(from, to)
+
+    if (error) throw error
+    all.push(...(data || []))
+    if (!data || data.length < pageSize) break
+  }
+  return all
 }
 
 async function main() {
@@ -110,16 +133,12 @@ async function main() {
   const rows = dataRows
     .filter(row => row.some(cell => clean(cell)))
     .map(row => Object.fromEntries(headers.map((header, index) => [header, row[index] || ''])))
+    .filter(row => !isGeneratedBadEvent(row))
 
   const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY, {
     auth: { persistSession: false },
   })
-  const { data, error } = await supabase
-    .from('events')
-    .select('id,title,date,venue,primary_source_url,created_at')
-    .limit(5000)
-
-  if (error) throw error
+  const data = await fetchExistingEvents(supabase)
 
   const dbKeys = new Map()
   for (const event of data || []) {
@@ -146,15 +165,15 @@ async function main() {
     missingCount: missing.length,
     duplicateKeyCount: duplicates.length,
     missing: missing.map(row => ({
-      title: row['Event Name'],
-      date: row['Date Start'],
-      venue: row.Venue,
-      website: row.Website,
+      title: row['Event Name'] || row.title,
+      date: row['Date Start'] || row.date,
+      venue: row.Venue || row.venue,
+      website: row.Website || row.primary_source_url,
     })),
     duplicates: duplicates.slice(0, 20).map(item => ({
-      title: item.row['Event Name'],
-      date: item.row['Date Start'],
-      venue: item.row.Venue,
+      title: item.row['Event Name'] || item.row.title,
+      date: item.row['Date Start'] || item.row.date,
+      venue: item.row.Venue || item.row.venue,
       dbCount: item.matches.length,
       ids: item.matches.map(match => match.id),
     })),

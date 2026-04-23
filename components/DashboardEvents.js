@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import ComboInput from './ComboInput'
 import { STYLES } from '@/lib/styles'
@@ -145,10 +145,10 @@ function EventForm({ event, onSave, onCancel, neighborhoodOptions = [] }) {
   )
 }
 
-export default function DashboardEvents() {
-  const [events,             setEvents]             = useState([])
-  const [totalCount,         setTotalCount]         = useState(0)
-  const [loading,            setLoading]            = useState(true)
+export default function DashboardEvents({ initialEvents = [], initialCount = 0 }) {
+  const [events,             setEvents]             = useState(initialEvents)
+  const [totalCount,         setTotalCount]         = useState(initialCount)
+  const [loading,            setLoading]            = useState(initialEvents.length === 0)
   const [error,              setError]              = useState(null)
   const [editTarget,         setEditTarget]         = useState(null)
   const [catFilter,          setCatFilter]          = useState('all')
@@ -156,8 +156,11 @@ export default function DashboardEvents() {
   const [searchTerm,         setSearchTerm]         = useState('')
   const [page,               setPage]               = useState(1)
   const [neighborhoodOptions, setNeighborhoodOptions] = useState([])
+  const skippedInitialLoad = useRef(false)
 
   useEffect(() => {
+    if (!editTarget) return
+    if (neighborhoodOptions.length > 0) return
     const supabase = createClient()
     Promise.all([
       supabase.from('neighborhoods').select('name').order('name'),
@@ -170,7 +173,7 @@ export default function DashboardEvents() {
       for (const r of evts || []) if (r.neighborhood) names.add(r.neighborhood.trim())
       setNeighborhoodOptions([...names].sort())
     })
-  }, [])
+  }, [editTarget, neighborhoodOptions.length])
 
   async function loadEvents(activePage = page) {
     setLoading(true)
@@ -182,9 +185,12 @@ export default function DashboardEvents() {
       if (catFilter    !== 'all') params.set('category', catFilter)
       if (statusFilter !== 'all') params.set('status', statusFilter)
       if (searchTerm.trim())      params.set('q', searchTerm.trim())
-      const res = await fetch(`/api/admin/events?${params}`)
-      const data = await res.json()
-      if (!res.ok) { setError(data.error); setLoading(false); return }
+      const res = await fetch(`/api/admin/events?${params}`, { credentials: 'same-origin' })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        setError(data.error || `Failed to load events (${res.status}).`)
+        return
+      }
       setEvents(data.events || [])
       setTotalCount(data.count || 0)
     } catch {
@@ -195,6 +201,10 @@ export default function DashboardEvents() {
   }
 
   useEffect(() => {
+    if (!skippedInitialLoad.current && page === 1 && catFilter === 'all' && statusFilter === 'all' && !searchTerm.trim()) {
+      skippedInitialLoad.current = true
+      return
+    }
     const timer = setTimeout(() => { loadEvents(page) }, 250)
     return () => clearTimeout(timer)
   }, [catFilter, statusFilter, searchTerm, page]) // eslint-disable-line
@@ -281,12 +291,17 @@ export default function DashboardEvents() {
 
       {loading ? (
         <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, color: '#8A8A8A', textTransform: 'uppercase', letterSpacing: '2px' }}>Loading…</div>
-      ) : error ? (
+      ) : error && events.length === 0 ? (
         <div style={{ fontFamily: "'DM Sans'", fontSize: 14, color: '#E73B2F' }}>{error}</div>
       ) : events.length === 0 ? (
         <div style={{ fontFamily: "'DM Sans'", fontSize: 15, color: '#8A8A8A' }}>No events found.</div>
       ) : (
         <>
+        {error && (
+          <div style={{ fontFamily: "'DM Sans'", fontSize: 13, color: '#E73B2F', marginBottom: 12 }}>
+            {error}
+          </div>
+        )}
         <div style={{ border: '1px solid #CCC5B8', overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: "'DM Sans', sans-serif", fontSize: 14 }}>
             <thead>

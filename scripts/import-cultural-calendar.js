@@ -10,6 +10,10 @@ const CATEGORY_MAP = {
   Heard: 'music',
   Savored: 'food',
   Around: 'nightlife',
+  art: 'art',
+  music: 'music',
+  food: 'food',
+  nightlife: 'nightlife',
 }
 
 function parseCSV(text) {
@@ -112,18 +116,25 @@ function matchKey(event) {
 }
 
 function sourceName(row) {
-  return clean(row.Venue) || 'Event Website'
+  return clean(row.Venue) || clean(row.venue) || 'Event Website'
+}
+
+function isGeneratedBadEvent(row) {
+  const title = clean(row['Event Name']) || clean(row.title) || ''
+  return /^CIVL Fest 2026: Venue Show \d+$/i.test(title)
+    || /^Local Maker\/Trinket Pop-up Event \d+$/i.test(title)
 }
 
 function toEvent(row) {
-  const category = CATEGORY_MAP[clean(row.Category)]
+  const rawCategory = clean(row.Category) || clean(row.category)
+  const category = CATEGORY_MAP[rawCategory]
   if (!category) {
-    throw new Error(`Unsupported category "${row.Category}" for "${row['Event Name']}"`)
+    throw new Error(`Unsupported category "${rawCategory}" for "${clean(row['Event Name']) || clean(row.title)}"`)
   }
 
-  const title = clean(row['Event Name'])
-  const date = normalizeDate(row['Date Start'])
-  const primary_source_url = clean(row.Website)
+  const title = clean(row['Event Name']) || clean(row.title)
+  const date = normalizeDate(row['Date Start'] || row.date)
+  const primary_source_url = clean(row.Website) || clean(row.primary_source_url)
   if (!title || !date || !primary_source_url) {
     throw new Error(`Missing required event fields: ${JSON.stringify(row)}`)
   }
@@ -132,9 +143,9 @@ function toEvent(row) {
     title,
     date,
     time: null,
-    end_date: normalizeDate(row['Date End']),
-    venue: clean(row.Venue),
-    neighborhood: clean(row.Neighborhood),
+    end_date: normalizeDate(row['Date End'] || row.end_date),
+    venue: clean(row.Venue) || clean(row.venue),
+    neighborhood: clean(row.Neighborhood) || clean(row.neighborhood),
     category,
     description: null,
     primary_source_url,
@@ -143,6 +154,23 @@ function toEvent(row) {
     image_url: null,
     status: 'approved',
   }
+}
+
+async function fetchExistingEvents(supabase) {
+  const all = []
+  const pageSize = 1000
+  for (let from = 0; ; from += pageSize) {
+    const to = from + pageSize - 1
+    const { data, error } = await supabase
+      .from('events')
+      .select('id,title,date,venue,primary_source_url')
+      .range(from, to)
+
+    if (error) throw error
+    all.push(...(data || []))
+    if (!data || data.length < pageSize) break
+  }
+  return all
 }
 
 async function main() {
@@ -155,6 +183,7 @@ async function main() {
   const rows = dataRows
     .filter(row => row.some(cell => clean(cell)))
     .map(row => Object.fromEntries(headers.map((header, index) => [header, row[index] || ''])))
+    .filter(row => !isGeneratedBadEvent(row))
 
   const importedByKey = new Map()
   for (const row of rows) {
@@ -164,12 +193,7 @@ async function main() {
   const imported = [...importedByKey.values()]
 
   const supabase = createClient(url, key, { auth: { persistSession: false } })
-  const { data: existing, error: existingError } = await supabase
-    .from('events')
-    .select('id,title,date,venue,primary_source_url')
-    .limit(5000)
-
-  if (existingError) throw existingError
+  const existing = await fetchExistingEvents(supabase)
 
   const byMatchKey = new Map()
   for (const event of existing || []) {
