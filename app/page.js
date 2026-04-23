@@ -97,7 +97,7 @@ export default async function HomePage({ searchParams }) {
       {/* ── Dark header ── */}
       <div style={DARK_ZONE}>
         <div style={NOISE_OVERLAY} />
-        <div style={{ position: 'relative', zIndex: 1, maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
+        <div className="cn-page-padded" style={{ position: 'relative', zIndex: 1, maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
           <Masthead />
           <PublicNav activeCategory={cat} activeNeighborhood={neighborhood} />
           <NeighborhoodBar neighborhoods={neighborhoods} activeNeighborhood={neighborhood} cat={cat} />
@@ -125,7 +125,7 @@ export default async function HomePage({ searchParams }) {
       )}
 
       {/* ── Article feed ── */}
-      <div style={{ maxWidth: 960, margin: '0 auto', padding: '40px 24px 80px' }}>
+      <div className="cn-article-feed" style={{ maxWidth: 960, margin: '0 auto', padding: '40px 24px 80px' }}>
         {featured && <ArticleHero article={featured} />}
 
         {gridArticles.length === 0 ? (

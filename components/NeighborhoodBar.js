@@ -26,27 +26,29 @@ export default function NeighborhoodBar({ neighborhoods, activeNeighborhood, cat
   if (!neighborhoods?.length) return null
 
   return (
-    <div style={{
-      display: 'flex',
-      gap: 6,
-      overflowX: 'auto',
-      padding: '10px 0 12px',
-      scrollbarWidth: 'none',
-      msOverflowStyle: 'none',
-    }}>
-      {neighborhoods.map(n => (
-        <NeighborhoodPill
-          key={n.slug}
-          neighborhood={n}
-          active={activeNeighborhood === n.slug}
-          onActivate={() => router.push(
-            cat && cat !== 'all' ? `/?cat=${cat}&neighborhood=${n.slug}` : `/?neighborhood=${n.slug}`
-          )}
-          onDeactivate={() => router.push(
-            cat && cat !== 'all' ? `/?cat=${cat}` : '/'
-          )}
-        />
-      ))}
+    <div className="cn-neighborhood-wrapper">
+      <div style={{
+        display: 'flex',
+        gap: 6,
+        overflowX: 'auto',
+        padding: '10px 0 12px',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+      }}>
+        {neighborhoods.map(n => (
+          <NeighborhoodPill
+            key={n.slug}
+            neighborhood={n}
+            active={activeNeighborhood === n.slug}
+            onActivate={() => router.push(
+              cat && cat !== 'all' ? `/?cat=${cat}&neighborhood=${n.slug}` : `/?neighborhood=${n.slug}`
+            )}
+            onDeactivate={() => router.push(
+              cat && cat !== 'all' ? `/?cat=${cat}` : '/'
+            )}
+          />
+        ))}
+      </div>
     </div>
   )
 }

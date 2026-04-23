@@ -16,6 +16,7 @@ function NavTab({ tab, active, onClick }) {
   const showFull = active || hovered
   return (
     <button
+      className="cn-nav-item"
       style={{
         ...STYLES.navItem(active),
         color: active ? '#111111' : hovered ? '#F5F1E8' : '#8A8A8A',
@@ -48,6 +49,7 @@ function CalendarTab({ active }) {
   return (
     <Link
       href="/calendar"
+      className="cn-calendar-tab-item"
       style={{
         ...STYLES.navItem(active),
         color: active ? '#111111' : hovered ? '#F5F1E8' : '#8A8A8A',
@@ -69,18 +71,20 @@ export default function PublicNav({ activeCategory, activeNeighborhood }) {
   const nbhd = activeNeighborhood ? `&neighborhood=${activeNeighborhood}` : ''
   const isCalendar = pathname === '/calendar'
   return (
-    <nav style={STYLES.nav}>
-      {PUBLIC_NAV_TABS.map(tab => (
-        <NavTab
-          key={tab.key}
-          tab={tab}
-          active={!isCalendar && tab.key === activeCategory}
-          onClick={() => {
-            if (tab.key === 'all') router.push(activeNeighborhood ? `/?neighborhood=${activeNeighborhood}` : '/')
-            else router.push(`/?cat=${tab.key}${nbhd}`)
-          }}
-        />
-      ))}
+    <nav style={STYLES.nav} className="cn-nav">
+      <div className="cn-nav-tabs">
+        {PUBLIC_NAV_TABS.map(tab => (
+          <NavTab
+            key={tab.key}
+            tab={tab}
+            active={!isCalendar && tab.key === activeCategory}
+            onClick={() => {
+              if (tab.key === 'all') router.push(activeNeighborhood ? `/?neighborhood=${activeNeighborhood}` : '/')
+              else router.push(`/?cat=${tab.key}${nbhd}`)
+            }}
+          />
+        ))}
+      </div>
       <CalendarTab active={isCalendar} />
     </nav>
   )

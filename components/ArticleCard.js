@@ -122,7 +122,7 @@ export default function ArticleCard({ article }) {
           <ArticleImage src={article.cover_image} />
           <CategoryBadge category={article.category} neighborhood={article.neighborhood} />
         </div>
-        <div style={{
+        <div className="cn-card-title" style={{
           fontFamily: "'Outfit', sans-serif",
           fontWeight: 700,
           fontSize: 18,

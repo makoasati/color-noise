@@ -55,6 +55,13 @@ function formatShortDate(dateStr) {
   return `${MONTH_NAMES[d.getMonth()]} ${d.getDate()}`
 }
 
+function formatMobileDate(dateStr) {
+  const d = parseLocalDate(dateStr)
+  const shortDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  const shortMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  return `${shortDays[d.getDay()]}, ${shortMonths[d.getMonth()]} ${d.getDate()}`
+}
+
 function compareEvents(a, b) {
   const categoryDiff = (CATEGORY_ORDER[a.category] ?? 99) - (CATEGORY_ORDER[b.category] ?? 99)
   if (categoryDiff !== 0) return categoryDiff
@@ -90,12 +97,13 @@ function CategoryFilters({ active, onChange }) {
   ]
 
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+    <div className="cn-cat-filters" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
       {items.map(({ key, label, color }) => {
         const isActive = active === key
         return (
           <button
             key={key}
+            className="cn-cat-filter-item"
             onClick={() => onChange(key)}
             onMouseEnter={e => {
               e.currentTarget.style.background = '#F5F1E8'
@@ -645,46 +653,64 @@ function MobileListView({ events, activeCategory, onEventClick }) {
   return (
     <div>
       {sortedDates.map(date => {
-        const { sameDay, ongoing } = partitionEventsForDate(date, grouped[date])
-
-        const renderItems = (items, heading) => items.length > 0 && (
-          <div>
-            {heading && (
-              <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 10, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A', margin: '12px 0 4px' }}>
-                {heading}
-              </div>
-            )}
-            {items.map(ev => {
+        const dayEvents = grouped[date].slice().sort(compareEvents)
+        return (
+          <div key={date} style={{ marginBottom: 24 }}>
+            <div style={{
+              fontFamily: "'Archivo Narrow', sans-serif",
+              fontSize: 13,
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '2px',
+              color: '#F5F1E8',
+              borderBottom: '1px solid #2A2A2A',
+              paddingBottom: 8,
+              marginBottom: 10,
+            }}>
+              {formatMobileDate(date)}
+            </div>
+            {dayEvents.map(ev => {
               const cat = EVENT_CATS[ev.category] || { color: '#8A8A8A' }
               return (
                 <button
                   key={ev.id}
                   onClick={() => onEventClick(ev)}
-                  style={{ display: 'flex', alignItems: 'flex-start', gap: 10, width: '100%', textAlign: 'left', background: 'transparent', border: 'none', borderBottom: '1px solid #1E1E1E', padding: '10px 0', cursor: 'pointer' }}
+                  style={{
+                    display: 'block',
+                    width: '100%',
+                    textAlign: 'left',
+                    background: '#F5F1E8',
+                    border: 'none',
+                    borderLeft: `4px solid ${cat.color}`,
+                    padding: '10px 12px',
+                    marginBottom: 8,
+                    cursor: 'pointer',
+                  }}
                 >
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', background: cat.color, flexShrink: 0, marginTop: 5 }} />
-                  <div style={{ flex: 1 }}>
-                    <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500, color: '#F5F1E8', marginBottom: 2 }}>
-                      {ev.title}
-                    </div>
-                    <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#555', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                      {ev.time || ''}{ev.venue ? (ev.time ? ' · ' : '') + ev.venue : ''}
-                      {heading === 'Ongoing' && ev.end_date ? ` · runs through ${formatShortDate(ev.end_date)}` : ''}
-                    </div>
+                  <div style={{
+                    fontFamily: "'Outfit', sans-serif",
+                    fontWeight: 700,
+                    fontSize: 16,
+                    color: '#111111',
+                    lineHeight: 1.2,
+                    marginBottom: ev.time || ev.venue ? 4 : 0,
+                  }}>
+                    {ev.title}
                   </div>
+                  {(ev.time || ev.venue) && (
+                    <div style={{
+                      fontFamily: "'Archivo Narrow', sans-serif",
+                      fontSize: 11,
+                      color: '#8A8A8A',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                    }}>
+                      {ev.time || ''}{ev.time && ev.venue ? ' · ' : ''}{ev.venue || ''}
+                    </div>
+                  )}
                 </button>
               )
             })}
-          </div>
-        )
-
-        return (
-          <div key={date} style={{ marginBottom: 28 }}>
-            <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', color: '#555', borderBottom: '1px solid #2A2A2A', paddingBottom: 6, marginBottom: 10 }}>
-              {formatFullDate(date)}
-            </div>
-            {renderItems(sameDay, null)}
-            {renderItems(ongoing, 'Ongoing')}
           </div>
         )
       })}
@@ -740,7 +766,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
 
   const today = toISODate(now)
   const grid = buildGrid(year, month)
-  const isListView = viewportWidth !== null && viewportWidth < 480
+  const isListView = viewportWidth !== null && viewportWidth < 768
   const isCompact = viewportWidth !== null && viewportWidth < 768
   const byDate = {}
   const monthStart = new Date(year, month, 1)

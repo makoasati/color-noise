@@ -35,7 +35,7 @@ export default async function CalendarPage() {
       color: '#F5F1E8',
       fontFamily: "'DM Sans', sans-serif",
     }}>
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
+      <div className="cn-page-padded" style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
         <Masthead />
         <PublicNav activeCategory="calendar" activeNeighborhood={null} />
 

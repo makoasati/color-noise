@@ -40,7 +40,7 @@ export default function Masthead() {
           </span>
         </Link>
       </h1>
-      <div style={STYLES.tagline}>Sight · Sound · Scene </div>
+      <div className="cn-tagline" style={STYLES.tagline}>Sight · Sound · Scene</div>
     </header>
   )
 }
