@@ -15,7 +15,7 @@ create table if not exists events (
   category            text not null check (category in ('music', 'art', 'food', 'nightlife')),
   description         text,
   primary_source_url  text not null,
-  primary_source_name text not null,
+  primary_source_name text not null,1
   additional_sources  jsonb default '[]'::jsonb,
   image_url           text,
   status              text not null default 'approved' check (status in ('approved', 'pending')),

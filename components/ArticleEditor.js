@@ -4,6 +4,7 @@ import { useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { createClient } from '@/lib/supabase/client'
 import CoverImageField from './CoverImageField'
+import ComboInput from './ComboInput'
 import { slugify, legacyBodyToHtml } from '@/lib/utils'
 import { STYLES, CATEGORIES, CATEGORY_LABELS } from '@/lib/styles'
 
@@ -27,13 +28,31 @@ export default function ArticleEditor({ article, userId, authorName }) {
   })
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState(null)
-  const [neighborhoods, setNeighborhoods] = useState([])
+  const [neighborhoodOptions, setNeighborhoodOptions] = useState([])
+  const [authorOptions, setAuthorOptions] = useState([])
 
   useEffect(() => {
     const supabase = createClient()
-    supabase.from('neighborhoods').select('name, slug').order('name').then(({ data }) => {
-      if (data) setNeighborhoods(data)
+    // Fetch neighborhood options: neighborhoods table + distinct values on articles
+    Promise.all([
+      supabase.from('neighborhoods').select('name').order('name'),
+      supabase.from('articles').select('neighborhood').not('neighborhood', 'is', null),
+    ]).then(([{ data: nbhdRows }, { data: articleRows }]) => {
+      const names = new Set()
+      for (const r of nbhdRows  || []) if (r.name)         names.add(r.name.trim())
+      for (const r of articleRows || []) if (r.neighborhood) names.add(r.neighborhood.trim())
+      setNeighborhoodOptions([...names].sort())
     })
+
+    // Fetch distinct author names from articles
+    supabase
+      .from('articles')
+      .select('author_name')
+      .not('author_name', 'is', null)
+      .then(({ data }) => {
+        const names = [...new Set((data || []).map(r => r.author_name?.trim()).filter(Boolean))].sort()
+        setAuthorOptions(names)
+      })
   }, [])
 
   const handleSave = async (status) => {
@@ -124,7 +143,12 @@ export default function ArticleEditor({ article, userId, authorName }) {
         <div style={{ display: 'flex', gap: 16 }}>
           <div style={{ flex: 1 }}>
             <label style={STYLES.cmsLabel}>Author</label>
-            <input style={STYLES.cmsInput} value={form.author_name} onChange={setField('author_name')} />
+            <ComboInput
+              value={form.author_name}
+              onChange={v => setForm(f => ({ ...f, author_name: v }))}
+              options={authorOptions}
+              placeholder="Author name"
+            />
           </div>
           <div style={{ flex: 1 }}>
             <label style={STYLES.cmsLabel}>Date</label>
@@ -139,16 +163,12 @@ export default function ArticleEditor({ article, userId, authorName }) {
           </div>
           <div style={{ flex: 1 }}>
             <label style={STYLES.cmsLabel}>Neighborhood</label>
-            <input
-              style={STYLES.cmsInput}
+            <ComboInput
               value={form.neighborhood}
-              onChange={setField('neighborhood')}
-              list="neighborhoods-list"
-              autoComplete="off"
+              onChange={v => setForm(f => ({ ...f, neighborhood: v }))}
+              options={neighborhoodOptions}
+              placeholder="e.g. Logan Square"
             />
-            <datalist id="neighborhoods-list">
-              {neighborhoods.map(n => <option key={n.slug} value={n.name} />)}
-            </datalist>
           </div>
         </div>
 

@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
-async function requireAdmin(supabase) {
+async function requireAdmin() {
+  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return null
   const { data: profile } = await supabase
@@ -11,8 +13,7 @@ async function requireAdmin(supabase) {
 
 // GET /api/admin/events — list all events (admin only)
 export async function GET(request) {
-  const supabase = await createClient()
-  const user = await requireAdmin(supabase)
+  const user = await requireAdmin()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const { searchParams } = new URL(request.url)
@@ -20,7 +21,8 @@ export async function GET(request) {
   const status   = searchParams.get('status')
   const source   = searchParams.get('source')
 
-  let query = supabase
+  const db = createAdminClient()
+  let query = db
     .from('events')
     .select('*')
     .order('date', { ascending: false })
@@ -37,8 +39,7 @@ export async function GET(request) {
 
 // POST /api/admin/events — manually add an event (admin only)
 export async function POST(request) {
-  const supabase = await createClient()
-  const user = await requireAdmin(supabase)
+  const user = await requireAdmin()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   let body
@@ -52,7 +53,8 @@ export async function POST(request) {
     return NextResponse.json({ error: 'title, date, and category are required.' }, { status: 400 })
   }
 
-  const { data, error } = await supabase.from('events').insert({
+  const db = createAdminClient()
+  const { data, error } = await db.from('events').insert({
     title: String(title).slice(0, 300),
     date,
     time: time || null,

@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 
-const SYSTEM_PROMPT = `Extract all upcoming events from this Chicago events page. Return ONLY a valid JSON array. Each event object should have: title (string), date (string, YYYY-MM-DD), time (string or null), end_date (string or null for multi-day events), venue (string or null), neighborhood (string or null), category (one of: music, art, food, nightlife), description (string or null, max 200 chars), url (string, full URL to the event page). Only include events happening today or in the future. If you cannot determine the date, skip that event. Return valid JSON only, no markdown, no backticks, no explanation.`
+function buildSystemPrompt(cutoffDate) {
+  return `Extract all events from this Chicago events page. Return ONLY a valid JSON array. Each event object should have: title (string), date (string, YYYY-MM-DD), time (string or null), end_date (string or null for multi-day events), venue (string or null), neighborhood (string or null), category (one of: music, art, food, nightlife), description (string or null, max 200 chars), url (string, full URL to the event page). Only include events with a date on or after ${cutoffDate}. If you cannot determine the date, skip that event. Return valid JSON only, no markdown, no backticks, no explanation.`
+}
 
 function trimHtml(html) {
   return html
@@ -67,14 +69,27 @@ export async function GET(request) {
   }
 
   const supabase = createAdminClient()
+  const { searchParams } = new URL(request.url)
+  const backfill = searchParams.get('backfill') === 'true'
+  const days     = parseInt(searchParams.get('days') || '7', 10)
 
-  // Pick 2 active sources with oldest last_scraped_at
-  const { data: sources, error: sourcesError } = await supabase
+  // backfill=true: scrape ALL sources, look back N days (default 7)
+  // normal cron:   scrape 2 oldest sources, only future events
+  const cutoffDate = (() => {
+    const d = new Date()
+    if (backfill) d.setDate(d.getDate() - days)
+    return d.toISOString().split('T')[0]
+  })()
+
+  let query = supabase
     .from('event_sources')
     .select('*')
     .eq('active', true)
     .order('last_scraped_at', { ascending: true, nullsFirst: true })
-    .limit(2)
+
+  if (!backfill) query = query.limit(2)
+
+  const { data: sources, error: sourcesError } = await query
 
   if (sourcesError) {
     console.error('Failed to fetch event sources:', sourcesError)
@@ -128,7 +143,7 @@ export async function GET(request) {
           body: JSON.stringify({
             model: 'claude-haiku-4-5-20251001',
             max_tokens: 4096,
-            system: SYSTEM_PROMPT,
+            system: buildSystemPrompt(cutoffDate),
             messages: [{ role: 'user', content: trimmedHtml }],
           }),
           signal: AbortSignal.timeout(20000),
@@ -160,7 +175,6 @@ export async function GET(request) {
       }
 
       // 5. Deduplicate and insert
-      const today = new Date().toISOString().split('T')[0]
       let inserted = 0
       let merged = 0
       let skipped = 0
@@ -168,7 +182,7 @@ export async function GET(request) {
       for (const ev of extractedEvents) {
         // Validate required fields
         if (!ev.title || !ev.date) { skipped++; continue }
-        if (ev.date < today) { skipped++; continue }
+        if (ev.date < cutoffDate) { skipped++; continue }
         // Validate date format
         if (!/^\d{4}-\d{2}-\d{2}$/.test(ev.date)) { skipped++; continue }
 
@@ -242,14 +256,11 @@ export async function GET(request) {
         }
       }
 
-      // 6. Cleanup events more than 7 days past their date
-      const cutoff = new Date()
-      cutoff.setDate(cutoff.getDate() - 7)
-      const cutoffStr = cutoff.toISOString().split('T')[0]
-      const { error: cleanupError } = await supabase
+      // 6. Cleanup: in normal mode delete events >7 days old; skip cleanup in backfill
+      const { error: cleanupError } = backfill ? {} : await supabase
         .from('events')
         .delete()
-        .lt('date', cutoffStr)
+        .lt('date', cutoffDate)
 
       if (cleanupError) {
         console.error('Cleanup error:', cleanupError.message)
@@ -274,6 +285,11 @@ export async function GET(request) {
     } catch (err) {
       console.error(`Unexpected error for ${source.name}:`, err)
       results.push({ source: source.name, status: 'error', error: err.message })
+    }
+
+    // Pause between sources to avoid hammering the Anthropic API
+    if (backfill && sources.indexOf(source) < sources.length - 1) {
+      await new Promise(r => setTimeout(r, 2000))
     }
   }
 

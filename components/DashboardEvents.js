@@ -1,5 +1,7 @@
 'use client'
 import { useState, useEffect } from 'react'
+import { createClient } from '@/lib/supabase/client'
+import ComboInput from './ComboInput'
 import { STYLES } from '@/lib/styles'
 
 const EVENT_CATS = {
@@ -16,7 +18,7 @@ function formatDate(str) {
   return new Date(y, m - 1, d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }
 
-function EventForm({ event, onSave, onCancel }) {
+function EventForm({ event, onSave, onCancel, neighborhoodOptions = [] }) {
   const [form, setForm] = useState({
     title: event?.title || '',
     date: event?.date || '',
@@ -98,7 +100,12 @@ function EventForm({ event, onSave, onCancel }) {
         </div>
         <div>
           <label style={STYLES.cmsLabel}>Neighborhood</label>
-          <input style={STYLES.cmsInput} value={form.neighborhood} onChange={e => set('neighborhood', e.target.value)} />
+          <ComboInput
+            value={form.neighborhood}
+            onChange={v => set('neighborhood', v)}
+            options={neighborhoodOptions}
+            placeholder="e.g. Logan Square"
+          />
         </div>
       </div>
 
@@ -138,14 +145,30 @@ function EventForm({ event, onSave, onCancel }) {
 }
 
 export default function DashboardEvents() {
-  const [events,     setEvents]     = useState([])
-  const [loading,    setLoading]    = useState(true)
-  const [error,      setError]      = useState(null)
-  const [editTarget, setEditTarget] = useState(null) // null | 'new' | event obj
-  const [catFilter,  setCatFilter]  = useState('all')
-  const [statusFilter, setStatusFilter] = useState('all')
+  const [events,             setEvents]             = useState([])
+  const [loading,            setLoading]            = useState(true)
+  const [error,              setError]              = useState(null)
+  const [editTarget,         setEditTarget]         = useState(null)
+  const [catFilter,          setCatFilter]          = useState('all')
+  const [statusFilter,       setStatusFilter]       = useState('all')
+  const [neighborhoodOptions, setNeighborhoodOptions] = useState([])
 
-  useEffect(() => { loadEvents() }, [])
+  useEffect(() => {
+    loadEvents()
+    // Fetch neighborhood options from all sources
+    const supabase = createClient()
+    Promise.all([
+      supabase.from('neighborhoods').select('name').order('name'),
+      supabase.from('articles').select('neighborhood').not('neighborhood', 'is', null),
+      supabase.from('events').select('neighborhood').not('neighborhood', 'is', null),
+    ]).then(([{ data: nbhd }, { data: arts }, { data: evts }]) => {
+      const names = new Set()
+      for (const r of nbhd || []) if (r.name)         names.add(r.name.trim())
+      for (const r of arts || []) if (r.neighborhood) names.add(r.neighborhood.trim())
+      for (const r of evts || []) if (r.neighborhood) names.add(r.neighborhood.trim())
+      setNeighborhoodOptions([...names].sort())
+    })
+  }, [])
 
   async function loadEvents() {
     setLoading(true)
@@ -225,6 +248,7 @@ export default function DashboardEvents() {
           event={editTarget === 'new' ? null : editTarget}
           onSave={handleSaved}
           onCancel={() => setEditTarget(null)}
+          neighborhoodOptions={neighborhoodOptions}
         />
       )}
 

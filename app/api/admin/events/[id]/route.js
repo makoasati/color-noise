@@ -1,7 +1,9 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/admin'
 
-async function requireAdmin(supabase) {
+async function requireAdmin() {
+  const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) return null
   const { data: profile } = await supabase
@@ -11,8 +13,7 @@ async function requireAdmin(supabase) {
 
 // PATCH /api/admin/events/[id] — edit or approve an event
 export async function PATCH(request, { params }) {
-  const supabase = await createClient()
-  const user = await requireAdmin(supabase)
+  const user = await requireAdmin()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const { id } = await params
@@ -21,7 +22,6 @@ export async function PATCH(request, { params }) {
     return NextResponse.json({ error: 'Invalid request.' }, { status: 400 })
   }
 
-  // Only allow updating specific fields
   const allowed = ['title', 'date', 'time', 'end_date', 'venue', 'neighborhood', 'category', 'description', 'primary_source_url', 'primary_source_name', 'image_url', 'status']
   const updates = {}
   for (const key of allowed) {
@@ -32,7 +32,9 @@ export async function PATCH(request, { params }) {
     return NextResponse.json({ error: 'No valid fields to update.' }, { status: 400 })
   }
 
-  const { data, error } = await supabase
+  // Use admin client to bypass RLS for the write operation
+  const db = createAdminClient()
+  const { data, error } = await db
     .from('events')
     .update(updates)
     .eq('id', id)
@@ -45,12 +47,12 @@ export async function PATCH(request, { params }) {
 
 // DELETE /api/admin/events/[id]
 export async function DELETE(request, { params }) {
-  const supabase = await createClient()
-  const user = await requireAdmin(supabase)
+  const user = await requireAdmin()
   if (!user) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
 
   const { id } = await params
-  const { error } = await supabase.from('events').delete().eq('id', id)
+  const db = createAdminClient()
+  const { error } = await db.from('events').delete().eq('id', id)
   if (error) return NextResponse.json({ error: error.message }, { status: 500 })
   return NextResponse.json({ ok: true })
 }
