@@ -8,6 +8,7 @@ const CATEGORY_HINTS = {
   food: 'Savored',
   nightlife: 'Around',
 }
+const PAGE_SIZE = 5
 
 function formatTimestamp(ts) {
   if (!ts) return 'Never'
@@ -24,6 +25,8 @@ export default function DashboardEventSources() {
   const [showAdd,   setShowAdd]   = useState(false)
   const [scraping,  setScraping]  = useState(false)
   const [scrapeMsg, setScrapeMsg] = useState(null)
+  const [searchTerm, setSearchTerm] = useState('')
+  const [page, setPage] = useState(1)
 
   // New source form state
   const [newForm, setNewForm] = useState({ name: '', url: '', category_hint: 'music' })
@@ -62,6 +65,26 @@ export default function DashboardEventSources() {
     const res = await fetch(`/api/admin/event-sources/${id}`, { method: 'DELETE' })
     if (res.ok) setSources(prev => prev.filter(s => s.id !== id))
   }
+
+  const filteredSources = sources.filter(src => {
+    const query = searchTerm.trim().toLowerCase()
+    if (!query) return true
+    const categoryLabel = CATEGORY_HINTS[src.category_hint] || src.category_hint
+    return [
+      src.name,
+      src.url,
+      src.category_hint,
+      categoryLabel,
+      src.active ? 'active' : 'inactive',
+      src.last_scraped_at,
+    ].some(value => String(value || '').toLowerCase().includes(query))
+  })
+  const totalPages = Math.max(1, Math.ceil(filteredSources.length / PAGE_SIZE))
+  const safePage = Math.min(page, totalPages)
+  const pageStart = (safePage - 1) * PAGE_SIZE
+  const visibleSources = filteredSources.slice(pageStart, pageStart + PAGE_SIZE)
+  const startRow = filteredSources.length === 0 ? 0 : pageStart + 1
+  const endRow = Math.min(pageStart + PAGE_SIZE, filteredSources.length)
 
   const handleScrapeNow = async () => {
     setScraping(true)
@@ -192,13 +215,36 @@ export default function DashboardEventSources() {
         </form>
       )}
 
+      <div style={{ position: 'relative', marginBottom: 16 }}>
+        <input
+          style={{ ...STYLES.cmsInput, paddingRight: searchTerm ? 36 : 12 }}
+          value={searchTerm}
+          onChange={e => { setSearchTerm(e.target.value); setPage(1) }}
+          placeholder="Search sources"
+          aria-label="Search sources"
+        />
+        {searchTerm && (
+          <button
+            type="button"
+            onClick={() => { setSearchTerm(''); setPage(1) }}
+            title="Clear search"
+            style={{ position: 'absolute', top: 7, right: 7, width: 24, height: 24, border: 'none', background: 'transparent', color: '#8A8A8A', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
+          >
+            x
+          </button>
+        )}
+      </div>
+
       {loading ? (
         <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, color: '#8A8A8A', textTransform: 'uppercase', letterSpacing: '2px' }}>Loading…</div>
       ) : error ? (
         <div style={{ fontFamily: "'DM Sans'", fontSize: 14, color: '#E73B2F' }}>{error}</div>
+      ) : filteredSources.length === 0 ? (
+        <div style={{ fontFamily: "'DM Sans'", fontSize: 15, color: '#8A8A8A' }}>No sources found.</div>
       ) : (
+        <>
         <div style={{ border: '1px solid #CCC5B8' }}>
-          {sources.map((src, i) => (
+          {visibleSources.map((src, i) => (
             <div
               key={src.id}
               style={{
@@ -206,7 +252,7 @@ export default function DashboardEventSources() {
                 gap: 16,
                 alignItems: 'center',
                 padding: '14px 16px',
-                borderBottom: i < sources.length - 1 ? '1px solid #E8E4DC' : 'none',
+                borderBottom: i < visibleSources.length - 1 ? '1px solid #E8E4DC' : 'none',
                 background: src.active ? '#FFFFFF' : '#FAF8F4',
                 opacity: src.active ? 1 : 0.65,
               }}
@@ -294,6 +340,31 @@ export default function DashboardEventSources() {
             </div>
           ))}
         </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginTop: 14, flexWrap: 'wrap' }}>
+          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A' }}>
+            Showing {startRow}-{endRow} of {filteredSources.length}
+          </div>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={safePage <= 1}
+              style={{ ...STYLES.cmsCancelBtn, opacity: safePage <= 1 ? 0.4 : 1, cursor: safePage <= 1 ? 'default' : 'pointer' }}
+            >
+              Previous
+            </button>
+            <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A' }}>
+              Page {safePage} of {totalPages}
+            </span>
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={safePage >= totalPages}
+              style={{ ...STYLES.cmsCancelBtn, opacity: safePage >= totalPages ? 0.4 : 1, cursor: safePage >= totalPages ? 'default' : 'pointer' }}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        </>
       )}
     </div>
   )

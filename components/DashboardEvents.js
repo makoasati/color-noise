@@ -11,6 +11,7 @@ const EVENT_CATS = {
   nightlife: { color: '#C95C2B', label: 'Around' },
 }
 const STATUS_COLORS = { approved: '#2D4DFF', pending: '#C95C2B' }
+const PAGE_SIZE = 5
 
 function formatDate(str) {
   if (!str) return '—'
@@ -146,16 +147,17 @@ function EventForm({ event, onSave, onCancel, neighborhoodOptions = [] }) {
 
 export default function DashboardEvents() {
   const [events,             setEvents]             = useState([])
+  const [totalCount,         setTotalCount]         = useState(0)
   const [loading,            setLoading]            = useState(true)
   const [error,              setError]              = useState(null)
   const [editTarget,         setEditTarget]         = useState(null)
   const [catFilter,          setCatFilter]          = useState('all')
   const [statusFilter,       setStatusFilter]       = useState('all')
+  const [searchTerm,         setSearchTerm]         = useState('')
+  const [page,               setPage]               = useState(1)
   const [neighborhoodOptions, setNeighborhoodOptions] = useState([])
 
   useEffect(() => {
-    loadEvents()
-    // Fetch neighborhood options from all sources
     const supabase = createClient()
     Promise.all([
       supabase.from('neighborhoods').select('name').order('name'),
@@ -170,16 +172,21 @@ export default function DashboardEvents() {
     })
   }, [])
 
-  async function loadEvents() {
+  async function loadEvents(activePage = page) {
     setLoading(true)
+    setError(null)
     try {
       const params = new URLSearchParams()
+      params.set('page', String(activePage))
+      params.set('limit', String(PAGE_SIZE))
       if (catFilter    !== 'all') params.set('category', catFilter)
       if (statusFilter !== 'all') params.set('status', statusFilter)
+      if (searchTerm.trim())      params.set('q', searchTerm.trim())
       const res = await fetch(`/api/admin/events?${params}`)
       const data = await res.json()
       if (!res.ok) { setError(data.error); setLoading(false); return }
       setEvents(data.events || [])
+      setTotalCount(data.count || 0)
     } catch {
       setError('Failed to load events.')
     } finally {
@@ -187,8 +194,10 @@ export default function DashboardEvents() {
     }
   }
 
-  // Re-fetch when filters change
-  useEffect(() => { if (!loading) loadEvents() }, [catFilter, statusFilter]) // eslint-disable-line
+  useEffect(() => {
+    const timer = setTimeout(() => { loadEvents(page) }, 250)
+    return () => clearTimeout(timer)
+  }, [catFilter, statusFilter, searchTerm, page]) // eslint-disable-line
 
   const handleApprove = async (id) => {
     const res = await fetch(`/api/admin/events/${id}`, {
@@ -202,25 +211,24 @@ export default function DashboardEvents() {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this event permanently?')) return
     const res = await fetch(`/api/admin/events/${id}`, { method: 'DELETE' })
-    if (res.ok) setEvents(prev => prev.filter(e => e.id !== id))
+    if (res.ok) loadEvents(page)
   }
 
   const handleSaved = (saved) => {
-    if (editTarget === 'new') {
-      setEvents(prev => [saved, ...prev])
-    } else {
-      setEvents(prev => prev.map(e => e.id === saved.id ? saved : e))
-    }
     setEditTarget(null)
+    loadEvents(page)
   }
 
   const pending = events.filter(e => e.status === 'pending').length
+  const totalPages = Math.max(1, Math.ceil(totalCount / PAGE_SIZE))
+  const startRow = totalCount === 0 ? 0 : (page - 1) * PAGE_SIZE + 1
+  const endRow = Math.min(page * PAGE_SIZE, totalCount)
 
   return (
     <div style={{ paddingTop: 32 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
         <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 26, color: '#111' }}>
-          Events {!loading && `(${events.length})`}
+          Events {!loading && `(${totalCount})`}
           {pending > 0 && (
             <span style={{ marginLeft: 12, fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, color: '#C95C2B', textTransform: 'uppercase', letterSpacing: '1px' }}>
               {pending} pending
@@ -231,12 +239,31 @@ export default function DashboardEvents() {
       </div>
 
       {/* Filters */}
-      <div style={{ display: 'flex', gap: 12, marginBottom: 20, flexWrap: 'wrap' }}>
-        <select style={{ ...STYLES.cmsSelect, width: 'auto' }} value={catFilter} onChange={e => setCatFilter(e.target.value)}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(240px, 1fr) auto auto', gap: 12, marginBottom: 20, alignItems: 'center' }}>
+        <div style={{ position: 'relative', minWidth: 0 }}>
+          <input
+            style={{ ...STYLES.cmsInput, paddingRight: searchTerm ? 36 : 12 }}
+            value={searchTerm}
+            onChange={e => { setSearchTerm(e.target.value); setPage(1) }}
+            placeholder="Search events"
+            aria-label="Search events"
+          />
+          {searchTerm && (
+            <button
+              type="button"
+              onClick={() => { setSearchTerm(''); setPage(1) }}
+              title="Clear search"
+              style={{ position: 'absolute', top: 7, right: 7, width: 24, height: 24, border: 'none', background: 'transparent', color: '#8A8A8A', cursor: 'pointer', fontSize: 16, lineHeight: 1 }}
+            >
+              x
+            </button>
+          )}
+        </div>
+        <select style={{ ...STYLES.cmsSelect, width: 'auto' }} value={catFilter} onChange={e => { setCatFilter(e.target.value); setPage(1) }}>
           <option value="all">All Categories</option>
           {Object.entries(EVENT_CATS).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
         </select>
-        <select style={{ ...STYLES.cmsSelect, width: 'auto' }} value={statusFilter} onChange={e => setStatusFilter(e.target.value)}>
+        <select style={{ ...STYLES.cmsSelect, width: 'auto' }} value={statusFilter} onChange={e => { setStatusFilter(e.target.value); setPage(1) }}>
           <option value="all">All Statuses</option>
           <option value="approved">Approved</option>
           <option value="pending">Pending</option>
@@ -259,6 +286,7 @@ export default function DashboardEvents() {
       ) : events.length === 0 ? (
         <div style={{ fontFamily: "'DM Sans'", fontSize: 15, color: '#8A8A8A' }}>No events found.</div>
       ) : (
+        <>
         <div style={{ border: '1px solid #CCC5B8', overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontFamily: "'DM Sans', sans-serif", fontSize: 14 }}>
             <thead>
@@ -391,6 +419,31 @@ export default function DashboardEvents() {
             </tbody>
           </table>
         </div>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12, marginTop: 14, flexWrap: 'wrap' }}>
+          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A' }}>
+            Showing {startRow}-{endRow} of {totalCount}
+          </div>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <button
+              onClick={() => setPage(p => Math.max(1, p - 1))}
+              disabled={page <= 1}
+              style={{ ...STYLES.cmsCancelBtn, opacity: page <= 1 ? 0.4 : 1, cursor: page <= 1 ? 'default' : 'pointer' }}
+            >
+              Previous
+            </button>
+            <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '1.5px', color: '#8A8A8A' }}>
+              Page {page} of {totalPages}
+            </span>
+            <button
+              onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+              disabled={page >= totalPages}
+              style={{ ...STYLES.cmsCancelBtn, opacity: page >= totalPages ? 0.4 : 1, cursor: page >= totalPages ? 'default' : 'pointer' }}
+            >
+              Next
+            </button>
+          </div>
+        </div>
+        </>
       )}
     </div>
   )

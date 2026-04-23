@@ -29,6 +29,12 @@ function toISODate(d) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`
 }
 
+function addDays(date, days) {
+  const next = new Date(date)
+  next.setDate(next.getDate() + days)
+  return next
+}
+
 function parseLocalDate(str) {
   const [y, m, d] = str.split('-').map(Number)
   return new Date(y, m - 1, d)
@@ -641,9 +647,18 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
   const isListView = viewportWidth !== null && viewportWidth < 480
   const isCompact  = viewportWidth !== null && viewportWidth < 768
   const byDate = {}
+  const monthStart = new Date(year, month, 1)
+  const monthEnd = new Date(year, month + 1, 0)
   for (const ev of events.filter(e => activeCategory === 'all' || e.category === activeCategory)) {
-    if (!byDate[ev.date]) byDate[ev.date] = []
-    byDate[ev.date].push(ev)
+    const eventStart = parseLocalDate(ev.date)
+    const eventEnd = ev.end_date ? parseLocalDate(ev.end_date) : eventStart
+    const visibleStart = eventStart > monthStart ? eventStart : monthStart
+    const visibleEnd = eventEnd < monthEnd ? eventEnd : monthEnd
+    for (let d = visibleStart; d <= visibleEnd; d = addDays(d, 1)) {
+      const key = toISODate(d)
+      if (!byDate[key]) byDate[key] = []
+      byDate[key].push(ev)
+    }
   }
 
   return (

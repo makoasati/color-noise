@@ -18,8 +18,7 @@ export async function GET(request) {
     .from('events')
     .select('id, title, date, time, end_date, venue, neighborhood, category, description, primary_source_url, primary_source_name, additional_sources, image_url, status')
     .eq('status', 'approved')
-    .gte('date', start)
-    .lte('date', end)
+    .or(`and(date.gte.${start},date.lte.${end}),and(date.lte.${end},end_date.gte.${start})`)
     .order('date', { ascending: true })
 
   if (category && category !== 'all') {

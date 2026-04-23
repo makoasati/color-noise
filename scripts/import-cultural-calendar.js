@@ -62,6 +62,47 @@ function clean(value) {
   return trimmed.length > 0 ? trimmed : null
 }
 
+function normalizeDate(value) {
+  const date = clean(value)
+  if (!date) return null
+  if (/^\d{4}-\d{2}-\d{2}$/.test(date)) return date
+
+  const monthNumbers = {
+    jan: '01',
+    january: '01',
+    feb: '02',
+    february: '02',
+    mar: '03',
+    march: '03',
+    apr: '04',
+    april: '04',
+    may: '05',
+    jun: '06',
+    june: '06',
+    jul: '07',
+    july: '07',
+    aug: '08',
+    august: '08',
+    sep: '09',
+    sept: '09',
+    september: '09',
+    oct: '10',
+    october: '10',
+    nov: '11',
+    november: '11',
+    dec: '12',
+    december: '12',
+  }
+  const match = date.match(/^(\d{4})-([A-Za-z]+)-(\d{1,2})$/)
+  if (match) {
+    const [, year, monthName, day] = match
+    const month = monthNumbers[monthName.toLowerCase()]
+    if (month) return `${year}-${month}-${String(Number(day)).padStart(2, '0')}`
+  }
+
+  throw new Error(`Unsupported date format "${date}"`)
+}
+
 function normalize(value) {
   return String(value || '').trim().toLowerCase().replace(/\s+/g, ' ')
 }
@@ -81,7 +122,7 @@ function toEvent(row) {
   }
 
   const title = clean(row['Event Name'])
-  const date = clean(row['Date Start'])
+  const date = normalizeDate(row['Date Start'])
   const primary_source_url = clean(row.Website)
   if (!title || !date || !primary_source_url) {
     throw new Error(`Missing required event fields: ${JSON.stringify(row)}`)
@@ -91,7 +132,7 @@ function toEvent(row) {
     title,
     date,
     time: null,
-    end_date: clean(row['Date End']),
+    end_date: normalizeDate(row['Date End']),
     venue: clean(row.Venue),
     neighborhood: clean(row.Neighborhood),
     category,
