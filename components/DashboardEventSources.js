@@ -2,7 +2,12 @@
 import { useState, useEffect } from 'react'
 import { STYLES } from '@/lib/styles'
 
-const CATEGORY_HINTS = ['music', 'art', 'food', 'nightlife']
+const CATEGORY_HINTS = {
+  music: 'Heard',
+  art: 'Seen',
+  food: 'Savored',
+  nightlife: 'Around',
+}
 
 function formatTimestamp(ts) {
   if (!ts) return 'Never'
@@ -163,7 +168,9 @@ export default function DashboardEventSources() {
                 value={newForm.category_hint}
                 onChange={e => setNewForm(f => ({ ...f, category_hint: e.target.value }))}
               >
-                {CATEGORY_HINTS.map(c => <option key={c} value={c}>{c.charAt(0).toUpperCase() + c.slice(1)}</option>)}
+                {Object.entries(CATEGORY_HINTS).map(([value, label]) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
               </select>
             </div>
           </div>
@@ -222,7 +229,7 @@ export default function DashboardEventSources() {
                     color: '#8A8A8A',
                     fontWeight: 600,
                   }}>
-                    {src.category_hint}
+                    {CATEGORY_HINTS[src.category_hint] || src.category_hint}
                   </span>
                 </div>
                 <div style={{

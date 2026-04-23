@@ -5,10 +5,10 @@ import ComboInput from './ComboInput'
 import { STYLES } from '@/lib/styles'
 
 const EVENT_CATS = {
-  music:     { color: '#E73B2F', label: 'Music' },
-  art:       { color: '#2D4DFF', label: 'Art' },
-  food:      { color: '#C95C2B', label: 'Food' },
-  nightlife: { color: '#8B5CF6', label: 'Nightlife' },
+  music:     { color: '#E73B2F', label: 'Heard' },
+  art:       { color: '#2D4DFF', label: 'Seen' },
+  food:      { color: '#C95C2B', label: 'Savored' },
+  nightlife: { color: '#8B5CF6', label: 'Around' },
 }
 const STATUS_COLORS = { approved: '#2D4DFF', pending: '#C95C2B' }
 

@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 // ── Constants ──────────────────────────────────────────────────────────────────
 const EVENT_CATS = {
-  music:     { color: '#E73B2F', label: 'Music' },
-  art:       { color: '#2D4DFF', label: 'Art' },
-  food:      { color: '#C95C2B', label: 'Food' },
-  nightlife: { color: '#8B5CF6', label: 'Nightlife' },
+  music:     { color: '#E73B2F', label: 'Heard' },
+  art:       { color: '#2D4DFF', label: 'Seen' },
+  food:      { color: '#C95C2B', label: 'Savored' },
+  nightlife: { color: '#8B5CF6', label: 'Around' },
 }
 const MONTH_NAMES = ['January','February','March','April','May','June','July','August','September','October','November','December']
 const DAY_NAMES   = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']

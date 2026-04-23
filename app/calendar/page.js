@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 
 export const metadata = {
   title: 'Calendar — Color&Noise',
-  description: 'Chicago events — music, art, food, and nightlife',
+  description: 'Chicago events — Heard, Seen, Savored, and Around',
 }
 
 export const revalidate = 300
@@ -58,7 +58,7 @@ export default async function CalendarPage() {
             marginTop: 6,
             marginBottom: 0,
           }}>
-            Music, art, food, and nightlife — updated daily.
+            Heard, Seen, Savored, and Around — updated daily.
           </p>
         </div>
 
