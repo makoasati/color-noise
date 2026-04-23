@@ -6,9 +6,9 @@ import { STYLES } from '@/lib/styles'
 
 const EVENT_CATS = {
   music:     { color: '#E73B2F', label: 'Heard' },
-  art:       { color: '#2D4DFF', label: 'Seen' },
-  food:      { color: '#C95C2B', label: 'Savored' },
-  nightlife: { color: '#8B5CF6', label: 'Around' },
+  art:       { color: '#4A6CF7', label: 'Seen' },
+  food:      { color: '#D8A23A', label: 'Savored' },
+  nightlife: { color: '#C95C2B', label: 'Around' },
 }
 const STATUS_COLORS = { approved: '#2D4DFF', pending: '#C95C2B' }
 
