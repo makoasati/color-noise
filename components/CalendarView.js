@@ -16,19 +16,12 @@ const DAY_NAMES   = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
 function buildGrid(year, month) {
   const firstDay = new Date(year, month, 1)
   const lastDay  = new Date(year, month + 1, 0)
-  const startDow = (firstDay.getDay() + 6) % 7 // Mon-based: 0=Mon … 6=Sun
+  const startDow = (firstDay.getDay() + 6) % 7 // Mon=0 … Sun=6
   const days = []
-
-  for (let i = startDow - 1; i >= 0; i--) {
-    days.push({ date: new Date(year, month, -i), overflow: true })
-  }
-  for (let d = 1; d <= lastDay.getDate(); d++) {
-    days.push({ date: new Date(year, month, d), overflow: false })
-  }
+  for (let i = startDow - 1; i >= 0; i--)      days.push({ date: new Date(year, month, -i), overflow: true })
+  for (let d = 1; d <= lastDay.getDate(); d++) days.push({ date: new Date(year, month, d), overflow: false })
   const rem = (7 - (days.length % 7)) % 7
-  for (let i = 1; i <= rem; i++) {
-    days.push({ date: new Date(year, month + 1, i), overflow: true })
-  }
+  for (let i = 1; i <= rem; i++)               days.push({ date: new Date(year, month + 1, i), overflow: true })
   return days
 }
 
@@ -37,7 +30,6 @@ function toISODate(d) {
 }
 
 function parseLocalDate(str) {
-  // str: 'YYYY-MM-DD' — parse in local time to avoid timezone shifts
   const [y, m, d] = str.split('-').map(Number)
   return new Date(y, m - 1, d)
 }
@@ -53,17 +45,34 @@ function formatShortDate(dateStr) {
   return `${MONTH_NAMES[d.getMonth()]} ${d.getDate()}`
 }
 
+// hex for 12% opacity: Math.round(0.12 * 255).toString(16) = '1f'
+function pillBg(hex) { return hex + '1f' }
+
 // ── Sub-components ──────────────────────────────────────────────────────────────
 
 function CategoryFilters({ active, onChange }) {
+  const items = [
+    { key: 'all',       label: 'All',       color: null },
+    ...Object.entries(EVENT_CATS).map(([k, v]) => ({ key: k, label: v.label, color: v.color })),
+  ]
   return (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
-      {[{ key: 'all', label: 'All', color: null }, ...Object.entries(EVENT_CATS).map(([k, v]) => ({ key: k, label: v.label, color: v.color }))].map(({ key, label, color }) => {
+    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
+      {items.map(({ key, label, color }) => {
         const isActive = active === key
         return (
           <button
             key={key}
             onClick={() => onChange(key)}
+            onMouseEnter={e => {
+              e.currentTarget.style.background = '#F5F1E8'
+              e.currentTarget.style.color = '#111'
+              e.currentTarget.style.borderColor = '#F5F1E8'
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.background = isActive ? '#F5F1E8' : 'transparent'
+              e.currentTarget.style.color = isActive ? '#111' : '#8A8A8A'
+              e.currentTarget.style.borderColor = isActive ? '#F5F1E8' : '#333'
+            }}
             style={{
               display: 'flex',
               alignItems: 'center',
@@ -73,16 +82,16 @@ function CategoryFilters({ active, onChange }) {
               textTransform: 'uppercase',
               letterSpacing: '2px',
               fontWeight: 600,
-              padding: '6px 12px',
+              padding: '5px 12px',
               cursor: 'pointer',
-              border: `1px solid ${isActive ? '#111' : '#CCC5B8'}`,
-              background: isActive ? '#111' : 'transparent',
-              color: isActive ? '#F5F1E8' : '#8A8A8A',
-              transition: 'all 0.15s',
+              border: `1px solid ${isActive ? '#F5F1E8' : '#333'}`,
+              background: isActive ? '#F5F1E8' : 'transparent',
+              color: isActive ? '#111' : '#8A8A8A',
+              transition: 'all 0.12s',
             }}
           >
             {color && (
-              <span style={{ width: 8, height: 8, background: color, display: 'inline-block', flexShrink: 0 }} />
+              <span style={{ width: 7, height: 7, background: color, display: 'inline-block', flexShrink: 0 }} />
             )}
             {label}
           </button>
@@ -92,7 +101,7 @@ function CategoryFilters({ active, onChange }) {
   )
 }
 
-function EventPill({ event, onClick }) {
+function EventPill({ event, onClick, compact = false }) {
   const cat = EVENT_CATS[event.category] || { color: '#8A8A8A' }
   return (
     <button
@@ -102,16 +111,16 @@ function EventPill({ event, onClick }) {
         display: 'block',
         width: '100%',
         textAlign: 'left',
-        background: cat.color + '26', // 15% opacity
+        background: pillBg(cat.color),
         color: cat.color,
         fontFamily: "'Archivo Narrow', sans-serif",
-        fontSize: 9,
+        fontSize: compact ? 8 : 9,
         fontWeight: 600,
-        padding: '2px 5px',
+        padding: compact ? '2px 4px' : '3px 6px',
         marginBottom: 2,
         border: 'none',
         cursor: 'pointer',
-        borderRadius: 2,
+        borderRadius: 3,
         overflow: 'hidden',
         textOverflow: 'ellipsis',
         whiteSpace: 'nowrap',
@@ -123,35 +132,37 @@ function EventPill({ event, onClick }) {
   )
 }
 
-function CalendarCell({ day, eventsForDay, today, onEventClick, onMoreClick }) {
-  const isToday    = toISODate(day.date) === today
-  const isPast     = day.date < new Date(today)
-  const dateNum    = day.date.getDate()
-  const visible    = eventsForDay.slice(0, 3)
-  const overflow   = eventsForDay.length - 3
+function CalendarCell({ day, eventsForDay, today, onEventClick, onMoreClick, compact = false }) {
+  const dateStr  = toISODate(day.date)
+  const isToday  = dateStr === today
+  const isPast   = !day.overflow && day.date < new Date(today)
+  const dateNum  = day.date.getDate()
+  const visible  = eventsForDay.slice(0, 3)
+  const overflow = eventsForDay.length - 3
 
   return (
     <div style={{
-      minHeight: 110,
-      padding: '6px 6px 4px',
-      border: `1px solid ${isToday ? '#E73B2F' : '#CCC5B8'}`,
-      background: '#FFFFFF',
-      opacity: isPast && !day.overflow ? 0.5 : 1,
+      minHeight: compact ? 80 : 110,
+      padding: compact ? 6 : 8,
+      background: day.overflow ? '#1a1a1a' : '#F5F1E8',
+      borderRadius: 2,
+      borderLeft: isToday && !day.overflow ? '3px solid #E73B2F' : undefined,
+      opacity: isPast ? 0.5 : 1,
       position: 'relative',
-      verticalAlign: 'top',
+      overflow: 'hidden',
     }}>
       <div style={{
         fontFamily: "'DM Sans', sans-serif",
-        fontSize: 13,
+        fontSize: compact ? 12 : 13,
         fontWeight: isToday ? 700 : 400,
-        color: day.overflow ? '#CCC5B8' : isToday ? '#E73B2F' : '#111',
-        marginBottom: 4,
+        color: day.overflow ? '#555' : isToday ? '#E73B2F' : '#111',
+        marginBottom: 5,
         lineHeight: 1,
       }}>
         {dateNum}
       </div>
       {visible.map(ev => (
-        <EventPill key={ev.id} event={ev} onClick={() => onEventClick(ev)} />
+        <EventPill key={ev.id} event={ev} compact={compact} onClick={() => onEventClick(ev)} />
       ))}
       {overflow > 0 && (
         <button
@@ -164,9 +175,9 @@ function CalendarCell({ day, eventsForDay, today, onEventClick, onMoreClick }) {
             border: 'none',
             cursor: 'pointer',
             fontFamily: "'Archivo Narrow', sans-serif",
-            fontSize: 9,
+            fontSize: compact ? 8 : 9,
             color: '#8A8A8A',
-            padding: '2px 5px',
+            padding: compact ? '2px 4px' : '2px 6px',
             fontWeight: 600,
             letterSpacing: '0.5px',
           }}
@@ -185,7 +196,6 @@ function EventModal({ event, onClose }) {
   return (
     <ModalOverlay onClose={onClose}>
       <div style={{ padding: '28px 28px 24px' }}>
-        {/* Category badge */}
         <div style={{
           display: 'inline-flex',
           alignItems: 'center',
@@ -205,7 +215,6 @@ function EventModal({ event, onClose }) {
           {cat.label}
         </div>
 
-        {/* Title */}
         <h2 style={{
           fontFamily: "'Outfit', sans-serif",
           fontWeight: 700,
@@ -217,7 +226,6 @@ function EventModal({ event, onClose }) {
           {event.title}
         </h2>
 
-        {/* Date & time */}
         <div style={{
           fontFamily: "'Archivo Narrow', sans-serif",
           fontSize: 13,
@@ -230,19 +238,12 @@ function EventModal({ event, onClose }) {
           {event.end_date && event.end_date !== event.date ? ` — ${formatFullDate(event.end_date)}` : ''}
         </div>
 
-        {/* Venue */}
         {event.venue && (
-          <div style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 15,
-            color: '#333',
-            marginBottom: 6,
-          }}>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: '#333', marginBottom: 6 }}>
             {event.venue}
           </div>
         )}
 
-        {/* Neighborhood */}
         {event.neighborhood && (
           <div style={{ marginBottom: 12 }}>
             <Link
@@ -267,7 +268,6 @@ function EventModal({ event, onClose }) {
           </div>
         )}
 
-        {/* Description */}
         {event.description && (
           <p style={{
             fontFamily: "'DM Sans', sans-serif",
@@ -284,7 +284,6 @@ function EventModal({ event, onClose }) {
           </p>
         )}
 
-        {/* Primary link */}
         <a
           href={event.primary_source_url}
           target="_blank"
@@ -307,13 +306,8 @@ function EventModal({ event, onClose }) {
           View on {event.primary_source_name} →
         </a>
 
-        {/* Additional sources */}
         {additionalSources.length > 0 && (
-          <div style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 12,
-            color: '#8A8A8A',
-          }}>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#8A8A8A' }}>
             Also listed on:{' '}
             {additionalSources.map((src, i) => (
               <span key={i}>
@@ -335,64 +329,30 @@ function EventModal({ event, onClose }) {
   )
 }
 
-function DayModal({ date, events, onClose, onEventSelect }) {
+function DayModal({ date, events, onClose }) {
   const [expanded, setExpanded] = useState(null)
   return (
     <ModalOverlay onClose={onClose}>
       <div style={{ padding: '24px 24px 20px' }}>
-        <h2 style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontWeight: 700,
-          fontSize: 20,
-          color: '#111',
-          margin: '0 0 20px',
-        }}>
+        <h2 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: '#111', margin: '0 0 20px' }}>
           {formatShortDate(date)}
         </h2>
-
         <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           {events.map(ev => {
-            const cat = EVENT_CATS[ev.category] || { color: '#8A8A8A', label: ev.category }
+            const cat  = EVENT_CATS[ev.category] || { color: '#8A8A8A', label: ev.category }
             const isExp = expanded === ev.id
             return (
               <div key={ev.id} style={{ border: '1px solid #E8E4DC', background: '#fff' }}>
                 <button
                   onClick={() => setExpanded(isExp ? null : ev.id)}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 10,
-                    width: '100%',
-                    textAlign: 'left',
-                    background: 'transparent',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: '10px 14px',
-                  }}
+                  style={{ display: 'flex', alignItems: 'center', gap: 10, width: '100%', textAlign: 'left', background: 'transparent', border: 'none', cursor: 'pointer', padding: '10px 14px' }}
                 >
                   <span style={{ width: 8, height: 8, borderRadius: '50%', background: cat.color, flexShrink: 0 }} />
-                  <span style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontSize: 14,
-                    fontWeight: 500,
-                    color: '#111',
-                    flex: 1,
-                    minWidth: 0,
-                    overflow: 'hidden',
-                    textOverflow: 'ellipsis',
-                    whiteSpace: 'nowrap',
-                  }}>
+                  <span style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500, color: '#111', flex: 1, minWidth: 0, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                     {ev.title}
                   </span>
                   {ev.time && (
-                    <span style={{
-                      fontFamily: "'Archivo Narrow', sans-serif",
-                      fontSize: 11,
-                      color: '#8A8A8A',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.5px',
-                      flexShrink: 0,
-                    }}>
+                    <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#8A8A8A', textTransform: 'uppercase', letterSpacing: '0.5px', flexShrink: 0 }}>
                       {ev.time}
                     </span>
                   )}
@@ -413,15 +373,7 @@ function DayModal({ date, events, onClose, onEventSelect }) {
                       href={ev.primary_source_url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{
-                        fontFamily: "'Archivo Narrow', sans-serif",
-                        fontSize: 11,
-                        textTransform: 'uppercase',
-                        letterSpacing: '1.5px',
-                        color: cat.color,
-                        textDecoration: 'none',
-                        fontWeight: 700,
-                      }}
+                      style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '1.5px', color: cat.color, textDecoration: 'none', fontWeight: 700 }}
                     >
                       View on {ev.primary_source_name} →
                     </a>
@@ -437,7 +389,6 @@ function DayModal({ date, events, onClose, onEventSelect }) {
 }
 
 function ModalOverlay({ children, onClose }) {
-  // Close on Escape
   useEffect(() => {
     const handler = (e) => { if (e.key === 'Escape') onClose() }
     window.addEventListener('keydown', handler)
@@ -447,45 +398,15 @@ function ModalOverlay({ children, onClose }) {
   return (
     <div
       onClick={onClose}
-      style={{
-        position: 'fixed',
-        inset: 0,
-        background: 'rgba(0,0,0,0.55)',
-        zIndex: 1000,
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '16px',
-      }}
+      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.55)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}
     >
       <div
         onClick={e => e.stopPropagation()}
-        style={{
-          background: '#fff',
-          borderRadius: 8,
-          boxShadow: '0 8px 40px rgba(0,0,0,0.25)',
-          width: '100%',
-          maxWidth: 420,
-          maxHeight: '90vh',
-          overflowY: 'auto',
-          position: 'relative',
-        }}
+        style={{ background: '#fff', borderRadius: 8, boxShadow: '0 8px 40px rgba(0,0,0,0.25)', width: '100%', maxWidth: 420, maxHeight: '90vh', overflowY: 'auto', position: 'relative' }}
       >
         <button
           onClick={onClose}
-          style={{
-            position: 'absolute',
-            top: 14,
-            right: 14,
-            background: 'transparent',
-            border: 'none',
-            fontSize: 18,
-            color: '#8A8A8A',
-            cursor: 'pointer',
-            lineHeight: 1,
-            padding: '2px 6px',
-            zIndex: 1,
-          }}
+          style={{ position: 'absolute', top: 14, right: 14, background: 'transparent', border: 'none', fontSize: 18, color: '#8A8A8A', cursor: 'pointer', lineHeight: 1, padding: '2px 6px', zIndex: 1 }}
           onMouseEnter={e => { e.currentTarget.style.color = '#E73B2F' }}
           onMouseLeave={e => { e.currentTarget.style.color = '#8A8A8A' }}
         >
@@ -514,11 +435,7 @@ function SubmitEventModal({ onClose }) {
     setSubmitting(true)
     setError(null)
     try {
-      const res = await fetch('/api/events/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
+      const res  = await fetch('/api/events/submit', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(form) })
       const data = await res.json()
       if (!res.ok) { setError(data.error || 'Submission failed.'); setSubmitting(false); return }
       setDone(true)
@@ -552,13 +469,7 @@ function SubmitEventModal({ onClose }) {
   return (
     <ModalOverlay onClose={onClose}>
       <div style={{ padding: '28px 28px 24px' }}>
-        <h2 style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontWeight: 700,
-          fontSize: 20,
-          color: '#111',
-          margin: '0 0 6px',
-        }}>
+        <h2 style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20, color: '#111', margin: '0 0 6px' }}>
           Submit an Event
         </h2>
         <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: '#8A8A8A', marginBottom: 18 }}>
@@ -566,38 +477,15 @@ function SubmitEventModal({ onClose }) {
         </div>
 
         {done ? (
-          <div style={{
-            fontFamily: "'DM Sans', sans-serif",
-            fontSize: 15,
-            color: '#333',
-            background: '#F5F1E8',
-            padding: '18px 20px',
-            borderRadius: 4,
-            lineHeight: 1.6,
-          }}>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 15, color: '#333', background: '#F5F1E8', padding: '18px 20px', borderRadius: 4, lineHeight: 1.6 }}>
             Thanks! Your event will be reviewed and added shortly.
           </div>
         ) : (
           <form onSubmit={handleSubmit}>
-            {/* Honeypot */}
-            <input
-              type="text"
-              name="website"
-              value={form.website}
-              onChange={e => set('website', e.target.value)}
-              style={{ display: 'none' }}
-              tabIndex={-1}
-              autoComplete="off"
-            />
+            <input type="text" name="website" value={form.website} onChange={e => set('website', e.target.value)} style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
 
             <label style={labelStyle}>Event Title *</label>
-            <input
-              required
-              style={inputStyle}
-              value={form.title}
-              onChange={e => set('title', e.target.value)}
-              maxLength={300}
-            />
+            <input required style={inputStyle} value={form.title} onChange={e => set('title', e.target.value)} maxLength={300} />
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div>
@@ -617,15 +505,8 @@ function SubmitEventModal({ onClose }) {
             <input style={inputStyle} value={form.neighborhood} onChange={e => set('neighborhood', e.target.value)} placeholder="e.g. Logan Square" />
 
             <label style={labelStyle}>Category *</label>
-            <select
-              required
-              style={{ ...inputStyle, fontFamily: "'Archivo Narrow', sans-serif" }}
-              value={form.category}
-              onChange={e => set('category', e.target.value)}
-            >
-              {Object.entries(EVENT_CATS).map(([k, v]) => (
-                <option key={k} value={k}>{v.label}</option>
-              ))}
+            <select required style={{ ...inputStyle, fontFamily: "'Archivo Narrow', sans-serif" }} value={form.category} onChange={e => set('category', e.target.value)}>
+              {Object.entries(EVENT_CATS).map(([k, v]) => <option key={k} value={k}>{v.label}</option>)}
             </select>
 
             <label style={labelStyle}>Description</label>
@@ -638,13 +519,7 @@ function SubmitEventModal({ onClose }) {
             />
 
             <label style={labelStyle}>Source URL</label>
-            <input
-              type="url"
-              style={inputStyle}
-              value={form.source_url}
-              onChange={e => set('source_url', e.target.value)}
-              placeholder="https://…"
-            />
+            <input type="url" style={inputStyle} value={form.source_url} onChange={e => set('source_url', e.target.value)} placeholder="https://…" />
 
             {error && (
               <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 13, color: '#E73B2F', marginTop: 12 }}>
@@ -655,21 +530,7 @@ function SubmitEventModal({ onClose }) {
             <button
               type="submit"
               disabled={submitting}
-              style={{
-                fontFamily: "'Archivo Narrow', sans-serif",
-                fontSize: 11,
-                textTransform: 'uppercase',
-                letterSpacing: '2px',
-                fontWeight: 700,
-                padding: '12px 28px',
-                background: '#E73B2F',
-                color: '#fff',
-                border: 'none',
-                cursor: submitting ? 'not-allowed' : 'pointer',
-                opacity: submitting ? 0.6 : 1,
-                marginTop: 20,
-                width: '100%',
-              }}
+              style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 700, padding: '12px 28px', background: '#E73B2F', color: '#fff', border: 'none', cursor: submitting ? 'not-allowed' : 'pointer', opacity: submitting ? 0.6 : 1, marginTop: 20, width: '100%' }}
             >
               {submitting ? 'Submitting…' : 'Submit Event'}
             </button>
@@ -680,10 +541,9 @@ function SubmitEventModal({ onClose }) {
   )
 }
 
-// Mobile list view
 function MobileListView({ events, activeCategory, onEventClick }) {
   const filtered = events.filter(e => activeCategory === 'all' || e.category === activeCategory)
-  const grouped = {}
+  const grouped  = {}
   for (const ev of filtered) {
     if (!grouped[ev.date]) grouped[ev.date] = []
     grouped[ev.date].push(ev)
@@ -692,7 +552,7 @@ function MobileListView({ events, activeCategory, onEventClick }) {
 
   if (sortedDates.length === 0) {
     return (
-      <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 13, color: '#8A8A8A', textAlign: 'center', padding: '48px 0', textTransform: 'uppercase', letterSpacing: '2px' }}>
+      <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 13, color: '#555', textAlign: 'center', padding: '48px 0', textTransform: 'uppercase', letterSpacing: '2px' }}>
         No events this month.
       </div>
     )
@@ -701,46 +561,25 @@ function MobileListView({ events, activeCategory, onEventClick }) {
   return (
     <div>
       {sortedDates.map(date => (
-        <div key={date} style={{ marginBottom: 24 }}>
-          <div style={{
-            fontFamily: "'Archivo Narrow', sans-serif",
-            fontSize: 11,
-            textTransform: 'uppercase',
-            letterSpacing: '2px',
-            color: '#8A8A8A',
-            borderBottom: '1px solid #CCC5B8',
-            paddingBottom: 6,
-            marginBottom: 10,
-          }}>
+        <div key={date} style={{ marginBottom: 28 }}>
+          <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', color: '#555', borderBottom: '1px solid #2A2A2A', paddingBottom: 6, marginBottom: 10 }}>
             {formatFullDate(date)}
           </div>
           {grouped[date].map(ev => {
-            const cat = EVENT_CATS[ev.category] || { color: '#8A8A8A', label: ev.category }
+            const cat = EVENT_CATS[ev.category] || { color: '#8A8A8A' }
             return (
               <button
                 key={ev.id}
                 onClick={() => onEventClick(ev)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: 10,
-                  width: '100%',
-                  textAlign: 'left',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '1px solid #E8E4DC',
-                  padding: '10px 0',
-                  cursor: 'pointer',
-                }}
+                style={{ display: 'flex', alignItems: 'flex-start', gap: 10, width: '100%', textAlign: 'left', background: 'transparent', border: 'none', borderBottom: '1px solid #1E1E1E', padding: '10px 0', cursor: 'pointer' }}
               >
                 <span style={{ width: 8, height: 8, borderRadius: '50%', background: cat.color, flexShrink: 0, marginTop: 5 }} />
                 <div style={{ flex: 1 }}>
-                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500, color: '#111', marginBottom: 2 }}>
+                  <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 14, fontWeight: 500, color: '#F5F1E8', marginBottom: 2 }}>
                     {ev.title}
                   </div>
-                  <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#8A8A8A', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
-                    {ev.time ? ev.time : ''}
-                    {ev.venue ? (ev.time ? ' · ' : '') + ev.venue : ''}
+                  <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#555', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                    {ev.time || ''}{ev.venue ? (ev.time ? ' · ' : '') + ev.venue : ''}
                   </div>
                 </div>
               </button>
@@ -760,12 +599,12 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
   const [events,         setEvents]         = useState(initialEvents)
   const [loading,        setLoading]        = useState(false)
   const [activeCategory, setActiveCategory] = useState('all')
-  const [modal,          setModal]          = useState(null) // {type:'event'|'day', data}
+  const [modal,          setModal]          = useState(null)
   const [showSubmit,     setShowSubmit]     = useState(false)
-  const [isMobile,       setIsMobile]       = useState(false)
+  const [viewportWidth,  setViewportWidth]  = useState(null)
 
   useEffect(() => {
-    const check = () => setIsMobile(window.innerWidth < 720)
+    const check = () => setViewportWidth(window.innerWidth)
     check()
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
@@ -774,10 +613,10 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
   const fetchEvents = useCallback(async (y, m) => {
     setLoading(true)
     try {
-      const start = `${y}-${String(m + 1).padStart(2, '0')}-01`
+      const start    = `${y}-${String(m + 1).padStart(2, '0')}-01`
       const lastDate = new Date(y, m + 1, 0).getDate()
-      const end = `${y}-${String(m + 1).padStart(2, '0')}-${String(lastDate).padStart(2, '0')}`
-      const res = await fetch(`/api/events?start=${start}&end=${end}`)
+      const end      = `${y}-${String(m + 1).padStart(2, '0')}-${String(lastDate).padStart(2, '0')}`
+      const res      = await fetch(`/api/events?start=${start}&end=${end}`)
       if (res.ok) {
         const data = await res.json()
         setEvents(data.events || [])
@@ -797,71 +636,51 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
     fetchEvents(ny, nm)
   }
 
-  const today       = toISODate(now)
-  const grid        = buildGrid(year, month)
-  const filtered    = events.filter(e => activeCategory === 'all' || e.category === activeCategory)
-  const byDate      = {}
-  for (const ev of filtered) {
+  const today  = toISODate(now)
+  const grid   = buildGrid(year, month)
+  const isListView = viewportWidth !== null && viewportWidth < 480
+  const isCompact  = viewportWidth !== null && viewportWidth < 768
+  const byDate = {}
+  for (const ev of events.filter(e => activeCategory === 'all' || e.category === activeCategory)) {
     if (!byDate[ev.date]) byDate[ev.date] = []
     byDate[ev.date].push(ev)
   }
 
   return (
-    <div>
-      {/* Category filter row */}
+    <div style={{ paddingBottom: 64 }}>
+      {/* Category filters */}
       <CategoryFilters active={activeCategory} onChange={setActiveCategory} />
 
       {/* Month navigation */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
         <button
           onClick={() => changeMonth(-1)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            fontSize: 18,
-            color: '#8A8A8A',
-            cursor: 'pointer',
-            padding: '4px 8px',
-            lineHeight: 1,
-          }}
+          style={{ background: 'transparent', border: 'none', fontSize: 20, color: '#8A8A8A', cursor: 'pointer', padding: '4px 8px', lineHeight: 1 }}
           onMouseEnter={e => { e.currentTarget.style.color = '#E73B2F' }}
           onMouseLeave={e => { e.currentTarget.style.color = '#8A8A8A' }}
         >
           ←
         </button>
-        <span style={{
-          fontFamily: "'Outfit', sans-serif",
-          fontWeight: 700,
-          fontSize: 22,
-          color: '#111',
-        }}>
+        <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 22, color: '#F5F1E8' }}>
           {MONTH_NAMES[month]} {year}
         </span>
         <button
           onClick={() => changeMonth(1)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            fontSize: 18,
-            color: '#8A8A8A',
-            cursor: 'pointer',
-            padding: '4px 8px',
-            lineHeight: 1,
-          }}
+          style={{ background: 'transparent', border: 'none', fontSize: 20, color: '#8A8A8A', cursor: 'pointer', padding: '4px 8px', lineHeight: 1 }}
           onMouseEnter={e => { e.currentTarget.style.color = '#E73B2F' }}
           onMouseLeave={e => { e.currentTarget.style.color = '#8A8A8A' }}
         >
           →
         </button>
         {loading && (
-          <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#8A8A8A', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
+          <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#555', textTransform: 'uppercase', letterSpacing: '1.5px' }}>
             Loading…
           </span>
         )}
       </div>
 
       {/* Desktop grid / Mobile list */}
-      {isMobile ? (
+      {isListView ? (
         <MobileListView
           events={events}
           activeCategory={activeCategory}
@@ -869,32 +688,39 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
         />
       ) : (
         <>
-          {/* Day-of-week header */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 1, marginBottom: 1 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(7, 1fr)',
+            gap: 3,
+            width: '100%',
+            marginBottom: 3,
+          }}>
             {DAY_NAMES.map(d => (
-              <div
-                key={d}
-                style={{
-                  fontFamily: "'Archivo Narrow', sans-serif",
-                  fontSize: 11,
-                  textTransform: 'uppercase',
-                  color: '#8A8A8A',
-                  letterSpacing: '0.5px',
-                  textAlign: 'center',
-                  padding: '8px 0',
-                }}
-              >
+              <div key={d} style={{
+                fontFamily: "'Archivo Narrow', sans-serif",
+                fontSize: isCompact ? 10 : 11,
+                textTransform: 'uppercase',
+                letterSpacing: '2px',
+                color: '#8A8A8A',
+                textAlign: 'center',
+                padding: '6px 0 8px',
+              }}>
                 {d}
               </div>
             ))}
           </div>
 
-          {/* Calendar grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 1, background: '#CCC5B8' }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(7, 1fr)',
+            gap: 3,
+            width: '100%',
+          }}>
             {grid.map((day, i) => (
               <CalendarCell
                 key={i}
                 day={day}
+                compact={isCompact}
                 eventsForDay={day.overflow ? [] : (byDate[toISODate(day.date)] || [])}
                 today={today}
                 onEventClick={ev => setModal({ type: 'event', data: ev })}
@@ -905,21 +731,11 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
         </>
       )}
 
-      {/* Submit event link */}
-      <div style={{ textAlign: 'center', marginTop: 32, paddingBottom: 8 }}>
+      {/* Submit event */}
+      <div style={{ textAlign: 'center', marginTop: 28 }}>
         <button
           onClick={() => setShowSubmit(true)}
-          style={{
-            background: 'transparent',
-            border: 'none',
-            cursor: 'pointer',
-            fontFamily: "'Archivo Narrow', sans-serif",
-            fontSize: 11,
-            textTransform: 'uppercase',
-            letterSpacing: '2px',
-            color: '#8A8A8A',
-            textDecoration: 'underline',
-          }}
+          style={{ background: 'transparent', border: 'none', cursor: 'pointer', fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', color: '#555', textDecoration: 'underline' }}
         >
           Submit an event
         </button>
@@ -937,9 +753,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
           onEventSelect={ev => setModal({ type: 'event', data: ev })}
         />
       )}
-      {showSubmit && (
-        <SubmitEventModal onClose={() => setShowSubmit(false)} />
-      )}
+      {showSubmit && <SubmitEventModal onClose={() => setShowSubmit(false)} />}
     </div>
   )
 }
