@@ -1,5 +1,12 @@
 import { NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/admin'
+import {
+  findContinuingSeriesEvent,
+  getEventEndDate,
+  shouldSkipOccurrenceEvent,
+  stripOccurrenceDateSuffix,
+  venuesAreSimilar,
+} from '@/lib/event-dedupe'
 
 function buildSystemPrompt(cutoffDate) {
   return `Extract all events from this Chicago events page. Return ONLY a valid JSON array. Each event object should have: title (string), date (string, YYYY-MM-DD), time (string or null), end_date (string or null for multi-day events), venue (string or null), neighborhood (string or null), category (one of: music, art, food, nightlife), description (string or null, max 200 chars), url (string, full URL to the event page). Only include events with a date on or after ${cutoffDate}. If you cannot determine the date, skip that event. Return valid JSON only, no markdown, no backticks, no explanation.`
@@ -186,16 +193,52 @@ export async function GET(request) {
         // Validate date format
         if (!/^\d{4}-\d{2}-\d{2}$/.test(ev.date)) { skipped++; continue }
 
+        const incomingEvent = {
+          title: String(ev.title),
+          date: ev.date,
+          end_date: ev.end_date || null,
+          venue: ev.venue ? String(ev.venue) : null,
+          category: ['music', 'art', 'food', 'nightlife'].includes(ev.category)
+            ? ev.category
+            : source.category_hint,
+        }
+
+        let venueCandidates = []
+
+        if (incomingEvent.venue) {
+          const { data } = await supabase
+            .from('events')
+            .select('id, title, date, end_date, venue, category, additional_sources')
+            .eq('category', incomingEvent.category)
+            .lte('date', incomingEvent.date)
+            .order('date', { ascending: false })
+            .limit(50)
+
+          venueCandidates = (data || []).filter(candidate => venuesAreSimilar(candidate.venue, incomingEvent.venue))
+        }
+
+        const continuingSeries = findContinuingSeriesEvent(incomingEvent, venueCandidates)
+        if (continuingSeries) {
+          await supabase
+            .from('events')
+            .update({
+              title: stripOccurrenceDateSuffix(continuingSeries.title),
+              end_date: incomingEvent.date > getEventEndDate(continuingSeries)
+                ? incomingEvent.date
+                : getEventEndDate(continuingSeries),
+            })
+            .eq('id', continuingSeries.id)
+
+          merged++
+          continue
+        }
+
         // Check for duplicates: same date + same venue + similar title
         let existingEvent = null
         if (ev.venue) {
-          const { data: candidates } = await supabase
-            .from('events')
-            .select('id, title, additional_sources')
-            .eq('date', ev.date)
-            .ilike('venue', ev.venue)
-
-          existingEvent = candidates?.find(c => isSimilarTitle(c.title, ev.title)) || null
+          existingEvent = venueCandidates
+            .filter(candidate => candidate.date === ev.date)
+            .find(candidate => isSimilarTitle(candidate.title, ev.title)) || null
         }
 
         if (!existingEvent && ev.venue) {
@@ -206,6 +249,20 @@ export async function GET(request) {
             .eq('date', ev.date)
 
           existingEvent = titleCandidates?.find(c => isSimilarTitle(c.title, ev.title)) || null
+        }
+
+        if (!existingEvent && incomingEvent.venue) {
+          const { data: ongoingCandidates } = await supabase
+            .from('events')
+            .select('id, title, date, end_date, venue, category')
+            .eq('category', incomingEvent.category)
+            .lte('date', incomingEvent.date)
+            .gte('end_date', incomingEvent.date)
+
+          if (shouldSkipOccurrenceEvent(incomingEvent, ongoingCandidates || [])) {
+            skipped++
+            continue
+          }
         }
 
         if (existingEvent) {
@@ -234,12 +291,10 @@ export async function GET(request) {
             title: String(ev.title).slice(0, 300),
             date: ev.date,
             time: ev.time ? String(ev.time).slice(0, 50) : null,
-            end_date: ev.end_date || null,
+            end_date: incomingEvent.end_date,
             venue: ev.venue ? String(ev.venue).slice(0, 200) : null,
             neighborhood: ev.neighborhood ? String(ev.neighborhood).slice(0, 100) : null,
-            category: ['music', 'art', 'food', 'nightlife'].includes(ev.category)
-              ? ev.category
-              : source.category_hint,
+            category: incomingEvent.category,
             description: ev.description ? String(ev.description).slice(0, 300) : null,
             primary_source_url: ev.url || source.url,
             primary_source_name: source.name,

@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { dedupeEvents } from '@/lib/event-dedupe'
 
 // GET /api/events?start=2026-04-01&end=2026-04-30&category=music
 export async function GET(request) {
@@ -31,5 +32,5 @@ export async function GET(request) {
     return NextResponse.json({ error: 'Failed to fetch events' }, { status: 500 })
   }
 
-  return NextResponse.json({ events: data || [] })
+  return NextResponse.json({ events: dedupeEvents(data || []) })
 }

@@ -3,6 +3,7 @@ import Masthead from '@/components/Masthead'
 import PublicNav from '@/components/PublicNav'
 import CalendarView from '@/components/CalendarView'
 import Footer from '@/components/Footer'
+import { dedupeEvents } from '@/lib/event-dedupe'
 
 export const metadata = {
   title: 'Calendar — Color&Noise',
@@ -62,7 +63,7 @@ export default async function CalendarPage() {
         </div>
 
         <CalendarView
-          initialEvents={events || []}
+          initialEvents={dedupeEvents(events || [])}
           initialYear={year}
           initialMonth={month}
         />
