@@ -138,6 +138,12 @@ a { color: inherit; }
   .cn-cat-filter-item { flex-shrink: 0 !important; }
 }
 
+/* ── Mobile masthead adjustments ── */
+@media (max-width: 767px) {
+  .cn-masthead-line2 { margin-top: calc(-0.2em + 3px) !important; }
+  .cn-masthead-noise { margin-left: 0.27em !important; }
+}
+
 /* ── Mobile tagline ── */
 @media (max-width: 767px) {
   .cn-tagline { letter-spacing: 2px !important; }

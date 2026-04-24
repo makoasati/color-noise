@@ -37,7 +37,7 @@ export default function Masthead() {
             letterSpacing: '0',
             display: 'block',
           }}>COLOR</span>
-          <span style={{ display: 'block', marginTop: '-0.2em' }}>
+          <span className="cn-masthead-line2" style={{ display: 'block', marginTop: '-0.2em' }}>
             <span
               ref={noiseLineRef}
               style={{
@@ -51,14 +51,14 @@ export default function Masthead() {
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: 'italic',
                 fontWeight: 1000,
-                fontSize: 'clamp(20px, 3.8vw, 50px)',
+                fontSize: 'clamp(28px, 3.8vw, 50px)',
                 color: '#E73B2F',
                 lineHeight: 1,
                 marginRight: '-0.25em',
                 zIndex: 2,
                 position: 'relative',
               }}>&amp;</span>
-              <span style={{
+              <span className="cn-masthead-noise" style={{
                 fontFamily: "'Outfit', sans-serif",
                 fontWeight: 1000,
                 fontStyle: 'italic',
