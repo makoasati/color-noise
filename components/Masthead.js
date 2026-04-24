@@ -43,8 +43,7 @@ export default function Masthead() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'baseline',
-                transformOrigin: 'left center',
-                transform: `scaleX(${scaleX})`,
+                ...(scaleX !== 1 && { transformOrigin: 'left center', transform: `scaleX(${scaleX})` }),
               }}
             >
               <span style={{

@@ -97,16 +97,18 @@ a { color: inherit; }
   }
 }
 
-/* ── Neighborhood bar right-edge fade ── */
+/* ── Neighborhood bar right-edge fade (mobile only) ── */
 .cn-neighborhood-wrapper { position: relative; }
-.cn-neighborhood-wrapper::after {
-  content: '';
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  width: 30px;
-  background: linear-gradient(to right, transparent, #111111);
-  pointer-events: none;
-  z-index: 1;
+@media (max-width: 767px) {
+  .cn-neighborhood-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 30px;
+    background: linear-gradient(to right, transparent, #111111);
+    pointer-events: none;
+    z-index: 1;
+  }
 }
 
 /* ── Mobile page padding ── */
