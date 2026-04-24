@@ -33,7 +33,7 @@ export default function Masthead() {
             fontFamily: "'Outfit', sans-serif",
             fontWeight: 1000,
             color: '#4A6CF7',
-            fontSize: 'clamp(36px, 7.95vw, 70px)',
+            fontSize: 'clamp(41px, 7.95vw, 70px)',
             letterSpacing: '0',
             display: 'block',
           }}>COLOR</span>
@@ -51,7 +51,7 @@ export default function Masthead() {
                 fontFamily: "'Playfair Display', serif",
                 fontStyle: 'italic',
                 fontWeight: 1000,
-                fontSize: 'clamp(0px, 3.8vw, 50px)',
+                fontSize: 'clamp(20px, 3.8vw, 50px)',
                 color: '#E73B2F',
                 lineHeight: 1,
                 marginRight: '-0.25em',
@@ -64,7 +64,7 @@ export default function Masthead() {
                 fontStyle: 'italic',
                 marginLeft: '0.3em',
                 color: '#F5F1E8',
-                fontSize: 'clamp(36px, 7.95vw, 60px)',
+                fontSize: 'clamp(35px, 7.95vw, 60px)',
                 letterSpacing: '0',
               }}>NOISE</span>
             </span>
