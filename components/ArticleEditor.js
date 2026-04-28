@@ -101,7 +101,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
       await supabase.from('neighborhoods').upsert(
         { name: form.neighborhood.trim(), slug: slugify(form.neighborhood.trim()) },
         { onConflict: 'slug', ignoreDuplicates: true }
-      ).catch(() => {})
+      )
     }
 
     router.push('/dashboard')

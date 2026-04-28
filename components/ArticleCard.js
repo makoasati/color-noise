@@ -27,9 +27,9 @@ function CategoryBadge({ category, neighborhood }) {
       padding: '4px 8px',
       backdropFilter: 'blur(2px)',
     }}>
-      <span style={{ ...labelStyle, color }}>{CATEGORY_LABELS[category]}</span>
+      <span style={{ ...labelStyle, color: '#F5F1E8' }}>{CATEGORY_LABELS[category]}</span>
       <span style={{ display: 'inline-block', width: 7, height: 7, background: color, flexShrink: 0 }} />
-      {neighborhood && <span style={{ ...labelStyle, color }}>{neighborhood}</span>}
+      {neighborhood && <span style={{ ...labelStyle, color: '#F5F1E8' }}>{neighborhood}</span>}
     </div>
   )
 }
