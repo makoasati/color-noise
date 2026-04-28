@@ -38,7 +38,7 @@ export default async function CalendarPage() {
     }}>
       <div className="cn-page-padded" style={{ maxWidth: 1100, margin: '0 auto', padding: '0 32px' }}>
         <Masthead />
-        <PublicNav activeCategory="calendar" activeNeighborhood={null} />
+        <PublicNav activeCategories={[]} activeNeighborhoods={[]} />
 
         <div style={{ paddingTop: 36, marginBottom: 24 }}>
           <h1 style={{

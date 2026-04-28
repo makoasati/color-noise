@@ -90,7 +90,7 @@ function pillBg(hex) {
   return hex + '1f'
 }
 
-function CategoryFilters({ active, onChange }) {
+function CategoryFilters({ activeCategories, onChange }) {
   const items = [
     { key: 'all', label: 'All', color: null },
     ...Object.entries(EVENT_CATS).map(([k, v]) => ({ key: k, label: v.label, color: v.color })),
@@ -99,7 +99,7 @@ function CategoryFilters({ active, onChange }) {
   return (
     <div className="cn-cat-filters" style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 20 }}>
       {items.map(({ key, label, color }) => {
-        const isActive = active === key
+        const isActive = key === 'all' ? activeCategories.length === 0 : activeCategories.includes(key)
         return (
           <button
             key={key}
@@ -633,8 +633,8 @@ function SubmitEventModal({ onClose }) {
   )
 }
 
-function MobileListView({ events, activeCategory, onEventClick }) {
-  const filtered = events.filter(e => activeCategory === 'all' || e.category === activeCategory)
+function MobileListView({ events, activeCategories, onEventClick }) {
+  const filtered = events.filter(e => activeCategories.length === 0 || activeCategories.includes(e.category))
   const grouped = {}
   for (const ev of filtered) {
     if (!grouped[ev.date]) grouped[ev.date] = []
@@ -724,7 +724,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
   const [month, setMonth] = useState(initialMonth ?? now.getMonth())
   const [events, setEvents] = useState(initialEvents)
   const [loading, setLoading] = useState(false)
-  const [activeCategory, setActiveCategory] = useState('all')
+  const [activeCategories, setActiveCategories] = useState([])
   const [modal, setModal] = useState(null)
   const [showSubmit, setShowSubmit] = useState(false)
   const [viewportWidth, setViewportWidth] = useState(null)
@@ -772,7 +772,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
   const monthStart = new Date(year, month, 1)
   const monthEnd = new Date(year, month + 1, 0)
 
-  for (const ev of events.filter(e => activeCategory === 'all' || e.category === activeCategory)) {
+  for (const ev of events.filter(e => activeCategories.length === 0 || activeCategories.includes(e.category))) {
     const eventStart = parseLocalDate(ev.date)
     const eventEnd = ev.end_date ? parseLocalDate(ev.end_date) : eventStart
     const visibleStart = eventStart > monthStart ? eventStart : monthStart
@@ -786,7 +786,13 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
 
   return (
     <div style={{ paddingBottom: 64 }}>
-      <CategoryFilters active={activeCategory} onChange={setActiveCategory} />
+      <CategoryFilters
+        activeCategories={activeCategories}
+        onChange={key => {
+          if (key === 'all') { setActiveCategories([]); return }
+          setActiveCategories(prev => prev.includes(key) ? prev.filter(k => k !== key) : [...prev, key])
+        }}
+      />
 
       <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16 }}>
         <button
@@ -816,7 +822,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
       </div>
 
       {isListView ? (
-        <MobileListView events={events} activeCategory={activeCategory} onEventClick={ev => setModal({ type: 'event', data: ev })} />
+        <MobileListView events={events} activeCategories={activeCategories} onEventClick={ev => setModal({ type: 'event', data: ev })} />
       ) : (
         <>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 3, width: '100%', marginBottom: 3 }}>

@@ -17,25 +17,23 @@ export const metadata = {
 
 export default async function HomePage({ searchParams }) {
   const params = await searchParams
-  const cat = params?.cat || 'all'
-  const neighborhood = params?.neighborhood || null
+
+  // Parse comma-separated multi-select filters
+  const cats = (params?.cat || '').split(',').map(s => s.trim()).filter(s => s && s !== 'all' && ['review', 'news', 'spotlight'].includes(s))
+  const neighborhoodSlugs = (params?.neighborhood || '').split(',').map(s => s.trim()).filter(Boolean)
 
   const supabase = await createClient()
 
-  // Fetch neighborhoods table + all distinct neighborhood values on published articles,
-  // then merge so the bar always shows every neighborhood that has at least one article.
   const [{ data: neighborhoodsData }, { data: articleNeighborhoodData }] = await Promise.all([
     supabase.from('neighborhoods').select('id, name, slug').order('name', { ascending: true }),
     supabase.from('articles').select('neighborhood').eq('status', 'published').not('neighborhood', 'is', null),
   ])
   const tableNeighborhoods = neighborhoodsData || []
-  // Build a set of all slugs already represented in the table (both stored slug AND slugify(name))
   const tableSlugSet = new Set([
     ...tableNeighborhoods.map(n => n.slug),
     ...tableNeighborhoods.map(n => slugify(n.name)),
   ])
 
-  // Add any neighborhoods that exist on articles but aren't in the table at all
   const extraNames = new Map()
   for (const row of (articleNeighborhoodData || [])) {
     const name = row.neighborhood?.trim()
@@ -49,6 +47,18 @@ export default async function HomePage({ searchParams }) {
   const neighborhoods = [...tableNeighborhoods, ...extraNeighborhoods]
     .sort((a, b) => a.name.localeCompare(b.name))
 
+  // Resolve each selected neighborhood slug to its real display name for SQL filtering
+  const activeNeighborhoodNames = []
+  for (const slug of neighborhoodSlugs) {
+    const match = neighborhoods.find(n => n.slug === slug) || neighborhoods.find(n => slugify(n.name) === slug)
+    let name = match?.name || null
+    if (!name) {
+      const found = (articleNeighborhoodData || []).find(a => a.neighborhood && slugify(a.neighborhood) === slug)
+      if (found) name = found.neighborhood?.trim() || null
+    }
+    if (name) activeNeighborhoodNames.push(name)
+  }
+
   // Build article query
   let query = supabase
     .from('articles')
@@ -56,40 +66,19 @@ export default async function HomePage({ searchParams }) {
     .eq('status', 'published')
     .order('date', { ascending: false })
 
-  if (cat !== 'all' && ['review', 'news', 'spotlight'].includes(cat)) {
-    query = query.eq('category', cat)
+  if (cats.length > 0) {
+    query = query.in('category', cats)
   }
-
-  // Match neighborhood by exact slug OR by slugifying the name (handles mismatches like "loop" vs "the-loop")
-  let matchedNeighborhood =
-    neighborhood
-      ? neighborhoods.find(n => n.slug === neighborhood) ||
-        neighborhoods.find(n => slugify(n.name) === neighborhood)
-      : null
-
-  // If still not found in the neighborhoods table, look up the real name from articles
-  // (reuse the articleNeighborhoodData already fetched above)
-  let neighborhoodNameForFilter = matchedNeighborhood?.name || null
-  if (neighborhood && !neighborhoodNameForFilter) {
-    const found = (articleNeighborhoodData || []).find(
-      a => a.neighborhood && slugify(a.neighborhood) === neighborhood
-    )
-    if (found) neighborhoodNameForFilter = found.neighborhood?.trim() || null
-  }
-
-  if (neighborhoodNameForFilter) {
-    query = query.eq('neighborhood', neighborhoodNameForFilter)
+  if (activeNeighborhoodNames.length > 0) {
+    query = query.in('neighborhood', activeNeighborhoodNames)
   }
 
   const { data: articlesData } = await query
   const articles = articlesData || []
 
-  // Hero only on unfiltered view (no category, no neighborhood filter)
-  const featured = !cat || cat === 'all' && !neighborhood ? articles.find(a => a.featured) : null
+  // Hero only on fully unfiltered view
+  const featured = cats.length === 0 && neighborhoodSlugs.length === 0 ? articles.find(a => a.featured) : null
   const gridArticles = featured ? articles.filter(a => a.id !== featured.id) : articles
-
-  // Active neighborhood display name for filter indicator
-  const activeNeighborhoodName = neighborhoodNameForFilter || null
 
   return (
     <div style={{ fontFamily: "'DM Sans', sans-serif", background: '#111111', color: '#F5F1E8', minHeight: '100vh' }}>
@@ -99,23 +88,23 @@ export default async function HomePage({ searchParams }) {
         <div style={NOISE_OVERLAY} />
         <div className="cn-page-padded" style={{ position: 'relative', zIndex: 1, maxWidth: 960, margin: '0 auto', padding: '0 24px' }}>
           <Masthead />
-          <PublicNav activeCategory={cat} activeNeighborhood={neighborhood} />
-          <NeighborhoodBar neighborhoods={neighborhoods} activeNeighborhood={neighborhood} cat={cat} />
+          <PublicNav activeCategories={cats} activeNeighborhoods={neighborhoodSlugs} />
+          <NeighborhoodBar neighborhoods={neighborhoods} activeNeighborhoods={neighborhoodSlugs} cats={cats} />
         </div>
       </div>
 
       {/* ── Neighborhood filter indicator ── */}
-      {activeNeighborhoodName && (
+      {activeNeighborhoodNames.length > 0 && (
         <div style={{ background: '#1A1A1A', borderBottom: '1px solid #2A2A2A' }}>
           <div style={{ maxWidth: 960, margin: '0 auto', padding: '10px 24px', display: 'flex', alignItems: 'center', gap: 10 }}>
             <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>
               Showing:
             </span>
             <span style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', color: '#F5F1E8', fontWeight: 700 }}>
-              {activeNeighborhoodName}
+              {activeNeighborhoodNames.join(', ')}
             </span>
             <Link
-              href={cat && cat !== 'all' ? `/?cat=${cat}` : '/'}
+              href={cats.length > 0 ? `/?cat=${cats.join(',')}` : '/'}
               style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, color: '#E73B2F', textDecoration: 'none', fontWeight: 700, marginLeft: 4 }}
             >
               ✕ Clear

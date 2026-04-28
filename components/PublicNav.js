@@ -65,25 +65,48 @@ function CalendarTab({ active }) {
   )
 }
 
-export default function PublicNav({ activeCategory, activeNeighborhood }) {
+export default function PublicNav({ activeCategories = [], activeNeighborhoods = [] }) {
   const router   = useRouter()
   const pathname = usePathname()
-  const nbhd = activeNeighborhood ? `&neighborhood=${activeNeighborhood}` : ''
   const isCalendar = pathname === '/calendar'
+
+  const nbhdStr = activeNeighborhoods.length ? `neighborhood=${activeNeighborhoods.join(',')}` : ''
+
+  function handleCatClick(tabKey) {
+    const nbhd = nbhdStr ? `&${nbhdStr}` : ''
+    const nbhdOnly = nbhdStr ? `/?${nbhdStr}` : '/'
+
+    if (tabKey === 'all') {
+      router.push(nbhdOnly)
+      return
+    }
+
+    const next = activeCategories.includes(tabKey)
+      ? activeCategories.filter(c => c !== tabKey)
+      : [...activeCategories, tabKey]
+
+    if (next.length === 0) {
+      router.push(nbhdOnly)
+    } else {
+      router.push(`/?cat=${next.join(',')}${nbhd}`)
+    }
+  }
+
   return (
     <nav style={STYLES.nav} className="cn-nav">
       <div className="cn-nav-tabs">
-        {PUBLIC_NAV_TABS.map(tab => (
-          <NavTab
-            key={tab.key}
-            tab={tab}
-            active={!isCalendar && tab.key === activeCategory}
-            onClick={() => {
-              if (tab.key === 'all') router.push(activeNeighborhood ? `/?neighborhood=${activeNeighborhood}` : '/')
-              else router.push(`/?cat=${tab.key}${nbhd}`)
-            }}
-          />
-        ))}
+        {PUBLIC_NAV_TABS.map(tab => {
+          const isAll = tab.key === 'all'
+          const active = !isCalendar && (isAll ? activeCategories.length === 0 : activeCategories.includes(tab.key))
+          return (
+            <NavTab
+              key={tab.key}
+              tab={tab}
+              active={active}
+              onClick={() => handleCatClick(tab.key)}
+            />
+          )
+        })}
       </div>
       <CalendarTab active={isCalendar} />
     </nav>
