@@ -633,12 +633,24 @@ function SubmitEventModal({ onClose }) {
   )
 }
 
-function MobileListView({ events, activeCategories, onEventClick }) {
+function MobileListView({ events, activeCategories, onEventClick, year, month, today }) {
   const filtered = events.filter(e => activeCategories.length === 0 || activeCategories.includes(e.category))
+  const monthStart = new Date(year, month, 1)
+  const monthEnd = new Date(year, month + 1, 0)
+  const todayDate = parseLocalDate(today)
+  const isCurrentMonth = year === todayDate.getFullYear() && month === todayDate.getMonth()
+  const displayStart = isCurrentMonth ? todayDate : monthStart
   const grouped = {}
   for (const ev of filtered) {
-    if (!grouped[ev.date]) grouped[ev.date] = []
-    grouped[ev.date].push(ev)
+    const eventStart = parseLocalDate(ev.date)
+    const eventEnd = ev.end_date ? parseLocalDate(ev.end_date) : eventStart
+    const visibleStart = eventStart > displayStart ? eventStart : displayStart
+    const visibleEnd = eventEnd < monthEnd ? eventEnd : monthEnd
+    for (let d = new Date(visibleStart); d <= visibleEnd; d = addDays(d, 1)) {
+      const key = toISODate(d)
+      if (!grouped[key]) grouped[key] = []
+      grouped[key].push(ev)
+    }
   }
   const sortedDates = Object.keys(grouped).sort()
 
@@ -822,7 +834,7 @@ export default function CalendarView({ initialEvents = [], initialYear, initialM
       </div>
 
       {isListView ? (
-        <MobileListView events={events} activeCategories={activeCategories} onEventClick={ev => setModal({ type: 'event', data: ev })} />
+        <MobileListView events={events} activeCategories={activeCategories} onEventClick={ev => setModal({ type: 'event', data: ev })} year={year} month={month} today={today} />
       ) : (
         <>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: 3, width: '100%', marginBottom: 3 }}>
