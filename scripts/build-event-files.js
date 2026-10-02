@@ -27,7 +27,7 @@ const FULLDIR = 'research/posts'
 const CHECK = process.argv.includes('--check')
 
 // Entries that are headline groupings rather than one event.
-const CLUSTERS = new Set([65, 70, 71, 84])
+const CLUSTERS = new Set([65, 70, 71, 84, 128, 129, 130])
 
 // ── read the dossier into per-event sections ─────────────────────────────────
 
@@ -245,7 +245,14 @@ function articles(e) {
 function parseScrapeDir() {
   if (!fs.existsSync(SCRAPEDIR)) return {}
   const byEvent = {}
-  for (const file of fs.readdirSync(SCRAPEDIR).filter(f => f.endsWith('.md')).sort()) {
+  // The full export is an exact superset of the themed files (verified: both
+  // total 4,222 posts), so reading both would count every post twice. Prefer it
+  // when present and ignore the themed files entirely.
+  const all = fs.readdirSync(SCRAPEDIR).filter(f => f.endsWith('.md')).sort()
+  const full = all.filter(f => /full-export/i.test(f))
+  const files = full.length ? full : all
+
+  for (const file of files) {
     const text = fs.readFileSync(path.join(SCRAPEDIR, file), 'utf8')
     // Split into event chunks on "## D<n> — Name"
     const chunks = text.split(/^(?=## D\d+\s+[—–-])/m)

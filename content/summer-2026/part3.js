@@ -2,6 +2,8 @@
 // Dossier #33, #46, #48, #62, #63, #64, #66 + three promoted out of the #65 cluster
 // (Ravenswood Art Walk, Printers Row Lit Fest, Gold Coast Art Fair).
 
+const E = require('./embeds')
+
 module.exports = [
 
 {
@@ -23,15 +25,21 @@ module.exports = [
 <h3>The Jury Is the Point</h3>
 <p>Juried is the operative word and it deserves defending. An open-entry fair is a marketplace. A juried fair is an argument: somebody has looked at the submissions and decided which ones belong, and is prepared to be wrong in public. That is the same discipline that separates a real exhibition from a trade show, and a neighbourhood fair that has maintained it for seventy-nine consecutive years has done something no commercial operation in this city can claim.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZSzvQ9J6oW/embed/" title="Instagram post DZSzvQ9J6oW" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-07 — <a href="https://www.instagram.com/p/DZSzvQ9J6oW/" rel="nofollow noopener" target="_blank">@afeltedlife via Instagram</a></figcaption></figure>
+${E.instagram('DZSzvQ9J6oW', {
+  caption: 'Posted 2026-06-07',
+})}
 <p>The artist count for 2026 is genuinely unsettled, which is worth stating rather than papering over: <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> put it at close to 200, while <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> reported 150 or more. Somewhere between those two numbers is the truth, and the fair has never been the sort of organisation that issues a corrective press release.</p>
 <h3>What Hyde Park Gets Right</h3>
 <p>The setting does work that a park cannot. A fair on 57th Street sits among houses, the University of Chicago a few blocks off, bookshops within walking distance, and people who live there passing through on the way to something else. Compare that to the tented fairs erected on Grant Park lawns each June, where the art is surrounded by nothing and the visitor arrives specifically to shop.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZOl0ReDnvY/embed/" title="Instagram post DZOl0ReDnvY" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-06 — <a href="https://www.instagram.com/p/DZOl0ReDnvY/" rel="nofollow noopener" target="_blank">@lisette.cedeno via Instagram</a></figcaption></figure>
+${E.instagram('DZOl0ReDnvY', {
+  caption: 'Posted 2026-06-06',
+})}
 <p>One cannot walk these two blocks without noticing that the fair’s longevity and its refusal to charge are the same fact. It never became a revenue instrument, so it never acquired the pressures that force a fair to widen its jury until the jury stops meaning anything. Seventy-nine years of turning people down is why it still has standing.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZQIXUVhgzw/embed/" title="Instagram post DZQIXUVhgzw" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-06 — <a href="https://www.instagram.com/p/DZQIXUVhgzw/" rel="nofollow noopener" target="_blank">@melissaschmidtstudio via Instagram</a></figcaption></figure>
+${E.instagram('DZQIXUVhgzw', {
+  caption: 'Posted 2026-06-06',
+})}
 <p>Hyde Park has a habit of this. The <a href="https://hydeparkjazzfestival.org/">Hyde Park Jazz Festival</a> reached its twentieth year in September on the same principle — free, artist-first, volunteer-heavy, and considerably more serious than its budget suggests. Two of the most rigorous cultural institutions in Chicago sit within a mile of each other on the South Side and neither charges admission.</p>
 <p>If the aisles become crowded by late Saturday afternoon, as they do, the correct response is to leave and walk two blocks east toward the lake, then come back at nine on Sunday morning when the artists are still setting up and will talk to you about the work rather than the price. That hour is the fair. The rest is the crowd.</p>
 <p class="cn-cover-credit">Cover image: Warren LeMay from Chicago, IL, United States / Wikimedia Commons (CC BY-SA 2.0)</p>`,
@@ -66,16 +74,22 @@ module.exports = [
 <h3>The Sleeper Attraction Is the Actual Attraction</h3>
 <p>Private gardens, in a dense landmark district, opened to strangers for two days. This is a form of exhibition, and a more demanding one than a tent full of framed prints, because a garden cannot be hung, lit or curated into coherence by anybody other than the person who has been tending it for thirty years. One is looking at a decade of accumulated decisions in a space the owner cannot rearrange for the occasion.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZqKB-Fj-p9/embed/" title="Instagram post DZqKB-Fj-p9" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-16 — <a href="https://www.instagram.com/p/DZqKB-Fj-p9/" rel="nofollow noopener" target="_blank">@gavinottesonart via Instagram</a></figcaption></figure>
+${E.instagram('DZqKB-Fj-p9', {
+  caption: 'Posted 2026-06-16',
+})}
 <p>It is also the only part of the weekend where the neighbourhood itself is the object under examination rather than the venue. The Old Town Triangle survived the Fire, survived urban renewal, and was landmarked before most of Chicago understood what landmarking was for. Walking through its back gardens is a more instructive experience than anything in the aisles, and the fair charges nothing extra for it.</p>
 <h3>Two Hundred Artists Is a Lot of Artists</h3>
 <p>A word on scale, since it recurs across every fair in this city’s June. Two hundred juried booths is more work than any visitor can actually look at. The same is true of the <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Gold Coast Art Fair</a> with its own 200-plus, and of the Wells Street Art Festival running the identical weekend a few blocks west with over 100.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZiUh7Nj0N9/embed/" title="Instagram post DZiUh7Nj0N9" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-13 — <a href="https://www.instagram.com/p/DZiUh7Nj0N9/" rel="nofollow noopener" target="_blank">@whitbeckstudios via Instagram</a></figcaption></figure>
+${E.instagram('DZiUh7Nj0N9', {
+  caption: 'Posted 2026-06-13',
+})}
 <p>Three art fairs within walking distance of one another on one June weekend, each presenting more objects than a person can absorb. The result is not abundance. It is a visitor moving at a pace that makes genuine looking impossible, which is precisely the condition that fairs of this scale create and then describe as success.</p>
 <p>The corrective is to refuse the itinerary. Pick one fair. Spend the morning in perhaps fifteen booths. The <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> lists all of them, which is useful for knowing what to skip.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZh9KVbO8zo/embed/" title="Instagram post DZh9KVbO8zo" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-13 — <a href="https://www.instagram.com/p/DZh9KVbO8zo/" rel="nofollow noopener" target="_blank">@katecarneyfineart via Instagram</a></figcaption></figure>
+${E.instagram('DZh9KVbO8zo', {
+  caption: 'Posted 2026-06-13',
+})}
 <p>Old Town also hosts the <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Ginza Holiday Festival</a> at the Midwest Buddhist Temple in August, an event with considerably more history beneath it than this one and a fraction of the attention. The neighbourhood is better at this than its reputation suggests.</p>
 <p>When the aisles thicken after lunch, find the garden-walk map, and stand in the smallest garden on it until you have worked out what the owner was trying to do. Nothing in the tents will hold you that long.</p>
 <p class="cn-cover-credit">Cover image: Martin Falbisoner / Wikimedia Commons (CC BY-SA 4.0)</p>`,
@@ -142,17 +156,23 @@ module.exports = [
 <p>The fact that goes routinely unmentioned is that this began here. Renegade started in Chicago in 2003, on a street, as an argument that handmade work deserved a market of its own rather than a corner of somebody else’s craft fair. It then became a national institution with editions across the country, and it still calls Chicago the heart of the Renegade Craft community while running events in <a href="https://www.renegadecraft.com/city/chicago/">Andersonville, Logan Square, Wicker Park and Bridgeport</a>.</p>
 <p>Chicago exports cultural forms and then imports them back as somebody else’s invention. House music did this. The independent craft market did it too, rather more quietly.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbT3j7WJM5P/embed/" title="Instagram post DbT3j7WJM5P" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-27 — <a href="https://www.instagram.com/p/DbT3j7WJM5P/" rel="nofollow noopener" target="_blank">@lailatextiles via Instagram</a></figcaption></figure>
+${E.instagram('DbT3j7WJM5P', {
+  caption: 'Posted 2026-07-27',
+})}
 <h3>The Handmade Economy in 2026</h3>
 <p>What makes the 2026 editions worth examining is the state of the thing they compete with. Etsy has spent years becoming indistinguishable from a drop-shipping platform, and the cultural authority that a handmade marketplace once conferred has drained out of it entirely. In-person craft markets, meanwhile, are doing well.</p>
 <p>One cannot survey 250 exhibitors on a closed street without concluding that the reason is verification. At a physical market the person who made the object is standing behind it and can be asked how. That is not nostalgia for a slower commerce. It is the only remaining mechanism by which a buyer can confirm that a human being made a thing, which is a service that has become considerably more valuable in the last three years than it was in 2003.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Da3rgYBnya6/embed/" title="Instagram post Da3rgYBnya6" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-16 — <a href="https://www.instagram.com/p/Da3rgYBnya6/" rel="nofollow noopener" target="_blank">@renegadecraft via Instagram</a></figcaption></figure>
+${E.instagram('Da3rgYBnya6', {
+  caption: 'Posted 2026-07-16',
+})}
 <h3>Five Dollars, By Code</h3>
 <p>The door deserves a note. A $5 suggested donation collected by QR scan is the most 2026 sentence in this entire summer, and it is a reasonable solution — no cash handling, no queue, no volunteer with a float. It also means the fair knows precisely who paid and who did not, which a bucket never did.</p>
 <p>Division Street is the right venue and a slightly uncomfortable one. Wicker Park is where artists were priced out over two decades, and the strip now runs to chain retail with the <a href="https://www.renegadecraft.com/city/chicago/">craft market</a> arriving twice a year to reoccupy it temporarily. Rogers Park has spent the same decades doing the opposite through the Glenwood Avenue Arts District, which kept its artists by design rather than hosting them as visitors.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Da-vlC_RP0M/embed/" title="Instagram post Da-vlC_RP0M" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-19 — <a href="https://www.instagram.com/p/Da-vlC_RP0M/" rel="nofollow noopener" target="_blank">@peach_beast via Instagram</a></figcaption></figure>
+${E.instagram('Da-vlC_RP0M', {
+  caption: 'Posted 2026-07-19',
+})}
 <p>Renegade is not responsible for what happened to Wicker Park. But a handmade market on Division Street in 2026 is standing on the evidence of what happens to the people who make things when the neighbourhood they made desirable stops being affordable.</p>
 <p>Skip the first two blocks, which are the most photographed and the most derivative. Find an exhibitor working in a material you cannot identify, and stay at that table until they have explained the process to you properly. Twenty-three years of this fair exists so that conversation can happen.</p>
 <p class="cn-cover-credit">Cover image: Via renegadecraft.com</p>`,
@@ -260,16 +280,23 @@ module.exports = [
 <p>Chicago has a standard sequence for artists and neighbourhoods, and everyone involved can recite it. Artists find cheap space. The area acquires a reputation for being interesting. Capital notices the reputation. Rents rise. The artists leave, and what remains is a commercial strip that advertises itself using the word they left behind.</p>
 <p>Wicker Park completed this sequence. The West Loop did it faster and more thoroughly. Logan Square has been running it at speed for fifteen years. Each of those places now hosts an arts festival that functions as a memorial to a population it no longer contains.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1061684266581405%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-15 — <a href="https://www.facebook.com/reel/1061684266581405/" rel="nofollow noopener" target="_blank">unknown via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1061684266581405/', {
+  caption: 'Posted 2026-08-15',
+  portrait: true,
+})}
 <p>The Glenwood Avenue Arts District is a deliberate, decades-long attempt to interrupt that sequence — an artist-retention project rather than an artist-attraction campaign. The distinction is not semantic. Attracting artists is a marketing activity and it precedes displacement. Retaining them requires holding space over time against the market, which is slow, unglamorous and does not generate press.</p>
 <h3>What Retention Looks Like on a Saturday</h3>
 <p>The consequence is visible in the character of the fair. Exhibitors at Morse and Glenwood are largely people who live within walking distance of where they are standing. That produces a weaker spectacle and a stronger district, and one cannot have both.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcHCwOeIBsn/embed/" title="Instagram post DcHCwOeIBsn" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-16 — <a href="https://www.instagram.com/p/DcHCwOeIBsn/" rel="nofollow noopener" target="_blank">@djbrettly via Instagram</a></figcaption></figure>
+${E.instagram('DcHCwOeIBsn', {
+  caption: 'Posted 2026-08-16',
+})}
 <p>Set it beside the <a href="https://www.renegadecraft.com/city/chicago/">fall Renegade market</a> on Division Street a month later — 250-plus makers, a national brand, a QR-coded door, in a neighbourhood whose own artists were priced out two decades ago. Both events are good. Only one of them is being held by the people who live there.</p>
 <p>Rogers Park is routinely described as Chicago’s most diverse neighbourhood and is among its least covered. Those two facts are related, and the arts district is the part of it that the rest of the city has most consistently failed to notice. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> gave it a line. The <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Choose Chicago guide</a> gave it less.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcJoAIcQemY/embed/" title="Instagram post DcJoAIcQemY" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-17 — <a href="https://www.instagram.com/p/DcJoAIcQemY/" rel="nofollow noopener" target="_blank">@_waveflowers_ via Instagram</a></figcaption></figure>
+${E.instagram('DcJoAIcQemY', {
+  caption: 'Posted 2026-08-17',
+})}
 <p>There is no reason to believe the interruption is permanent. Retention holds only while the people doing it keep doing it, and the market is patient. But at the moment Rogers Park is the single piece of evidence in this city that the sequence is not a law of nature.</p>
 <p>The right approach is to ignore the festival programme entirely. Walk Glenwood from Morse northward and go into the spaces that are open year-round rather than the ones erected for the weekend. Stand in one of them long enough to establish how long its occupant has been there. The answer is the whole argument.</p>
 <p class="cn-cover-credit">Cover image: Ben Schumin from Montgomery Village, Maryland, USA / Wikimedia Commons (CC BY-SA 2.0)</p>`,
@@ -304,15 +331,24 @@ module.exports = [
 <h3>Whose Heritage, Chosen How</h3>
 <p>This is not an objection. It is the question every institution presenting diasporic work has to answer, and most avoid it by using language vague enough to commit to nothing. Africa International House at least named its position in three words and can be held to it.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1603838128194455%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-07 — <a href="https://www.facebook.com/reel/1603838128194455/" rel="nofollow noopener" target="_blank">African Festival of the Arts via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1603838128194455/', {
+  caption: 'Posted 2026-09-07',
+  portrait: true,
+})}
 <p>The honourable version of the answer is that a festival run for thirty-six years by an organisation embedded in the community it serves has earned the right to make that selection, in a way that no museum department has. The uncomfortable version is that any act of crowning produces a periphery, and the diaspora is precisely the sort of subject that punishes tidy framing.</p>
 <p>One cannot survey the fashion and marketplace components without seeing the thesis operating at the level of objects. Those sections are frequently dismissed as the commercial edge of a cultural event, which gets it backwards. A marketplace is where a diaspora’s material culture is actually transacted and sustained, and treating garments and goods as evidence rather than merchandise is the more rigorous position.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1390688979231584%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-07 — <a href="https://www.facebook.com/reel/1390688979231584/" rel="nofollow noopener" target="_blank">Blanks Chris via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1390688979231584/', {
+  caption: 'Posted 2026-09-07',
+  portrait: true,
+})}
 <h3>The Park Is Being Rebuilt Around It</h3>
 <p>The setting has changed under the festival’s feet. Washington Park is Olmsted parkland on the South Side, and the Obama Presidential Center is rising nearby. Whatever that eventually means for the surrounding blocks, it is being built next to a park that has hosted a diasporic arts festival every Labor Day weekend for thirty-six years, largely without the institutional attention now arriving.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1081669121117413%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-07 — <a href="https://www.facebook.com/reel/1081669121117413/" rel="nofollow noopener" target="_blank">Felicia K. Apprey via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1081669121117413/', {
+  caption: 'Posted 2026-09-07',
+  portrait: true,
+})}
 <p>The same park held the <a href="https://www.budbillikenparade.org/">Bud Billiken Parade</a> in August, which ends with a festival in Washington Park and is the largest African American parade in the country. Two events of that magnitude, one month apart, on the same ground. Both predate the Center by decades. <a href="https://aihusa.org/events">Africa International House</a> and the <a href="https://www.choosechicago.com/event/36th-annual-african-festival-of-the-arts/2026-09-06/">Choose Chicago listing</a> carry the programme.</p>
 <p>Go to the fashion section before the music, which is the reverse of what the schedule encourages. Find a single garment whose construction you cannot account for, and stay with it until you have worked out how it was made and who it was made for. The theme is answerable at that scale and nowhere else.</p>
 <p class="cn-cover-credit">Cover image: Courtesy Choose Chicago</p>`,
@@ -349,17 +385,23 @@ module.exports = [
 <p>The Midwest Buddhist Temple was founded by Japanese Americans who came to Chicago after being incarcerated by their own government during the Second World War. Resettlement brought a Japanese American community to this city that had not previously existed at that scale, and the temple was built by people who had been released from camps and directed away from the West Coast.</p>
 <p>A festival with that immediately beneath it is not a heritage pageant. It is an institution founded in the aftermath of mass detention, still operating, still holding a public weekend at which it demonstrates its own cultural forms to strangers.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbzZRNvDhQW/embed/" title="Instagram post DbzZRNvDhQW" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-09 — <a href="https://www.instagram.com/p/DbzZRNvDhQW/" rel="nofollow noopener" target="_blank">@captain_wonder via Instagram</a></figcaption></figure>
+${E.instagram('DbzZRNvDhQW', {
+  caption: 'Posted 2026-08-09',
+})}
 <h3>Why the Arts Demonstrations Are the Substance</h3>
 <p>This is where the programming choice becomes an argument. The festival could present Japanese culture as spectacle, and taiko in particular rewards that treatment — it is loud, physical and photographs well. Instead the weekend is built around demonstrations of classical arts, which is to say around technique shown slowly enough to be understood.</p>
 <p>One cannot watch a demonstration of that kind without registering what it is for. A community that was scattered by policy and reassembled in an unfamiliar city preserved a body of practical knowledge, and the way such knowledge survives is by being performed in front of people who do not yet have it. The demonstrations are not an educational supplement to the festival. They are the mechanism by which the thing continues to exist.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Db0xTQ1OvuG/embed/" title="Instagram post Db0xTQ1OvuG" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-09 — <a href="https://www.instagram.com/p/Db0xTQ1OvuG/" rel="nofollow noopener" target="_blank">@ll_cool_j2 via Instagram</a></figcaption></figure>
+${E.instagram('Db0xTQ1OvuG', {
+  caption: 'Posted 2026-08-09',
+})}
 <p>Taiko in Old Town is also, straightforwardly, worth hearing. But the drums are the part that draws the crowd, and the quieter tables are the part that explains why there is a temple there at all.</p>
 <h3>The Least-Covered Strong Story of the Summer</h3>
 <p>Old Town spent the same summer hosting the <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Old Town Art Fair</a> and the Wells Street Art Festival on one June weekend, between them drawing more than 300 exhibitors and a great deal of press. Ginza Holiday received a line in the <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Choose Chicago guide</a> and a mention in <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a>.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbwA91LFGMl/embed/" title="Instagram post DbwA91LFGMl" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-07 — <a href="https://www.instagram.com/p/DbwA91LFGMl/" rel="nofollow noopener" target="_blank">@chicagozakka via Instagram</a></figcaption></figure>
+${E.instagram('DbwA91LFGMl', {
+  caption: 'Posted 2026-08-07',
+})}
 <p>That ratio is the story. A neighbourhood produces two large commercial art fairs and one festival run by a religious institution founded by formerly incarcerated citizens, and the coverage divides accordingly. It is a reasonable illustration of what the Chicago summer calendar notices.</p>
 <p>Arrive before the taiko and go to the demonstration tables while they are still quiet. Choose one art — whichever you understand least — and remain at that table until the person working has shown you the stage of it that goes wrong. Everything the festival is protecting is contained in that correction.</p>
 <p class="cn-cover-credit">Cover image: Alberto Aldana / Wikimedia Commons (CC BY-SA 2.5)</p>`,
@@ -394,16 +436,23 @@ module.exports = [
 <h3>Three Festivals, One Weather System</h3>
 <p>It was a wet Chicago summer and three major events were defined by it, which produced an unintentionally instructive experiment. Identical rain, three entirely different collective responses.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1433422521948574%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-15 — <a href="https://www.facebook.com/reel/1433422521948574/" rel="nofollow noopener" target="_blank">unknown via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1433422521948574/', {
+  caption: 'Posted 2026-08-15',
+  portrait: true,
+})}
 <p>At Lollapalooza a four-hour delay produced a stranger organising a mud-wrestling event from her phone that reached a hundred thousand views before she arrived. At <a href="https://riotfest.org/">Riot Fest</a> the same weather produced graffiti, a press conference, named residents on the record and a year-long restoration watch. At the Air and Water Show the crowd sat on the beach for two hours and then applauded the Thunderbirds.</p>
 <p>One cannot read that spread as being about rain. It is about what each event’s audience believes it is owed. A ticketed festival on rented parkland generates grievance. A neighbourhood watching its park get destroyed generates organising. A free show on a public beach generates patience.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcEh7yRpvNN/embed/" title="Instagram post DcEh7yRpvNN" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-15 — <a href="https://www.instagram.com/p/DcEh7yRpvNN/" rel="nofollow noopener" target="_blank">@kayleejochicago via Instagram</a></figcaption></figure>
+${E.instagram('DcEh7yRpvNN', {
+  caption: 'Posted 2026-08-15',
+})}
 <h3>The Thing Nobody Writes</h3>
 <p>Which brings up the subject this event reliably avoids. A military airshow is a demonstration of armed force presented as free family entertainment, and it is among the most genuinely beloved things the city does. Both halves of that sentence are true and they sit together uncomfortably in 2026.</p>
 <p>The honest position is not to pretend the tension away in either direction. The Thunderbirds are extraordinary to watch and the precision is real. It is also a recruitment and prestige exercise conducted over a beach full of children, in a summer when federal enforcement operations were reshaping which Chicagoans felt able to attend public gatherings at all. Those two facts did not touch each other on the sand in August, and the distance between them is worth naming.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcHZnLWylhc/embed/" title="Instagram post DcHZnLWylhc" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-16 — <a href="https://www.instagram.com/p/DcHZnLWylhc/" rel="nofollow noopener" target="_blank">@maunaeats via Instagram</a></figcaption></figure>
+${E.instagram('DcHZnLWylhc', {
+  caption: 'Posted 2026-08-16',
+})}
 <p>The <a href="https://www.chicago.gov/city/en/depts/dca/supp_info/air_water_show.html">city’s own page</a> carries the programme. Note one practical advantage for anyone illustrating this: military public-affairs imagery is generally a US Government work, which makes this the only major event of the Chicago summer that an independent outlet can illustrate properly for nothing.</p>
 <p>Ignore the beach, which is the worst vantage point and the most crowded. Find a position north along the lakefront path where the aircraft turn, and stay there through one full pass without raising a phone. The performance is a question of geometry, and geometry does not survive a nine-second video.</p>
 <p class="cn-cover-credit">Cover image: Via abc7chicago.com</p>`,

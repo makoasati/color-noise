@@ -3,6 +3,8 @@
 // The three enforcement-context pieces run in Mora's serious register: no slang.
 // Korina Sanchez's denial runs in full wherever the El Grito boycott is raised.
 
+const E = require('./embeds')
+
 module.exports = [
 
 {
@@ -23,16 +25,24 @@ module.exports = [
 <p><strong>Alan King</strong> explained it to <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the organisers</a> in terms that are worth keeping: the Chosen Few deliberately made decisions to be more inclusive to the house music crowd, and wanted to focus on local artists. That is an unusually plain description of a curatorial shift, and it landed. <strong>DJ Slugo</strong> played “Get Down Lil Mama,” “There’s Some Hoes in This House,” “Let’s Go to The Mo” and “Let’s Juke.” <strong>Boolu Master</strong> featured. <strong>Kym Mazelle</strong>, the First Lady of House, attended her second picnic.</p>
 <p>The peak, by most accounts, was <strong>Terry Hunter</strong> folding Michael Jackson’s “Earth Song” into a house mix. Hunter also watched his son, <strong>DJ Tai</strong>, become the youngest DJ ever to play the picnic, which is the kind of succession that no festival can book and every festival wants.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1383580823616544%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-12 — <a href="https://www.facebook.com/reel/1383580823616544/" rel="nofollow noopener" target="_blank">Tamika Lang via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1383580823616544/', {
+  caption: 'Posted 2026-07-12',
+  portrait: true,
+})}
 <h3>Thirty-Six Years From a Backyard</h3>
 <p><strong>Wayne Williams</strong> founded the Chosen Few in 1977. The picnic has run since 1990, growing out of a backyard reunion behind the Museum of Science and Industry into one of the largest single-day house festivals in the country. <strong>Jesse Saunders</strong>, who released what is widely called the first house record, is still DJing it.</p>
 <p>That lineage is why the juke decision matters rather than being a booking footnote. House came out of Chicago’s Black gay nightlife, and the people who built it have spent four decades watching the genre get exported, sanitised and sold back to them at festival prices. An event run by the originators choosing to widen its own definition is a different act than a promoter chasing a trend. The <a href="https://chosenfewdjs.com/">the Chosen Few DJs</a> put it well: the festival needs the people and the people need the festival, and in the forty-plus years since this music emerged it has become vital to survival for many.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Das5sEFzMlF/embed/" title="Instagram post Das5sEFzMlF" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-12 — <a href="https://www.instagram.com/p/Das5sEFzMlF/" rel="nofollow noopener" target="_blank">@chicagomediatakeout via Instagram</a></figcaption></figure>
+${E.instagram('Das5sEFzMlF', {
+  caption: 'Posted 2026-07-12',
+})}
 <h3>The Ground It Sits On</h3>
 <p>Jackson Park is the other half. The picnic happens at 6401 South Stony Island, on Olmsted’s South Side parkland, and the Obama Presidential Center is rising next to it. Whatever the Center eventually means for Woodlawn and South Shore, it is being built beside a park that already had one of the most significant recurring Black cultural gatherings in America on it, every July, for 36 years, largely uncovered by the city’s major outlets.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1330686959273147%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-12 — <a href="https://www.facebook.com/reel/1330686959273147/" rel="nofollow noopener" target="_blank">Joi Marie via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1330686959273147/', {
+  caption: 'Posted 2026-07-12',
+  portrait: true,
+})}
 <p>Compare the treatment to <a href="https://arcmusicfestival.com/">ARC</a> in Union Park two months later — four days, a $549 top tier, international headliners, and heavy trade press. Both events are about Chicago house. Only one of them is run by the people who made it. The <a href="https://chosenfewdjs.com/">the Chosen Few DJs</a> reported the obvious thing, which is that 36 years in it still packs the park.</p>
 <p>A genre that spent thirty years deciding juke was too much finally put it on the main stage, in the park where the picnic started, and a nine-year-old lineage closed a loop in public.</p>
 <p class="cn-cover-credit">Cover image: Via thetriibe.com</p>`,
@@ -65,17 +75,26 @@ module.exports = [
 <p>Hyde Park peaked at roughly <strong>40,000 people in 2019</strong>. The Salt Shed holds about <strong>7,000</strong>. That is a reduction of around 80 percent in the number of people who can possibly attend. Founder <strong>Eric Williams</strong> did not move north for the room.</p>
 <p>He moved for the arithmetic. A Hyde Park block party cost up to <strong>$300,000</strong> to produce, and the two-day Oakwood Beach edition ran past <strong>$1 million</strong>. Williams shut the event down after years of carrying that, and the 2026 return is built on a venue that already has fencing, power, bars, security and insurance. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the organisers</a> reported the outcome plainly: a smaller crowd, and a profit. He has already committed to the Salt Shed for 2027.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Da_DauWnzNh/embed/" title="Instagram post Da_DauWnzNh" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-19 — <a href="https://www.instagram.com/p/Da_DauWnzNh/" rel="nofollow noopener" target="_blank">@sea_of_indigo via Instagram</a></figcaption></figure>
+${E.instagram('Da_UatYlqYa', {
+  // Replaced the dead @sea_of_indigo post with this one, which renders.
+  // Credit is the fallback until the next fetch-embed-meta.js run.
+  credit: '@jusjordanchicago',
+  caption: 'Posted 2026-07-19',
+})}
 <h3>The Story Is Not a Betrayal</h3>
 <p>It would be easy to write this as a Black South Side institution abandoning the South Side, and the sentiment on the ground does not support it. The mood on the day was closer to a reunion, captured in the <a href="https://www.silverroomblockparty.com/">the block party's own record</a> led on a longtime attendee calling it a family reunion, with the wistful note attached: when they were doing it in Hyde Park, it was like a big family reunion.</p>
 <p>The sharpest defence came from a Hyde Park native rather than from the organisers. <strong>Ross Read</strong>, in his mid-forties, wrote on X that he remembered the Silver Room when it was in Wicker Park and in Hyde Park, that the party had to move to a venue like the Salt Shed to continue at all, and that too many people do not understand the liability issues that had built up at the end of its run on 53rd Street.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Da8Taf2jqcQ/embed/" title="Instagram post Da8Taf2jqcQ" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-18 — <a href="https://www.instagram.com/p/Da8Taf2jqcQ/" rel="nofollow noopener" target="_blank">@natashadiggs via Instagram</a></figcaption></figure>
+${E.instagram('Da8Taf2jqcQ', {
+  caption: 'Posted 2026-07-18',
+})}
 <p>That is the whole argument in one post. The choice was not South Side versus North Side. It was a party that exists at 7,000 or a party that does not exist at 40,000.</p>
 <h3>What Got Traded</h3>
 <p>Something real was still given up, and it is worth naming precisely. A free-feeling street event on a commercial South Side block, where you could wander in off 53rd Street, is a different civic object than a ticketed event on a private campus in Goose Island. The first one belongs to a neighborhood. The second one is hosted by a venue.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Da-xdY3OHMd/embed/" title="Instagram post Da-xdY3OHMd" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-19 — <a href="https://www.instagram.com/p/Da-xdY3OHMd/" rel="nofollow noopener" target="_blank">@keinika via Instagram</a></figcaption></figure>
+${E.instagram('Da-xdY3OHMd', {
+  caption: 'Posted 2026-07-19',
+})}
 <p>The Salt Shed keeps turning out to be the answer to this question. It saved <a href="https://do312.com/events/2026/5/23/warm-love-cool-dreams-tickets">Warm Love Cool Dreams</a> the same way in May, by being several venues at once so a festival can grow without negotiating with a park district. In a summer when Douglass Park residents were demanding festivals move to private venues, the Silver Room had already done it — voluntarily, for money reasons, at a cost to its own character.</p>
 <p>The Silver Room started as independent Black retail in a city that does not make that easy, and became cultural infrastructure. Infrastructure has running costs. Nineteen years in, the bill came due and Williams paid it with 33,000 seats.</p>
 <p class="cn-cover-credit">Cover image: Via thetriibe.com</p>`,
@@ -107,17 +126,23 @@ module.exports = [
 <p>Organisers spent months building infrastructure that a street festival should never need. They set up a clear reporting system, trained response teams, and ran know-your-rights education for vendors, volunteers and staff. The Pilsen Neighbors Community Council, which runs the festival, published a statement on its own blog under a title that does the work of an entire editorial: <a href="https://www.fiestadelsol.org/blog/fiesta-del-sol-to-ice-community-festivals-should-be-places-of-joy-not-fear">community festivals should be places of joy, not fear</a>.</p>
 <p>The festival went ahead amid active ICE vehicle stops in the area, which <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> reported at the time. Some community members said it felt different this year. Some stayed away, and there is no honest way to count those people.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbQm_LUmKiI/embed/" title="Instagram post DbQm_LUmKiI" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-26 — <a href="https://www.instagram.com/p/DbQm_LUmKiI/" rel="nofollow noopener" target="_blank">@chicagosmayor via Instagram</a></figcaption></figure>
+${E.instagram('DbQm_LUmKiI', {
+  caption: 'Posted 2026-07-26',
+})}
 <p>The ones who came included <strong>Michaela Gonzalez</strong> and <strong>Patricia Rodriguez</strong>, who have been attending since childhood and told <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> the simplest reason anybody gave all summer: it is tradition, they have to come, and it would be weird if they did not.</p>
 <h3>What the Festival Actually Is</h3>
 <p>It is worth being clear about what was at stake, because Fiesta del Sol is not a promoter’s product. It began 54 years ago out of community organising, it is free, and the proceeds fund scholarships and local programming through Pilsen Neighbors. The organisers put attendance across four days above a million, which is an organiser figure and should be read as one, but even a fraction of that on a residential commercial strip is an enormous undertaking by people who are not being paid to undertake it.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbTv7NMGdL-/embed/" title="Instagram post DbTv7NMGdL-" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-27 — <a href="https://www.instagram.com/p/DbTv7NMGdL-/" rel="nofollow noopener" target="_blank">@alexiforchi via Instagram</a></figcaption></figure>
+${E.instagram('DbTv7NMGdL-', {
+  caption: 'Posted 2026-07-27',
+})}
 <p>So when a festival like that budgets for trained response teams, the thing being protected is not a party. It is a scholarship fund, a mile of small vendors, and the one weekend a year when the neighborhood is unambiguously the center of the city.</p>
 <h3>Two Kinds of Pressure on One Neighborhood</h3>
 <p>Pilsen has spent a decade being written about through gentrification — the galleries, the rents, the new storefronts along 18th Street, the families who left. That story is still true and it did not pause this year. What 2026 added was a second and faster kind of displacement, one that does not work through property values.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbO-201PbKP/embed/" title="Instagram post DbO-201PbKP" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-25 — <a href="https://www.instagram.com/p/DbO-201PbKP/" rel="nofollow noopener" target="_blank">@trumpetpapi via Instagram</a></figcaption></figure>
+${E.instagram('DbO-201PbKP', {
+  caption: 'Posted 2026-07-25',
+})}
 <p>The two pressures are not the same and they do not cancel out. A neighborhood can be priced out and frightened at once, and Pilsen spent this summer being both while putting on the largest free Latino festival in the country on schedule.</p>
 <p>Cermak reopened on the Monday. The vendors who came back for a 54th year did it knowing exactly what the weekend might cost them, which is a harder kind of tradition than the word usually carries.</p>
 <p class="cn-cover-credit">Cover image: Via fiestadelsol.org</p>`,
@@ -151,18 +176,28 @@ module.exports = [
 <p>Saturday was visibly sparse. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> found attendees who remembered the festival packed from 2pm to 10pm in previous years; the 2024 edition drew around 24,000. Downtown car caravans were relatively muted, and police warned that displaying flags outside vehicle windows is illegal, with extra enforcement stationed downtown.</p>
 <p><strong>Chris Beltran</strong> offered the sentence that matters most, because it refuses a single explanation: it was pretty empty, he said, probably because people are still scared about ICE, but also because of the boycott. <strong>Isaac Cuellar</strong> put the first half more plainly — some people were already scared because they think ICE might just pop out of nowhere.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DdKs8qYE7Wr/embed/" title="Instagram post DdKs8qYE7Wr" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-12 — <a href="https://www.instagram.com/p/DdKs8qYE7Wr/" rel="nofollow noopener" target="_blank">@cbschicago via Instagram</a></figcaption></figure>
+${E.instagram('DdKs8qYE7Wr', {
+  // Posted by a newsroom this package may not lean on (2). The credit
+  // stands because it is who posted, but their copy is kept out of the
+  // rail. Replacing this with a primary-source post is the real fix.
+  quote: false,
+  caption: 'Posted 2026-09-12',
+})}
 <h3>The Boycott</h3>
 <p>Calls to boycott El Grito went viral on TikTok and Instagram in the days beforehand, led in part by the influencer <strong>Angel De La Rosa</strong>. The grievance concerned the festival’s organiser, <strong>Korina Sanchez</strong>, who is CEO of Third Coast Hospitality, the company of her father <strong>Sam Sanchez</strong> — Moe’s Cantina, Tunnel, Old Crow Smokehouse. Sam Sanchez had supported the Trump administration’s law-and-order platform, while opposing the tactics of the enforcement operation in Chicago.</p>
 <p>Korina Sanchez’s response was unequivocal and deserves to run in full. She said she does not support Donald Trump, in those words. She described the event as non-partisan. She said she understood why some members of the community were raising concerns, that she respected that everyone would make their own decision about attending, and that El Grito exists to support local businesses, celebrate the culture, and bring the community together around Mexican heritage and pride in Chicago.</p>
 <p>Not every attendee agreed the boycott helped. <strong>Meredith Cline</strong> thought it was taking away from the vendors. <strong>Diego Rivera</strong> framed his ticket as a choice about where money goes — he would rather it went toward Mexican people than to a big corporate festival.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DdN_Q1BjgAJ/embed/" title="Instagram post DdN_Q1BjgAJ" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-13 — <a href="https://www.instagram.com/p/DdN_Q1BjgAJ/" rel="nofollow noopener" target="_blank">@chicagopolicedepartment via Instagram</a></figcaption></figure>
+${E.instagram('DdN_Q1BjgAJ', {
+  caption: 'Posted 2026-09-13',
+})}
 <h3>The Livestream</h3>
 <p>A free civic ceremony honouring El Grito de Independencia began after 8pm on the Sunday, and it was streamed live for people who could not attend in person. Read that detail slowly. A city livestreamed a patriotic ceremony so that residents who were afraid to stand in a park downtown could still take part in it.</p>
 <p>That same weekend carried the 55th annual 26th Street Parade through Little Village, where community groups handed out know-your-rights material and monitored the route for federal agents while the parade rolled past. Parade weekend normally generates $6 to $8 million for Little Village restaurants, bars and shops.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DdR-mmXs5ar/embed/" title="Instagram post DdR-mmXs5ar" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-09-14 — <a href="https://www.instagram.com/p/DdR-mmXs5ar/" rel="nofollow noopener" target="_blank">@minipapix via Instagram</a></figcaption></figure>
+${E.instagram('DdR-mmXs5ar', {
+  caption: 'Posted 2026-09-14',
+})}
 <p>Across the summer the pattern was consistent. Little Village’s Cinco de Mayo parade was cancelled for a second year. <a href="https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/september/mexican-independence-day.html">El Grito scaled down</a>. <a href="https://www.fiestadelsol.org/blog/fiesta-del-sol-to-ice-community-festivals-should-be-places-of-joy-not-fear">Fiesta del Sol</a> ran with trained response teams.</p>
 <p>Chicago held its Mexican Independence celebration this year. It just held some of it through a screen, for people who had decided the park was not safe, and the city agreed with them enough to point a camera at the stage.</p>
 <p class="cn-cover-credit">Cover image: Via abc7chicago.com</p>`,
@@ -197,15 +232,24 @@ module.exports = [
 <h3>The Park Is a Remediated Superfund Site</h3>
 <p>The ground deserves attention. La Villita Park sits on remediated industrial land — a former Superfund site in a neighborhood that has absorbed a great deal of Chicago’s industrial legacy, and that had to organise for years to get open space at all. Little Village did not receive that park. It extracted it.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcZXPeHljuI/embed/" title="Instagram post DcZXPeHljuI" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-23 — <a href="https://www.instagram.com/p/DcZXPeHljuI/" rel="nofollow noopener" target="_blank">@win_jayden via Instagram</a></figcaption></figure>
+${E.instagram('DcZXPeHljuI', {
+  caption: 'Posted 2026-08-23',
+})}
 <p>Which changes what a festival in it means. Every other event in this package uses parkland that was already there and mostly treats it as a venue. Villapalooza uses a park the neighborhood fought to create, and programmes it with the neighborhood’s own performers. The relationship between the event and the ground runs the other direction.</p>
 <h3>The Summer It Happened In</h3>
 <p>It also happened in the summer that Little Village had. The Cinco de Mayo parade was cancelled for a second consecutive year over fears of immigration raids, after 40 years. The 26th Street Parade in September proceeded with community groups monitoring the route for federal agents. <a href="https://www.fiestadelsol.org/blog/fiesta-del-sol-to-ice-community-festivals-should-be-places-of-joy-not-fear">Fiesta del Sol</a>, a mile and a half east in Pilsen, ran its 54th year with trained response teams and know-your-rights sessions for vendors.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcZjV-Ph3mc/embed/" title="Instagram post DcZjV-Ph3mc" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-23 — <a href="https://www.instagram.com/p/DcZjV-Ph3mc/" rel="nofollow noopener" target="_blank">@1001tracklists via Instagram</a></figcaption></figure>
+${E.instagram('DcZjV-Ph3mc', {
+  caption: 'Posted 2026-08-23',
+})}
 <p>A free all-day gathering in a Little Village park in August 2026 was therefore not a neutral act, and the volunteers who put it on knew that. The youth-vendor component reads differently in that light too. Handing a table to a teenager from the neighborhood, in public, in that specific August, is a decision about who gets to be visible.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DcWksFRgk44/embed/" title="Instagram post DcWksFRgk44" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-22 — <a href="https://www.instagram.com/p/DcWksFRgk44/" rel="nofollow noopener" target="_blank">@q101chicago via Instagram</a></figcaption></figure>
+${E.instagram('DcY4dqeDp6C', {
+  // Replaced the dead @q101chicago post with this one, which renders.
+  // Credit is the fallback until the next fetch-embed-meta.js run.
+  credit: '@maestramendoza',
+  caption: 'Posted 2026-08-23',
+})}
 <p>Details sit on the <a href="https://www.villapalooza.org/">festival’s own site</a> and on <a href="https://do312.com/events/2026/8/22/villapalooza-tickets">Do312</a>. There is no press office, because there is no staff.</p>
 <p>Every festival in this city says it is community-driven somewhere in its marketing copy. This one is run by volunteers, costs nothing, books the block, and sits on land the block had to win. The distinction is not rhetorical and it cost somebody their August.</p>
 <p class="cn-cover-credit">Cover image: Via Do312</p>`,
@@ -277,17 +321,27 @@ module.exports = [
 <p>The parade that actually rolled was read differently by the people in it. The framing on the route was that the <a href="https://pridechicago.org/faq-and-map/">turned back toward protest</a>. The mood on the route was a community celebrating unity despite attacks, summed up by a line somebody in the crowd was carrying: they <a href="https://pridechicago.org/faq-and-map/">refused to surrender the celebration</a>.</p>
 <p>Those two headlines are the whole tension. An official theme in the register of civic commemoration, and a route full of people who had not come to commemorate anything.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DaJQz5Ex6Fd/embed/" title="Instagram post DaJQz5Ex6Fd" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-28 — <a href="https://www.instagram.com/p/DaJQz5Ex6Fd/" rel="nofollow noopener" target="_blank">@nhlblackhawks via Instagram</a></figcaption></figure>
+${E.instagram('DaJQz5Ex6Fd', {
+  caption: 'Posted 2026-06-28',
+})}
 <h3>Two Movements Marching Together</h3>
 <p>The most consequential thing in the parade was a coalition. The <strong>Gay Liberation Network</strong> and <strong>Organized Communities Against Deportations</strong> marched together, explicitly linking LGBTQ+ organising to immigrant defence.</p>
 <p>In a different year that would read as solidarity in the abstract. In the summer of 2026 it is a specific alliance about a specific thing, formed in the same months that Little Village cancelled its Cinco de Mayo parade for a second year, that <a href="https://www.fiestadelsol.org/blog/fiesta-del-sol-to-ice-community-festivals-should-be-places-of-joy-not-fear">Fiesta del Sol</a> ran with trained response teams, and that El Grito livestreamed its civic ceremony for people afraid to attend in person. Two communities that are policed differently decided to walk the same two miles.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DaJFmdjAezM/embed/" title="Instagram post DaJFmdjAezM" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-28 — <a href="https://www.instagram.com/p/DaJFmdjAezM/" rel="nofollow noopener" target="_blank">@blockclubchi via Instagram</a></figcaption></figure>
+${E.instagram('DaJFmdjAezM', {
+  // Posted by a newsroom this package may not lean on (2). The credit
+  // stands because it is who posted, but their copy is kept out of the
+  // rail. Replacing this with a primary-source post is the real fix.
+  quote: false,
+  caption: 'Posted 2026-06-28',
+})}
 <p>Security around the route was heightened, with barriers installed and CPD officers working days off. A parade that needs that apparatus to proceed is already making the protest argument on its own, whatever the banner over it says.</p>
 <h3>Fifty-Five Years, and the Step-Off Time</h3>
 <p>The smaller change was the clock. The 2026 step-off moved to 11am, earlier than historical practice, and that adjustment was itself news — the latest round in a long negotiation between the parade, the neighborhood it runs through, and the police who manage it. Northalsted absorbs a million people in a day and then goes back to being a residential commercial strip on Monday, and the terms of that arrangement get renegotiated in small increments like an hour on a clock.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DaLOzqwlTuG/embed/" title="Instagram post DaLOzqwlTuG" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-29 — <a href="https://www.instagram.com/p/DaLOzqwlTuG/" rel="nofollow noopener" target="_blank">@diagogiron via Instagram</a></figcaption></figure>
+${E.instagram('DaLOzqwlTuG', {
+  caption: 'Posted 2026-06-29',
+})}
 <p>Fifty-five years is the distance from a Stonewall-era march to a civic mega-event with a theme, a sponsor structure and a street-closure plan. The usual way to tell that story is as progress, and it mostly is. The thing worth noticing about 2026 is that the direction of travel reversed slightly. A parade that had spent decades becoming a celebration spent this June remembering it started as a demonstration.</p>
 <p>Broadway reopened that evening. What the coalition that formed on it does next is the part with a future.</p>
 <p class="cn-cover-credit">Cover image: Via pridechicago.org</p>`,
@@ -321,16 +375,23 @@ module.exports = [
 <h3>The Booking Formula, and the Exception</h3>
 <p>There is a method at work in the headliners. Keri Hilson and Dawn Richard are both 2000s R&amp;B figures whose commercial peaks were managed by labels that did not entirely know what to do with them, and both have been reclaimed with real affection by queer audiences in the years since. Booking them is not nostalgia programming. It is a festival returning artists to the crowd that kept their catalogues alive.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Dbvv-igES9u/embed/" title="Instagram post Dbvv-igES9u" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-07 — <a href="https://www.instagram.com/p/Dbvv-igES9u/" rel="nofollow noopener" target="_blank">@ricwilsonisme via Instagram</a></figcaption></figure>
+${E.instagram('Dbvv-igES9u', {
+  caption: 'Posted 2026-08-07',
+})}
 <p>Myki Meeks won RuPaul’s Drag Race that same season, which is about as timely as a street festival can be. <strong>JORDY</strong> is from Northbrook, which makes a Sunday headline slot on Halsted a local-kid story that the <a href="https://northalsted.com/events/northalsted-market-days-2026/">lineup announcement</a> barely touched.</p>
 <p>The most interesting name, though, is <strong>Ric Wilson</strong> — a Chicago artist whose whole project is the collision of disco, house and rap with explicit organising politics. Putting him on a Saturday stage on Halsted six weeks after the <a href="https://pridechicago.org/faq-and-map/">Pride Parade turned back toward protest</a> is a coherent piece of programming, whether or not anybody planned it that way.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Db37pKzj9aF/embed/" title="Instagram post Db37pKzj9aF" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-10 — <a href="https://www.instagram.com/p/Db37pKzj9aF/" rel="nofollow noopener" target="_blank">@gayruggerbear via Instagram</a></figcaption></figure>
+${E.instagram('Db37pKzj9aF', {
+  caption: 'Posted 2026-08-10',
+})}
 <h3>Half a Mile of Halsted</h3>
 <p>The scale is the thing people outside Chicago get wrong about Market Days. This is the largest street festival in the Midwest, and it is not a stage with stalls around it. It is a closed commercial corridor with 250 businesses and vendors operating along it for three days, in a neighborhood that has spent 43 years learning how to absorb that and then hand the street back.</p>
 <p>The $20 suggested donation is the mechanism that keeps it working, and it is the same quietly load-bearing model that runs most of Chicago’s street fests — a gate that is technically optional, funding a business alliance that has to pay for barricades and insurance. It is worth asking what a suggested donation means at a Pride-season event, where the people most likely to skip it are the people with the least, and the answer is that the model survives because enough people pay anyway.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2076211989771682%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-09 — <a href="https://www.facebook.com/reel/2076211989771682/" rel="nofollow noopener" target="_blank">Rick Guasco via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/2076211989771682/', {
+  caption: 'Posted 2026-08-09',
+  portrait: true,
+})}
 <p>Full details sit with the <a href="https://northalsted.com/events/northalsted-market-days-2026/">Northalsted Business Alliance</a>.</p>
 <p>Two blocks of Halsted in August hold a hundred thousand people, four stages, a Drag Race winner from that season, and a Chicago rapper who sings about organising. The street is back to normal by Tuesday, which is the part that never stops being impressive.</p>
 <p class="cn-cover-credit">Cover image: Via northalsted.com</p>`,

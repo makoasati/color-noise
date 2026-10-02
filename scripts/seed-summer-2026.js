@@ -104,10 +104,17 @@ function validate(a, slug) {
   if (!['review', 'news', 'spotlight'].includes(a.category)) errs.push(`bad category: ${a.category}`)
   if (!['Jude', 'Julian Vane', 'Mora'].includes(a.author_name)) errs.push(`unknown byline: ${a.author_name}`)
 
+  // The house rules in §9 govern Color&Noise's writing. An embed's
+  // cn-embed-quote block is the creator's own caption, harvested verbatim by
+  // scripts/fetch-embed-meta.js, so it is measured out of these checks —
+  // editing someone's punctuation inside quotation marks is not a style fix.
+  // Everything else in the body, embed captions included, still obeys them.
+  const unquoted = a.body.replace(/<blockquote class="cn-embed-quote">[\s\S]*?<\/blockquote>/g, ' ')
+
   if (a.body.includes('data:image'))  errs.push('base64 image in body (§5.1)')
-  if (/\*/.test(a.body))              errs.push('markdown asterisk in body (§6)')
-  if (a.body.includes('!'))           errs.push('exclamation point in body (§9)')
-  if (/\s[,.]/.test(a.body.replace(/<[^>]+>/g, ''))) errs.push('space before punctuation (§9)')
+  if (/\*/.test(unquoted))            errs.push('markdown asterisk in body (§6)')
+  if (unquoted.includes('!'))         errs.push('exclamation point in body (§9)')
+  if (/\s[,.]/.test(unquoted.replace(/<[^>]+>/g, ''))) errs.push('space before punctuation (§9)')
   if (a.body.includes(a.title)) errs.push("title duplicated inside body (2)")
   // §6 retired the 400-650 ceiling. Floor is 400 (380 tolerance for the prose
   // count excluding embed captions); the Long tier tops out at 3,000.
@@ -129,9 +136,13 @@ function validate(a, slug) {
   // The cover-credit line is attribution, not a reference. CC BY and many
   // publisher images REQUIRE a named credit, so it is exempt from the
   // outlet-name ban that applies to the rest of the prose.
+  // An embed's credit and the creator's own caption are attribution and
+  // quotation, so they are exempt alongside the cover credit. Our own
+  // figcaption and cn-embed-note lines are not: those are prose.
   const text = a.body
     .replace(/<p class="cn-cover-credit">[\s\S]*?<\/p>/g, ' ')
-    .replace(/<figcaption>[\s\S]*?<\/figcaption>/g, ' ')
+    .replace(/<p class="cn-embed-credit">[\s\S]*?<\/p>/g, ' ')
+    .replace(/<blockquote class="cn-embed-quote">[\s\S]*?<\/blockquote>/g, ' ')
     .replace(/<[^>]+>/g, ' ')
   for (const n of NEWS_NAMES) {
     if (new RegExp(`\\b${n.replace(/[.*+?^${}()|[\]\\-]/g, '\\$&')}\\b`).test(text)) {

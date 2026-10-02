@@ -38,7 +38,7 @@ module.exports = [
 
 ${E.facebookVideo('https://www.facebook.com/reel/3535499566604042/', {
   caption: 'From inside the crowd, main stage, July 11',
-  credit: 'Ladonna Holliman via Facebook',
+  portrait: true,
 })}
 
 <h3>Earth Song, and Somebody's Son</h3>
@@ -49,7 +49,6 @@ ${E.facebookVideo('https://www.facebook.com/reel/3535499566604042/', {
 
 ${E.instagram('DasdnCPDpTU', {
   caption: 'Five clips from the field, Jackson Park',
-  credit: 'Mashaune Hardy / @budaflycreative via Instagram',
 })}
 
 <h3>What the Park Is</h3>
@@ -64,7 +63,7 @@ ${E.instagram('DasdnCPDpTU', {
 
 ${E.facebookVideo('https://www.facebook.com/reel/2253775948495694/', {
   caption: 'First-person walk through the 36th annual picnic',
-  credit: 'James Brown via Facebook',
+  portrait: true,
 })}
 
 <p class="cn-cover-credit">Cover image: Jackson Park, Chicago / Wikimedia Commons</p>`,
@@ -109,7 +108,6 @@ ${E.facebookVideo('https://www.facebook.com/reel/2253775948495694/', {
 
 ${E.instagram('DbT3j7WJM5P', {
   caption: 'Laila Textiles reads out the cost of a two-day booth',
-  credit: 'Liz Marie Mortensen / @lailatextiles via Instagram',
 })}
 
 <p>That video is the most useful piece of criticism the fair produced this year, and no institution commissioned it. It establishes the real entry requirement, which is not talent but working capital. <strong>Sam</strong> of Stokes Jones Studio drove more than seven hundred miles from South Carolina with her husband Fuller doing the unloading and the parking so that she could build the tent — wooden shelves, mugs, bowls, a sign reading MAGNET TRIO $20. Setup weather was rain. It cleared. One does not make that drive on speculation; one makes it because the Chicago market reliably returns the fuel.</p>
@@ -122,7 +120,6 @@ ${E.instagram('DbT3j7WJM5P', {
 
 ${E.instagram('DbwFWp4pU3f', {
   caption: 'Several hundred ceramic figures, sorted by colour',
-  credit: 'Jenna Bean Ceramics / @jenna.bean.ceramics via Instagram',
 })}
 
 <p>The best object at the fair cost four quarters. <strong>Hadley</strong> operates a red coin-fed vending machine that dispenses one of eight Chicago prints at random for a dollar. A machine that refuses to let you choose is doing something no booth of carefully arranged prints can do, which is to remove taste from the transaction entirely. The wall text, one notes, is a coin slot. It has declined to explain itself.</p>
@@ -135,7 +132,6 @@ ${E.instagram('DbwFWp4pU3f', {
 
 ${E.instagram('DdO8eckO9WR', {
   caption: 'A walk down the September market',
-  credit: '@heycaitlouise via Instagram',
 })}
 
 <p>Renegade returns to Chicago next spring. When the tents begin to blur into one long table of pleasant objects, as they will by the third block, I suggest you find Hadley's vending machine, put in four quarters, accept whatever it gives you, and stand there until you notice that you are holding something you did not select and cannot return. That is the only moment at a craft fair when you are not shopping.</p>
@@ -179,9 +175,11 @@ ${E.instagram('DdO8eckO9WR', {
 
 <p>Further in, the tents started: red, blue, green, running north toward 24th Place. Grilled skewers. Cotton candy. Aguas frescas, mango and piña colada, which is worth saying plainly because a Chinatown street fair in 2026 is also a Mexican-vendor street fair, and nobody on Wentworth appeared to find this remarkable. <strong>Uni Uni Boba</strong> had a bright yellow pop-up under a HANDCRAFT BUBBLE TEA sign with the dispensers lined up and a list of its other locations taped to the counter. The <strong>Illinois Lottery</strong> tent had hung rows of red paper lanterns under its canopy, a small act of set dressing that mostly succeeded.</p>
 
-${E.instagram('DbPsz1FNBcC', {
-  caption: 'Walking in past the dragon wall and under the gate',
-  credit: '@aishinchicago via Instagram',
+${E.instagram('DbQrPWVvzpn', {
+  caption: 'Posted 2026-07-26',
+  // Replaced the dead @aishinchicago walkthrough with this one, which renders.
+  // Credit is the fallback until the next fetch-embed-meta.js run.
+  credit: '@chiwithus',
 })}
 
 <h3>Why It Moved Here</h3>
@@ -198,7 +196,6 @@ ${E.instagram('DbPsz1FNBcC', {
 
 ${E.instagram('DbRuC1sx9bi', {
   caption: 'The gate with the 2026 sponsor banner',
-  credit: '@jaslene.blanca via Instagram',
 })}
 
 <h3>One Block Off the Fair</h3>
@@ -209,7 +206,6 @@ ${E.instagram('DbRuC1sx9bi', {
 
 ${E.instagram('DbRKBs5GTDi', {
   caption: 'A vendor tent from daylight through to night',
-  credit: 'Uni Uni / @uniuni_us via Instagram',
 })}
 
 <p>Chinatown will do this again next July, under the same gate, with a different corporate name in front of it. Forty-seven years in, the neighborhood is not commemorating itself. It is still arriving.</p>

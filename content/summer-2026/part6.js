@@ -1,6 +1,8 @@
 // Dossier #34, #35, #36, #38, #40, #41, #45, #47, #49, #50 — the remaining
 // street fests and the heritage/identity tier.
 
+const E = require('./embeds')
+
 module.exports = [
 
 {
@@ -22,16 +24,22 @@ module.exports = [
 <h3>What the Form Actually Does</h3>
 <p>Start with the function. A street festival needs a crowd that stays and spends, made up largely of people who did not come for the music. Original material asks that crowd to pay attention to something unfamiliar while holding a beer in a street full of distractions. A tribute act asks nothing, and delivers a room where several hundred strangers sing the same song.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYs-GXgkXtf/embed/" title="Instagram post DYs-GXgkXtf" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-24 — <a href="https://www.instagram.com/p/DYs-GXgkXtf/" rel="nofollow noopener" target="_blank">@danneechicago via Instagram</a></figcaption></figure>
+${E.instagram('DYs-GXgkXtf', {
+  caption: 'Posted 2026-05-24',
+})}
 <p>That collective recognition is a real musical experience, not a degraded substitute for one. It is also, incidentally, exactly what happened at the most-discussed moment of Lollapalooza this year, when a string trio played Lily Allen arrangements and the crowd did the singing. The mechanism is identical; only the prestige differs.</p>
 <p>Second, the musicianship is frequently excellent and always underrated. Playing another band’s catalogue accurately, for two hours, outdoors, on a flatbed stage, is difficult work. The players doing it are working musicians earning a living in a city where that is close to impossible, and a tribute circuit is one of the few reliable sources of paid live work left.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYsDcUugF27/embed/" title="Instagram post DYsDcUugF27" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-23 — <a href="https://www.instagram.com/p/DYsDcUugF27/" rel="nofollow noopener" target="_blank">@semevents via Instagram</a></figcaption></figure>
+${E.instagram('DYsDcUugF27', {
+  caption: 'Posted 2026-05-23',
+})}
 <h3>The Honest Criticism</h3>
 <p>None of which means the model is costless. Every tribute slot on a street festival is a slot an original act did not get, and a city whose neighbourhood festivals default to the form is quietly deciding not to invest in its own scene.</p>
 <p>That is why <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Edgewater Music Fest</a> booking 35 original acts in August is genuinely notable, and why <a href="https://www.westtownchamber.org/west-fest-chicago">West Fest</a> handing its booking to the Empty Bottle produces a better festival. Those are chambers of commerce choosing to take a risk on unfamiliar music, and the risk is real.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYuZGZ_lo9X/embed/" title="Instagram post DYuZGZ_lo9X" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-24 — <a href="https://www.instagram.com/p/DYuZGZ_lo9X/" rel="nofollow noopener" target="_blank">@speedstick69 via Instagram</a></figcaption></figure>
+${E.instagram('DYuZGZ_lo9X', {
+  caption: 'Posted 2026-05-24',
+})}
 <p>Belmont-Sheffield does not take it. It opens the season on Memorial Day weekend with songs everybody knows, fills Lakeview, and sends everyone home happy. Produced by Special Events Management, per <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a>.</p>
 <p>The version of this piece that mocks a covers festival writes itself and is worth nothing. A few hundred people in Lakeview singing a chorus together on the first warm weekend of the year is a decent thing that happened, and the musicians got paid.</p>
 <p class="cn-cover-credit">Cover image: Ken Lund from Reno, Nevada, USA / Wikimedia Commons (CC BY-SA 2.0)</p>`,
@@ -63,15 +71,21 @@ module.exports = [
 <h3>Optimism as Municipal Practice</h3>
 <p>This is a specific Chicago habit and it is worth naming. The city’s entire outdoor calendar is an act of collective optimism against a climate that does not reward it. Farmers markets move outdoors in early April. Navy Pier starts its fireworks on May 23. Street festivals begin in the middle of May.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYdTltfmgMJ/embed/" title="Instagram post DYdTltfmgMJ" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-17 — <a href="https://www.instagram.com/p/DYdTltfmgMJ/" rel="nofollow noopener" target="_blank">@jessbeis via Instagram</a></figcaption></figure>
+${E.instagram('DYdTltfmgMJ', {
+  caption: 'Posted 2026-05-17',
+})}
 <p>None of that is warranted by the actual weather. It is warranted by how badly people want it to be over, and a festival on Armitage in mid-May is the purest expression of that impatience. You put out the barricades, you book four local bands, and you find out on the day.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYavMbRjczJ/embed/" title="Instagram post DYavMbRjczJ" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-16 — <a href="https://www.instagram.com/p/DYavMbRjczJ/" rel="nofollow noopener" target="_blank">@relish_brand via Instagram</a></figcaption></figure>
+${E.instagram('DYavMbRjczJ', {
+  caption: 'Posted 2026-05-16',
+})}
 <p>The 2026 season went on to be a wet one. Rain defined <a href="https://www.lollapalooza.com/lineup">Lollapalooza</a> in July, tore up Douglass Park at <a href="https://riotfest.org/">Riot Fest</a> in September, and delayed the Air and Water Show on both of its days. Whoever bet on a May weekend was, in the context of what followed, not obviously wrong.</p>
 <h3>Local Bands on a Residential Block</h3>
 <p>The scale is the other thing. One block of Armitage, local bands, no headliner, no international booking. That is what a street festival looked like before the form scaled up into the $319 three-day event, and a good deal of Chicago’s summer still runs at this size without appearing in any national coverage.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DYezhncRJGt/embed/" title="Instagram post DYezhncRJGt" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-18 — <a href="https://www.instagram.com/p/DYezhncRJGt/" rel="nofollow noopener" target="_blank">@mediawithmae via Instagram</a></figcaption></figure>
+${E.instagram('DYezhncRJGt', {
+  caption: 'Posted 2026-05-18',
+})}
 <p>Lincoln Park hosts the considerably larger <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Taste of Lincoln Avenue</a> in July, forty-two years old and repeatedly fought over by residents. Mayfest is the same neighbourhood at a tenth of the volume and generates none of that friction, which suggests the friction is about amplification rather than closure.</p>
 <p>A block of Armitage, four local bands, and a city deciding in the middle of May that it had waited long enough. The summer that followed was wet, cancelled parades, and torn-up parks. Nobody on Armitage knew that yet, and the barricades went out anyway.</p>`,
   sources: [
@@ -103,16 +117,22 @@ module.exports = [
 <h3>Three German Events, One Neighbourhood</h3>
 <p>Maifest is not the only one. Lincoln Square also produced the Chicago German-American Oktoberfest in September — dates for which also conflict, one listing saying September 11 to 13 and another September 5 to 7, to the point where there may simply be two different Oktoberfests — and the Von Steuben German Day Parade on September 12, running up Lincoln Avenue from Irving Park to Lawrence.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DY_PdVhDtVi/embed/" title="Instagram post DY_PdVhDtVi" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-05-31 — <a href="https://www.instagram.com/p/DY_PdVhDtVi/" rel="nofollow noopener" target="_blank">@jonathanzaragozafoto via Instagram</a></figcaption></figure>
+${E.instagram('DY_PdVhDtVi', {
+  caption: 'Posted 2026-05-31',
+})}
 <p>Three German-identified public events in one neighbourhood in one year. That is a substantial commitment to an identity, and it raises the question of what is being sustained.</p>
 <h3>Branding or Community</h3>
 <p>Lincoln Square’s German character is now largely commercial. A handful of businesses carry it genuinely — the delicatessens, a couple of the restaurants, the shops that have been there for decades — and they are real. The residential population is not meaningfully German in the way it was mid-century, and the streetscape’s Germanness is partly a design decision maintained by a chamber of commerce.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZDNtFCkaI9/embed/" title="Instagram post DZDNtFCkaI9" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-01 — <a href="https://www.instagram.com/p/DZDNtFCkaI9/" rel="nofollow noopener" target="_blank">@n.evii_ via Instagram</a></figcaption></figure>
+${E.instagram('DZDNtFCkaI9', {
+  caption: 'Posted 2026-06-01',
+})}
 <p>The same question applies a few miles east in <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Andersonville</a>, where a Swedish midsummer festival turned sixty this June on a strip that is now one of Chicago’s queerest and most Middle Eastern. Both neighbourhoods perform an ethnic identity that has largely moved out, and both do it well enough that nobody complains.</p>
 <p>There is a generous reading and it is probably the right one. A heritage festival that outlives its original community becomes something else — a neighbourhood tradition rather than an ethnic one — and the people running it are usually the descendants of the institutions rather than opportunists. Beer, a brass band and a closed street in May does not require anybody present to be German.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZBeU0Jlk8QIwXUiQlDC3a-jomDeXIVvxID1KA0/embed/" title="Instagram post DZBeU0Jlk8QIwXUiQlDC3a-jomDeXIVvxID1KA0" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-01 — <a href="https://www.instagram.com/p/DZBeU0Jlk8QIwXUiQlDC3a-jomDeXIVvxID1KA0/" rel="nofollow noopener" target="_blank">@danteewith2es via Instagram</a></figcaption></figure>
+${E.instagram('DZBeU0Jlk8QIwXUiQlDC3a-jomDeXIVvxID1KA0', {
+  caption: 'Posted 2026-06-01',
+})}
 <p>The less generous reading is that "historically German" is doing commercial work on behalf of property values, and that a free festival is a cheap way to maintain a brand.</p>
 <p>Both things are true at once, which is how neighbourhood identity generally works in this city. What is not defensible is that nobody can say for certain which weekend the festival happened on.</p>
 <p class="cn-cover-credit">Cover image: Erstwhile.Human from Ellensburg, Washington, USA / Wikimedia Commons (CC BY-SA 2.0)</p>`,
@@ -147,16 +167,23 @@ module.exports = [
 <h3>Two Economies on One Street</h3>
 <p>The festival is a business-alliance event. It is fenced, programmed, staffed and funded by a gate, and what it produces is a controlled space with booked performers and a bar. The parade is a civic event, unfenced, free, drawing around a million spectators, and what it produces is a street nobody is charging for.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZ5eWMakaZy/embed/" title="Instagram post DZ5eWMakaZy" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-22 — <a href="https://www.instagram.com/p/DZ5eWMakaZy/" rel="nofollow noopener" target="_blank">@_austin.htx via Instagram</a></figcaption></figure>
+${E.instagram('DZ5eWMakaZy', {
+  caption: 'Posted 2026-06-22',
+})}
 <p>Those are different products for different crowds, and both have a case. A ticketed festival can pay drag performers properly, which a free parade cannot, and paying performers is not a trivial consideration in a scene where drag labour has historically been undercompensated. A fence also means security, medical cover and toilets, all of which cost money somebody has to put up.</p>
 <p>But a $20 suggested donation at a Pride event is worth sitting with, because the people most likely to walk past the bucket are the ones with the least, and they are disproportionately the people Pride was originally organised by and for. Queer youth, trans people without stable income, anyone who came in on the Red Line with the fare and not much else.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZyYIJQuHLu/embed/" title="Instagram post DZyYIJQuHLu" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-20 — <a href="https://www.instagram.com/p/DZyYIJQuHLu/" rel="nofollow noopener" target="_blank">@bealchicago via Instagram</a></figcaption></figure>
+${E.instagram('DZyYIJQuHLu', {
+  caption: 'Posted 2026-06-20',
+})}
 <h3>Access, Gatekeeping, or Survival</h3>
 <p>The honest answer is that it is all three, and that the alliance running it does not have a better option. Halsted cannot be closed for a weekend on goodwill. Barricades, permits, insurance and performer fees are real invoices for the <a href="https://northalsted.com/">business alliance</a> that carries them, and a suggested donation is the softest available way to cover them.</p>
 <p>It is also the same model that funds most of this city’s street festivals, from <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Do Division’s $10</a> to Market Days’ own $20 in August. Northalsted alone runs two $20 events a summer on the same blocks.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F876802761553896%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-21 — <a href="https://www.facebook.com/reel/876802761553896/" rel="nofollow noopener" target="_blank">Miz Cracker via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/876802761553896/', {
+  caption: 'Posted 2026-06-21',
+  portrait: true,
+})}
 <p>What made 2026 different is the political weather. The parade a week later turned back toward protest, with the Gay Liberation Network and Organized Communities Against Deportations marching together. A ticketed street party and a protest march are not the same instrument, and this was a year when the difference mattered more than usual.</p>
 <p>Halsted did both inside nine days. One asked for twenty dollars and paid its performers; the other asked for nothing and made an argument. The street can carry both, and in June 2026 it needed to.</p>
 <p class="cn-cover-credit">Cover image: Via northalsted.com</p>`,
@@ -190,16 +217,22 @@ module.exports = [
 <h3>The Geography of Pride in a Segregated City</h3>
 <p>Chicago’s official Pride happens in Northalsted, on the North Side, in a neighbourhood whose commercial gay identity was built substantially around white gay men. That is not an accusation, it is a description of how the strip developed, and it has consequences for who feels addressed by a parade that runs down it.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DabNPTnmlaU/embed/" title="Instagram post DabNPTnmlaU" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-05 — <a href="https://www.instagram.com/p/DabNPTnmlaU/" rel="nofollow noopener" target="_blank">@summer_destallion via Instagram</a></figcaption></figure>
+${E.instagram('DabNPTnmlaU', {
+  caption: 'Posted 2026-07-05',
+})}
 <p>A Black Pride on the South Side is the answer to a practical problem: a queer Black Chicagoan on the South or West Side has to travel a considerable distance, into a neighbourhood that is not theirs, to attend the city’s main Pride event. Pride South Side removes that journey.</p>
 <p>The venue reinforces it. Holding the event at the DuSable — the oldest independent Black history museum in the country — places Black queer life inside the institution that holds Black Chicago’s historical record, rather than adjacent to it. That is a curatorial argument as much as a logistical one.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DabywbBnPw0/embed/" title="Instagram post DabywbBnPw0" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-06 — <a href="https://www.instagram.com/p/DabywbBnPw0/" rel="nofollow noopener" target="_blank">@stephanieschwartzphoto via Instagram</a></figcaption></figure>
+${E.instagram('DabywbBnPw0', {
+  caption: 'Posted 2026-07-06',
+})}
 <h3>Why the Week Later Matters</h3>
 <p>The scheduling is the sharpest part. A separate date means nobody has to choose, and it means the event is not positioned as an alternative or a spillover. It stands on its own week.</p>
 <p>It also means the city gets two Prides and mostly notices one. The <a href="https://pridechicago.org/faq-and-map/">the parade</a> in 2026 was extensive and good, and rightly focused on the turn back toward protest and the coalition between the Gay Liberation Network and Organized Communities Against Deportations. Pride South Side, in its eighth year, received a line in <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">a listings page</a>.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DaZHsaMFYL3/embed/" title="Instagram post DaZHsaMFYL3" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-05 — <a href="https://www.instagram.com/p/DaZHsaMFYL3/" rel="nofollow noopener" target="_blank">@secondcityoutlaws via Instagram</a></figcaption></figure>
+${E.instagram('DaZHsaMFYL3', {
+  caption: 'Posted 2026-07-05',
+})}
 <p>The same pattern runs through this whole summer. Washington Park also hosted the <a href="https://aihusa.org/">African Festival of the Arts</a> over Labor Day weekend, in its 36th year, and the finish of the Bud Billiken Parade in August. Three significant events on one piece of South Side parkland, and coverage that sorted itself by distance from the Loop.</p>
 <p>Eight years of a free Black Pride at the DuSable. Why it exists is the article, and the answer is a map of Chicago.</p>
 <p class="cn-cover-credit">Cover image: User:TonyTheTiger / Wikimedia Commons (CC BY-SA 3.0)</p>`,
@@ -234,16 +267,24 @@ module.exports = [
 <h3>A Community That Built Monuments to Stay</h3>
 <p>Paseo Boricua is a half-mile stretch of Division Street bracketed by two enormous steel Puerto Rican flags, erected as permanent public sculpture. They were not put there to decorate a commercial strip. They were put there to make a claim, in steel, at a scale that cannot be quietly removed, about who this street belongs to.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1394219386090229%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-12 — <a href="https://www.facebook.com/reel/1394219386090229/" rel="nofollow noopener" target="_blank">Alie Outsidee via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1394219386090229/', {
+  caption: 'Posted 2026-06-12',
+  portrait: true,
+})}
 <p>That is anti-displacement architecture, and it is a genuinely unusual strategy. Most communities facing displacement organise around rents, zoning and tenant protections — legal instruments that can be reversed by a different council. Humboldt Park’s Puerto Rican community also built something physical and immovable, on the reasonable theory that a fifty-nine-foot flag is harder to repeal than an ordinance.</p>
 <p>Whether it worked is the hard question. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Humboldt Park</a>’s Puerto Rican population has fallen substantially, and the flags now span a strip where the community they announce is a smaller share of the residents than when they went up. A monument can hold a claim without holding a population.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1107361802470427%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-14 — <a href="https://www.facebook.com/reel/1107361802470427/" rel="nofollow noopener" target="_blank">JB Pritzker via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1107361802470427/', {
+  caption: 'Posted 2026-06-14',
+  portrait: true,
+})}
 <h3>What the Festival Does About That</h3>
 <p>Which gives the festival a function beyond celebration. Four days of vendors, rides and a parade between the flags is an annual reassertion — the street performing its own identity for people who may have moved to Belmont Cragin or out of the city entirely and come back for it.</p>
 <p>That is what a diaspora festival inside a diaspora looks like, and it is not unique. The <a href="https://www.silverroomblockparty.com/">Silver Room Block Party</a> did something structurally similar in July, drawing people back to an event that had itself relocated. <a href="https://www.fiestadelsol.org/blog/fiesta-del-sol-to-ice-community-festivals-should-be-places-of-joy-not-fear">Fiesta del Sol</a> in Pilsen did it in July under considerably worse pressure.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZgg4uagThx/embed/" title="Instagram post DZgg4uagThx" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-13 — <a href="https://www.instagram.com/p/DZgg4uagThx/" rel="nofollow noopener" target="_blank">@allieidrac via Instagram</a></figcaption></figure>
+${E.instagram('DZgg4uagThx', {
+  caption: 'Posted 2026-06-13',
+})}
 <p>The gate price is worth a note and a caution. Admission started at $18.18, and the figure is widely read as a reference to Puerto Rican history. That reading is plausible and almost certainly intentional, but the organisers do not appear to have stated it publicly, so it should not be asserted as fact without confirmation.</p>
 <p>Two steel flags, half a mile apart, and a parade that passes under both. Whatever happens to the rents on Division Street, somebody will have to physically cut those down.</p>
 <p class="cn-cover-credit">Cover image: Via hoodline.com</p>`,
@@ -278,17 +319,24 @@ module.exports = [
 <h3>It Started for Paperboys</h3>
 <p>The parade was founded in 1929 by <strong>Robert Abbott</strong>, the publisher of the <em>Chicago Defender</em>, and named after a fictional Defender mascot. It was created so that the Black newsboys who sold his paper would have a day of their own.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/Dby46_PGI9q/embed/" title="Instagram post Dby46_PGI9q" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-08 — <a href="https://www.instagram.com/p/Dby46_PGI9q/" rel="nofollow noopener" target="_blank">@chicagosmayor via Instagram</a></figcaption></figure>
+${E.instagram('Dby46_PGI9q', {
+  caption: 'Posted 2026-08-08',
+})}
 <p>Sit with the scale of that. The Defender was the paper that told Black Southerners to come north and helped drive the Great Migration that built Bronzeville. Its publisher looked at the children distributing it on Chicago streets and decided they deserved a parade. Almost a century later that gesture is a televised half-million-person civic event, and the drill teams marching in it are from the same schools those newsboys would have attended.</p>
 <p>There is no other parade in America with that provenance. It was not founded by a city, a chamber of commerce or an ethnic association. It was founded by a newspaper for its own child labour force, and it outlived the newspaper’s heyday by decades.</p>
 <h3>Back to School Is the Frame</h3>
 <p>The organising idea is still the children. Bud Billiken is Chicago’s Black back-to-school celebration, held in the first half of August, built around drill teams and school marching bands, and for a great many CPS students it is the event that marks the end of summer.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbyecBBEx82/embed/" title="Instagram post DbyecBBEx82" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-08 — <a href="https://www.instagram.com/p/DbyecBBEx82/" rel="nofollow noopener" target="_blank">@jbpritzker via Instagram</a></figcaption></figure>
+${E.instagram('DbyecBBEx82', {
+  caption: 'Posted 2026-08-08',
+})}
 <p>That is a serious piece of civic infrastructure and it explains the parade’s durability better than nostalgia does. A parade that a school band prepares for all year is not an optional cultural amenity; it is a fixture in an academic calendar, with adults organising around it because children are counting on it.</p>
 <p>LisaRaye McCoy as grand marshal fits the pattern of a parade that has always used recognisable Chicago figures to hold the attention of an audience that is fundamentally local. The <a href="https://www.budbillikenparade.org/">parade organisers</a> took it citywide.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1022030604028643%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-08-08 — <a href="https://www.facebook.com/reel/1022030604028643/" rel="nofollow noopener" target="_blank">Choose Chicago via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1022030604028643/', {
+  caption: 'Posted 2026-08-08',
+  portrait: true,
+})}
 <p>Washington Park had a busy year — the <a href="https://aihusa.org/">African Festival of the Arts</a> over Labor Day weekend, Pride South Side at the DuSable in July. Details on the parade sit with the <a href="https://www.budbillikenparade.org/">organisers</a> and <a href="https://www.choosechicago.com/blog/special-events/bud-billiken-parade-2026/">Choose Chicago</a>.</p>
 <p>Ninety-seven years from a publisher’s gesture to his paperboys. The hundredth is in 2029, and somebody should be planning the coverage now.</p>
 <p class="cn-cover-credit">Cover image: Via abc7chicago.com</p>`,
@@ -324,17 +372,25 @@ module.exports = [
 <h3>Forty-Six Years Is the Evidence</h3>
 <p>A neighbourhood fair does not run for forty-six consecutive years on sentiment. It runs because there are enough businesses on the strip to fund it, enough residents to fill it, and enough continuity of organisation to renew the permits, and all three of those have held here while comparable neighbourhoods elsewhere lost them.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1012743984880221%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-26 — <a href="https://www.facebook.com/reel/1012743984880221/" rel="nofollow noopener" target="_blank">Illinois Secretary of State via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1012743984880221/', {
+  caption: 'Posted 2026-07-26',
+  portrait: true,
+})}
 <p>The reasons are worth understanding rather than celebrating vaguely: Chinatown expanded physically south and west rather than being contained, the Red Line runs through it, and the housing stock around it stayed within reach of the families arriving. Growth was possible, so it happened.</p>
 <p>That makes the fair a slightly different object than the other heritage festivals in this package. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Andersonville’s Midsommarfest</a> turned sixty this June on a street whose Swedish population largely left. Lincoln Square runs three German events a year in a neighbourhood whose German identity is now mostly commercial. Chinatown’s fair is thrown by the community it names, for the community it names, and the community is getting larger.</p>
 <h3>The Generational Menu Split</h3>
 <p>The food framing gives away the more interesting tension. Describing the offering as traditional <em>and</em> contemporary is a chamber of commerce acknowledging that its own strip contains two different eating publics — the restaurants that have been there for decades doing Cantonese, and the newer places doing regional Chinese cooking and things aimed at a younger, often non-Chinese clientele.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DbTWtT_GUpb/embed/" title="Instagram post DbTWtT_GUpb" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-27 — <a href="https://www.instagram.com/p/DbTWtT_GUpb/" rel="nofollow noopener" target="_blank">@cbcacchicago via Instagram</a></figcaption></figure>
+${E.instagram('DbTWtT_GUpb', {
+  caption: 'Posted 2026-07-27',
+})}
 <p>That split is the actual news on Wentworth and it is playing out in storefronts rather than at a festival. A fair that puts both on one street for a weekend is documenting a negotiation that the neighbourhood is having with itself about what it serves and who to.</p>
 <p>The lion dances and kung fu demonstrations, meanwhile, are doing the same work that the arts demonstrations do at <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Ginza Holiday</a> in Old Town — transmitting technique in public, to people who do not have it, which is how such things continue to exist.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2928034820865370%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-25 — <a href="https://www.facebook.com/reel/2928034820865370/" rel="nofollow noopener" target="_blank">Rampadora Ghen via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/2928034820865370/', {
+  caption: 'Posted 2026-07-25',
+  portrait: true,
+})}
 <p>The <a href="https://chicagochinatown.org/map-guide-for-summer-events-2026/">Chamber’s own guide</a> carries the full programme.</p>
 <p>Forty-six years on Wentworth, and a neighbourhood that has spent those decades doing the opposite of what every other American Chinatown did.</p>
 <p class="cn-cover-credit">Cover image: Via secretchicago.com</p>`,
@@ -371,18 +427,26 @@ module.exports = [
 <p>The DuSable is the oldest independent Black history museum in the country, and a Juneteenth programme there is a curated, institutional act. It has staff, a building, an archive, and a mandate to interpret. What it offers is context — the holiday explained, placed and documented.</p>
 <p>King Drive is a block party in its sixth year. It has organisers rather than curators, and what it offers is the thing itself: people on a street, on a Saturday, marking the day in the neighbourhood the Great Migration built.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DZ1HeDujdw3/embed/" title="Instagram post DZ1HeDujdw3" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-21 — <a href="https://www.instagram.com/p/DZ1HeDujdw3/" rel="nofollow noopener" target="_blank">@fellowshipchicago via Instagram</a></figcaption></figure>
+${E.instagram('DZ1HeDujdw3', {
+  caption: 'Posted 2026-06-21',
+})}
 <p>Neither is the superior version. The museum can tell you what Juneteenth means and cannot fill a street. The block party fills the street and does not need to explain itself to anybody standing on it. A city with both is better served than a city with either.</p>
 <h3>Five Years as a Federal Holiday</h3>
 <p>The wider question is what federal recognition has done. Juneteenth became a federal holiday in 2021, and 2026 is the fifth observance under that status. The honest assessment is mixed.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1315703733562900%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-19 — <a href="https://www.facebook.com/reel/1315703733562900/" rel="nofollow noopener" target="_blank">Rep. Melanie Stansbury via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1315703733562900/', {
+  caption: 'Posted 2026-06-19',
+  portrait: true,
+})}
 <p>Recognition brought funding, civic programming and a day off for some workers. It also brought corporate observance, which has a documented tendency to flatten a commemoration into a marketing window, and it shifted some of the programming initiative away from the community organisations that sustained the holiday for over a century before any government took an interest.</p>
 <p>What is striking about the Chicago version is that both of this year’s observances were free and neither was corporate. A museum and a block association did it, on consecutive days, which suggests the local infrastructure absorbed federal recognition without surrendering to it.</p>
 <h3>Bronzeville Tying It to Father’s Day</h3>
 <p>The King Drive event’s Father’s Day recognition is the detail worth keeping. Juneteenth and Father’s Day fall close together, and a neighbourhood choosing to combine them is making a local decision about what the weekend is for — emancipation and Black fatherhood in the same afternoon, in a neighbourhood whose men are more often the subject of civic hand-wringing than of celebration.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1357311873130898%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-06-19 — <a href="https://www.facebook.com/reel/1357311873130898/" rel="nofollow noopener" target="_blank">Michelle Williams via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1357311873130898/', {
+  caption: 'Posted 2026-06-19',
+  portrait: true,
+})}
 <p>Bronzeville ran a dense summer: <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the Smooth Jazz Festival</a> on King Drive in August, Black and Bronze at Armstrong Park, and the <a href="https://www.budbillikenparade.org/">Bud Billiken Parade</a> finishing in Washington Park. The <a href="https://aihusa.org/">African Festival of the Arts</a> followed over Labor Day weekend.</p>
 <p>Two Juneteenths, both free, a mile apart, on the 19th and the 20th. Whoever scheduled them that way did the city a favour.</p>
 <p class="cn-cover-credit">Cover image: Unknown authorUnknown author / Wikimedia Commons (Public domain)</p>`,
@@ -417,18 +481,30 @@ module.exports = [
 <p>Chicago’s default Fourth is Navy Pier — fireworks over the lake, an enormous crowd, and an experience in which nobody participates in anything. You watch, you leave, you spend two hours getting home. It is a fine evening and it is entirely passive.</p>
 <p>A neighbourhood parade is the opposite proposition. Children ride bicycles with streamers in the spokes. A school marching band plays slightly out of tune. Somebody’s uncle drives a convertible. The audience is the same people as the participants, and the whole thing takes ninety minutes and ends in a park.</p>
 
-<figure class="cn-embed" data-platform="instagram"><iframe src="https://www.instagram.com/p/DaYInBGx5pn/embed/" title="Instagram post DaYInBGx5pn" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:820px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-04 — <a href="https://www.instagram.com/p/DaYInBGx5pn/" rel="nofollow noopener" target="_blank">@baichwalabc7 via Instagram</a></figcaption></figure>
+${E.instagram('DaYInBGx5pn', {
+  // Posted by a newsroom this package may not lean on (2). The credit
+  // stands because it is who posted, but their copy is kept out of the
+  // rail. Replacing this with a primary-source post is the real fix.
+  quote: false,
+  caption: 'Posted 2026-07-04',
+})}
 <p>That format is almost extinct in large American cities and it survives in Hyde Park partly because of what Hyde Park is: a neighbourhood with an unusually strong civic self-image, a university at its centre, and a long habit of organising its own institutions rather than waiting for the city.</p>
 <h3>Two Kinds of Patriotism in One Summer</h3>
 <p>The comparison worth drawing is with the summer’s other patriotic programming, because 2026 put three very different versions of it on the calendar.</p>
 <p>The <a href="https://www.grantparkmusicfestival.com/2026-concerts/">Grant Park Music Festival</a> programmed its season around America 250 and ran its annual Independence Day Salute with a professional orchestra in a Gehry bandshell — patriotism as concert repertoire. Hyde Park did it with a drill team and a bike parade. And in September, El Grito livestreamed its civic ceremony honouring Mexican Independence so that people too frightened of immigration enforcement to stand in a downtown park could still take part.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1344804340351348%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-04 — <a href="https://www.facebook.com/reel/1344804340351348/" rel="nofollow noopener" target="_blank">LO Pez via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/1344804340351348/', {
+  caption: 'Posted 2026-07-04',
+  portrait: true,
+})}
 <p>Those three events describe the range of what a national celebration meant in this city this year, and the distance between the third and the first two is the thing to sit with.</p>
 <h3>Hyde Park’s Particular Self-Regard</h3>
 <p>It should be said that Hyde Park’s civic confidence is occasionally insufferable and mostly earned. The neighbourhood runs the oldest juried art fair in the city on <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">57th Street</a>, a free jazz festival that hit its twentieth year in September, and a Fourth of July parade, all substantially volunteer-run.</p>
 
-<figure class="cn-embed" data-platform="facebook"><iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2024028064860259%2F&amp;show_text=false" title="Facebook video" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="width:100%;max-width:560px;height:620px;border:none;display:block;margin:0 auto"></iframe><figcaption>Posted 2026-07-04 — <a href="https://www.facebook.com/reel/2024028064860259/" rel="nofollow noopener" target="_blank">Bob Mike via Facebook</a></figcaption></figure>
+${E.facebookVideo('https://www.facebook.com/reel/2024028064860259/', {
+  caption: 'Posted 2026-07-04',
+  portrait: true,
+})}
 <p>That is three durable free institutions in one neighbourhood, and the <a href="https://hydeparkjazzfestival.org/">jazz festival</a> alone is more musically serious than most ticketed events in this package.</p>
 <p>Kids on bikes, a band, and a park on 53rd Street. No fireworks, no crowd control, nobody stuck on Lake Shore Drive at eleven at night.</p>
 <p class="cn-cover-credit">Cover image: TonyTheTiger / Wikimedia Commons (CC BY 4.0)</p>`,
