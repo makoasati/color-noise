@@ -177,9 +177,6 @@ ${E.instagram('DdO8eckO9WR', {
 
 ${E.instagram('DbQrPWVvzpn', {
   caption: 'Posted 2026-07-26',
-  // Replaced the dead @aishinchicago walkthrough with this one, which renders.
-  // Credit is the fallback until the next fetch-embed-meta.js run.
-  credit: '@chiwithus',
 })}
 
 <h3>Why It Moved Here</h3>
@@ -219,7 +216,7 @@ ${E.instagram('DbRKBs5GTDi', {
   ],
   photos: [
     { slot: 'cover', subject: 'Wentworth Avenue, Chinatown', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Chicago_Chinatown_Wentworth_Avenue.jpg', credit: 'Wikimedia Commons' },
-    { slot: 'body-1', subject: 'Entrance walkthrough', source: 'Instagram — @aishinchicago', license: 'EMBED', contact: 'https://www.instagram.com/reel/DbPsz1FNBcC/', credit: '@aishinchicago via Instagram' },
+    { slot: 'body-1', subject: 'Entrance walkthrough', source: 'Instagram — @chiwithus', license: 'EMBED', contact: 'https://www.instagram.com/p/DbQrPWVvzpn/', credit: '@chiwithus via Instagram' },
     { slot: 'body-2', subject: 'Paifang gate with sponsor banner', source: 'Instagram — @jaslene.blanca', license: 'EMBED', contact: 'https://www.instagram.com/p/DbRuC1sx9bi/', credit: '@jaslene.blanca via Instagram' },
     { slot: 'body-3', subject: 'Vendor tent, day to night', source: 'Instagram — @uniuni_us', license: 'EMBED', contact: 'https://www.instagram.com/p/DbRKBs5GTDi/', credit: 'Uni Uni via Instagram' },
     { slot: 'upgrade', subject: 'Lion dance and kung fu demonstration', source: 'Chicago Chinatown Chamber of Commerce', license: 'ASK', contact: 'Chamber, plus the performing troupes’ own accounts', credit: 'Courtesy Chicago Chinatown Chamber of Commerce' },
