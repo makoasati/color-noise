@@ -30,3 +30,10 @@ next-*.out.log
 # Next.js
 /.next
 /out
+
+# Scraped social post data — ~16 MB of third-party content.
+# Regenerate: node scripts/build-event-files.js (reads "event scrape/")
+event scrape/
+research/posts/
+research/events.json
+research/social-raw/
