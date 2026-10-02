@@ -2,6 +2,7 @@
 // Usage:  node scripts/seed-summer-2026.js            (insert/update as published)
 //         node scripts/seed-summer-2026.js --draft    (insert/update as draft)
 //         node scripts/seed-summer-2026.js --dry-run  (print, touch nothing)
+//         node scripts/seed-summer-2026.js --only=D11,D62  (just those refs)
 //
 // Requires .env.local with NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.
 // This script reads those itself — no credential needs to be pasted anywhere.
@@ -14,6 +15,8 @@ const ARTICLES = require('../content/summer-2026')
 const DRAFT   = process.argv.includes('--draft')
 const DRY_RUN = process.argv.includes('--dry-run')
 const CHECK   = process.argv.includes('--check')
+const ONLY    = (process.argv.find(x => x.startsWith('--only=')) || '').replace('--only=', '')
+  .split(',').map(x => x.trim()).filter(Boolean)
 
 const supabaseUrl    = process.env.NEXT_PUBLIC_SUPABASE_URL
 const serviceRoleKey = process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -106,7 +109,9 @@ function validate(a, slug) {
   if (a.body.includes('!'))           errs.push('exclamation point in body (§9)')
   if (/\s[,.]/.test(a.body.replace(/<[^>]+>/g, ''))) errs.push('space before punctuation (§9)')
   if (a.body.includes(a.title)) errs.push("title duplicated inside body (2)")
-  if (words < 380 || words > 680)     errs.push(`body ${words} words, outside 400-650 (§6)`)
+  // §6 retired the 400-650 ceiling. Floor is 400 (380 tolerance for the prose
+  // count excluding embed captions); the Long tier tops out at 3,000.
+  if (words < 380 || words > 3100)    errs.push(`body ${words} words, outside the 400-3,000 range (§6)`)
 
   const links = (a.body.match(/<a /g) || []).length
   if (links < 3)                      errs.push(`only ${links} outbound links, need 3+ (§7)`)
@@ -176,14 +181,28 @@ async function preflight() {
 async function main() {
   if (CHECK) return preflight()
 
-  console.log(`\nColor&Noise — summer 2026 package: ${ARTICLES.length} articles`)
+  // Without --only, a bare run publishes the whole package. That is rarely what
+  // you want once the package is bigger than the batch you just reviewed.
+  const selected = ONLY.length ? ARTICLES.filter(a => ONLY.includes(a.ref)) : ARTICLES
+  if (ONLY.length) {
+    const missing = ONLY.filter(r => !ARTICLES.some(a => a.ref === r))
+    if (missing.length) {
+      console.error(`\nNo article with ref: ${missing.join(', ')}\n`)
+      process.exit(1)
+    }
+  }
+
+  console.log(`\nColor&Noise — summer 2026 package: ${selected.length} of ${ARTICLES.length} articles`)
+  if (ONLY.length) console.log(`Filter: --only=${ONLY.join(',')}`)
   console.log(`Mode: ${DRY_RUN ? 'DRY RUN' : DRAFT ? 'insert as DRAFT' : 'insert as PUBLISHED'}\n`)
 
   const rows = []
   let bad = 0
 
-  for (const a of ARTICLES) {
-    const slug = slugify(a.title)
+  for (const a of selected) {
+    // A rewrite keeps the slug it was first saved under (§2), even when the
+    // title changes, so the URL stays alive and no duplicate row is created.
+    const slug = a.slug || slugify(a.title)
     const errs = validate(a, slug)
     if (errs.length) {
       bad++

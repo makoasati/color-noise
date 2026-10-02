@@ -13,6 +13,7 @@ module.exports = [
 
 {
   ref: 'D11',
+  slug: 'the-chosen-few-picnic-made-room-for-juke',  // rewrite: keep the published URL
   title: 'Thirty-Six Years of House, and the Year Juke Got a Slot',
   category: 'review',
   author_name: 'Jude',
@@ -69,10 +70,8 @@ ${E.facebookVideo('https://www.facebook.com/reel/2253775948495694/', {
 <p class="cn-cover-credit">Cover image: Jackson Park, Chicago / Wikimedia Commons</p>`,
   sources: [
     { name: 'Chosen Few DJs', url: 'https://chosenfewdjs.com/' },
-    { name: 'The TRiiBE — on the juke and ghetto house expansion', url: 'https://thetriibe.com/2026/07/chosen-few-djs-broadened-their-2026-picnic-to-celebrate-ghetto-house-and-juke/' },
-    { name: 'Chicago Reader — photos by Ashley Chappell', url: 'https://chicagoreader.com/music/music-feature/chosen-few-picnic-festival-house-photos/' },
-    { name: 'Hyde Park Herald', url: 'https://www.hpherald.com/evening_digest/36-years-in-chosen-few-picnic-still-packs-jackson-park/article_64439d8a-842a-4fd4-9666-f2a006f7d68d.html' },
-    { name: '5 Magazine — lineup', url: 'https://5mag.net/calendar/festivals/chosen-few-picnic-lineup-music-festival-2026/' },
+    { name: 'Special Events Management — the picnic', url: 'https://chicagoevents.com/event/the-chosen-few-old-school-reunion-picnic/' },
+    { name: 'Chicago Park District — Jackson Park', url: 'https://www.chicagoparkdistrict.com/parks-facilities/jackson-park' },
   ],
   photos: [
     { slot: 'cover', subject: 'Jackson Park parkland', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Jackson_Park_Chicago_1.jpg', credit: 'Jackson Park, Chicago / Wikimedia Commons' },
@@ -85,6 +84,7 @@ ${E.facebookVideo('https://www.facebook.com/reel/2253775948495694/', {
 
 {
   ref: 'D62',
+  slug: 'renegade-craft-turned-twenty-three-in-the-city-that-made-it',  // rewrite: keep the published URL
   title: 'The $1,065 Booth: Renegade Craft on Division Street',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -144,7 +144,7 @@ ${E.instagram('DdO8eckO9WR', {
   sources: [
     { name: 'Renegade Craft — Chicago', url: 'https://www.renegadecraft.com/city/chicago/' },
     { name: 'Renegade Craft — Chicago Fall', url: 'https://www.renegadecraft.com/event/chicago-fall/' },
-    { name: 'Time Out Chicago', url: 'https://www.timeout.com/chicago/shopping/renegade-craft-fair-1' },
+    { name: 'Renegade Craft — Chicago Spring', url: 'https://www.renegadecraft.com/event/chicago-spring/' },
     { name: 'Choose Chicago — markets and fashion events', url: 'https://www.choosechicago.com/articles/shopping-and-fashion/chicago-shopping-markets-fashion-events/' },
   ],
   photos: [
@@ -158,6 +158,7 @@ ${E.instagram('DdO8eckO9WR', {
 
 {
   ref: 'D47',
+  slug: 'chicagos-chinatown-is-growing-and-the-summer-fair-is-the-proof',  // rewrite: keep the published URL
   title: 'Under the Paifang: Chinatown’s 47th Summer Fair on Wentworth',
   category: 'news',
   author_name: 'Mora',
@@ -216,7 +217,7 @@ ${E.instagram('DbRKBs5GTDi', {
 <p class="cn-cover-credit">Cover image: Wentworth Avenue, Chinatown / Wikimedia Commons</p>`,
   sources: [
     { name: 'Chicago Chinatown Chamber of Commerce — summer events guide', url: 'https://chicagochinatown.org/map-guide-for-summer-events-2026/' },
-    { name: 'Secret Chicago', url: 'https://secretchicago.com/46th-chinatown-summer-fair-returns-to-chicagos-wentworth-avenue-summer-2026/' },
+    { name: 'Choose Chicago — Chinatown Summer Fair', url: 'https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/' },
     { name: 'Special Events Management', url: 'https://chicagoevents.com/event/chinatown-summer-fair/' },
     { name: 'Chicago Parent', url: 'https://www.chicagoparent.com/things-to-do/chinatown-summer-fair-chicago' },
   ],
