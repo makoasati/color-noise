@@ -1,0 +1,88 @@
+# Chicago 2026 events — eyewitness social posts
+
+Total: **3053 posts** across **82 events** (68 events at 40/40).
+Each file is a JSON array of {event_id, event_name, post_url, platform, username, post_created_at, caption_snippet}.
+Sources: Facebook, Instagram, Threads. Official/promo accounts filtered where identifiable.
+
+- ✅ D1 Lollapalooza: **40** — `D1_lollapalooza.json`
+- ⚠️ D2 Riot Fest: **17** — `D2_riotfest.json`
+- ✅ D3 Sueños Music Festival: **40** — `D3_suenos.json`
+- ✅ D4 Lyrical Lemonade Summer Smash: **40** — `D4_summersmash.json`
+- ✅ D5 ARC Music Festival: **40** — `D5_arc.json`
+- ✅ D6 North Coast Music Festival: **40** — `D6_northcoast.json`
+- ✅ D7 Beyond Wonderland: **40** — `D7_beyondwonderland.json`
+- ✅ D8 Warm Love Cool Dreams: **40** — `D8_warmlovecooldreams.json`
+- ⚠️ D9 Michelada Fest: **0** — `D9_micheladafest.json`
+- ✅ D10 Windy City Smokeout: **40** — `D10_smokeout.json`
+- ✅ D11 Chosen Few Picnic: **40** — `D11_chosen_few_picnic.json`
+- ✅ D12 Silver Room Block Party: **40** — `D12_silver_room_block_party.json`
+- ✅ D13 Chicago House Music Festival: **40** — `D13_chicago_house_music_festival.json`
+- ✅ D14 West Fest Chicago: **40** — `D14_west_fest_chicago.json`
+- ✅ D15 Bronzeville Smooth Jazz Festival: **40** — `D15_bronzeville_smooth_jazz_festival.json`
+- ✅ D16 Black & Bronze: Bronzeville Music Fest: **40** — `D16_black_and_bronze_bronzeville_music_fest.json`
+- ✅ D17 Englewood Jazz Festival: **40** — `D17_englewood_jazz_festival.json`
+- ✅ D18 Chicago Blues Festival: **40** — `D18_chicago_blues_festival.json`
+- ✅ D19 Gospel Music Festival: **40** — `D19_gospel_music_festival.json`
+- ⚠️ D20 Chicago Jazz Festival: **37** — `D20_chicago_jazz_festival.json`
+- ✅ D21 SummerDance: **40** — `D21_summerdance.json`
+- ✅ D22 Grant Park Music Festival: **40** — `D22_grant_park_music_festival.json`
+- ✅ D23 Millennium Park Summer Music Series: **40** — `D23_millennium_park_summer_music_series.json`
+- ✅ D24 Summer Film Series: **40** — `D24_summer_film_series.json`
+- ✅ D25 Do Division: **40** — `D25_do_division.json`
+- ✅ D26 Midsommarfest: **40** — `D26_midsommarfest.json`
+- ✅ D27 Wicker Park Fest: **40** — `D27_wicker_park_fest.json`
+- ✅ D28 Square Roots: **40** — `D28_square_roots.json`
+- ✅ D29 Logan Square Arts Fest: **40** — `D29_logan_square_arts_fest.json`
+- ✅ D30 Taste of Lincoln Ave: **40** — `D30_taste_of_lincoln_ave.json`
+- ✅ D31 Edgewater Music Fest: **40** — `D31_edgewater_music_fest.json`
+- ✅ D32 Retro on Roscoe: **40** — `D32_retro_on_roscoe.json`
+- ✅ D33 Glenwood Ave Arts Fest: **40** — `D33_glenwood_ave_arts_fest.json`
+- ✅ D34 Belmont-Sheffield: **40** — `D34_belmont_sheffield.json`
+- ✅ D35 Lincoln Park Mayfest: **40** — `D35_lincoln_park_mayfest.json`
+- ✅ D36 Maifest: **40** — `D36_maifest.json`
+- ✅ D37 Chicago Pride Parade: **40** — `D37_chicago_pride_parade.json`
+- ✅ D38 Pride Fest: **40** — `D38_pride_fest.json`
+- ✅ D39 Market Days: **40** — `D39_market_days.json`
+- ✅ D40 Pride South Side: **40** — `D40_pride_south_side.json`
+- ✅ D41 Puerto Rican Fest + People's Day Parade: **40** — `D41_puerto_rican_fest.json`
+- ✅ D42 Fiesta del Sol: **40** — `D42_fiesta_del_sol.json`
+- ⚠️ D43 Villapalooza: **38** — `D43_villapalooza.json`
+- ✅ D44 El Grito + 26th St Parade: **40** — `D44_el_grito.json`
+- ✅ D45 Bud Billiken Parade: **40** — `D45_bud_billiken_parade.json`
+- ✅ D46 African Festival of the Arts: **40** — `D46_african_festival_of_the_arts.json`
+- ✅ D47 Chinatown Summer Fair: **40** — `D47_chinatown_summer_fair.json`
+- ⚠️ D48 Ginza Holiday: **12** — `D48_ginza_holiday.json`
+- ✅ D49 Juneteenth: **40** — `D49_juneteenth.json`
+- ✅ D50 4th on 53rd: **40** — `D50_4th_on_53rd.json`
+- ✅ D51 Taste of Chicago: **40** — `d51_taste_of_chicago.json`
+- ⚠️ D52 Taste of Randolph: **28** — `d52_taste_of_randolph.json`
+- ✅ D53 Ribfest: **40** — `d53_ribfest.json`
+- ✅ D54 Roscoe Village Burger Fest: **40** — `d54_roscoe_village_burger_fest.json`
+- ✅ D55 Tacos y Tamales: **40** — `d55_tacos_y_tamales.json`
+- ✅ D56 Italian Beef Fest: **40** — `d56_italian_beef_fest.json`
+- ⚠️ D57 Lakeview Taco Fest: **33** — `d57_lakeview_taco_fest.json`
+- ✅ D58 Panda Fest: **40** — `d58_panda_fest.json`
+- ⚠️ D59 Taste of Greektown: **30** — `d59_taste_of_greektown.json`
+- ⚠️ D60 Randolph Street Market: **36** — `D60_randolph_street_market.json`
+- ⚠️ D61 Maxwell Street Market: **31** — `D61_maxwell_street_market.json`
+- ✅ D62 Renegade Craft: **40** — `D62_renegade_craft.json`
+- ✅ D63 Old Town Art Fair: **40** — `D63_old_town_art_fair.json`
+- ⚠️ D64 57th Street Art Fair: **20** — `D64_57th_street_art_fair.json`
+- ✅ D66 Air & Water Show: **40** — `D66_air_water_show.json`
+- ✅ D67 Navy Pier Fireworks: **40** — `D67_navy_pier_fireworks.json`
+- ✅ D68 Ravinia: **40** — `D68_ravinia.json`
+- ✅ D69 Hyde Park Jazz Fest: **40** — `D69_hyde_park_jazz_fest.json`
+- ✅ D72 World Music Festival Chicago: **40** — `D72_world_music_festival.json`
+- ✅ D73 Chicago Exhibition Week: **40** — `D73_chicago_exhibition_week.json`
+- ✅ D74 EXPO Chicago: **40** — `D74_expo_chicago.json`
+- ✅ D75 Barely Fair: **40** — `D75_barely_fair.json`
+- ⚠️ D76 Neighbors: **20** — `D76_neighbors.json`
+- ✅ D77 The Other Art Fair: **40** — `D77_other_art_fair.json`
+- ✅ D78 2nd Fridays: **40** — `D78_2nd_fridays.json`
+- ✅ D79 3rd Fridays Open Studios: **40** — `D79_3rd_fridays.json`
+- ✅ D80 Pilsen Open Studios: **40** — `D80_pilsen_open_studios.json`
+- ✅ D81 Comfort Station: **40** — `D81_comfort_station.json`
+- ✅ D82 Elastic Arts: **40** — `D82_elastic_arts.json`
+- ⚠️ D83 MCA — Dancing the Revolution: **31** — `D83_mca_dancing_revolution.json`
+- ✅ D85 Hyde Park Art Center — Ground Floor: **40** — `D85_hyde_park_art_center_ground_floor.json`
+- ⚠️ D86 Chicago Art Book Fair: **0** — `D86_chicago_art_book_fair.json`
