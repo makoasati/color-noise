@@ -421,7 +421,11 @@ ${E.instagram('Dc6aYfhBKQv', {
 
 {
   ref: 'D22',
-  title: 'Ben Folds Fronted the Grant Park Orchestra for Nothing',
+  // Retitled: this is the season piece, and the old title named one July
+  // concert — which collided with D112, the review of that night. Slug is
+  // pinned to the original so the published URL survives (§2).
+  slug: 'ben-folds-fronted-the-grant-park-orchestra-for-nothing',
+  title: 'Ninety Years of Free Orchestra on the Millennium Park Lawn',
   category: 'review',
   author_name: 'Jude',
   date: '2026-08-18',
