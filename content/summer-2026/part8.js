@@ -134,7 +134,9 @@ ${E.instagram('DdO8eckO9WR', {
   caption: 'A walk down the September market',
 })}
 
-<p>Renegade returns to Chicago next spring. When the tents begin to blur into one long table of pleasant objects, as they will by the third block, I suggest you find Hadley's vending machine, put in four quarters, accept whatever it gives you, and stand there until you notice that you are holding something you did not select and cannot return. That is the only moment at a craft fair when you are not shopping.</p>
+<p>By the third block the tents blur into one long table of pleasant objects, and the shoppers stop reading signage entirely — they scan a booth, decide in under two seconds, and move. The exception was Hadley's vending machine, where people queued four deep for a dollar print they could not choose, and stood looking at whatever it gave them for far longer than they had looked at anything they selected themselves.</p>
+
+<p>This is not a market pretending to be an exhibition. It is a manufacturing sector that has learned to retail itself two days at a time.</p>
 
 <p class="cn-cover-credit">Cover image: Flatiron Arts Building, Wicker Park / w_lemay via Wikimedia Commons</p>`,
   sources: [

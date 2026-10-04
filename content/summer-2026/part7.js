@@ -133,9 +133,6 @@ ${E.instagram('DZ2s_eilfmF', {
 <p>Worth remembering what Randolph did for a living. This was the wholesale food district — meat, produce, loading docks, refrigerated trucks at four in the morning. Restaurant Row is built in the shell of the infrastructure that fed the city’s restaurants rather than being one.</p>
 
 ${E.instagram('DZ3TMOSlOOW', {
-  // Replaced the dead @brianfromthepit post with this one, which renders.
-  // Credit is the fallback until the next fetch-embed-meta.js run.
-  credit: '@digitalmarketingmind',
   caption: 'Posted 2026-06-21',
 })}
 <p>That transition happened fast and it displaced businesses that had operated for generations. Some of the purveyors moved out to the suburbs or to Fulton Market’s western edges; some closed. The buildings stayed, the loading bays got glazed, and the neighbourhood now sells thirty-dollar plates where it once sold pallets.</p>

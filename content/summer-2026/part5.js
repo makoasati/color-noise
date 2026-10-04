@@ -182,9 +182,6 @@ ${E.instagram('DZjVKQEnHJJ', {
 <p>Worth noting the scale, because it gets lost behind the folk-costume photographs. Five stages is more than most ticketed festivals in this package managed. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">Do Division</a> ran two. Riot Fest ran five and charged $319.</p>
 
 ${E.instagram('DZgj9NAFrBL', {
-  // Replaced the dead @veronicaeye post with this one, which renders.
-  // Credit is the fallback until the next fetch-embed-meta.js run.
-  credit: '@becky.in.chicago',
   caption: 'Posted 2026-06-13',
 })}
 <p>A $10-suggested neighbourhood festival programming five stages for three days is doing a genuine amount of booking, funded by a chamber of commerce and a voluntary gate. The Andersonville Chamber has been running this operation for six decades and it is among the most competently produced street festivals in the city.</p>

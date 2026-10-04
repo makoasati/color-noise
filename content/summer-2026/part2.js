@@ -76,9 +76,6 @@ ${E.facebookVideo('https://www.facebook.com/reel/1330686959273147/', {
 <p>He moved for the arithmetic. A Hyde Park block party cost up to <strong>$300,000</strong> to produce, and the two-day Oakwood Beach edition ran past <strong>$1 million</strong>. Williams shut the event down after years of carrying that, and the 2026 return is built on a venue that already has fencing, power, bars, security and insurance. <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the organisers</a> reported the outcome plainly: a smaller crowd, and a profit. He has already committed to the Salt Shed for 2027.</p>
 
 ${E.instagram('Da_UatYlqYa', {
-  // Replaced the dead @sea_of_indigo post with this one, which renders.
-  // Credit is the fallback until the next fetch-embed-meta.js run.
-  credit: '@jusjordanchicago',
   caption: 'Posted 2026-07-19',
 })}
 <h3>The Story Is Not a Betrayal</h3>
@@ -245,9 +242,6 @@ ${E.instagram('DcZjV-Ph3mc', {
 <p>A free all-day gathering in a Little Village park in August 2026 was therefore not a neutral act, and the volunteers who put it on knew that. The youth-vendor component reads differently in that light too. Handing a table to a teenager from the neighborhood, in public, in that specific August, is a decision about who gets to be visible.</p>
 
 ${E.instagram('DcY4dqeDp6C', {
-  // Replaced the dead @q101chicago post with this one, which renders.
-  // Credit is the fallback until the next fetch-embed-meta.js run.
-  credit: '@maestramendoza',
   caption: 'Posted 2026-08-23',
 })}
 <p>Details sit on the <a href="https://www.villapalooza.org/">festival’s own site</a> and on <a href="https://do312.com/events/2026/8/22/villapalooza-tickets">Do312</a>. There is no press office, because there is no staff.</p>
