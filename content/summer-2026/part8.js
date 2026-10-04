@@ -207,7 +207,7 @@ ${E.instagram('DbRKBs5GTDi', {
   caption: 'A vendor tent from daylight through to night',
 })}
 
-<p>Chinatown will do this again next July, under the same gate, with a different corporate name in front of it. Forty-seven years in, the neighborhood is not commemorating itself. It is still arriving.</p>
+<p><strong>Joshua Escobar Ware</strong> came to Chinatown Square on the Saturday and got his photograph taken standing beside the monk in the orange robe. He captioned it as having come for guidance, and he was back in the crowd on Wentworth twenty minutes later.</p>
 
 <p class="cn-cover-credit">Cover image: Wentworth Avenue, Chinatown / Wikimedia Commons</p>`,
   sources: [
