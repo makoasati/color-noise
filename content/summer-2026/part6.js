@@ -64,7 +64,7 @@ ${E.instagram('DYuZGZ_lo9X', {
   venue: '1000 block of W. Armitage Ave',
   neighborhood: 'Lincoln Park',
   featured: false,
-  cover_image: '',
+  cover_image: "https://commons.wikimedia.org/wiki/Special:FilePath/View_of_South_Pond,_Lincoln_Park,_Chicago,_Illinois.jpg",
   excerpt: 'The genuinely first street festival of the 2026 calendar, two weeks ahead of Do Division, on a block of Armitage in the middle of May. Chicago optimism as a civic practice.',
   body: `<p>Lincoln Park Mayfest ran May 15 to 17 on the 1000 block of West Armitage with live music from local bands. It was the earliest street festival on the 2026 calendar — a full two weeks before Do Division, which gets called the season opener and is not.</p>
 <p>Mid-May in Chicago is a gamble and everybody involved knows it. The lake is still cold enough to generate its own weather, the wind off it has not warmed, and a festival in the third week of May is betting on a forecast that has no business being trusted.</p>

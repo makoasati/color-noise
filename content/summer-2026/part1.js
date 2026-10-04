@@ -35,6 +35,10 @@ ${E.instagram('DbhPY58ldhf', {
   // Replacing the embed with a festival or attendee post is the real fix.
   quote: false,
 })}
+${E.instagram('DbeIC1elruO', { caption: 'Four days, documented by an attendee', credit: '@madzgoetz' })}
+
+${E.instagram('DblwRCfkoaH', { caption: 'The weekend in photographs', credit: '@gettyentertainment' })}
+
 <h3>The Phones Were the Real Complaint</h3>
 <p>The dominant grievance across the weekend was not the weather. It was recording devices. Sightlines blocked by hundreds of raised phones. People declining to dance, sing or clap under what amounted to a panopticon of cameras. Audrey Hobert’s second performance earned a particular kind of praise, and the reason was simply that the crowd in front of her put their phones away.</p>
 <p>Elsewhere the festival felt draining between sets built for brand activations. Headliner campers were indifferent or actively rude to earlier acts. Teenagers talked through sets. A bag of urine went over a crowd. Against all of that, <strong>Turnstile</strong>’s pit was the weekend’s counterexample for the opposite reason: fans checked on people who fell.</p>

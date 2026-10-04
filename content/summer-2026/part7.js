@@ -214,7 +214,7 @@ ${E.instagram('DZScB2KlJa_', {
   venue: '2000 W. Belmont Ave',
   neighborhood: 'Roscoe Village',
   featured: false,
-  cover_image: '',
+  cover_image: "https://commons.wikimedia.org/wiki/Special:FilePath/Belmont_Avenue_at_the_North_Branch_Chicago_River.jpg",
   excerpt: 'Live music and a best-burger competition on Belmont Avenue, in a city with strong and largely unexamined convictions about how much char a burger is supposed to have.',
   body: `<p>Roscoe Village Burger Fest took 2000 West Belmont in mid-July with live music and a best-burger competition, on a $10 suggested donation. The end date is unsettled: <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> has it as the 17th to the 19th, <a href="https://www.choosechicago.com/articles/festivals-special-events/chicago-festival-event-guide/">the published calendars</a> as the 17th to the 18th.</p>
 <h3>The Char Is a Regional Position</h3>
@@ -415,7 +415,7 @@ ${E.instagram('DcTpjVURl56', {
   venue: 'Upper Hutchinson Field, Grant Park',
   neighborhood: 'The Loop',
   featured: false,
-  cover_image: '',
+  cover_image: "https://commons.wikimedia.org/wiki/Special:FilePath/Chicago_Grant_Park_night_pano.jpg",
   excerpt: 'A ticketed Asian food and culture festival on Grant Park parkland, a month after Chinatown ran its 46th Summer Fair for free on its own street. The contrast does the work.',
   body: `<p>Panda Fest ran August 28 to 30 on Upper Hutchinson Field in Grant Park, tickets from $12.79, an Asian food and culture festival. A month earlier the <a href="https://chicagochinatown.org/map-guide-for-summer-events-2026/">Chinatown Summer Fair</a> closed Wentworth Avenue for its forty-sixth year, free, run by the Chicago Chinatown Chamber of Commerce.</p>
 <p>Two events about Asian food in one Chicago summer, and the difference between them is the entire subject.</p>

@@ -271,7 +271,7 @@ ${E.instagram('DcY4dqeDp6C', {
   venue: 'Little Village',
   neighborhood: 'Little Village',
   featured: true,
-  cover_image: '',
+  cover_image: "https://commons.wikimedia.org/wiki/Special:FilePath/26th_Street,_Armour_Square,_Chicago,_IL_(54837889834).jpg",
   excerpt: 'For the second year running, Little Village’s Cinco de Mayo parade was called off over fears of immigration raids — ending, for now, a run the Cermak Road Chamber of Commerce kept going for 40 years.',
   body: `<p>There was no Cinco de Mayo parade in Little Village this year. There was none last year either. The Cermak Road Chamber of Commerce, which had run it for <strong>40 years</strong>, and Casa Puebla pulled it over fears of immigration raids, and a four-decade tradition is now two years into an absence that nobody is calling permanent and nobody is calling temporary.</p>
 <p>A calendar of Chicago’s summer ought to include the things that did not take place, because in 2026 the cancellations tell you more than the lineups do.</p>
