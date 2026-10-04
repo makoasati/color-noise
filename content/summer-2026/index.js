@@ -2,7 +2,7 @@
 // clusters expanded, plus the Cinco de Mayo absence. Consumed by
 // scripts/seed-summer-2026.js
 const parts = []
-for (let i = 1; i <= 12; i++) {
+for (let i = 1; i <= 24; i++) {
   try { parts.push(...require('./part' + i)) } catch (e) {
     if (e.code !== 'MODULE_NOT_FOUND') throw e
   }
