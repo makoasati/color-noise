@@ -89,11 +89,17 @@ const EVENTS = [
   // ─────────────────────────────────────────────────────────────── HARRIS
   ev('Georgian National Ballet "Sukhishvili"', 'art', '2026-10-20', null, 'harris', 'sukhi',
     'The Georgian National Ballet on its US tour, dancing to original live music from its own orchestra of rare instruments. Listed by the Harris as a Visiting Company date; the Chicago stop sits between Seattle (Oct 18) and New York (Oct 24).', '8:00 PM'),
+  one('2026-10-01', 'Desinight 2026', 'art', 'harris', 'harris',
+    "AIA Chicago's annual design awards — the profession's own ceremony for Chicago buildings, naming project, emerging-talent and lifetime honours.", '6:00 PM'),
+  one('2026-10-03', 'TEDxChicago: We The People', 'art', 'harris', 'harris',
+    'A day of talks and performances on civic life, under the banner We The People.', '10:00 AM'),
   one('2026-10-14', 'Swan Lake: Symphony of Lights', 'art', 'harris', 'harris'),
   one('2026-10-15', 'The Main Squeeze', 'music', 'harris', 'harris'),
   one('2026-10-16', 'Red Line Jazz Festival', 'music', 'harris', 'harris'),
   one('2026-10-17', 'Michael Douglas', 'art', 'harris', 'harris', 'An evening with the actor.'),
   one('2026-10-19', 'Vivaldi & Beyond', 'music', 'harris', 'harris'),
+  one('2026-10-21', 'GMMTV Fanday 38: Force & Book', 'music', 'harris', 'harris',
+    'Force Jiratchapong and Book Kasidet of the Thai studio GMMTV, on their first US date — a fan event rather than a theatre booking.', '6:00 PM'),
   one('2026-10-22', 'Beyond the Aria: Lawrence Brownlee, Christian Van Horn, Alexis Peart', 'music', 'harris', 'harris'),
   one('2026-10-26', '3Arts Awards Celebration', 'art', 'harris', 'harris', 'Annual awards for Chicago artists in the performing, visual and media arts.'),
   one('2026-10-27', 'Piano Trios: Beethoven, Smetana, Dvořák', 'music', 'harris', 'harris'),
@@ -331,6 +337,14 @@ const datesOverlap = (a, b) => {
 // Distinct events the overlap heuristic mistakes for each other: the three
 // Nutcrackers, two Beyond the Aria nights, the Messiah/Muti December weeks.
 // Each verified by hand against the calendar.
+// Titles that bypass the collision check, because a same-night, similarly-named
+// booking elsewhere in the calendar would otherwise swallow them.
+//
+// WARNING: this list is why the script is NOT idempotent. Everything in it
+// inserts unconditionally, so a second --commit run duplicates every FORCE'd
+// row that already landed on the first. Three of them (both Nutcrackers and the
+// November Beyond the Aria) are already in the calendar. Clear the entries that
+// have been inserted before re-running, or insert new rows on their own.
 const FORCE = new Set([
   'The Nutcracker (Ballet Chicago)',
   'The Nutcracker: Symphony of Lights',
