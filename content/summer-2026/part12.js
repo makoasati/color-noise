@@ -74,7 +74,7 @@ ${E.instagram('DbWJ0AWpFV5', { caption: 'A grandmother and granddaughter spend t
   title: 'A Seven-Year-Old Had a Stall at Maxwell Street in September',
   category: 'news',
   author_name: 'Mora',
-  date: '2026-09-29',
+  date: '2026-09-15',
   event_dates: 'Sundays: May 17, June 7, July 19, August 9 and September 13, 2026',
   venue: 'Maxwell Street at Union Avenue',
   neighborhood: 'Near West Side',
