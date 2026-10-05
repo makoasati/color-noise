@@ -37,3 +37,10 @@ event scrape/
 research/posts/
 research/events.json
 research/social-raw/
+
+# One-off Supabase probe scripts — hidden with a leading dot, written to
+# answer a single question against the live DB and not meant to persist.
+scripts/.*.js
+
+# Local dev-server config for the Claude Code browser pane (machine-specific port).
+.claude/launch.json
