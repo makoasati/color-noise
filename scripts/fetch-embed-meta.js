@@ -115,10 +115,16 @@ function embedsFromContent() {
   for (const f of fs.readdirSync(CONTENT)) {
     if (!f.endsWith('.js')) continue
     const src = fs.readFileSync(path.join(CONTENT, f), 'utf8')
-    for (const m of src.matchAll(/E\.instagram\(\s*'([^']+)'\s*,\s*\{([\s\S]*?)\n\}\)/g)) {
+    // Calls are written both ways in these files — one line for the short
+    // ones, several for anything carrying a comment — so the argument object
+    // is matched by "no braces inside" rather than by where its closing
+    // brace sits. An earlier version required a newline before `})` and
+    // silently skipped 119 single-line calls, which then rendered at the
+    // fallback aspect with a hand-written credit.
+    for (const m of src.matchAll(/E\.instagram\(\s*'([^']+)'\s*,\s*\{([^{}]*)\}\s*\)/g)) {
       if (!instagram.has(m[1])) instagram.set(m[1], { credit: creditFrom(m[2]), file: f })
     }
-    for (const m of src.matchAll(/E\.facebookVideo\(\s*'([^']+)'\s*,\s*\{([\s\S]*?)\n\}\)/g)) {
+    for (const m of src.matchAll(/E\.facebookVideo\(\s*'([^']+)'\s*,\s*\{([^{}]*)\}\s*\)/g)) {
       if (!facebook.has(m[1])) facebook.set(m[1], { credit: creditFrom(m[2]), file: f })
     }
   }

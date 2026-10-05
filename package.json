@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "embeds": "node scripts/fetch-embed-meta.js",
+    "embeds:check": "node scripts/fetch-embed-meta.js --check"
   },
   "dependencies": {
     "@supabase/ssr": "^0.5.2",

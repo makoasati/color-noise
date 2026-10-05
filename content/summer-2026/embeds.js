@@ -111,6 +111,38 @@ function aspectBox(ratioPercent, chromePx) {
   return `padding-bottom:calc(${ratioPercent}% + ${chromePx}px)`
 }
 
+// Width of the media column, matching the grid track in app/globals.css.
+const MEDIA_WIDTH = 300
+
+// WHY THE STRUCTURAL STYLES ARE INLINE AND NOT ONLY IN CSS:
+// Article bodies are stored HTML in Supabase and ship independently of the
+// stylesheet. On 2026-10-05 bodies were seeded while app/globals.css was
+// still uncommitted, and every embed on the live site rendered as a 300x150
+// default iframe parked at the top of a tall empty box: the padding-bottom
+// travelled with the content, the rules that turn it into an aspect box did
+// not. So everything load-bearing is inline now, where it cannot be
+// separated from the markup it describes.
+//
+// WHY THERE ARE TWO NESTED DIVS:
+// Percentage padding resolves against the containing block's width, not the
+// element's own. One div capped at max-width:300px still measured its
+// padding against the 560px column around it and came out 325px too tall.
+// The outer div fixes the width; the inner one turns that width into the
+// aspect box. Both are needed, and the inner div keeps the cn-embed-media
+// class so bodies seeded before this change still match the stylesheet.
+const IFRAME_STYLE = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block'
+
+function mediaBox(frame, layout, inner) {
+  const col = layout === 'side' ? `width:100%;max-width:${MEDIA_WIDTH}px` : 'width:100%'
+  return (
+    `<div class="cn-embed-col" style="${col}">` +
+      `<div class="cn-embed-media" style="position:relative;width:100%;height:0;${frame}">` +
+        inner +
+      `</div>` +
+    `</div>`
+  )
+}
+
 // Every embed carries a visible credit line with a live permalink, so the
 // attribution outlives the iframe even if the platform stops serving it.
 //
@@ -128,9 +160,8 @@ function figure({
   if (!credit)  throw new Error(`Embed missing credit: ${src}`)
 
   const media =
-    `<div class="cn-embed-media" style="${frame}">` +
-      `<iframe src="${esc(src)}" title="${esc(title)}" loading="lazy" frameborder="0" scrolling="no" allowfullscreen></iframe>` +
-    `</div>`
+    mediaBox(frame, layout,
+      `<iframe src="${esc(src)}" title="${esc(title)}" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="${IFRAME_STYLE}"></iframe>`)
 
   const side =
     `<div class="cn-embed-side">` +
@@ -240,5 +271,5 @@ function accountLink(handle, url, platform) {
 
 module.exports = {
   instagram, tiktok, youtube, facebookVideo, accountLink,
-  ALLOWED_HOSTS, IG_CHROME, IG_BROKEN_HEIGHT,
+  ALLOWED_HOSTS, IG_CHROME, IG_BROKEN_HEIGHT, MEDIA_WIDTH,
 }

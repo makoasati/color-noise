@@ -16,11 +16,11 @@ Field names are exact, from [components/ArticleEditor.js:18](../../components/Ar
 |---|---|---|
 | `title` | **Yes** (enforced) | See §2 |
 | `excerpt` | **Yes** (enforced) | See §4 |
-| `author_name` | **Yes** | Must be an existing byline: `Jude`, `Julian Vane`, `Mora`. Never `admin` — see §14. |
-| `category` | **Yes** | `review` → Heard · `news` → Around · `spotlight` → Seen. Must match the author's beat. |
+| `author_name` | **Yes** | Must be an existing byline: `Jude`, `Julian Vane`, `Mora`, `Gus`. Never `admin` — see §14. |
+| `category` | **Yes** | `review` → Heard · `news` → Around · `spotlight` → Seen · `food` → Savored. Must match the author's beat. |
 | `date` | **Yes** | See §3 |
 | `neighborhood` | **Yes** | Pick from the existing list in the combo box. Do not invent a new spelling of an existing neighborhood. |
-| `venue` | Yes for Heard and Seen | Optional for Around only when the neighborhood *is* the subject |
+| `venue` | Yes for Heard, Seen and Savored | Optional for Around only when the neighborhood *is* the subject. For Savored, drop it only when the subject is a corridor rather than a site. |
 | `cover_image` | **Yes** | See §5 |
 | `body` | **Yes** | See §6 |
 | `featured` | No | Editor's call |
@@ -100,6 +100,18 @@ Where a licensed photograph cannot be obtained, an embedded post is an acceptabl
 - **Verify before shipping.** Instagram returns HTTP 200 for missing posts, so a status check is not proof. Confirm the payload contains real post content.
 - Embed captions are excluded from the body word count. They are body text, not writing.
 
+**How an embed is laid out and sized.** Rewritten 2026-10-02, after the first pass shipped every Instagram post as a flat `height:820px` iframe with `scrolling="no"`, which cut the post off partway down the like/comment row.
+
+- **Run `npm run embeds` after adding or changing any embed.** It reads the posts out of the content files and records what the platforms say about each one in `content/summer-2026/embed-meta.json`: the media aspect that sizes the frame, the account that posted, and the caption. Nothing renders until it has run. `npm run embeds:check` fails if the layout data has gone stale.
+- **Never give a social iframe a pixel height.** Instagram's embed does not post its height to the parent window, so nothing can measure it at runtime. The helper puts it in a box of `padding-bottom: calc(<aspect>% + <chrome>px)` instead, which is exact at every column width.
+- **The frame is deliberately narrow (300px).** An Instagram embed carries 204px of its own header, buttons and footer whatever size you draw it, so column width is the only lever on how tall the thing ends up. Widening it costs height.
+- **The reading matter sits beside the frame, not under it.** Our caption, the creator's own caption, the like and comment counts, and the credit all render in a side rail. Landscape video (`layout: 'wide'`) keeps them underneath.
+- **The credit is the account that posted, and it is never typed by hand.** Instagram names the account in the embed document and Facebook puts the page at the end of the reel's `og:title`; `fetch-embed-meta.js` reads both, and the helper renders what it read. This is not a style preference. Of the embeds in this package, one Instagram post was credited to a festival when it belonged to a newsroom, and seven Facebook reels were credited to `unknown` — a hand-written credit drifts from the post and nothing catches it.
+- **Pass `credit` only as a fallback for a post the platform no longer serves**, where there is no account left to read. Say so in a comment at the call site: that credit is unverifiable until the embed is replaced.
+- **The creator's caption is quoted, not paraphrased.** `fetch-embed-meta.js` harvests it from `/embed/captioned/`, trims trailing hashtags, and cuts it to an excerpt. Because it is quotation, the `cn-embed-quote` block is exempt from the §9 punctuation rules — the seed script measures it out. Nothing else in a figure is exempt.
+- **`npm run embeds` is also the embed health check.** It exits non-zero on a post the platform will no longer render, and on a hand-written fallback credit that does not name the account that posted. Both are reported, neither is auto-fixed: replacing a dead embed is an editorial decision.
+- **A dead embed is recorded as `null`** and rendered as a short card rather than a tall empty frame. That is damage control, not a fix. Replace it.
+
 **Known code gap:** `cover_credit` and `cover_alt` are recorded in the content files but there are no such columns in `articles`, so the seed script drops them. They are documentation until the schema gains those fields — see §14.
 
 ### 5.3 Placement
@@ -111,18 +123,17 @@ Where a licensed photograph cannot be obtained, an embedded post is an acceptabl
 
 ## 6. Body
 
-- **Length: no upper cap.** The old 400–650 ceiling is retired. Pick a form and commit to it:
+- **Length: 350–1,500 words, two tiers.** The old 400–650 ceiling is retired.
 
-  | Form | Words |
-  |---|---|
-  | Dispatch / Notice / Walk | 400–700 |
-  | Standard | 700–1,500 — **the default** |
-  | Long | 1,500–3,000 |
+  | Tier | Words | |
+  |---|---|---|
+  | Short — *Dispatch* (Heard) / *Notice* (Seen) / *Walk* (Around) / *Counter* (Savored) | 350–700 | One room, one idea |
+  | Full — *Standard* | 700–1,500 | **The default** |
 
-  **400 words is still the floor.** Length is earned by reporting, not by prose: more words means more stops, more names, more numbers, more hours on site. A 2,000-word piece built from a 500-word visit is worse than the 500-word piece. The per-byline skills in `.claude/skills/` define the form tiers and the reporting each one requires.
+  **1,500 is a hard ceiling and 350 is a hard floor.** Length is bought with reporting, not prose: more words means more names, more numbers, more hours on site. A padded 1,100 is worse than a tight 500. The per-byline skills in `.claude/skills/` define what reporting each tier requires and which techniques are affordable at which length.
 - **Paragraphs: 3–6 sentences.** No one-sentence paragraphs used for drama.
-- **Subheads:** optional, `<h3>`, 2–5 words. Use them if the piece has discrete parts (acts, sections, artists). Do not use them to break up 400 words of continuous argument. If you use one, use at least three.
-- **Bold is for waypoints, not emphasis** — venue and business names (Around), artist names (Seen), act and song labels (Heard). Never bold a sentence for intensity.
+- **Subheads:** optional, `<h3>`, 2–5 words. Use them if the piece has discrete parts (acts, sections, artists). Do not use them to break up a Short piece of continuous argument. If you use one, use at least three.
+- **Bold is for waypoints, not emphasis** — venue and business names (Around), artist names (Seen), act and song labels (Heard), dish names (Savored). Never bold a sentence for intensity.
 - **Every proper noun gets its full form once**, then a short form. `The Old Town School of Folk Music` → `Maurer Hall`. `Kate Sierzputowski`, not `Sierzputowski` on first mention.
 - **Diacritics are mandatory and must be checked:** `Nausicaä`, `Élisabeth Louise Vigée Le Brun`, `Anticonquista Café`, `Nuevo Leon Bakery`. Copy them from the institution's own page, not from memory.
 - Song and exhibition titles in quotes; album, book, and film titles in italics. **Italics via the editor's italic button — never `*asterisks*`.** *(Live violation: the Hisaishi piece renders `*Nausicaä of the Valley of the Wind*` and `*My Neighbor Totoro*` with literal asterisks on the page. Markdown pasted into a rich-text field does not become italics; it becomes garbage.)*
@@ -263,7 +274,7 @@ IMAGES
 [ ] article does not end on an image
 
 BODY
-[ ] word count matches a declared form (400–700 dispatch / 700–1,500 standard / 1,500–3,000 long), floor 400
+[ ] word count within tier: 350–700 Short or 700–1,500 Full. Nothing over 1,500
 [ ] event date stated in the body, tense unambiguous
 [ ] 3+ outbound links, all resolving, link text = the thing's name
 [ ] title does NOT appear inside the body

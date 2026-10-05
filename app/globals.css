@@ -61,6 +61,47 @@ a { color: inherit; }
 .cn-article-body li { margin-bottom: 0.2em; }
 .cn-article-body li p { margin: 0; }
 .cn-article-body img { max-width: 100%; height: auto; display: block; margin: 1em 0; border-radius: 4px; }
+/* A contact sheet of the food, four across. Every cell is cropped to one
+   aspect so the grid reads as a grid; the label under each is what the thing
+   is, because a photograph of a donut cannot say which stall it came from. */
+.cn-photo-grid { margin: 1.4em 0; }
+.cn-grid-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.cn-grid-item { min-width: 0; }
+.cn-grid-item img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  margin: 0 0 6px;
+  border-radius: 4px;
+}
+.cn-grid-item span {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12.5px;
+  line-height: 1.35;
+  color: #555555;
+}
+.cn-photo-grid figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 12px 0 0;
+}
+.cn-photo-credit {
+  display: block;
+  font-size: 13.5px;
+  color: #777777;
+  margin-top: 2px;
+}
+@media (max-width: 560px) {
+  .cn-grid-items { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+}
+
 .cn-article-body a { color: #2D4DFF; text-decoration: none; }
 .cn-article-body span[style] { font-size: inherit; }
 .cn-editor-body span[style] { font-size: inherit; }
@@ -154,4 +195,113 @@ a { color: inherit; }
 /* ── Mobile article card title ── */
 @media (max-width: 767px) {
   .cn-card-title { font-size: clamp(18px, 5vw, 22px) !important; }
+}
+
+/* ── Embedded social posts ──
+   Built by content/summer-2026/embeds.js. Two columns: the platform iframe on
+   the left, the reading matter on the right. The iframe is never given a
+   pixel height — its wrapper carries padding-bottom: calc(<aspect>% + <chrome>px),
+   so the frame is exact at any column width and nothing gets clipped. The
+   media column is deliberately narrow; an Instagram embed brings ~248px of
+   its own furniture, so width is the only lever on overall height. */
+.cn-embed {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+  margin: 1.6em 0;
+  padding: 0;
+}
+.cn-embed[data-layout="wide"] { grid-template-columns: minmax(0, 1fr); }
+
+/* embeds.js writes these structural declarations inline as well, because
+   article bodies ship from the database and the stylesheet does not travel
+   with them. The duplication is deliberate: it keeps bodies seeded before
+   that change rendering correctly. Change both or neither.
+
+   cn-embed-col fixes the width; cn-embed-media turns that width into the
+   aspect box. Percentage padding resolves against the containing block, so
+   the two cannot be collapsed into one element. */
+.cn-embed-col { min-width: 0; max-width: 300px; }
+.cn-embed[data-layout="wide"] .cn-embed-col { max-width: none; }
+.cn-embed-media {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  height: 0;              /* height comes entirely from padding-bottom */
+  background: #FFFFFF;
+  border: 1px solid #E4DED1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+.cn-embed-media iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.cn-embed-side { min-width: 0; }
+.cn-embed-side > * + * { margin-top: 10px; }
+.cn-embed-side figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+.cn-embed-note {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5A5A5A;
+}
+
+/* The post's own caption, harvested from /embed/captioned/. The type selector
+   is load-bearing: it matches the specificity of `.cn-article-body blockquote`
+   so this rule, coming later in the file, wins the red rule and the italics
+   that pull-quotes get. */
+blockquote.cn-embed-quote {
+  margin: 0;
+  padding: 10px 0 0;
+  border-left: none;
+  border-top: 1px solid #E4DED1;
+  font-style: normal;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #5A5A5A;
+  overflow-wrap: break-word;
+}
+.cn-embed-stats {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.cn-embed-stats a { color: #5A5A5A; border-bottom: 1px solid #E4DED1; }
+.cn-embed-label {
+  display: block;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: #8A8A8A;
+  margin-bottom: 2px;
+}
+.cn-embed-credit {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #8A8A8A;
+}
+.cn-embed-credit a { color: #2D4DFF; }
+
+/* Stack below the point where a 300px media column stops leaving the rail a
+   readable measure. The iframe keeps a sane maximum so a phone-width article
+   does not hand one post the whole screen. */
+@media (max-width: 620px) {
+  .cn-embed { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .cn-embed-col, .cn-embed-media { max-width: 300px; }
 }
