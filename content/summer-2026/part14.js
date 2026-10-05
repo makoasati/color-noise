@@ -35,6 +35,19 @@
 // in an Instagram post, but the chamber publishes no count. The 1987-vs-1988
 // founding year came from newsrooms this package may not cite, so the piece
 // derives thirty-nine years from the chamber's own "39th Annual" instead.
+//
+// ART: seven photographs from the thread laid out four across, dish and stand
+// under each, plus a cover off the same roll. Credited to u/Jeeperscrow123 with
+// the permalink attached and used with their permission as of 2026-10-05, so
+// the licence is CLEAR and the release no longer blocks publication.
+//
+// TWO THINGS REMAIN BEFORE THIS CAN BE SEEDED, neither of them editorial:
+//   1. migration-savored-category.sql has to run against the live Supabase
+//      project. schema.sql uses `create table if not exists`, so the committed
+//      constraint change does nothing to the existing table and an insert with
+//      category 'food' will fail articles_category_check.
+//   2. The images want moving out of public/ and into the article-images bucket
+//      per §5.1, so the CMS can see them.
 
 module.exports = [
 
@@ -116,24 +129,30 @@ module.exports = [
     // wants them uploaded through the editor to the article-images bucket before
     // publication, at which point these src attributes become hosted URLs.
     //
-    // CREDIT IS SETTLED, THE RELEASE IS NOT. These are u/Jeeperscrow123's
-    // photographs, credited with the permalink attached in the figcaption and
-    // the cover line. Licence stays ASK because a credit is not a permission and
-    // nobody has asked them yet. §5.1 blocks publication until somebody does.
+    // CREDITED AND RELEASED. These are u/Jeeperscrow123's photographs, used with
+    // their permission as of 2026-10-05, credited with the permalink attached in
+    // both the figcaption and the cover line. Licence CLEAR.
+    //
+    // One §5.1 item is still outstanding, and it is mechanical rather than legal:
+    // these files are served out of public/ as a staging location. The standard
+    // wants them uploaded through the editor into the article-images bucket, at
+    // which point the src attributes become hosted URLs. Until that happens the
+    // article renders correctly from the repo but the art is not in the CMS, so
+    // an editor opening this piece cannot see or replace the images.
     //
     // Captions follow the Savored convention — dish, then stand, bare. Four of
     // the seven name a stand that is not visible in its frame; those were
     // matched to the thread's list of eight stops by elimination and confirmed
     // by the desk on 2026-10-05. Bang Bang Pie, Jerry & Geraldine's and Byron's
     // are legible from the food itself.
-    { slot: 'cover',  file: 'public/article-images/apple-fest-39/cover-cider-donut-pie.webp',                   caption: 'Apple cider donut pie, Bang Bang Pie',       license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-1', file: 'public/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp',          caption: 'Apple cider donut pie, Bang Bang Pie — $6',  license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-2', file: 'public/article-images/apple-fest-39/grid/jerry-geraldines-apple-cinnamon-roll.webp', caption: 'Apple cinnamon roll, Jerry & Geraldine’s',  license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-3', file: 'public/article-images/apple-fest-39/grid/chopping-block-apple-pie.webp',           caption: 'Apple pie, The Chopping Block',              license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-4', file: 'public/article-images/apple-fest-39/grid/dinky-delights-apple-crisp-donut.webp',   caption: 'Apple crisp donut, Dinky Delights',          license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-5', file: 'public/article-images/apple-fest-39/grid/byrons-apple-churros.webp',               caption: 'Apple churros, Byron’s',                     license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-6', file: 'public/article-images/apple-fest-39/grid/dalys-cider-donut.webp',                  caption: 'Cider donut, Daly’s',                        license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-7', file: 'public/article-images/apple-fest-39/grid/dalys-cider-donuts-bag.webp',             caption: 'Cider donuts by the bag, Daly’s',            license: 'ASK', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'cover',  file: 'public/article-images/apple-fest-39/cover-cider-donut-pie.webp',                   caption: 'Apple cider donut pie, Bang Bang Pie',       license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-1', file: 'public/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp',          caption: 'Apple cider donut pie, Bang Bang Pie — $6',  license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-2', file: 'public/article-images/apple-fest-39/grid/jerry-geraldines-apple-cinnamon-roll.webp', caption: 'Apple cinnamon roll, Jerry & Geraldine’s',  license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-3', file: 'public/article-images/apple-fest-39/grid/chopping-block-apple-pie.webp',           caption: 'Apple pie, The Chopping Block',              license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-4', file: 'public/article-images/apple-fest-39/grid/dinky-delights-apple-crisp-donut.webp',   caption: 'Apple crisp donut, Dinky Delights',          license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-5', file: 'public/article-images/apple-fest-39/grid/byrons-apple-churros.webp',               caption: 'Apple churros, Byron’s',                     license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-6', file: 'public/article-images/apple-fest-39/grid/dalys-cider-donut.webp',                  caption: 'Cider donut, Daly’s',                        license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-7', file: 'public/article-images/apple-fest-39/grid/dalys-cider-donuts-bag.webp',             caption: 'Cider donuts by the bag, Daly’s',            license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
   ],
 },
 
