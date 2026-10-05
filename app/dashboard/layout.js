@@ -5,7 +5,7 @@ import DashboardNav from '@/components/DashboardNav'
 import { DARK_ZONE, LIGHT_ZONE, NOISE_OVERLAY } from '@/lib/styles'
 import Footer from '@/components/Footer'
 
-export const metadata = { title: 'Dashboard — Color&Noise' }
+export const metadata = { title: 'Dashboard | Color&Noise' }
 
 export default async function DashboardLayout({ children }) {
   const supabase = await createClient()
