@@ -42,7 +42,7 @@ module.exports = [
 
 <p>Lizzo's contribution sat inside that programme rather than beside it, and she spoke briefly about what music had done in her own life before playing. The audience applauded the speaking more than the playing, which tells you who they thought they had come to see.</p>
 
-${E.instagram('Daq-ZYYEbLb', { caption: 'Opening night, July 11', credit: '@bccapture' })}
+${E.instagram('Daq-ZYYEbLb', { caption: 'Opening night, July 11' })}
 
 <p>The night carried three anniversaries at once, which is how an institution justifies a capital campaign: the sixtieth gala evening, the orchestra's ninetieth season in residence, and the first public use of the rebuilt hall. Stacking them means no single one has to carry the ticket price.</p>
 
@@ -52,9 +52,9 @@ ${E.instagram('Daq-ZYYEbLb', { caption: 'Opening night, July 11', credit: '@bcca
 
 <p>That split is the whole economics of this venue. A seventy-million-dollar hall seats a few thousand. The lawn holds the rest, for a fraction of the price, and hears a different show.</p>
 
-${E.instagram('Daqb2mCEXEQ', { caption: 'Inside the renovated Hunter Pavilion', credit: '@wbezchicago' })}
+${E.instagram('Daqb2mCEXEQ', { caption: 'Inside the renovated Hunter Pavilion' })}
 
-${E.instagram('Daoy5nmierQ', { caption: 'Reporting from the reopening', credit: '@cbschicago' })}
+${E.instagram('Daoy5nmierQ', { caption: 'Reporting from the reopening' })}
 
 <p>Four women on the grass near me had brought folding chairs, a cooler and a cheese board, and stayed through the Ravel. A pop star opened a classical hall by shutting up.</p>
 
@@ -98,7 +98,7 @@ ${E.instagram('Daoy5nmierQ', { caption: 'Reporting from the reopening', credit: 
 
 <p>That is not a classical festival with pop bookings attached. It is two festivals sharing a lawn, and the programming no longer pretends otherwise.</p>
 
-${E.instagram('Dao8McMAC6e', { caption: 'The new pavilion, inaugural week', credit: '@fvillella' })}
+${E.instagram('Dao8McMAC6e', { caption: 'The new pavilion, inaugural week' })}
 
 <p>Ravinia was built as a trolley park. A streetcar company put a music pavilion at the end of its own line in 1904 to give riders a reason to buy a fare, which is the least romantic origin available to a classical institution and explains the geography exactly: the Metra halt sits at the gate because the railway came first and the festival was its destination.</p>
 
@@ -108,9 +108,9 @@ ${E.instagram('Dao8McMAC6e', { caption: 'The new pavilion, inaugural week', cred
 
 <p>Ravinia knows which audience is larger and prices accordingly, and the renovation money went to the smaller one. That is a defensible institutional decision and it is also the reason the lawn crowd talks through quiet passages without embarrassment. They are not in the room.</p>
 
-${E.instagram('Dcm7NEFjNJT', { caption: 'A late-August evening on the grounds', credit: '@johana_neumann' })}
+${E.instagram('Dcm7NEFjNJT', { caption: 'A late-August evening on the grounds' })}
 
-${E.instagram('DdG-gRzxhEP', { caption: 'A day in the Ravinia district', credit: '@chicagoishmama' })}
+${E.instagram('DdG-gRzxhEP', { caption: 'A day in the Ravinia district' })}
 
 <p>The last week of the season was still selling lawn tickets at twenty dollars with the new hall four weeks old. Ninety concerts, and the cheap seats remain the point.</p>
 
@@ -154,7 +154,7 @@ ${E.instagram('DdG-gRzxhEP', { caption: 'A day in the Ravinia district', credit:
 
 <p><strong>"Rebel Yell"</strong> arrived with more guitar in it than the record has, and it is a better song for the surplus. <strong>"White Wedding"</strong> is built on a figure anybody can hum and got the full lawn treatment, folding chairs and all. Idol's voice has lost range and gained grain, and he sings around the gaps rather than through them, which is the correct instinct at sixty-nine.</p>
 
-${E.instagram('DauBCJAhISn', { caption: 'Billy Idol on stage, July 12', credit: '@danny_augustine' })}
+${E.instagram('DauBCJAhISn', { caption: 'Billy Idol on stage, July 12' })}
 
 <p>The audience was the oldest of any show in this package and the most committed. Four people near me had driven in from Indiana and had seen the same pairing in 2019, and said so twice. Nobody under thirty was visible within fifty feet, which for a catalogue that was marketed as a youth product in 1983 is the correct and slightly melancholy arithmetic.</p>
 
@@ -166,7 +166,7 @@ ${E.instagram('DauBCJAhISn', { caption: 'Billy Idol on stage, July 12', credit: 
 
 ${E.instagram('Dauft6BHD5K', { caption: 'Opening for Idol and Stevens', credit: '@trhjunior' })}
 
-${E.instagram('Datwax4AHHH', { caption: 'On the lawn before the set', credit: '@wiskygirl4' })}
+${E.instagram('Datwax4AHHH', { caption: 'On the lawn before the set' })}
 
 <p>Two rows of camp chairs stayed occupied through the encore and their owners sang every word sitting down. Steve Stevens is why this still works.</p>
 
@@ -210,7 +210,7 @@ ${E.instagram('Datwax4AHHH', { caption: 'On the lawn before the set', credit: '@
 
 <p><strong>"Livin' la Vida Loca"</strong> is a brass arrangement pretending to be a pop song and the band played it as the former, which is the only way it survives at this distance. <strong>"María"</strong> landed harder than the hits that followed it, because it is the one the Spanish-speaking half of the audience had come for and they carried it.</p>
 
-${E.instagram('DcSZ3QuAklL', { caption: 'Ravinia debut, August 20', credit: '@galloconcertvids' })}
+${E.instagram('DcSZ3QuAklL', { caption: 'Ravinia debut, August 20' })}
 
 <p>A revue needs a band that can change register on a bar line, and this one did it repeatedly — brass-led on the uptempo material, then stripped to almost nothing for the ballads, with the players reading rather than improvising. That is an expensive way to tour and it is why the show works at this distance, where a backing track would have been audible as a backing track.</p>
 
@@ -218,9 +218,9 @@ ${E.instagram('DcSZ3QuAklL', { caption: 'Ravinia debut, August 20', credit: '@ga
 
 <p>Ravinia sits in a suburb with a median income that does not resemble the neighbourhoods most of this audience drove in from, and the Union Pacific North line is the mechanism that makes the trip possible at all. A festival that has existed since 1904 booking this artist for the first time in 2026 is not a story about the artist.</p>
 
-${E.instagram('DcTcJe4CMAR', { caption: 'Fan compilation from the Chicago show', credit: '@jpuspain' })}
+${E.instagram('DcTcJe4CMAR', { caption: 'Fan compilation from the Chicago show' })}
 
-${E.instagram('DcUX8njxVKy', { caption: 'Local news on the debut', credit: '@laura71298' })}
+${E.instagram('DcUX8njxVKy', { caption: 'Local news on the debut' })}
 
 <p>A Spanish fan club in Spain had the Chicago footage cut and posted inside a day. It took Ravinia a hundred and twenty-two years to book him.</p>
 
@@ -264,7 +264,7 @@ ${E.instagram('DcUX8njxVKy', { caption: 'Local news on the debut', credit: '@lau
 
 <p><strong>"Jesus Walks"</strong> is twenty-two years old and still the moment a Chicago crowd stops performing attention and simply pays it. <strong>"All Falls Down"</strong> got the loudest singalong of either night, and the loudness is itself the review — a verse about self-loathing and consumption, shouted back by seventy thousand people in a stadium that cost them four hundred dollars to enter.</p>
 
-${E.instagram('Dc6Sqpvkf_D', { caption: 'Night two, sold out', credit: '@xxl' })}
+${E.instagram('Dc6Sqpvkf_D', { caption: 'Night two, sold out' })}
 
 <p>He did not perform alone. The run leaned on a long list of collaborators moving on and off the stage, which is the only way a catalogue this size gets covered in one night by a man who has spent four years dismantling his own touring operation. The staging was spare by stadium standards — light, smoke, a red blazer, and very little screen — and the absence read as deliberate rather than cheap.</p>
 
@@ -274,9 +274,9 @@ ${E.instagram('Dc6Sqpvkf_D', { caption: 'Night two, sold out', credit: '@xxl' })
 
 <p>I am not going to resolve here what Chicago owes him or he owes Chicago. The stadium sold out twice. Both facts stand.</p>
 
-${E.instagram('Dc6TIUJji2w', { caption: 'Homecoming, night two', credit: '@complex' })}
+${E.instagram('Dc6TIUJji2w', { caption: 'Homecoming, night two' })}
 
-${E.instagram('Dc6sdzlCK4p', { caption: 'From the floor', credit: '@vznmag' })}
+${E.instagram('Dc6sdzlCK4p', { caption: 'From the floor' })}
 
 <p>Seventy thousand on the second night, at four hundred dollars resale, in a stadium owned by the public. He came home and the city did not comment.</p>
 
@@ -320,7 +320,7 @@ ${E.instagram('Dc6sdzlCK4p', { caption: 'From the floor', credit: '@vznmag' })}
 
 <p>What did benefit was <strong>"New Flame"</strong>, the collaboration that put them on the same stage simultaneously, which is the only moment in either night that needed a stadium — two performers who could each fill a theatre, in a venue that justifies itself only when both are on it.</p>
 
-${E.instagram('DcXXw8YRZQw', { caption: '"New Flame", both on stage', credit: '@calvinthecreative' })}
+${E.instagram('DcXXw8YRZQw', { caption: '"New Flame", both on stage' })}
 
 <p>The two productions did not share equipment, which is why the changeover ran long on both nights and why the second night finished later than the first. A co-headline at this scale is two full load-ins sharing one stadium licence, and the audience spends forty minutes in the gap looking at a dark stage. Nobody left during it.</p>
 
@@ -330,9 +330,9 @@ ${E.instagram('DcXXw8YRZQw', { caption: '"New Flame", both on stage', credit: '@
 
 <p>This is a stadium that hosted two R&B co-headliners and a Colombian reggaetón star inside five weeks, which is a different booking calendar than this building had a decade ago and a better one.</p>
 
-${E.instagram('DcZOusOy06X', { caption: 'Both nights, recapped', credit: '@isaiah_jaay' })}
+${E.instagram('DcZOusOy06X', { caption: 'Both nights, recapped' })}
 
-${E.instagram('DcWLXg6Ed_T', { caption: 'Night two, August 22', credit: '@jojocapone1' })}
+${E.instagram('DcWLXg6Ed_T', { caption: 'Night two, August 22' })}
 
 <p>The finale on the second night ran past curfew and the lights stayed on. Two theatres' worth of talent in a stadium, and one duet that earned it.</p>
 
@@ -376,7 +376,7 @@ ${E.instagram('DcWLXg6Ed_T', { caption: 'Night two, August 22', credit: '@jojoca
 
 <p><strong>"A Milli"</strong> still functions as a test of whether a crowd knows the words or knows the record, and this one knew the words. <strong>"No Problem"</strong> got the loudest response of Wayne's portion, which at an outdoor show with the lake eating the bottom end is carried almost entirely by the vocal.</p>
 
-${E.instagram('Da84V7fHdNw', { caption: 'July 17 in Chicago', credit: '@stefany_waynee' })}
+${E.instagram('Da84V7fHdNw', { caption: 'July 17 in Chicago' })}
 
 <p>Ninety minutes is not enough time for either catalogue and both men know it, so the sets run as medleys more than as performances — a verse and a chorus, then the next thing. It is the honest solution to an impossible selection problem and it costs the slower material entirely. Nothing from the back half of either discography got a full airing.</p>
 
@@ -386,9 +386,9 @@ ${E.instagram('Da84V7fHdNw', { caption: 'July 17 in Chicago', credit: '@stefany_
 
 <p>What the venue gives in exchange for its terrible low-end retention is the skyline, directly behind the performers, which no indoor room in this city can offer and which every artist who plays here uses.</p>
 
-${E.instagram('Da8WDlWjl6f', { caption: 'Waterfront before the show', credit: '@lisamarie1027' })}
+${E.instagram('Da8WDlWjl6f', { caption: 'Waterfront before the show' })}
 
-${E.instagram('Da76qSUla65', { caption: 'From the field', credit: '@nevaeh_capps' })}
+${E.instagram('Da76qSUla65', { caption: 'From the field' })}
 
 <p>The series posters carried the sponsor's name above the headliners'. That is the 2026 touring economy in one piece of artwork.</p>
 
@@ -432,7 +432,7 @@ ${E.instagram('Da76qSUla65', { caption: 'From the field', credit: '@nevaeh_capps
 
 <p>Mulaney adapted by slowing down and leaving longer gaps, which is the right adjustment and also changes the material — the dense, fast construction his best work depends on cannot survive a two-second delay between a line and its reception. He got the room eventually. He got it late.</p>
 
-${E.instagram('DargYxJOreK', { caption: 'The marquee on show night', credit: '@kovertcreative' })}
+${E.instagram('DargYxJOreK', { caption: 'The marquee on show night' })}
 
 <h3>What The Building Is For</h3>
 
@@ -440,9 +440,9 @@ ${E.instagram('DargYxJOreK', { caption: 'The marquee on show night', credit: '@k
 
 <p>The pre-show economy is the other half. Murphy's Bleachers, across Waveland, does the business of a stadium show whatever is on the stage, and the staff had worked out by six that a comedy crowd drinks differently and earlier.</p>
 
-${E.instagram('DaqWMBbsFaC', { caption: 'Murphy’s Bleachers before doors', credit: '@murphysbleachers' })}
+${E.instagram('DaqWMBbsFaC', { caption: 'Murphy’s Bleachers before doors' })}
 
-${E.instagram('DatFCaYEWlD', { caption: 'Inside for Mister Whatever', credit: '@charlottelange' })}
+${E.instagram('DatFCaYEWlD', { caption: 'Inside for Mister Whatever' })}
 
 <p>The marquee photograph outnumbered every other image of the night by an order of magnitude. A ballpark sold forty thousand seats to a man standing still.</p>
 
@@ -486,7 +486,7 @@ ${E.instagram('DatFCaYEWlD', { caption: 'Inside for Mister Whatever', credit: '@
 
 <p>The Wagner Stage carried the outdoor programme under a banner, and the sound on the Plaisance is better than an open field has any right to be, because the Midway is a sunken canal bed — Olmsted dug it for a waterway that never came, and the depression holds sound in.</p>
 
-${E.instagram('Dd1afBIyHMn', { caption: 'Caravan #2 on the covered stage', credit: '@stardixon' })}
+${E.instagram('Dd1afBIyHMn', { caption: 'Caravan #2 on the covered stage' })}
 
 <p>The indoor half of this festival is the half that justifies it. Sets run in university rooms, a hotel space and a church across the neighbourhood, at a scale of a hundred or two hundred people, with no amplification in some of them — which means a listener can hear a drummer's stick on a rim. A free festival programming unamplified rooms is making a claim about what it thinks jazz is.</p>
 
@@ -496,9 +496,9 @@ ${E.instagram('Dd1afBIyHMn', { caption: 'Caravan #2 on the covered stage', credi
 
 <p>The University of Chicago supplies some of the audience and most of the indoor rooms. The neighbourhood supplies the rest.</p>
 
-${E.instagram('Dd0f7cfTNiz', { caption: 'The Wagner Stage', credit: '@bobert_goutlet' })}
+${E.instagram('Dd0f7cfTNiz', { caption: 'The Wagner Stage' })}
 
-${E.instagram('Dd2WQiKFnM2', { caption: 'Performers in black and white', credit: '@abvalentin___' })}
+${E.instagram('Dd2WQiKFnM2', { caption: 'Performers in black and white' })}
 
 <p>Chairs were still out on the Plaisance at dusk on the Sunday with the stage already struck. Twenty years, no ticket, and the best listening in Chicago.</p>
 
@@ -552,9 +552,9 @@ ${E.instagram('DdvBKBYNj7o', { caption: 'Nine musicians under the arches', credi
 
 <p>The festival also went where the audiences are rather than making them travel — the Beverly Arts Center on the far South Side carried a free night of its own on October 3rd.</p>
 
-${E.instagram('Dd0RBSxjh8n', { caption: 'A weekend at the festival', credit: '@nazgulmokeeva' })}
+${E.instagram('Dd0RBSxjh8n', { caption: 'A weekend at the festival' })}
 
-${E.instagram('DdzXmLzhQFf', { caption: 'On stage at the Cultural Center', credit: '@surreal_sir.reel' })}
+${E.instagram('DdzXmLzhQFf', { caption: 'On stage at the Cultural Center' })}
 
 <p>A Chicago makeup artist played one of the bills. Ten days of international programming, in a library, for nothing.</p>
 

@@ -44,7 +44,7 @@ module.exports = [
 
 <p><strong>"Pumped Up Kicks"</strong> is the song everybody came for and it has aged into something stranger than it was — a whistled hook over a lyric about a school shooting, sung back by a lawn full of people who were children when it charted. <strong>"Sit Next to Me"</strong> was the better live performance and got a fraction of the response. Newer material off the <em>Glare</em> cycle sat in the middle and was received politely.</p>
 
-${E.instagram('DdyXOPfESyl', { caption: 'From the field, September 26', credit: '@vivalakid_' })}
+${E.instagram('DdyXOPfESyl', { caption: 'From the field, September 26' })}
 
 <h3>A Shed That Closes In September</h3>
 
@@ -52,9 +52,9 @@ ${E.instagram('DdyXOPfESyl', { caption: 'From the field, September 26', credit: 
 
 <p>Which gives the last date of the season a particular quality. The low end goes into the lake, as it does all summer, and the vocal has to carry the whole thing — but in late September the crowd is denser toward the front because everybody has worked out that the back of the lawn is colder.</p>
 
-${E.instagram('DdyoXrdoJEl', { caption: 'Twenty slides from the night, with Goth Babe', credit: '@fella626' })}
+${E.instagram('DdyoXrdoJEl', { caption: 'Twenty slides from the night, with Goth Babe' })}
 
-${E.instagram('Ddxe1HLlrhb', { caption: 'Closing night of the season', credit: '@jaxb126' })}
+${E.instagram('Ddxe1HLlrhb', { caption: 'Closing night of the season' })}
 
 <p>A fan photographed the venue run sheet before the doors opened and posted it. That piece of paper was the last one Northerly Island printed in 2026.</p>
 
@@ -98,7 +98,7 @@ ${E.instagram('Ddxe1HLlrhb', { caption: 'Closing night of the season', credit: '
 
 <p><strong>"2 Die 4"</strong> was the loudest the night got, built on a sample that does most of the work and does it well outdoors where the low end has somewhere to go. The staging was minimal by arena-pop standards — the warehouse behind her is the set design and the production knew it.</p>
 
-${E.instagram('DdZ86x9gXM-', { caption: 'On stage at the Fairgrounds', credit: '@thebiglebekski' })}
+${E.instagram('DdZ86x9gXM-', { caption: 'On stage at the Fairgrounds' })}
 
 <h3>A Salt Warehouse With A River Behind It</h3>
 
@@ -106,9 +106,9 @@ ${E.instagram('DdZ86x9gXM-', { caption: 'On stage at the Fairgrounds', credit: '
 
 <p>What that gives a pop show is a hard vertical surface at the back of the stage and the river at your shoulder, so the sound has one reflective wall and one dead side. It is an accident of industrial geometry and it flatters a synth-led record more than a purpose-built shed does.</p>
 
-${E.instagram('DdaBEQfAKQ0', { caption: 'Professional set photography', credit: '@chicagomusicguide' })}
+${E.instagram('DdaBEQfAKQ0', { caption: 'Professional set photography' })}
 
-${E.instagram('DdYODVyosZk', { caption: 'The unreleased track, from the crowd', credit: '@levisliveshows' })}
+${E.instagram('DdYODVyosZk', { caption: 'The unreleased track, from the crowd' })}
 
 <p>Chicago Music Guide had the professional frames out the following day. An unreleased song got played to four thousand people who could not join in.</p>
 
@@ -152,7 +152,7 @@ ${E.instagram('DdYODVyosZk', { caption: 'The unreleased track, from the crowd', 
 
 <p><strong>"How to Save a Life"</strong> is the reason most of that lawn bought a ticket, and it arrived as a piano figure that an outdoor shed cannot really hold — the mid-range disperses and what is left is the vocal and the crowd. That turned out to be enough, because several thousand people singing a chorus they learned at fifteen is its own arrangement. Dashboard's set leaned acoustic, which fared worse against the lake and better against the crowd.</p>
 
-${E.instagram('DcrFM0DRB3D', { caption: '"How to Save a Life", from the audience', credit: '@eddiecovamusic' })}
+${E.instagram('DcrFM0DRB3D', { caption: '"How to Save a Life", from the audience' })}
 
 <h3>What The Lake Does To A Piano</h3>
 
@@ -162,7 +162,7 @@ ${E.instagram('DcrFM0DRB3D', { caption: '"How to Save a Life", from the audience
 
 ${E.instagram('Dcpxyhjt385', { caption: 'A review filmed outside the venue', credit: '@wilddirky' })}
 
-${E.instagram('DcrKdo5m06i', { caption: 'Multiple angles from the crowd', credit: '@thebestseats' })}
+${E.instagram('DcrKdo5m06i', { caption: 'Multiple angles from the crowd' })}
 
 <p>A woman filmed her own review in the car park afterwards and said she had loved The Fray since she was a teenager. She had driven in for it.</p>
 
@@ -206,7 +206,7 @@ ${E.instagram('DcrKdo5m06i', { caption: 'Multiple angles from the crowd', credit
 
 <p><strong>"Here It Goes Again"</strong> is the song attached to the treadmill video and the crowd response to it has almost nothing to do with the music, which the band has clearly made peace with. They play it hard and fast and let the recognition do the rest. The rest of the set is better and gets less, which is the permanent condition of a band with a viral artefact in its past.</p>
 
-${E.instagram('DZjcWurOjhA', { caption: 'Damian Kulash on the plaza stage', credit: '@musicmakesyouthink' })}
+${E.instagram('DZjcWurOjhA', { caption: 'Damian Kulash on the plaza stage' })}
 
 <h3>A Plaza Is Not A Venue</h3>
 
@@ -214,9 +214,9 @@ ${E.instagram('DZjcWurOjhA', { caption: 'Damian Kulash on the plaza stage', cred
 
 <p>Acoustically it is a hard box with one side missing. Guitar bands do fine. The handclap-and-shout parts of an OK Go song, which depend on a crowd hearing itself, work better here than in a shed.</p>
 
-${E.instagram('DZlBo7_Rtrc', { caption: 'Heart-shaped confetti over the crowd', credit: '@kristin.nilsen.write' })}
+${E.instagram('DZlBo7_Rtrc', { caption: 'Heart-shaped confetti over the crowd' })}
 
-${E.instagram('DZjoQKBgKLQ', { caption: 'Fan engagement mid-set', credit: '@jan_cooney' })}
+${E.instagram('DZjoQKBgKLQ', { caption: 'Fan engagement mid-set' })}
 
 <p>The confetti was still on the plaza the following morning, in the gutters along Clark. A Chicago band came home and brought a cannon.</p>
 

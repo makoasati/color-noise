@@ -40,13 +40,13 @@ module.exports = [
 
 <p>At DOCUMENT, Slovakian painter <strong>Alexandra Barth</strong> showed <em>The Awnings</em>, a solo of flat, depopulated architectural surfaces — the kind of painting that rewards the second look and punishes the photograph. Corbett vs. Dempsey gave over its rooms to the late <strong>Pope.L</strong>, with the focus on his experimental band rather than the performance work, which is the correct and least obvious choice. GRAY hung a monumental freestanding wood relief by <strong>Jaume Plensa</strong>. Magic Hour opened for the first time, with <strong>Natalie Baxter</strong>'s quilted octagonal textile pieces against bare white.</p>
 
-${E.instagram('Ddjl-d9kRzj', { caption: 'DOCUMENT, Alexandra Barth', credit: '@stephen5w' })}
+${E.instagram('Ddjl-d9kRzj', { caption: 'DOCUMENT, Alexandra Barth' })}
 
 <p>The week's most useful artefact was not an exhibition. Several participants published their own routes — one writer put out a three-slide itinerary of the galleries she intended to reach and in what order — which is the admission that the official map is unusable and the audience has started doing the curatorial work itself.</p>
 
-${E.instagram('DdRtViMFjiX', { caption: 'A visitor-made route through the week', credit: '@kaylenralph' })}
+${E.instagram('DdRtViMFjiX', { caption: 'A visitor-made route through the week' })}
 
-${E.instagram('Dde-gqbieQl', { caption: 'Four spaces in a day', credit: '@delisha_____' })}
+${E.instagram('Dde-gqbieQl', { caption: 'Four spaces in a day' })}
 
 <h3>Who Went Where</h3>
 
@@ -93,15 +93,15 @@ ${E.instagram('Dde-gqbieQl', { caption: 'Four spaces in a day', credit: '@delish
 
 <p>Works moved in the low thousands at the edges and well past six figures at the centre, which is the ordinary shape of a fair and worth stating plainly because the fair's own language avoids it. <strong>Guy Stanley Philoche</strong>, who markets himself as the people's artist, unveiled a new mixed-media canvas at GP Gallery in Booth 300 — a photorealistic portrait of a child with a voluminous afro, mid-smile, in a plain white shirt. The work is sincere. The booth number is also the point.</p>
 
-${E.instagram('DW_gXYAk4j-', { caption: 'GP Gallery, Booth 300', credit: '@guystanleyphiloche' })}
+${E.instagram('DW_gXYAk4j-', { caption: 'GP Gallery, Booth 300' })}
 
 <h3>The Institution Attached To It</h3>
 
 <p>This edition ran with ties to the Obama Presidential Center, which is a thing an art fair does when it wants to be read as civic rather than commercial, and which the Center presumably does because a fair at Navy Pier reaches an audience that a construction site in Jackson Park cannot. Neither party is doing anything improper. Both are using the other, in April, at a pier.</p>
 
-${E.instagram('DXCS9aSDgNP', { caption: 'EXPO Chicago at Navy Pier', credit: '@zoomingwithjoel' })}
+${E.instagram('DXCS9aSDgNP', { caption: 'EXPO Chicago at Navy Pier' })}
 
-${E.instagram('DW6PD2NkSqm', { caption: 'A first solo exhibition outside Brazil', credit: '@diego.mouro' })}
+${E.instagram('DW6PD2NkSqm', { caption: 'A first solo exhibition outside Brazil' })}
 
 <p>I walked a hundred and thirty booths in a shed and by the fourth aisle had stopped reading labels, which is a failure of attention and not of the fair.</p>
 
@@ -150,13 +150,13 @@ ${E.instagram('DW6PD2NkSqm', { caption: 'A first solo exhibition outside Brazil'
 
 <p>Good Naked showed a dog roughly two by two by one and a half inches, hand-sewn from tea-stained linen with the batting pushing out the seams — an object that reads as rustic at full size and, at this size, as a deliberate exercise in how little material can carry a sculpture. <strong>Meg Duguid</strong>, an MFA of 2006, had work in. The Art Newspaper covered the fair alongside Neighbors and reached the conclusion that smaller alternative formats are now outperforming the majors, which is a sentence the majors should read twice.</p>
 
-${E.instagram('DXCH7aZiqMK', { caption: 'A two-inch linen dog', credit: '@good_naked' })}
+${E.instagram('DXCH7aZiqMK', { caption: 'A two-inch linen dog' })}
 
 <p>Fabrication is the unglamorous half of this fair and nobody writes about it. Somebody built thirty identical boxes to tolerance, in a project space, for free.</p>
 
 ${E.instagram('DXAObJ_jz4Y', { caption: 'Press coverage of the sixth edition', credit: '@m.tooley.parker' })}
 
-${E.instagram('DXALQImk9gq', { caption: 'A work from the fair', credit: '@artforum' })}
+${E.instagram('DXALQImk9gq', { caption: 'A work from the fair' })}
 
 <h3>The Posture Of Looking</h3>
 
@@ -206,9 +206,9 @@ ${E.instagram('DXCYcewDgKn', { caption: 'A velvet panel on the window sill', cre
 
 <p>That is also the unresolved thing. A fair staged in a Gold Coast apartment on Astor Street, a block from the Charnley-Persky House, is making an argument about intimacy inside a form of domestic wealth that very few of the exhibiting artists have access to. The organisers did not pretend otherwise and did not address it either.</p>
 
-${E.instagram('DW4PHKZkc0c', { caption: 'Opening day announcement', credit: '@hansgoodrich' })}
+${E.instagram('DW4PHKZkc0c', { caption: 'Opening day announcement' })}
 
-${E.instagram('DW5Nb8hjObN', { caption: 'Inside the apartment', credit: 'Jenny Lam / @artistsonthelam' })}
+${E.instagram('DW5Nb8hjObN', { caption: 'Inside the apartment' })}
 
 <p>Jenny Lam wrote it up as a bite-sized fair with surprises in every room, which is the right register. I spent eleven minutes in the first room feeling pleased with myself for slowing down, which is a different activity from looking.</p>
 
@@ -257,11 +257,11 @@ ${E.instagram('DW5Nb8hjObN', { caption: 'Inside the apartment', credit: 'Jenny L
 
 <p>Work ran from about five hundred dollars to five thousand six hundred and seventy, with the bulk clustered between two and three thousand — a band that does not exist at EXPO, where the floor is roughly where this fair's ceiling sits. One table held three screen prints on a green cutting mat, a line-art figure in bed with a cat and a small feathered dinosaur among them, priced for somebody's first purchase.</p>
 
-${E.instagram('DXCs5AiPHgY', { caption: 'Walking the fair, closing day', credit: '@moji_akinde' })}
+${E.instagram('DXCs5AiPHgY', { caption: 'Walking the fair, closing day' })}
 
-${E.instagram('DW9tgerke0L', { caption: 'A day at the fair', credit: '@hannah_day28' })}
+${E.instagram('DW9tgerke0L', { caption: 'A day at the fair' })}
 
-${E.instagram('DW7aCWeEuso', { caption: 'An exhibiting booth', credit: '@lyonroadart' })}
+${E.instagram('DW7aCWeEuso', { caption: 'An exhibiting booth' })}
 
 <p>The architect and urban sketcher <strong>David Roberts</strong> came on opening night to see the photographer <strong>Morgan Anderson</strong>'s work and spent the evening making quick drawings on site, which is the most interesting thing anyone did at any Chicago fair in April: a visitor producing work in response, in the room, for nobody.</p>
 
@@ -309,15 +309,15 @@ ${E.instagram('DW7aCWeEuso', { caption: 'An exhibiting booth', credit: '@lyonroa
 
 <p>In August, the interdisciplinary artist <strong>Sierra Rose Zucker</strong> opened <em>Fragments</em> at 1152 West 18th Street, hosted with the project Some Like Us in the backroom — a solo that ran three days total, which is the actual duration of most work shown on this street. In July one organiser issued a flyer in neon-yellow ASCII text instructing attendees to put their phones away, a demand no West Loop gallery would dare make of its own audience.</p>
 
-${E.instagram('DbI576kxOq1', { caption: 'Fragments, 1152 W 18th Street', credit: '@longtimenosierra' })}
+${E.instagram('DbI576kxOq1', { caption: 'Fragments, 1152 W 18th Street' })}
 
 <h3>Who Built This And What It Cost</h3>
 
 <p>The district exists because the Podmajersky family spent decades buying Pilsen industrial property and renting it to artists at rates that made a studio possible, which built the arts district and, in the same motion, established Pilsen as a desirable address. The artists who can no longer afford Pilsen were priced out by the desirability their own presence created, on real estate assembled by the family that housed them. Both halves of that are true and the street declines to litigate it.</p>
 
-${E.instagram('Dbb4uc3Fb6T', { caption: 'A new Pilsen storefront', credit: '@fantasia_cafe__' })}
+${E.instagram('Dbb4uc3Fb6T', { caption: 'A new Pilsen storefront' })}
 
-${E.instagram('Dd4uKcvi6q4', { caption: 'A night market four blocks west', credit: '@chicago_forfree' })}
+${E.instagram('Dd4uKcvi6q4', { caption: 'A night market four blocks west' })}
 
 <p>One must occasionally admit that a gallery night held in defiance of the market calendar is doing something the market cannot buy.</p>
 
@@ -366,17 +366,17 @@ ${E.instagram('Dd4uKcvi6q4', { caption: 'A night market four blocks west', credi
 
 <p>The photographer <strong>David M. Wong</strong> opened a new studio in the building this year, which is the detail that tells you what these nights are for: not an audience development exercise but a leasing mechanism, in which the public walks past empty units and somebody eventually takes one. The Chicago Ceramic Center is the strongest thing in either building and gets the least attention, because glazed work photographs badly and ceramics has never recovered from being called craft.</p>
 
-${E.instagram('Db8mfi1hVTF', { caption: '3rd Fridays Open Studios, August 21', credit: '@bridgeportartcenter' })}
+${E.instagram('Db8mfi1hVTF', { caption: '3rd Fridays Open Studios, August 21' })}
 
 <p>Programming around it has multiplied. The Bridgeport Music Collective runs a Third Friday Concert Series of chamber music inside the complex, and The Creative Outlet runs a Third Friday Artist Spotlight. A free monthly open studio has acquired satellites, which is what happens when a format works and nobody owns it.</p>
 
-${E.instagram('DdjgHhzBsgU', { caption: 'A new photography studio in the building', credit: '@davidwongphoto' })}
+${E.instagram('DdjgHhzBsgU', { caption: 'A new photography studio in the building' })}
 
 <h3>What A Neighbourhood Was Before</h3>
 
 <p>Bridgeport sent five mayors to City Hall and spent most of the twentieth century with a reputation for making outsiders unwelcome, which is a thing residents will tell you themselves. The building at 1200 West 35th was a factory. That both facts are now footnotes to a monthly open studio is the most consequential change in this neighbourhood's cultural life and it happened without a single press release.</p>
 
-${E.instagram('DbofHRdCR8R', { caption: 'Third Friday Concert Series flyer', credit: '@bridgeport_music_collective' })}
+${E.instagram('DbofHRdCR8R', { caption: 'Third Friday Concert Series flyer' })}
 
 <h3>Who Comes In</h3>
 
@@ -422,17 +422,17 @@ ${E.instagram('DbofHRdCR8R', { caption: 'Third Friday Concert Series flyer', cre
 
 <p>The studios here are smaller and the work is more openly political than four blocks east, because the organising body is a community house and the selection pressure runs the other way. SZNL Chicago held an evening gathering in its industrial-style gallery in September that drew a crowd through the space without a single wall label, and the absence was not an oversight. Mana Contemporary occupies a converted industrial tower in the same neighbourhood with a view of the skyline from its upper floors, which is the other end of the same real-estate story.</p>
 
-${E.instagram('Dcwy87IGtk5', { caption: 'An evening at SZNL Chicago', credit: '@sznlchicago' })}
+${E.instagram('Dcwy87IGtk5', { caption: 'An evening at SZNL Chicago' })}
 
 <p>The murals are the permanent collection and nobody curates them. A skull-headed figure on a brick side wall under blue sky does more for this neighbourhood's visual identity than any programme, and it was not commissioned by an institution.</p>
 
-${E.instagram('DcGlMTrHFZ0', { caption: 'A Pilsen mural wall', credit: '@gringolandia22' })}
+${E.instagram('DcGlMTrHFZ0', { caption: 'A Pilsen mural wall' })}
 
 <h3>The Clause Nobody Resolves</h3>
 
 <p>Pilsen's Mexican population has been declining for twenty years while its gallery count has risen, and the open studios are full of artists who are themselves part of the arithmetic that displaced the people who made the neighbourhood worth moving to. The community house exists because somebody noticed. It has not reversed anything.</p>
 
-${E.instagram('DP92hWmkW2W', { caption: 'A past edition, reframed as La Lucha', credit: '@pilsenopenstudios' })}
+${E.instagram('DP92hWmkW2W', { caption: 'A past edition, reframed as La Lucha' })}
 
 <h3>Who Turns Up</h3>
 
@@ -478,17 +478,17 @@ ${E.instagram('DP92hWmkW2W', { caption: 'A past edition, reframed as La Lucha', 
 
 <p>In July the Unpacked Mobile Gallery parked a bright yellow box truck outside with its rear doors open and the interior lit, which is a gallery in the sense that matters and in no sense an institution. In August the space ran a market called Dog Days of Summer for a maker showing for the first time. At the end of August the musicians <strong>Tommaso Moretti</strong> and <strong>Elijah McLaughlin</strong> played outside from half seven to half nine, free, on a traffic island, to whoever was walking past.</p>
 
-${E.instagram('Da7HtddgKkI', { caption: 'Unpacked Mobile Gallery, July 17', credit: '@unpacked.artist.space' })}
+${E.instagram('Da7HtddgKkI', { caption: 'Unpacked Mobile Gallery, July 17' })}
 
 <p>The range is the argument. A room this size cannot specialise, so it has taken the opposite position and programmed exhibitions, experimental music, film and a craft market in the same quarter, on the apparent theory that a neighbourhood wants all of it and the distinctions are an art-world artefact.</p>
 
-${E.instagram('DcmEMBMFD2q', { caption: 'Free outdoor performance, August 28', credit: '@elijah_mclaughlin_' })}
+${E.instagram('DcmEMBMFD2q', { caption: 'Free outdoor performance, August 28' })}
 
 <h3>What The Building Was</h3>
 
 <p>It is a comfort station — a public convenience and waiting room built for streetcar passengers, of a type the city put up across its park and transit system a century ago and then almost entirely demolished. This one survived by being on an island nobody wanted to develop. A municipal toilet block is now one of the two or three most adventurous programmers in Chicago, which is funnier than anything in the programme.</p>
 
-${E.instagram('DbwL785FHlp', { caption: 'Dog Days of Summer market', credit: '@itshmorgsbrain' })}
+${E.instagram('DbwL785FHlp', { caption: 'Dog Days of Summer market' })}
 
 <h3>A Room You Cannot Hide In</h3>
 
@@ -535,17 +535,17 @@ ${E.instagram('DbwL785FHlp', { caption: 'Dog Days of Summer market', credit: '@i
 
 <p>Improvised dance with improvised accompaniment fails more often than it succeeds and the failures are instructive in a way that a failed exhibition is not — the room watches two people decline to find each other for ten minutes, and the discomfort is the material. Sabbagh's curatorial decision is to programme the risk rather than the reconciliation, which is why the series has lasted.</p>
 
-${E.instagram('DduXg8lFF37', { caption: 'Freedom From and Freedom To, Set 6', credit: 'Cristal Sabbagh / @cristalsabbagh' })}
+${E.instagram('DduXg8lFF37', { caption: 'Freedom From and Freedom To, Set 6' })}
 
 <p>Elsewhere in the calendar the space ran <em>Night School</em>, an audio-visual series, on July 22nd at eight, advertised with a minimalist line drawing of two baseball players mid-swing with their bats intersecting. The flyer is better than most of the art in the West Loop and cost nothing.</p>
 
-${E.instagram('DbBdGDxRpPq', { caption: 'Night School flyer, July 22', credit: '@elasticarts' })}
+${E.instagram('DbBdGDxRpPq', { caption: 'Night School flyer, July 22' })}
 
 <h3>The Scene Nobody Covers</h3>
 
 <p>Chicago's experimental music infrastructure — this room, Constellation, Hungry Brain, the Experimental Sound Studio — descends in a reasonably direct line from the AACM, and it is the most internationally significant thing the city's art scene currently does. It receives a fraction of the coverage given to a gallery opening in Fulton Market. One cannot write about Chicago art without noticing that the institutions with the least money are producing the work with the most consequence.</p>
 
-${E.instagram('DcbjCDRxifY', { caption: 'An August weekend series', credit: '@elasticarts' })}
+${E.instagram('DcbjCDRxifY', { caption: 'An August weekend series' })}
 
 <h3>How An Audience Behaves With No Score</h3>
 
@@ -591,17 +591,17 @@ ${E.instagram('DcbjCDRxifY', { caption: 'An August weekend series', credit: '@el
 
 <p>The speaker stack is the curatorial argument in physical form: a sound system is not equipment that plays culture, it is the culture, and dancehall is unintelligible without the specific social technology of the stack and the people who built and carried them. Jean-Michel Basquiat's inclusion is the institutional reassurance — the name that justifies the show to a board — and it is the least interesting thing in it.</p>
 
-${E.instagram('DdXFd3FI-yC', { caption: 'Final days of the exhibition', credit: '@mcachicago' })}
+${E.instagram('DdXFd3FI-yC', { caption: 'Final days of the exhibition' })}
 
 <h3>Who The Museum Let In</h3>
 
 <p>The MCA ran after-hours programming around the show, including a Prime Time event and a launch hosted jointly with Gertie — the same platform that programmes Chicago Exhibition Week — which is how a Streeterville museum reaches an audience that does not otherwise come to Streeterville. The institution's own economics sit awkwardly beside the material: a show about music made by poor people in Kingston and San Juan, staged four blocks from the Magnificent Mile by an institution whose membership tier runs into the seventies of dollars. The exhibition did not pretend to resolve that and was better for not trying.</p>
 
-${E.instagram('DdjWDFpuMVi', { caption: 'After-hours launch, Gertie x MCA', credit: '@girlsjstwannahave' })}
+${E.instagram('DdjWDFpuMVi', { caption: 'After-hours launch, Gertie x MCA' })}
 
 <p>The artist <strong>Justin White Foreva</strong>, who is legally blind, documented his visit on opening day. A show whose central object is a speaker stack is one of the very few exhibitions in this city that does not primarily reward sight, and nothing in the museum's own material noticed that.</p>
 
-${E.instagram('DXIxEX0Dcdo', { caption: 'Opening day', credit: '@justinwhiteforeva' })}
+${E.instagram('DXIxEX0Dcdo', { caption: 'Opening day' })}
 
 <h3>What Bodies Did In The Galleries</h3>
 
@@ -647,17 +647,17 @@ ${E.instagram('DXIxEX0Dcdo', { caption: 'Opening day', credit: '@justinwhitefore
 
 <p><strong>Mauricio López Fernández</strong> installed a series called <em>Wind Reenactment</em>, documented in four photographs by Mikey Mosher — work that exists as a record of something performed rather than as the thing itself, which is the most common move among artists leaving these programmes and the hardest to install well. <strong>Te Palandjian</strong> and <strong>Isaiah Lee</strong> both showed, and in Lee's room three small framed paintings were hung on a long white wall with nothing else on it, which is a curatorial act of either great confidence or none.</p>
 
-${E.instagram('DcgummsETka', { caption: 'Wind Reenactment, installed', credit: '@mauriciolopezfernandez' })}
+${E.instagram('DcgummsETka', { caption: 'Wind Reenactment, installed' })}
 
 <h3>What A Survey Costs The Artists In It</h3>
 
 <p>Inclusion in a biennial like this is the single most valuable thing that can happen to an artist in their first two years out, and the institution giving it away free is also the institution deciding which five schools count. The Art Center has been in Hyde Park since the 1930s and sits a short walk from the University of Chicago, which supplies some of the graduates and much of the audience. That the gatekeeping is benign does not make it absent.</p>
 
-${E.instagram('DdCaZjmnwRm', { caption: 'Gallery interior, Ground Floor', credit: '@isaiahleeart' })}
+${E.instagram('DdCaZjmnwRm', { caption: 'Gallery interior, Ground Floor' })}
 
 <p>I caught myself checking the wall list for school affiliations before looking properly at three separate works, which is the exact failure the show is built to provoke and I provided it on request.</p>
 
-${E.instagram('DbzMsGOjSC2', { caption: 'Opening, August 9', credit: '@tepalandjian.art' })}
+${E.instagram('DbzMsGOjSC2', { caption: 'Opening, August 9' })}
 
 <h3>How People Read A Prediction</h3>
 

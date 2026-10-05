@@ -42,11 +42,11 @@ module.exports = [
 
 <p>On the Saturday she premiered a single called <strong>"MATADORA"</strong>, which arrived with the confidence of something already tested. The crowd knew the hook by the second chorus, which either means the song is very well built or that a stadium will sing anything twice.</p>
 
-${E.instagram('DbMfUa3xlik', { caption: 'Opening night, July 24', credit: '@victoorrlopez' })}
+${E.instagram('DbMfUa3xlik', { caption: 'Opening night, July 24' })}
 
 <p>What the production understands, and what most stadium pop does not, is that a crowd of fifty thousand cannot be addressed as one object. The show kept breaking the field into smaller rooms — a mariachi number that pulled everything toward the centre, then a run of floor-shaking singles that pushed it back out. Two women behind me spent the mariachi section explaining the lyrics to a friend who had come for the hits, line by line, and did not stop when the next song started.</p>
 
-${E.instagram('DbOQ01jEeE0', { caption: 'From the floor, night one', credit: '@alejandrardrz' })}
+${E.instagram('DbOQ01jEeE0', { caption: 'From the floor, night one' })}
 
 <h3>A Stadium Built For Football</h3>
 
@@ -54,7 +54,7 @@ ${E.instagram('DbOQ01jEeE0', { caption: 'From the floor, night one', credit: '@a
 
 <p>The booking matters beyond the box office. Six weeks after these two nights, <a href="https://www.chicago.gov/city/en/depts/mayor/press_room/press_releases/2026/september/mexican-independence-day.html">El Grito</a> came back to Grant Park after a year off and drew visibly thin crowds, with attendees naming federal immigration enforcement as the reason. A Colombian artist selling out a municipal stadium twice in July, and a free Mexican Independence festival struggling to fill a field in September, are the same summer.</p>
 
-${E.instagram('DbOXl-MD8aS', { caption: 'Tropicoqueta staging, Soldier Field', credit: '@fiercebymitu' })}
+${E.instagram('DbOXl-MD8aS', { caption: 'Tropicoqueta staging, Soldier Field' })}
 
 <p>Fireworks went off over the stadium on both nights, which the neighbours across Michigan Avenue filmed from their windows rather than complaining about. Chicago gave her the whole lakefront twice.</p>
 
@@ -98,11 +98,11 @@ ${E.instagram('DbOXl-MD8aS', { caption: 'Tropicoqueta staging, Soldier Field', c
 
 <p>Queens of the Stone Age do not play loud so much as play dense — the guitars sit in a band of frequency that makes the air feel thicker than it was. In a stadium that mostly flattens everything, their set came through with more low-mid intact than anybody else's.</p>
 
-${E.instagram('DbzNLh2E4Sk', { caption: 'Opening of the set, August 8', credit: '@stvnrndll' })}
+${E.instagram('DbzNLh2E4Sk', { caption: 'Opening of the set, August 8' })}
 
 <p>The Foos played the catalogue. <strong>"The Pretender"</strong> landed the way it always lands, which is as a reliable piece of engineering rather than a surprise. <strong>"Times Like These"</strong> got the full sixty-thousand-voice treatment and was better for the volume, which is not true of most of their ballads.</p>
 
-${E.instagram('Db1JWhlmOv1', { caption: 'Stadium wide, from the upper stands', credit: '@certifiedmusicguy' })}
+${E.instagram('Db1JWhlmOv1', { caption: 'Stadium wide, from the upper stands' })}
 
 <h3>A Bowl That Fights You</h3>
 
@@ -110,7 +110,7 @@ ${E.instagram('Db1JWhlmOv1', { caption: 'Stadium wide, from the upper stands', c
 
 <p>The merch tables were out of the tour shirt in the 2XL and 3XL sizes by the time the headliner went on, which is a small fact that says something about who actually turned up: a crowd that has been coming to see this band for twenty-eight years and has aged accordingly. The show was built for them and did not condescend to them.</p>
 
-${E.instagram('Db1nWwoo4Qc', { caption: 'Late in the headline set', credit: '@doug.howie' })}
+${E.instagram('Db1nWwoo4Qc', { caption: 'Late in the headline set' })}
 
 <p>Two photographers were credited across the fan galleries by name, Andi K Taylor and Sean Cox, which is more credit than most stadium shows generate. Sixty thousand people, one stage, nobody left early.</p>
 
@@ -154,13 +154,13 @@ ${E.instagram('Db1nWwoo4Qc', { caption: 'Late in the headline set', credit: '@do
 
 <p><strong>Taylor Bennett</strong>, Chance's brother, was on the bill too, and <strong>Mello</strong> — who manages Bennett and announced the Chicago date as the tour's first stop — was the one visibly running people between the stage and the back of house all night. Credit where it is due: the night was organised by Chicagoans for a Chicago audience that had travelled north to get to it.</p>
 
-${E.instagram('Db1p0fTOn2W', { caption: 'Young Roddo before his set', credit: '@sharodcantsing' })}
+${E.instagram('Db1p0fTOn2W', { caption: 'Young Roddo before his set' })}
 
 <h3>The Record At Ten</h3>
 
 <p><em>Coloring Book</em> was a gospel-rap mixtape that won a Grammy without being sold, and it does not survive on nostalgia the way a rock catalogue does — the songs were built on choir arrangements, and a choir either shows up or it does not. This one showed up. <strong>"Blessings"</strong> came through with the horn line intact and the crowd carrying the response vocal, which on a lawn means several thousand people singing a church part slightly behind the beat. <strong>"No Problem"</strong> was the loudest the night got. <strong>"Same Drugs"</strong> was the strangest — a song about growing apart from someone, played to an audience of families on picnic blankets, under red stage light and smoke.</p>
 
-${E.instagram('Db09EyzuwQO', { caption: 'From the pavilion, opening night', credit: '@itsashleyrenee__' })}
+${E.instagram('Db09EyzuwQO', { caption: 'From the pavilion, opening night' })}
 
 <h3>A Lawn Is Not A Room</h3>
 
@@ -168,7 +168,7 @@ ${E.instagram('Db09EyzuwQO', { caption: 'From the pavilion, opening night', cred
 
 <p>Somebody near me said, to nobody in particular, that they had taken the Metra up and would be taking it back and that this was the first time they had ever done that for a concert. The Union Pacific North line runs to a halt directly beside the festival gate, which is the only reason a show like this can put a South Side audience on a North Shore lawn at all.</p>
 
-${E.instagram('Dbx1bE1DuAx', { caption: 'Stage view, August 8', credit: '@tie_nuh_' })}
+${E.instagram('Dbx1bE1DuAx', { caption: 'Stage view, August 8' })}
 
 <p>The Metra platform at eleven was standing room in both directions. He opened a national tour thirty miles from home.</p>
 
@@ -212,7 +212,7 @@ ${E.instagram('Dbx1bE1DuAx', { caption: 'Stage view, August 8', credit: '@tie_nu
 
 <p><strong>"Graceland"</strong> came out with the bass line further forward than on the record, which stripped the studio off it and left four people playing a song. <strong>"The Boxer"</strong> was the one that got the lawn to stop talking entirely. He let the last verse sit almost unaccompanied, and thirteen thousand people on folding chairs went quiet enough that you could hear the Metra pass.</p>
 
-${E.instagram('Da65No_H_kV', { caption: 'From the lawn, July 17', credit: '@katschock' })}
+${E.instagram('Da65No_H_kV', { caption: 'From the lawn, July 17' })}
 
 <h3>The Hall Is Six Days Old</h3>
 
@@ -220,11 +220,11 @@ ${E.instagram('Da65No_H_kV', { caption: 'From the lawn, July 17', credit: '@kats
 
 <p>Whether that money reaches the lawn is a different question, and the answer is mostly no. The lawn is still a field with a speaker array pointed at it, and the people on it were hearing a competent reinforcement of a show happening somewhere else. They did not appear to mind, because the lawn is not really about fidelity; it is about being outdoors in July with a bottle of wine and somebody else's children running past.</p>
 
-${E.instagram('Da6i8malZ5T', { caption: 'Pavilion and lawn, opening of the run', credit: '@krismjohnson1' })}
+${E.instagram('Da6i8malZ5T', { caption: 'Pavilion and lawn, opening of the run' })}
 
 <p>The train is the other half of this venue. Ravinia has its own Metra halt on the Union Pacific North line, and the Ogilvie platform before both shows was full of people in their sixties carrying folding chairs and cooler bags. Somebody on the northbound told their friend they had been coming to this festival for forty years and had never once driven.</p>
 
-${E.instagram('Da8_hf7kfDP', { caption: 'Second night, July 18', credit: '@whatprod' })}
+${E.instagram('Da8_hf7kfDP', { caption: 'Second night, July 18' })}
 
 <p>Twenty dollars, two nights, and a man who has been saying he is finished since 2018. He is not finished.</p>
 
@@ -268,13 +268,13 @@ ${E.instagram('Da8_hf7kfDP', { caption: 'Second night, July 18', credit: '@whatp
 
 <p><strong>Jon Batiste</strong> played second, and that is the booking nobody can quite explain: a jazz bandleader and former late-night music director, in the direct support slot, for a country headliner. He went at it as a pianist rather than a personality, which was the right instinct for a crowd that had mostly not come for him. By the end of his set the outfield was paying attention. I have no theory for why the pairing works and I am not going to pretend to one.</p>
 
-${E.instagram('DavgQR7lOfI', { caption: 'Stage and outfield, July 12', credit: '@_emmagraf_' })}
+${E.instagram('DavgQR7lOfI', { caption: 'Stage and outfield, July 12' })}
 
 <h3>What Childers Did With It</h3>
 
 <p>The Food Stamps are a band that plays behind a singer rather than around him, and in a stadium that means the arrangements have to be bigger without becoming rock. They managed it mostly through the pedal steel, which cuts through open air better than any guitar. <strong>"Feathered Indians"</strong> got the full forty-thousand-voice treatment and survived it. <strong>"All Your'n"</strong> was the one that demonstrated the actual problem with ballparks: a song that works because of intimacy, performed at a distance of four hundred feet, carried entirely by the crowd singing it back.</p>
 
-${E.instagram('DawDxlCjmeS', { caption: 'From the crowd, Snipe Hunt at Wrigley', credit: '@fidlard' })}
+${E.instagram('DawDxlCjmeS', { caption: 'From the crowd, Snipe Hunt at Wrigley' })}
 
 <h3>A Ballpark Is A Terrible Venue</h3>
 
@@ -282,7 +282,7 @@ ${E.instagram('DawDxlCjmeS', { caption: 'From the crowd, Snipe Hunt at Wrigley',
 
 <p>What a ballpark offers instead is the thing a theatre cannot: forty thousand people outdoors in July, in a neighbourhood that absorbs the overflow into its bars rather than resenting it. The trade is fidelity for occasion, and for this bill it was the correct trade.</p>
 
-${E.instagram('DavcrNbkUJ2', { caption: 'Marquee before doors', credit: '@heidi.pilon' })}
+${E.instagram('DavcrNbkUJ2', { caption: 'Marquee before doors' })}
 
 <p>The marquee still read SOLD OUT at midnight with the field empty. A jazz pianist opened a country show and nobody booed.</p>
 
@@ -334,11 +334,11 @@ ${E.instagram('DalShnEletj', { caption: 'End of the show, July 8', credit: '@mag
 
 <p>Acoustically it is a canopy over a shallow bowl in open air next to a large body of water, which means the lake eats the low end and the wind moves the whole image left and right. For a band playing loud that is a problem. For a piano, upright bass and a singer who will not raise his voice, it is nearly ideal.</p>
 
-${E.instagram('DajE_bNpQs3', { caption: 'From the pavilion', credit: '@katie668405' })}
+${E.instagram('DajE_bNpQs3', { caption: 'From the pavilion' })}
 
 <p>He did not say the word Chicago. Fan accounts from Ireland had the photographs posted by the following morning, which tells you what kind of audience follows this tour — people who count the shows.</p>
 
-${E.instagram('DalIorLlsSJ', { caption: 'Stage, late in the set', credit: '@brendan_p_burke' })}
+${E.instagram('DalIorLlsSJ', { caption: 'Stage, late in the set' })}
 
 <p>Forty-eight shows into the year, on a Wednesday, on a landfill. He will play forty more.</p>
 
@@ -382,7 +382,7 @@ ${E.instagram('DalIorLlsSJ', { caption: 'Stage, late in the set', credit: '@bren
 
 <p><strong>Gabe Phoenix</strong>, a Los Angeles photographer, shot the night and put seventeen frames out the same evening, which is how the tour-opening images that defined the run came out of this city rather than a later stop.</p>
 
-${E.instagram('Db1BgD6lY-A', { caption: 'Tour opening night, August 9', credit: '@gc_phoenix' })}
+${E.instagram('Db1BgD6lY-A', { caption: 'Tour opening night, August 9' })}
 
 <h3>What She Sang</h3>
 
@@ -390,9 +390,9 @@ ${E.instagram('Db1BgD6lY-A', { caption: 'Tour opening night, August 9', credit: 
 
 <p>The Northerly Island canopy covers maybe a third of the audience and the rest are on grass with the skyline directly behind the stage, which gives this venue the best sightline in Chicago and the worst low-end retention. For a show built on bass and breath, the lake takes something out of it before it reaches the back.</p>
 
-${E.instagram('Db17_EDMEdT', { caption: 'THE PHOENIX staging', credit: '@juaan.jpg' })}
+${E.instagram('Db17_EDMEdT', { caption: 'THE PHOENIX staging' })}
 
-${E.instagram('Db4NgCkKPu4', { caption: 'Crowd, night one', credit: '@milehighclubworldwide' })}
+${E.instagram('Db4NgCkKPu4', { caption: 'Crowd, night one' })}
 
 <p>Janet Jackson watched the first night of it from the wings. Chicago got the tour before anybody else did.</p>
 
@@ -434,11 +434,11 @@ ${E.instagram('Db4NgCkKPu4', { caption: 'Crowd, night one', credit: '@milehighcl
 
 <p>The production was a multi-level LED structure built around a central cross shape, pulsing blue, and it did most of the communicative work. <strong>"Animals"</strong> is eleven years old and still the moment the field loses its composure — a track built on one idea executed without embarrassment. <strong>"High on Life"</strong> carried the middle of the set and is the better record, with a melody that survives being played outdoors next to a lake.</p>
 
-${E.instagram('DaHthXbFlb8', { caption: 'Third night, June 27', credit: '@mofoninja8' })}
+${E.instagram('DaHthXbFlb8', { caption: 'Third night, June 27' })}
 
 <p>What the lake does to this music is specific: it takes the sub-bass and spreads it, so the kick that would hit you in the chest in a warehouse arrives as pressure rather than impact. Garrix's engineers compensated by pushing the mid-range, which keeps the melody legible and costs the drop its violence. In a shed on open water that is the right compromise, and it is why nobody comes to Northerly Island for techno.</p>
 
-${E.instagram('DaJYsfDuFGk', { caption: 'LED structure, closing night', credit: '@edmsven' })}
+${E.instagram('DaJYsfDuFGk', { caption: 'LED structure, closing night' })}
 
 <h3>Whose Park It Is</h3>
 
@@ -488,7 +488,7 @@ ${E.instagram('DaJG-9khAD9', { caption: 'Crowd and skyline', credit: '@reverbvis
 
 <p>He conducts from the piano bench, badly and visibly, which the orchestra appeared to find funnier than the audience did.</p>
 
-${E.instagram('DbZqqUejCh1', { caption: 'The lawn at dusk, July 29', credit: '@kulrichpapczun' })}
+${E.instagram('DbZqqUejCh1', { caption: 'The lawn at dusk, July 29' })}
 
 <h3>The Best Room In Chicago Is Outdoors</h3>
 
@@ -496,9 +496,9 @@ ${E.instagram('DbZqqUejCh1', { caption: 'The lawn at dusk, July 29', credit: '@k
 
 <p>Somebody behind me spent the interval explaining to a visitor that yes, it was always free, and no, you did not need to book. They sounded personally proud of it.</p>
 
-${E.instagram('DbZdfnODpxC', { caption: 'Orchestra and crowd', credit: '@sealchicago' })}
+${E.instagram('DbZdfnODpxC', { caption: 'Orchestra and crowd' })}
 
-${E.instagram('DbZneDAFjh2', { caption: 'Pritzker Pavilion, Ben Folds night', credit: '@swallowstudios' })}
+${E.instagram('DbZneDAFjh2', { caption: 'Pritzker Pavilion, Ben Folds night' })}
 
 <p>Seventy players, a piano, and a zero-dollar ticket on a Wednesday in July. The lawn was full by seven.</p>
 
@@ -542,7 +542,7 @@ ${E.instagram('DbZneDAFjh2', { caption: 'Pritzker Pavilion, Ben Folds night', cr
 
 <p><strong>"Divorce Song"</strong> was the Phair moment — a song built on a conversational vocal and a guitar part that barely moves, and in a room this size it depended entirely on the crowd shutting up, which they did. <strong>"Dig Me Out"</strong> was the Sleater-Kinney moment and the loudest the night got, Corin Tucker's voice doing the thing it has done since 1997, which is to arrive like a structural problem.</p>
 
-${E.instagram('DdaszIfEac0', { caption: 'The Flannel and the Fury, September 17', credit: '@bhilverda' })}
+${E.instagram('DdaszIfEac0', { caption: 'The Flannel and the Fury, September 17' })}
 
 <h3>A Salt Plant With A PA</h3>
 
@@ -550,9 +550,9 @@ ${E.instagram('DdaszIfEac0', { caption: 'The Flannel and the Fury, September 17'
 
 <p>For a bill of three guitar acts it is close to the best room in Chicago, and it is the direct beneficiary of what happened to the mid-size circuit when Pitchfork left town — the same campus that now hosts Warm Love Cool Dreams in May and took the Silver Room Block Party in July.</p>
 
-${E.instagram('Ddg1HcWFePX', { caption: 'Tour poster, fourteen dates', credit: '@frankiecombos' })}
+${E.instagram('Ddg1HcWFePX', { caption: 'Tour poster, fourteen dates' })}
 
-${E.instagram('DXrtaP4gUMa', { caption: 'The Flannel and the Fury tour', credit: '@lizphairofficial' })}
+${E.instagram('DXrtaP4gUMa', { caption: 'The Flannel and the Fury tour' })}
 
 <p>Joshua Mellin shot the night and had the frames out by morning. A Winnetka record came home to a salt shed and filled it.</p>
 

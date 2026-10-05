@@ -41,17 +41,17 @@ module.exports = [
 
 <p>The artist <strong>Pugs Atomz</strong> took a spot in the big tent for the July weekend, which is a different proposition again — a working Chicago artist selling his own output next to people reselling other people's, at the same booth rate.</p>
 
-${E.instagram('DaVfThtFmS9', { caption: 'A booth in the big tent, July weekend', credit: '@pugsatomz' })}
+${E.instagram('DaVfThtFmS9', { caption: 'A booth in the big tent, July weekend' })}
 
 <h3>Who Built This Block</h3>
 
 <p>The hall at 1341 West Randolph went up for a plumbers' union, in a district that was wholesale food — meat, produce, refrigerated trucks at four in the morning, and almost nothing open to the public. Restaurant Row is built inside that shell. The market is one of the few things on the strip that still sells objects rather than dinner, in a neighbourhood that has been priced for dinner for about fifteen years now.</p>
 
-${E.instagram('DbBY6P8tAJX', { caption: 'The outdoor half, Randolph and Washington', credit: '@heronagency' })}
+${E.instagram('DbBY6P8tAJX', { caption: 'The outdoor half, Randolph and Washington' })}
 
 <p>The “noise” of this market is almost entirely transactional — no music to speak of, just the particular sound of several hundred people picking things up and putting them down again, and a lot of very specific questions about provenance.</p>
 
-${E.instagram('DbWJ0AWpFV5', { caption: 'A grandmother and granddaughter spend the day', credit: '@biglittleescapes' })}
+${E.instagram('DbWJ0AWpFV5', { caption: 'A grandmother and granddaughter spend the day' })}
 
 <p>A woman with grey hair in a bun spent the July Saturday walking the stalls with her granddaughter, who was drinking something purple and being allowed to choose one thing. They were still deciding at four.</p>
 
@@ -103,9 +103,9 @@ ${E.instagram('DdO7uZEjjhg', { caption: 'A seven-year-old vendor, September 13',
 
 <p><strong>Jim's Original</strong>, the Polish sausage stand, is the surviving thread. A Maxwell Street Polish runs about seven dollars, it has been essentially the same object since 1939, and it is the only thing on this street with continuous tenure.</p>
 
-${E.instagram('Db0trX9FofK', { caption: 'Jim’s Original, and the August market', credit: '@maxwellstreetfoundation' })}
+${E.instagram('Db0trX9FofK', { caption: 'Jim’s Original, and the August market' })}
 
-${E.instagram('DbtnJ0MjVGj', { caption: 'Rediscover Maxwell Street', credit: '@chicagodcase' })}
+${E.instagram('DbtnJ0MjVGj', { caption: 'Rediscover Maxwell Street' })}
 
 <p>The “noise” here is the only genuinely polyglot sound left in a Chicago market — Spanish, Polish, Arabic and English across one row of tables, plus whatever is coming out of a car with its doors open.</p>
 
@@ -149,7 +149,7 @@ ${E.instagram('DbtnJ0MjVGj', { caption: 'Rediscover Maxwell Street', credit: '@c
 
 <p>From the water you get the whole thing — the bursts, the illuminated skyline behind them, and the lit Ferris wheel on the horizon in the same frame — and the boats cluster far enough out that the sound arrives a beat late. People who own boats here know this. People who rent them find out once.</p>
 
-${E.instagram('DaS75MdgKmj', { caption: 'From the water, looking back at the pier', credit: '@penelope_314' })}
+${E.instagram('DaS75MdgKmj', { caption: 'From the water, looking back at the pier' })}
 
 <h3>What the Pier Was Built For</h3>
 
@@ -157,7 +157,7 @@ ${E.instagram('DaS75MdgKmj', { caption: 'From the water, looking back at the pie
 
 <p>The July 4th show is the one everybody attends and the worst one to pick, because the crowd is four times normal and the programme is the same.</p>
 
-${E.instagram('Dc7oANGuz6O', { caption: 'The last show of the summer, September 5', credit: '@maunaeats' })}
+${E.instagram('Dc7oANGuz6O', { caption: 'The last show of the summer, September 5' })}
 
 ${E.instagram('Dc4k1QKMzsk', { caption: 'From a window on the near North Side', credit: '@justdougkas' })}
 
