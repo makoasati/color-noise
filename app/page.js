@@ -12,7 +12,7 @@ export const revalidate = 60
 
 export const metadata = {
   title: 'Color&Noise',
-  description: 'Sight, sound, scene — the visual and sonic life of Chicago',
+  description: 'Sight, sound, scene. The visual and sonic life of Chicago.',
 }
 
 export default async function HomePage({ searchParams }) {
