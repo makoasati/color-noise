@@ -1998,3 +1998,249 @@ Conflicts I found between reputable sources. **Do not let the tone-of-voice agen
   4. 🟡 **Performing artists' own IGs** — international acts, heavy visual output
   5. 🟡 **WTTW guide** — news.wttw.com/2026-chicago-festival-guide-summer-fall-events
 
+
+---
+
+# THE STANDALONE CONCERTS (97–130)
+
+**Why this section exists.** Entries #87–#90 group individual gigs under their venue season, and #68 (Ravinia), #91 (Queen!) and #95 (the DJ circuit) bury named nights inside a single bullet. That made every non-festival concert invisible to the event list and to the eyewitness-post scrape. Each verified show below is now its own entry so it can carry its own posts, images and article.
+
+**Nothing here is new research.** Every date, bill and source is lifted from the parent entry named in each block. No show has been added that the dossier did not already verify. The arena and theatre tier — United Center, Allstate Arena, the Chicago Theatre, the Riviera, the Aragon, the Auditorium, Credit Union 1 Arena, the Vic, Park West, Symphony Center, House of Blues, Concord Music Hall, Radius — **was never researched and is not represented below.** That is the largest remaining gap in the dossier.
+
+### 97. DJ Chico at The Whistler
+- **Apr 24, 2026** · The Whistler, Logan Square · `nightlife`
+- **2026 specifics:** A free-entry neighbourhood DJ night, and one of only two individually dated club bookings outside Smartbar that the research pinned down. The dossier's argument is that nights like this, not the festivals, are the actual base of Chicago house.
+- **Parent entry:** #95 — the club and DJ circuit
+- **Primary source:** https://5mag.net/calendars/chicago-house-music-events-calendar/
+- **More:** [Resident Advisor Chicago](https://ra.co/events/us/chicago)
+
+### 98. Honey Dijon at Queen!
+- **Apr 26, 2026** · Smartbar, 3730 N. Clark St, Wrigleyville · `nightlife`
+- **2026 specifics:** A guest booking at Queen!, the Sunday weekly that has run over 14 years with residents Derrick Carter, Michael Serafini and Shaun J. Wright, hosted by Lucy Stoole and Nico. Honey Dijon returning to the room is the Chicago-house-made-good story in one night.
+- **Parent entry:** #91 — Queen! at Smartbar
+- **Primary source:** https://5mag.net/event/honey-dijon-at-queen-at-smartbar-april-26-2026/
+- **More:** [Smartbar — Queen!](https://smartbarchicago.com/queen/) · [RA club page](https://ra.co/clubs/608)
+
+### 99. Mayday Parade at Gallagher Way
+- **Sun May 17, 2026** · Gallagher Way, 1060 W. Addison, Wrigleyville · `music`
+- **2026 specifics:** Part of the Budweiser Concert Series, the small sibling to the Wrigley Field stadium shows — an outdoor plaza booking rather than a ballpark one.
+- **Parent entry:** #88 — Wrigley Field + Gallagher Way
+- **Primary source:** https://www.mlb.com/cubs/tickets/concerts
+- **More:** [Wrigleyville Chicago 2026 concerts](https://wrigleyvillechicago.com/concerts-at-wrigley-field-2026/)
+
+### 100. Jimmy Eat World, Sunny Day Real Estate and The Get Up Kids
+- **Thu Jun 11, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** An emo-canon triple bill, and the dossier calls it the most purely nostalgic booking of the Chicago summer. Three bands whose audience has aged into lawn seats.
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Ticketmaster venue schedule](https://www.ticketmaster.com/huntington-bank-pavilion-at-northerly-island-tickets-chicago/venue/33036)
+
+### 101. OK Go at Gallagher Way
+- **Sat Jun 13, 2026** · Gallagher Way, 1060 W. Addison, Wrigleyville · `music`
+- **2026 specifics:** Budweiser Concert Series booking at the Wrigley plaza.
+- **Parent entry:** #88 — Wrigley Field + Gallagher Way
+- **Primary source:** https://www.mlb.com/cubs/tickets/concerts
+- **More:** [Wrigleyville Chicago 2026 concerts](https://wrigleyvillechicago.com/concerts-at-wrigley-field-2026/)
+
+### 102. House Prescription: Disco Rx at California Clipper
+- **Sat Jun 13, 2026** · California Clipper, Humboldt Park · `nightlife`
+- **2026 specifics:** A neighbourhood bar DJ night — the free-entry end of the circuit, set against ARC's $169–549 tickets (#5).
+- **Parent entry:** #95 — the club and DJ circuit
+- **Primary source:** https://5mag.net/calendars/chicago-house-music-events-calendar/
+- **More:** [Resident Advisor Chicago](https://ra.co/events/us/chicago) · [RA club guide](https://ra.co/guides/clubs-in-chicago)
+
+### 103. Martin Garrix — three nights
+- **Jun 25, 26 and 27, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** Three consecutive nights at a ~30,000-capacity shed on city-owned parkland. The dossier flags this as an EDM residency-economics story: what it means for a Chicago park to be booked out for one DJ for a long weekend.
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Pavilion events](https://www.pavilionnortherlyisland.com/events/)
+
+### 104. Bob Dylan at Northerly Island
+- **Wed Jul 8, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** Paired in the research with the Aug 2 Outlaw Festival (#113) as "the last of a generation, played to a lakefill built on landfill" — Dylan and Willie Nelson on the same peninsula in the same summer.
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Concert Archives](https://www.concertarchives.org/venues/huntington-bank-pavilion-at-northerly-island)
+
+### 105. Lizzo on flute with the Chicago Symphony — Ravinia 60th Gala
+- **Sat Jul 11, 2026** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** Lizzo did not play a pop headline set. At the 60th Gala Evening, opening the redesigned Hunter Pavilion, she appeared on flute with the CSO alongside chief conductor Marin Alsop and pianist Yunchan Lim (Ravel's Piano Concerto in G), and spoke about music's role in her life. Renovation cost conflicts: $75M venue-wide vs $70M for the Hunter Pavilion specifically — write "roughly $70–75 million" or attribute.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://cso.org/experience/article/28485/ravinia-summer-2026-season-programming-and-pa
+- **More:** [Sun-Times review](https://chicago.suntimes.com/music/2026/07/12/lizzo-cso-chicago-ravinia-yunchan-lim-music-review) · [Splash Magazines gala coverage](https://splashmags.com/2026/07/ravinia-opens-new-hunter-pavilion-the-cso-lizzo-lim-and-alsop-shine-at-gala/) · [ABC7 full Ravinia schedule](https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/)
+
+### 106. John Mulaney at Wrigley Field
+- **Sat Jul 11, 2026** · Wrigley Field, 1060 W. Addison, Wrigleyville · `music`
+- **2026 specifics:** The *Mister Whatever Tour*, and **the first comedy event ever held at Wrigley Field** — a ballpark that has hosted rock for two decades finally booking a comedian. Clean, specific and reportable.
+- **Parent entry:** #88 — Wrigley Field + Gallagher Way
+- **Primary source:** https://www.mlb.com/cubs/tickets/concerts
+- **More:** [Wrigleyville Chicago 2026 concerts](https://wrigleyvillechicago.com/concerts-at-wrigley-field-2026/) · [Concertfix](https://concertfix.com/concerts/chicago-il+wrigley-field)
+
+### 107. Billy Idol at Ravinia
+- **Sun Jul 12, 2026** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** Booked the night after the Hunter Pavilion opening gala (#105) — the swing from a CSO gala to Billy Idol in 24 hours is Ravinia's whole programming thesis.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/
+- **More:** [Time Out Ravinia guide](https://www.timeout.com/chicago/music/ravinia-festival-schedule-and-best-concerts)
+
+### 108. Tyler Childers with Jon Batiste and Wednesday
+- **Sun Jul 12, 2026** · Wrigley Field, 1060 W. Addison, Wrigleyville · `music`
+- **2026 specifics:** The *Snipe Hunt Tour*. Jon Batiste and Wednesday opening for Childers is an unusually interesting pairing for a ballpark — jazz-pop bandleader and noise-country band under one country headliner.
+- **Parent entry:** #88 — Wrigley Field + Gallagher Way
+- **Primary source:** https://www.mlb.com/cubs/tickets/concerts
+- **More:** [Wrigleyville Chicago 2026 concerts](https://wrigleyvillechicago.com/concerts-at-wrigley-field-2026/)
+
+### 109. Lil Wayne and 2 Chainz at Northerly Island
+- **Fri Jul 17, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** 2 Chainz also played the Lyrical Lemonade Summer Smash undercard (#4) the same summer — two very different Chicago-area rooms in one season.
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Ticketmaster venue schedule](https://www.ticketmaster.com/huntington-bank-pavilion-at-northerly-island-tickets-chicago/venue/33036)
+
+### 110. Paul Simon at Ravinia — two nights
+- **Fri Jul 17 and Sat Jul 18, 2026** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** A two-night stand in the first week of the renovated venue's operation.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/
+- **More:** [BroadwayWorld season announcement](https://www.broadwayworld.com/chicago/article/Ravinia-Festival-Unveils-2026-Season-Featuring-Paul-Simon-Gladys-Knight-Hugh-Jackman-and-the-Chicago-Symphony-Orchestra-20260312)
+
+### 111. Karol G at Soldier Field — two nights
+- **Fri Jul 24 and Sat Jul 25, 2026** · Soldier Field, 1410 S. Museum Campus Dr, Near South Side · `music`
+- **2026 specifics:** **The single biggest Latin music story of the Chicago year** — a two-night stadium stand. It landed in the same summer that El Grito (#44) drew muted crowds under federal immigration enforcement. The dossier's instruction is to write those two facts together.
+- **Parent entry:** #87 — Soldier Field
+- **Primary source:** https://www.soldierfield.com/events/all
+- **More:** [Concert Archives venue history](https://www.concertarchives.org/venues/soldier-field--2) · [Songkick](https://www.songkick.com/venues/14732-soldier-field)
+
+### 112. Ben Folds at the Grant Park Music Festival
+- **Wed Jul 29, 2026** · Jay Pritzker Pavilion, Millennium Park · `music`
+- **2026 specifics:** Folds made his festival debut, inside a 90-year-old free classical series programmed in 2026 around America 250. A pop songwriter on a bill of American composers and a Broadway tribute.
+- **Parent entry:** #22 — Grant Park Music Festival
+- **Primary source:** https://www.grantparkmusicfestival.com/2026-concerts/
+- **More:** [WBEZ on the season](https://www.wbez.org/music/2026/01/06/grant-park-festival-chicago-classical-millennium-park-music-free-ben-folds) · [WFMT](https://www.wfmt.com/2026/01/07/grant-park-music-festival-announces-2026-season/)
+
+### 113. Outlaw Festival — Willie Nelson, The Avett Brothers, Lukas Nelson
+- **Sun Aug 2, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** A touring package rather than a Chicago festival, which is why it sits here and not in Tier 1. Pair with Bob Dylan on Jul 8 (#104).
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Pavilion events](https://www.pavilionnortherlyisland.com/events/)
+
+### 114. Foo Fighters with Queens of the Stone Age and Mannequin Pussy
+- **Sat Aug 8, 2026** · Soldier Field, 1410 S. Museum Campus Dr, Near South Side · `music`
+- **2026 specifics:** The *Take Cover Tour 2026*. A generational stadium-rock bill — a 90s headliner, a 2000s one, and a current punk band opening a stadium.
+- **Parent entry:** #87 — Soldier Field
+- **Primary source:** https://www.soldierfield.com/events/detail/foo-fighters
+- **More:** [FOX32 on the stadium tour](https://www.fox32chicago.com/news/foo-fighters-announce-2026-stadium-tour-stop-chicagos-soldier-field) · [Soldier Field events](https://www.soldierfield.com/events/all)
+
+### 115. Chance the Rapper at Ravinia
+- **Sat Aug 8, 2026** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** A South Side artist on the North Shore's genteel lawn. The dossier calls this genuinely loaded and genuinely interesting, and flags the lawn-seat picnic as a distinct Chicago-area class ritual worth reporting on its own terms.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/
+- **More:** [CSO on the Ravinia season](https://cso.org/experience/article/28485/ravinia-summer-2026-season-programming-and-pa)
+
+### 116. Kehlani at Northerly Island
+- **Sun Aug 9, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** R&B on the lakefill, the night after Chance at Ravinia (#115).
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Ticketmaster venue schedule](https://www.ticketmaster.com/huntington-bank-pavilion-at-northerly-island-tickets-chicago/venue/33036)
+
+### 117. Ricky Martin at Ravinia
+- **Thu Aug 20, 2026** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** The second major Latin booking of the Chicago summer after Karol G's two Soldier Field nights (#111) — a useful contrast in venue, price and audience.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/
+- **More:** [Time Out Ravinia guide](https://www.timeout.com/chicago/music/ravinia-festival-schedule-and-best-concerts)
+
+### 118. Usher and Chris Brown at Soldier Field — back-to-back nights
+- **Fri Aug 21 and Sat Aug 22, 2026** · Soldier Field, 1410 S. Museum Campus Dr, Near South Side · `music`
+- **2026 specifics:** Two consecutive stadium nights. The research establishes the pair and the two dates but **not which artist played which night** — confirm against the Soldier Field calendar before writing either name against either date.
+- **Parent entry:** #87 — Soldier Field
+- **Primary source:** https://www.soldierfield.com/events/all
+- **More:** [Concert Archives venue history](https://www.concertarchives.org/venues/soldier-field--2)
+
+### 119. The Fray with Dashboard Confessional
+- **Sat Aug 29, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** The *Summer of Light Tour* — the second nostalgia co-headline of the Northerly Island season after the Jun 11 emo triple bill (#100).
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Pavilion events](https://www.pavilionnortherlyisland.com/events/)
+
+### 120. Acid Queen! at Smartbar
+- **Sun Aug 30, 2026** · Smartbar, 3730 N. Clark St, Wrigleyville · `nightlife`
+- **2026 specifics:** A themed edition of the Queen! weekly, built around acid house.
+- **Parent entry:** #91 — Queen! at Smartbar
+- **Primary source:** https://5mag.net/event/acid-queen-at-smartbar-august-30-2026/
+- **More:** [Smartbar — Queen!](https://smartbarchicago.com/queen/) · [Smartbar events](https://smartbarchicago.com/events/)
+
+### 121. Kanye West (Ye) at Soldier Field — two nights
+- **Thu Sept 3 and Fri Sept 4, 2026** · Soldier Field, 1410 S. Museum Campus Dr, Near South Side · `music`
+- **2026 specifics:** A two-night hometown stadium return that **cannot be covered as a neutral booking.** The dossier's instruction is explicit: handle deliberately. Decide the editorial line before reporting, not during.
+- **Parent entry:** #87 — Soldier Field
+- **Primary source:** https://www.soldierfield.com/events/all
+- **More:** [Concert Archives venue history](https://www.concertarchives.org/venues/soldier-field--2) · [Songkick](https://www.songkick.com/venues/14732-soldier-field)
+
+### 122. Tove Lo with Mallrat at the Salt Shed Fairgrounds
+- **Wed Sept 16, 2026** · The Salt Shed Fairgrounds, 1357 N. Elston Ave, Goose Island · `music`
+- **2026 specifics:** The *ESTRUS Tour*, opening the venue's near-nightly Sept 16 – Oct 11 outdoor run.
+- **Parent entry:** #90 — The Salt Shed Fairgrounds
+- **Primary source:** https://www.saltshedchicago.com/
+- **More:** [OnesToWatch fall schedule](https://resources.onestowatch.com/salt-shed-fairgrounds-chicago-shows/) · [Ticketmaster Fairgrounds](https://www.ticketmaster.com/the-salt-shed-outdoors-fairgrounds-tickets-chicago/venue/33256)
+
+### 123. Foster The People at Northerly Island
+- **Sat Sept 26, 2026** · Huntington Bank Pavilion, Northerly Island · `music`
+- **2026 specifics:** The closing show of the Northerly Island season, which ran Jun 6 – Sept 26.
+- **Parent entry:** #89 — Huntington Bank Pavilion
+- **Primary source:** https://www.huntingtonbankpavilion.com/shows
+- **More:** [Ticketmaster venue schedule](https://www.ticketmaster.com/huntington-bank-pavilion-at-northerly-island-tickets-chicago/venue/33036)
+
+### 124. MUNA at the Salt Shed Fairgrounds
+- **Fri Oct 9, 2026** · The Salt Shed Fairgrounds, 1357 N. Elston Ave, Goose Island · `music`
+- **2026 specifics:** The *Gets So Hot Tour*.
+- **Parent entry:** #90 — The Salt Shed Fairgrounds
+- **Primary source:** https://www.saltshedchicago.com/
+- **More:** [OnesToWatch fall schedule](https://resources.onestowatch.com/salt-shed-fairgrounds-chicago-shows/) · [JamBase](https://www.jambase.com/venue/the-salt-shed-outdoors-fairgrounds)
+
+### 125. Interpol with DIIV at the Salt Shed Fairgrounds
+- **Sun Oct 11, 2026** · The Salt Shed Fairgrounds, 1357 N. Elston Ave, Goose Island · `music`
+- **2026 specifics:** The closing night of the Fairgrounds outdoor season.
+- **Parent entry:** #90 — The Salt Shed Fairgrounds
+- **Primary source:** https://www.saltshedchicago.com/
+- **More:** [Ticketmaster Fairgrounds](https://www.ticketmaster.com/the-salt-shed-outdoors-fairgrounds-tickets-chicago/venue/33256)
+
+### 126. Derrick Carter's birthday Queen! at Smartbar
+- **Sun Oct 18, 2026** · Smartbar, 3730 N. Clark St, Wrigleyville · `nightlife`
+- **2026 specifics:** Carter with fellow residents Michael Serafini and Shaun J. Wright plus guest Luke Solomon. The dossier's lead angle for the whole nightlife desk: a house music founder has held a standing Sunday residency in Chicago for fourteen years and most of the city doesn't know it.
+- **Parent entry:** #91 — Queen! at Smartbar
+- **Primary source:** https://smartbarchicago.com/queen/
+- **More:** [Smartbar events](https://smartbarchicago.com/events/) · [RA club page](https://ra.co/clubs/608) · [5 Magazine](https://5mag.net/)
+
+### 127. Liz Phair and Sleater-Kinney with Frankie Cosmos
+- **2026 Fairgrounds outdoor season — exact date not established** · The Salt Shed Fairgrounds, 1357 N. Elston Ave, Goose Island · `music`
+- **2026 specifics:** *The Flannel And The Fury*, co-headlined, with Frankie Cosmos opening. A homecoming bill — *Exile in Guyville* is a Chicago record. The research confirms the bill and the tour name but not the date; pull it from the venue before publishing.
+- **Parent entry:** #90 — The Salt Shed Fairgrounds
+- **Primary source:** https://www.saltshedchicago.com/
+- **More:** [OnesToWatch fall schedule](https://resources.onestowatch.com/salt-shed-fairgrounds-chicago-shows/) · [Ticketmaster Fairgrounds](https://www.ticketmaster.com/the-salt-shed-outdoors-fairgrounds-tickets-chicago/venue/33256)
+
+### 128. Ravinia 2026 — further named bookings
+- **June – September 2026 — individual dates not established** · Ravinia Festival, Highland Park · `music`
+- **2026 specifics:** Named in the research without dates: **Gladys Knight, Bonnie Raitt, Brandi Carlile, Jacob Collier, Hugh Jackman, Rod Stewart, Kool & The Gang, Alabama Shakes, Ray LaMontagne.** Miranda Lambert appears in the ABC7 schedule headline but not in the dossier's own prose — treat as a lead, not a fact. This is a grouping, not one event: 90+ concerts ran across the season and only these names came back. Split into real entries from the ABC7 full schedule when you need any of them.
+- **Parent entry:** #68 — Ravinia Festival
+- **Primary source:** https://abc7chicago.com/post/ravinia-festival-2026-schedule-list-more-90-concerts-including-paul-simon-gladys-knight-miranda-lambert-ricky-martin/18705574/
+- **More:** [CSO](https://cso.org/experience/article/28485/ravinia-summer-2026-season-programming-and-pa) · [BroadwayWorld](https://www.broadwayworld.com/chicago/article/Ravinia-Festival-Unveils-2026-Season-Featuring-Paul-Simon-Gladys-Knight-Hugh-Jackman-and-the-Chicago-Symphony-Orchestra-20260312) · [Time Out](https://www.timeout.com/chicago/music/ravinia-festival-schedule-and-best-concerts)
+
+### 129. Salt Shed Fairgrounds — further named bookings
+- **2026 outdoor season — individual dates not established** · The Salt Shed Fairgrounds, 1357 N. Elston Ave, Goose Island · `music`
+- **2026 specifics:** **Role Model** and **Malcolm Todd** both played the Fairgrounds in 2026 with no date recovered. The season also extends into May 2027 with FKJ — outside this dossier's scope. The bigger gap: searches surfaced the autumn run in detail and the summer run only thinly. Pull the full summer calendar from the venue before treating this section as complete.
+- **Parent entry:** #90 — The Salt Shed Fairgrounds
+- **Primary source:** https://www.saltshedchicago.com/
+- **More:** [Ticketmaster Fairgrounds](https://www.ticketmaster.com/the-salt-shed-outdoors-fairgrounds-tickets-chicago/venue/33256) · [JamBase](https://www.jambase.com/venue/the-salt-shed-outdoors-fairgrounds)
+
+### 130. Thalia Hall 2026 — named bookings
+- **Year-round — individual dates not established** · Thalia Hall, 1807 S. Allport, Pilsen · `music`
+- **2026 specifics:** Thalia Hall books 3–5 shows a week; the only 2026 names recovered are **Ronboy, Matt Berninger** and **Yola**, all undated. This stands in for the whole indie-venue circuit, where no show-by-show listings were retrieved. Venue calendars are the source — don't let anyone fill this in from memory.
+- **Parent entry:** #96 — the indie venue circuit
+- **Primary source:** https://www.thaliahallchicago.com/shows
+- **More:** [Empty Bottle via Concertfix](https://concertfix.com/concerts/chicago-il+the-empty-bottle) · [Lincoln Hall](https://concertfix.com/concerts/chicago-il+lincoln-hall) · [Do312](https://do312.com/)
