@@ -33,7 +33,7 @@ create table if not exists articles (
   id           uuid primary key default gen_random_uuid(),
   slug         text unique not null,
   title        text not null,
-  category     text not null check (category in ('review', 'news', 'spotlight')),
+  category     text not null check (category in ('review', 'news', 'spotlight', 'food')),
   author_id    uuid references profiles(id) on delete set null,
   author_name  text,
   date         text,

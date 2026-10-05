@@ -101,8 +101,8 @@ function validate(a, slug) {
   if (!a.neighborhood)                errs.push('missing neighborhood')
   if (!a.date)                        errs.push('missing date')
   if (!/^\d{4}-\d{2}-\d{2}$/.test(a.date || '')) errs.push(`date not YYYY-MM-DD: ${a.date}`)
-  if (!['review', 'news', 'spotlight'].includes(a.category)) errs.push(`bad category: ${a.category}`)
-  if (!['Jude', 'Julian Vane', 'Mora'].includes(a.author_name)) errs.push(`unknown byline: ${a.author_name}`)
+  if (!['review', 'news', 'spotlight', 'food'].includes(a.category)) errs.push(`bad category: ${a.category}`)
+  if (!['Jude', 'Julian Vane', 'Mora', 'Gus'].includes(a.author_name)) errs.push(`unknown byline: ${a.author_name}`)
 
   // The house rules in §9 govern Color&Noise's writing. An embed's
   // cn-embed-quote block is the creator's own caption, harvested verbatim by
@@ -252,9 +252,31 @@ async function main() {
     auth: { autoRefreshToken: false, persistSession: false },
   })
 
-  const { error } = await supabase.from('articles').upsert(rows, { onConflict: 'slug' })
-  if (error) {
-    console.error('\nSupabase error:', error.message, '\n')
+  // Chunked, and verified afterwards. A single upsert of the whole package
+  // reports success but silently drops new inserts once the payload gets
+  // large — updates land, inserts do not. Chunking fixes it; the read-back
+  // below is there so a silent drop can never be reported as success again.
+  const CHUNK = 20
+  for (let i = 0; i < rows.length; i += CHUNK) {
+    const slice = rows.slice(i, i + CHUNK)
+    const { error } = await supabase.from('articles').upsert(slice, { onConflict: 'slug' })
+    if (error) {
+      console.error(`\nSupabase error on rows ${i}-${i + slice.length - 1}:`, error.message, '\n')
+      process.exit(1)
+    }
+  }
+
+  const { data: back, error: readErr } = await supabase
+    .from('articles').select('slug').in('slug', rows.map(r => r.slug))
+  if (readErr) {
+    console.error('\nCould not verify the write:', readErr.message, '\n')
+    process.exit(1)
+  }
+  const landed = new Set((back || []).map(r => r.slug))
+  const lost = rows.filter(r => !landed.has(r.slug)).map(r => r.slug)
+  if (lost.length) {
+    console.error(`\n${lost.length} row(s) did not land:`)
+    for (const s of lost) console.error('  ' + s)
     process.exit(1)
   }
 

@@ -5,10 +5,11 @@ import Link from 'next/link'
 import { STYLES } from '@/lib/styles'
 
 const PUBLIC_NAV_TABS = [
-  { key: 'all',       label: 'All',    square: null },
-  { key: 'news',      label: 'Around', square: '#C95C2B' },
-  { key: 'review',    label: 'Heard',  square: '#E73B2F' },
-  { key: 'spotlight', label: 'Seen',   square: '#2D4DFF' },
+  { key: 'all',       label: 'All',     square: null },
+  { key: 'news',      label: 'Around',  square: '#C95C2B' },
+  { key: 'review',    label: 'Heard',   square: '#E73B2F' },
+  { key: 'food',      label: 'Savored', square: '#D8A23A' },
+  { key: 'spotlight', label: 'Seen',    square: '#2D4DFF' },
 ]
 
 function NavTab({ tab, active, onClick }) {

@@ -12,14 +12,14 @@ export const revalidate = 60
 
 export const metadata = {
   title: 'Color&Noise',
-  description: 'Sight, sound, scene — the visual and sonic life of Chicago',
+  description: 'Sight, sound, scene. The visual and sonic life of Chicago.',
 }
 
 export default async function HomePage({ searchParams }) {
   const params = await searchParams
 
   // Parse comma-separated multi-select filters
-  const cats = (params?.cat || '').split(',').map(s => s.trim()).filter(s => s && s !== 'all' && ['review', 'news', 'spotlight'].includes(s))
+  const cats = (params?.cat || '').split(',').map(s => s.trim()).filter(s => s && s !== 'all' && ['review', 'news', 'spotlight', 'food'].includes(s))
   const neighborhoodSlugs = (params?.neighborhood || '').split(',').map(s => s.trim()).filter(Boolean)
 
   const supabase = await createClient()
