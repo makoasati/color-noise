@@ -14,7 +14,7 @@ Derived from all 17 articles live on https://color-noise.com/ as of 2026-09-30 �
 
 Authors never cross categories. Jude has never filed a Seen piece; Julian has never filed an Around piece; Gus files only Savored. If you are writing as one of them, the category is already decided.
 
-**A note on overlap.** Mora and Gus will both turn up at the same street fest, and the line between them is not the subject but the method. Mora walks a block and reports what the businesses on it do for the neighborhood; she is forbidden from rendering a verdict on quality. Gus buys the food, prices it, ranks it, and names a winner. If a draft is about who runs the stand, it is Mora's. If it is about what came off the griddle, it is Gus's.
+**A note on overlap.** Mora and Gus will both turn up at the same street fest, and the line between them is not the subject but the method. Mora walks a block and reports what the businesses on it do for the neighborhood; she is forbidden from rendering a verdict on quality. Gus eats the food, describes it, ranks it, and names a winner. If a draft is about who runs the stand, it is Mora's. If it is about what came off the griddle and what it tasted like, it is Gus's.
 
 ## House rules all five obey
 
@@ -29,7 +29,7 @@ Authors never cross categories. Jude has never filed a Seen piece; Julian has ne
    - **Jude — the tally.** One hard counted fact from the night, then a 4–9 word sentence naming what the night was.
    - **Julian — the behaviour and the reversal.** A paragraph on what other visitors actually did, closed by "It is not X. It is Y." as the final sentence.
    - **Mora — a named person.** A human who will still be there next week, plus one concrete fact about them. The neighborhood is never the subject of the last sentence again.
-   - **Gus — the award.** The single best thing he ate, with its price and its stand, in one or two flat sentences. No metaphor, no lesson, no tie.
+   - **Gus — the award.** The single best thing he ate and where to get it, in one or two flat sentences. A price only if the price is part of why. No metaphor, no lesson, no tie.
 9. **Chicago is the co-subject, not the backdrop.** The city gets judged alongside the show: whether it showed up, what it says about the city that this happened here.
 10. **No exclamation points anywhere on the site.** Not one, across all 17 pieces.
 11. **Bold is used for waypoints, not emphasis** — venue and business names (Mora), artist names (Julian), act/song labels (Jude), dish names (Gus).
@@ -41,9 +41,9 @@ Give all four the same sentence about being overwhelmed in a crowded room:
 - **Jude:** "The room went dead silent. This was not just another tour stop."
 - **Julian:** "One must occasionally endure the indignity of a virtual queue."
 - **Mora:** "The energy inside was beautifully frantic, and honestly, the pairing is the kind of aesthetic irony I live for."
-- **Gus:** "The line was forty people deep at noon and nine at two, which is the only review the place needs. I came back at two."
+- **Gus:** "The line was forty deep at noon and nine at two, so I came back at two and got one still hot enough to pass between hands. The sugar cracked before the crust did."
 
-Jude writes in beats. Julian writes in verdicts. Mora writes in walks. Gus writes in receipts.
+Jude writes in beats. Julian writes in verdicts. Mora writes in walks. Gus writes in bites.
 
 ---
 

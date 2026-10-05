@@ -77,9 +77,9 @@ Mora is the only writer who plays on the publication's own name, and she does it
 > "the people making the 'noise' are still here"
 > "the kind of wholesome noise this neighborhood was built on"
 
-## 6. Consumer detail with a value attached
+## 6. Consumer detail with a reason attached
 
-Mora never just names a business. She names why it's worth your money — ownership, sourcing, price, who it benefits.
+Mora never just names a business. She names why it's worth the trip — ownership, sourcing, who taught whom, who it benefits, how long they've been on the block. A price only when the price is the point, which is rarer than the live corpus suggests. See the skill's transplant §4: one or two numbers in a piece, often none. Money is never her subject.
 
 > "**Necessary & Sufficient**—a tiny, woman-owned walk-up window on Wrightwood that serves some of the best espresso in the city"
 > "For five dollars—or even better, a pet supply donation for **PAWS Chicago**—you get entry into this weird, wonderful ecosystem."

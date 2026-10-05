@@ -68,7 +68,7 @@ module.exports = [
 
 <figure class="cn-photo-grid">
 <div class="cn-grid-items">
-<div class="cn-grid-item"><img src="/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp" alt="A cinnamon-sugar cider donut sitting on a slice of crumb-topped apple pie in a blue-checked paper boat"><span>Apple cider donut pie, Bang Bang Pie — $6</span></div>
+<div class="cn-grid-item"><img src="/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp" alt="A cinnamon-sugar cider donut sitting on a slice of crumb-topped apple pie in a blue-checked paper boat"><span>Apple cider donut pie, Bang Bang Pie</span></div>
 <div class="cn-grid-item"><img src="/article-images/apple-fest-39/grid/jerry-geraldines-apple-cinnamon-roll.webp" alt="An apple cinnamon roll under thick white icing dusted with cinnamon, in a kraft paper box"><span>Apple cinnamon roll, Jerry &amp; Geraldine’s</span></div>
 <div class="cn-grid-item"><img src="/article-images/apple-fest-39/grid/chopping-block-apple-pie.webp" alt="A hand holding a paper boat with a slice of double-crust apple pie topped with whipped cream and a black plastic fork"><span>Apple pie, The Chopping Block</span></div>
 <div class="cn-grid-item"><img src="/article-images/apple-fest-39/grid/dinky-delights-apple-crisp-donut.webp" alt="A single ring donut coated in cinnamon sugar, on white paper in bright sun"><span>Apple crisp donut, Dinky Delights</span></div>
@@ -133,7 +133,7 @@ module.exports = [
     // frames were matched to the thread's list of eight stops by elimination and
     // confirmed by the desk on 2026-10-05.
     { slot: 'cover',  file: 'public/article-images/apple-fest-39/cover-cider-donut-pie.webp',                     caption: 'Apple cider donut pie, Bang Bang Pie',      license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
-    { slot: 'grid-1', file: 'public/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp',            caption: 'Apple cider donut pie, Bang Bang Pie — $6', license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
+    { slot: 'grid-1', file: 'public/article-images/apple-fest-39/grid/bang-bang-cider-donut-pie.webp',            caption: 'Apple cider donut pie, Bang Bang Pie', license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
     { slot: 'grid-2', file: 'public/article-images/apple-fest-39/grid/jerry-geraldines-apple-cinnamon-roll.webp', caption: 'Apple cinnamon roll, Jerry & Geraldine’s',   license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
     { slot: 'grid-3', file: 'public/article-images/apple-fest-39/grid/chopping-block-apple-pie.webp',             caption: 'Apple pie, The Chopping Block',             license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },
     { slot: 'grid-4', file: 'public/article-images/apple-fest-39/grid/dinky-delights-apple-crisp-donut.webp',     caption: 'Apple crisp donut, Dinky Delights',         license: 'CLEAR', credit: 'u/Jeeperscrow123 via r/chicagofood' },

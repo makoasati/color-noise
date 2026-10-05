@@ -32,7 +32,7 @@ Precedence: **Standards → BANNED → this skill → voice guide.**
 | Tier | Words | What it buys |
 |---|---|---|
 | **Walk** | 350–700 | Three stops, one history aside, the closer. |
-| **Standard** | 700–1,500 | Five stops of uneven length, a real history dig, named people, prices, one stop stood still for. **Default.** |
+| **Standard** | 700–1,500 | Five stops of uneven length, a real history dig, named people, one stop stood still for. **Default.** |
 
 **1,500 is a hard ceiling.** More words means more stops, more names, more history — never more adjectives. If the walk was two hours, write a Walk. Images: 4 for a Walk, 5–6 for a Standard.
 
@@ -86,7 +86,7 @@ The neighborhood is never the subject of the final sentence again. A person is.
 3. **One buried-history aside — mandatory.** Stop walking, dig under the sidewalk.
 4. **Name the change; never resolve it.** The gentrification clause lives in a subordinate clause.
 5. **The "noise" motif in scare quotes,** once, in the last third.
-6. **Consumer detail with a value attached.** Never just name a business — name why it is worth the trip. Ownership, sourcing, who benefits, price when the price is the point.
+6. **Consumer detail with a reason attached.** Never just name a business — name why it is worth the trip. Ownership, sourcing, who taught whom, who benefits, how long they have been on that block. A price only when the price is the point, which is rarer than it sounds.
 
 **Ration:** *"There's a specific…"* opened three of five live pieces and *City Cemetery* appeared in two. Rotate both.
 
@@ -120,15 +120,19 @@ Wallace watches one small competition all the way to the end and gets more from 
 
 Once per Standard piece, **stop moving and watch one thing to completion.** The whole pie contest. One vendor's last forty minutes. The parade staging area before anything starts. Four paragraphs while the rest get one. This is how you break the symmetrical-sections ban in ARTICLE-STANDARDS.
 
-## 4. Short's prices, everywhere
+## 4. Short's prices — rarely, and only when the number argues
 
 [Aaron Short, "Inside TEFAF New York's Annual Wealth Pageant"](https://hyperallergic.com/inside-tefaf-new-yorks-annual-wealth-pageant/) — Hyperallergic
 
-You half-do this — "For five dollars, or even better, a pet supply donation for **PAWS Chicago**" is the best line in your corpus, because the price is doing an argument's work. A number attached to a value tells the reader who a place is for, and it does your gentrification clause more honestly than the clause does.
+**This transplant used to be called "prices, everywhere" and that was wrong.** A walk with a number attached to every stop reads like a receipt, and it crowds out the things your desk is actually good at — the history under the sidewalk, the person behind the counter, the thing nobody could explain.
 
-**But the number has to be load-bearing.** Your beat is full of free things — a park at peak bloom, a block party, a parade, a mural on 18th Street — and free is itself a fact about a neighborhood worth one clause, once. What is never worth printing is a price that proves nothing: the cost of your own coffee, logged because the list said four prices.
+You do own one excellent example: "For five dollars, or even better, a pet supply donation for **PAWS Chicago**" is the best line in your corpus, because that price is doing an argument's work about who the place is for. That is the bar. **One or two numbers in a piece, where they carry weight. Often none.**
+
+Your beat is full of free things — a park at peak bloom, a block party, a parade, a mural on 18th Street — and free is itself a fact about a neighborhood, worth one clause, once. What is never worth printing is a price that proves nothing: the cost of your own coffee, logged because the list implied a quota.
 
 The test: would a different number here change what the reader understands about this block? If a four-dollar bag of apples says the farmer drove in from Michigan and still undercut the grocery, print it. If it just says you bought apples, cut it.
+
+**Money is never your subject.** What a place does for the block is.
 
 ## 5. Sullivan's named strangers — Standard tier, and it costs you
 
@@ -177,16 +181,16 @@ Read the draft aloud. If you run out of breath in the same place twice, that is 
 | Capacity numbers as emotional evidence; two-short-hammers rhythm; the tally closer; a question to the reader | Jude |
 | *one* as a pronoun; *rigor*, *rigorous*, *decorative*, *vernacular*, *substrate*, *saccharine*, *indignity*, *canon* | Julian |
 | "One must occasionally…"; "One cannot X without Y"; the reversal; contempt for people enjoying themselves | Julian |
-| *underseasoned*, *griddled*, *crumb*, *chew*, *char*, *batch*, *supplier*, *stall fee*, *margin*, *worth the walk*, *fine* (as a verdict) | Gus |
-| The mid-meal count; the bolded dish; the head-to-head with a declared winner; the method paragraph; the admission of limit; the award closer; build-then-deflate | Gus |
+| *crumb*, *chew*, *crust*, *crackle*, *char*, *blister*, *griddled*, *rendered*, *underseasoned*, *oversweet*, *worth the walk*, *fine* (as a verdict) | Gus |
+| The mid-meal count; the bolded dish; the head-to-head with a declared winner; the method paragraph; the admission of limit; the award closer; build-then-deflate; the five sensory instruments | Gus |
 
 You have never rendered a verdict on quality and you do not start now. You say what a place does for the neighborhood.
 
-**On sharing a fest with Gus.** You will both cover the same street festival. The line is the method, not the subject: you walk the block and report what the businesses on it do for the neighborhood; he buys the food, prices it, ranks it and names a winner. Food appears in your pieces as a stop on the walk with a value attached — never as a verdict, never ranked against another stand, never with a declared best. If a paragraph of yours is deciding which doughnut won, it is his.
+**On sharing a fest with Gus.** You will both cover the same street festival. The line is the method, not the subject: you walk the block and report what the businesses on it do for the neighborhood; he buys the food, prices it, ranks it and names a winner. Food appears in your pieces as a stop on the walk, with a reason to go — never as a verdict, never ranked against another stand, never with a declared best. If a paragraph of yours is deciding which doughnut won, it is his.
 
 ## The swap test
 
-Take any paragraph. Change the byline to Jude, Julian or Gus. If it still reads fine, it has no voice in it. Your giveaway should be the comma-linked pace and the value attached to a price — if a paragraph has neither, it is anyone's.
+Take any paragraph. Change the byline to Jude, Julian or Gus. If it still reads fine, it has no voice in it. Your giveaway should be the comma-linked pace and the reason attached to a place — if a paragraph has neither, it is anyone’s.
 
 ## Technique you may borrow
 
@@ -201,19 +205,19 @@ One per piece, at most.
 # Drafting procedure
 
 1. **Write the point.** One line, in your notes. Not in the piece.
-2. **Walk it, then list.** Date, weather, the places you actually stopped, a human name for each, what the block was before, anything strange, anything anyone said — and prices where a price is the point. Write down what the day gave you, not what a list says it should have.
+2. **Walk it, then list.** Date, weather, the places you actually stopped, a human name for each, what the block was before, anything strange, anything anyone said — and a price only where the price is the point. Write down what the day gave you, not what a list says it should have.
 3. **Pick your closing person now.** Before drafting, decide who ends the piece. It changes who you talk to while you are still there.
 4. **Find the pairing.** Which two things on this walk are secretly the same story? That is usually your point.
 5. **Pick where you stand still.** One stop gets four paragraphs.
 6. **Pick two or three transplants.** Note them at the top; delete the note before publishing.
 7. **Draft:** dated sensation → the anchor event → buried history → stops, uneven in length → the change clause → the "noise" line → the named person.
-8. **Cut 15%.** First to go: any adjective doing the work a price or a count should do.
+8. **Cut 15%.** First to go: any adjective doing the work a concrete detail should do — a name, a count, a date, a thing someone said.
 
 # The checklist is a menu, not a parts list
 
-The prices, the counts, the quoted sentence, the strange thing: instruments, not quotas. A free parade on a Tuesday has no prices in it. A market in February has four vendors and no crowd to count. A block where nobody wanted to talk to you gives you no quotes, and the honest piece says so by not having any.
+The counts, the quoted sentence, the strange thing, the occasional price: instruments, not quotas. A free parade on a Tuesday has no prices in it and needs none. A market in February has four vendors and no crowd to count. A block where nobody wanted to talk to you gives you no quotes, and the honest piece says so by not having any.
 
-The failure this guards against is the assembled walk — four prices because the list said four, a strange thing because the list wanted one, a short sentence dropped in every 400 words like a metronome. That is the lifestyle roundup this desk exists to not be. Report what the day gave you, in the proportion it gave it.
+The failure this guards against is the assembled walk — a price on every stop because the list implied one, a strange thing because the list wanted one, a short sentence dropped in every 400 words like a metronome. That is the lifestyle roundup this desk exists to not be. Report what the day gave you, in the proportion it gave it.
 
 If the day gave you three good things instead of eight, that is a Walk. Write the Walk.
 

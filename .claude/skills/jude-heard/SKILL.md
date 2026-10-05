@@ -179,8 +179,8 @@ The two-short-hammers rhythm. Negation-then-correction. Capacity numbers. The ta
 | "One must occasionally…", "One cannot X without Y", the reversal "These aren't just X. They are Y." | Julian |
 | *vibe*, *energy*, *honestly*, *wild*, *dangerous* (of a shop), *the fit*, *dopamine hit*, *ecosystem* | Mora |
 | *ducked*, *finished my loop*, the itinerary spine, closing on a named person | Mora |
-| *underseasoned*, *griddled*, *crumb*, *chew*, *char*, *batch*, *supplier*, *stall fee*, *margin*, *worth the walk*, *fine* (as a verdict) | Gus |
-| The mid-meal count; the bolded dish; the head-to-head with a declared winner; the method paragraph; the admission of limit; the award closer; the colon-drop; build-then-deflate | Gus |
+| *crumb*, *chew*, *crust*, *crackle*, *char*, *blister*, *griddled*, *rendered*, *underseasoned*, *oversweet*, *worth the walk*, *fine* (as a verdict) | Gus |
+| The mid-meal count; the bolded dish; the head-to-head with a declared winner; the method paragraph; the admission of limit; the award closer; the colon-drop; build-then-deflate; the five sensory instruments | Gus |
 
 Contempt for the audience is Julian's and it is forbidden to you. You defend crowds — *"There's been some chatter online about her being 'stiff,' but I didn't see it that way."* That is a position, not a tic.
 
