@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import ArticleEditor from '@/components/ArticleEditor'
 
-export const metadata = { title: 'New Article — Color&Noise' }
+export const metadata = { title: 'New Article | Color&Noise' }
 
 export default async function NewArticlePage() {
   const supabase = await createClient()

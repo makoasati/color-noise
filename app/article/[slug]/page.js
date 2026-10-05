@@ -19,9 +19,9 @@ export async function generateMetadata({ params }) {
     .eq('slug', slug)
     .eq('status', 'published')
     .single()
-  if (!data) return { title: 'Not Found — Color&Noise' }
+  if (!data) return { title: 'Not Found | Color&Noise' }
   return {
-    title: `${data.title} — Color&Noise`,
+    title: `${data.title} | Color&Noise`,
     description: data.excerpt,
   }
 }
@@ -63,7 +63,7 @@ export default async function ArticlePage({ params }) {
           {article.cover_image && (
             <img
               src={article.cover_image}
-              alt=""
+              alt={article.title}
               style={{ width: '100%', maxHeight: 420, objectFit: 'cover', display: 'block', borderRadius: 4, marginBottom: 28 }}
             />
           )}

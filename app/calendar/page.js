@@ -6,8 +6,8 @@ import Footer from '@/components/Footer'
 import { dedupeEvents } from '@/lib/event-dedupe'
 
 export const metadata = {
-  title: 'Calendar — Color&Noise',
-  description: 'Chicago events — Heard, Seen, Savored, and Around',
+  title: 'Calendar | Color&Noise',
+  description: 'Chicago events: Heard, Seen, Savored, and Around',
 }
 
 export const revalidate = 300
@@ -58,7 +58,7 @@ export default async function CalendarPage() {
             marginTop: 6,
             marginBottom: 0,
           }}>
-            Heard, Seen, Savored, and Around — updated daily.
+            Heard, Seen, Savored, and Around. Updated daily.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 import './globals.css'
 
 export const metadata = {
-  title: 'Color&Noise — Chicago',
+  title: 'Color&Noise | Chicago',
   description: 'Sight, sound, scene',
 }
 
