@@ -54,7 +54,13 @@ ${E.instagram('Daq-ZYYEbLb', { caption: 'Opening night, July 11' })}
 
 ${E.instagram('Daqb2mCEXEQ', { caption: 'Inside the renovated Hunter Pavilion' })}
 
-${E.instagram('Daoy5nmierQ', { caption: 'Reporting from the reopening' })}
+${E.instagram('Daoy5nmierQ', {
+  caption: 'Reporting from the reopening',
+  // Posted by a newsroom this package may not lean on (2). The credit
+  // stands because it is who posted, but their copy is kept out of the
+  // rail. Replacing this with a primary-source post is the real fix.
+  quote: false,
+})}
 
 <p>Four women on the grass near me had brought folding chairs, a cooler and a cheese board, and stayed through the Ravel. A pop star opened a classical hall by shutting up.</p>
 
