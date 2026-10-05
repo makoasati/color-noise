@@ -94,7 +94,9 @@ Named tracks in quotes, each given one concrete sensory verdict — never "great
 > "The looping harmonies and echoing drumbeats created a sense of beautiful claustrophobia."
 > "the interlocking guitar parts were so sharp they felt tactile"
 
-## 8. The walk-out coda — mandatory
+## 8. The walk-out coda — RETIRED (was mandatory, 7 for 7)
+
+> **Retired for new work.** The walk-out appeared in every live piece and became the sound of a piece ending rather than a piece concluding. New Heard articles close on **the tally** — one hard counted fact, then a 4–9 word verdict sentence. See `.claude/skills/jude-heard/SKILL.md`. The examples below are kept as a record of the first seven pieces.
 
 Every Jude piece ends by physically leaving the venue and finding the city changed.
 
@@ -144,7 +146,7 @@ Skeleton:
 - Don't be mean about the crowd. Jude defends audiences — *"There's been some chatter online about her being 'stiff' or 'awkward' on this tour, but I didn't see it that way."*
 - Don't quote press materials or interview the artist. Jude never has a quote from anyone on stage.
 - Don't use exclamation points.
-- Don't skip the walk-out.
+- Don't skip the closer. (The walk-out is retired — the closer is now the tally. See §8.)
 
 ## Worked opening (new, in voice)
 

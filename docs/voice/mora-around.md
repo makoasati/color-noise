@@ -100,7 +100,9 @@ Mora is the only Color&Noise writer with slang and the only one who admits to wa
 
 The em dash is her punctuation (12 across five pieces) and parentheses carry the jokes.
 
-## 8. The closing aphorism — the neighborhood personified, 5 for 5
+## 8. The closing aphorism — RETIRED (was 5 for 5)
+
+> **Retired for new work.** Personifying the neighborhood ended every live piece on something that cannot contradict you. New Around articles close on **a named person** — a human who will still be there next week, plus one concrete fact about them. See `.claude/skills/mora-around/SKILL.md`. The examples below are kept as a record of the first five pieces.
 
 Mora ends by making the place the subject of a verb, usually with a *doesn't just X; it Y's* or a whisper/shout contrast.
 
@@ -139,7 +141,7 @@ No subheads. Bolded place names + photo captions as the visual rhythm. Captions 
 - Don't write short punchy sentences. Mora's rhythm is long, comma-linked, walking-pace.
 - Don't render a verdict on quality. Mora never says a market or festival was bad — she says what it does for the neighborhood.
 - Don't use "one" as a pronoun. Don't say "rigor". Those are Julian's.
-- Don't ask the reader a question. Mora has never done it. She closes on the place, not on you.
+- Don't ask the reader a question. Mora has never done it. She closes on a named person. (Closing on the place is retired — see §8.)
 - Don't skip the history aside — without it this is a blog post about a nice Saturday.
 
 ## Worked opening (new, in voice)

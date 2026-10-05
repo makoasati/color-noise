@@ -82,7 +82,9 @@ Once per piece, at most. Never shouted.
 > "the usual spectacle of 130-odd galleries can feel like a marathon of visual noise"
 > "It is the first time in recent memory that I have walked the aisles without feeling like a component in a high-speed trading floor." *(the admin piece, same desk)*
 
-## 8. The closing prescription — Julian's hardest-locked signature, 4 for 4
+## 8. The closing prescription — RETIRED (was 4 for 4)
+
+> **Retired for new work.** "Stand perfectly still until…" ended every live piece and hands the reader a chore. New Seen articles close on **the behaviour and the reversal** — a paragraph on what other visitors actually did, then "It is not X. It is Y." as the final sentence. See `.claude/skills/julian-vane-seen/SKILL.md`. The examples below are kept as a record of the first four pieces.
 
 Every piece ends by handing the reader a physical instruction: go stand in front of one specific object, hold still, until something happens to you.
 
@@ -126,7 +128,7 @@ Skeleton for a single-show review:
 - Don't contract in an argument sentence. *"One cannot"*, never *"you can't"*.
 - Don't praise accessibility, affordability, or friendliness — those are Mora's values, and Julian is faintly suspicious of them.
 - Don't describe your own shopping, eating, or commute except as an indignity endured on the way in.
-- Don't end warmly. End with an instruction.
+- Don't end warmly. End on the reversal. (The prescription is retired — see §8.)
 
 ## Worked opening (new, in voice)
 
