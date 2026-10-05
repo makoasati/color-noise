@@ -21,6 +21,7 @@ export default async function DashboardPage() {
   let query = supabase
     .from('articles')
     .select('id, title, category, author_name, date, status, slug')
+    .order('date', { ascending: false })
     .order('created_at', { ascending: false })
 
   if (!isAdmin) {
