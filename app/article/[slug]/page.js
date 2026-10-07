@@ -39,7 +39,18 @@ export default async function ArticlePage({ params }) {
 
   if (!article) notFound()
 
-  const htmlBody = legacyBodyToHtml(article.body || article.excerpt)
+  // Edit button: only for the article's author or an admin (same rule as the edit page)
+  let canEdit = false
+  const { data: { user } } = await supabase.auth.getUser()
+  if (user) {
+    if (article.author_id === user.id) canEdit = true
+    else {
+      const { data: profile } = await supabase.from('profiles').select('role').eq('id', user.id).single()
+      canEdit = profile?.role === 'admin'
+    }
+  }
+
+  const htmlBody =legacyBodyToHtml(article.body || article.excerpt)
   const catColor = CATEGORY_COLOR[article.category] || '#8A8A8A'
 
   return (
@@ -58,7 +69,17 @@ export default async function ArticlePage({ params }) {
       <div style={LIGHT_ZONE}>
         <div style={{ maxWidth: 960, margin: '0 auto', padding: '0 24px 64px' }}>
 
-          <Link href="/" style={STYLES.articleBack}>← All articles</Link>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16 }}>
+            <Link href="/" style={STYLES.articleBack}>← All articles</Link>
+            {canEdit && (
+              <Link
+                href={`/dashboard/edit/${article.id}`}
+                style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 11, textTransform: 'uppercase', letterSpacing: '2px', fontWeight: 700, padding: '8px 16px', background: '#E73B2F', color: '#fff', textDecoration: 'none', flexShrink: 0 }}
+              >
+                Edit
+              </Link>
+            )}
+          </div>
 
           {article.cover_image && (
             <img
