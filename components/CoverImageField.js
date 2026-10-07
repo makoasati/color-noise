@@ -1,11 +1,12 @@
 'use client'
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { getClipboardImage } from '@/components/RichTextEditor'
 import { STYLES } from '@/lib/styles'
 
 async function uploadToStorage(file) {
   const supabase = createClient()
-  const ext = file.name.split('.').pop()
+  const ext = (file.name && file.name.includes('.') ? file.name.split('.').pop() : file.type.split('/')[1]) || 'png'
   const path = `covers/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
   const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
   if (error) throw error
@@ -32,6 +33,24 @@ export default function CoverImageField({ value, onChange }) {
       setUploading(false)
     }
   }
+
+  // Paste an image from the clipboard when no cover is set (ignored while typing in a field/editor)
+  const handleFileRef = useRef(null)
+  handleFileRef.current = handleFile
+  const hasValue = !!value
+  useEffect(() => {
+    if (hasValue) return
+    const onPaste = (e) => {
+      const el = e.target
+      if (el?.closest?.('input, textarea, [contenteditable="true"]')) return
+      const file = getClipboardImage(e)
+      if (!file) return
+      e.preventDefault()
+      handleFileRef.current(file)
+    }
+    document.addEventListener('paste', onPaste)
+    return () => document.removeEventListener('paste', onPaste)
+  }, [hasValue])
 
   return (
     <div style={{ marginTop: 20 }}>
@@ -63,7 +82,7 @@ export default function CoverImageField({ value, onChange }) {
           <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>
             {uploading ? 'Uploading…' : 'Add cover image'}
           </div>
-          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#CCC5B8', marginTop: 4 }}>Drop here or click to browse · JPG, PNG, WebP</div>
+          <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#CCC5B8', marginTop: 4 }}>Drop, paste (Ctrl+V), or click to browse · JPG, PNG, WebP</div>
         </div>
       )}
       <input ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files[0])} />

@@ -1,5 +1,5 @@
 'use client'
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useEditor, EditorContent, Extension, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
@@ -195,9 +195,19 @@ function ToolbarSelect({ value, onChange, title, children, width = 110 }) {
   )
 }
 
+// Returns the first image file on a paste event's clipboard, or null.
+// Skips pastes that also carry plain text (e.g. Word/Docs content, which
+// bundles a rendered image alongside the text) so those paste normally.
+export function getClipboardImage(event) {
+  const cd = event.clipboardData
+  if (!cd || cd.getData('text/plain')) return null
+  const item = Array.from(cd.items || []).find(i => i.kind === 'file' && i.type.startsWith('image/'))
+  return item ? item.getAsFile() : null
+}
+
 async function uploadImageToStorage(file) {
   const supabase = createClient()
-  const ext = file.name.split('.').pop()
+  const ext = (file.name && file.name.includes('.') ? file.name.split('.').pop() : file.type.split('/')[1]) || 'png'
   const path = `body/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
   const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
   if (error) throw error
@@ -214,6 +224,20 @@ function ImageModal({ onInsert, onClose }) {
   const [uploadedUrl, setUploadedUrl] = useState(null)
   const [dragging, setDragging] = useState(false)
   const fileInputRef = useRef(null)
+  const handleFileRef = useRef(null)
+
+  // Accept images pasted from the clipboard while the upload tab is open
+  useEffect(() => {
+    if (tab !== 'upload') return
+    const onPaste = (e) => {
+      const file = getClipboardImage(e)
+      if (!file) return
+      e.preventDefault()
+      handleFileRef.current(file)
+    }
+    document.addEventListener('paste', onPaste)
+    return () => document.removeEventListener('paste', onPaste)
+  }, [tab])
 
   const handleFile = async (file) => {
     if (!file || !file.type.startsWith('image/')) return
@@ -233,6 +257,8 @@ function ImageModal({ onInsert, onClose }) {
       setUploading(false)
     }
   }
+
+  handleFileRef.current = handleFile
 
   const canInsert = tab === 'upload' ? !!uploadedUrl : !!url.trim()
   const handleInsert = () => { if (canInsert) onInsert(tab === 'upload' ? uploadedUrl : url.trim()) }
@@ -264,7 +290,7 @@ function ImageModal({ onInsert, onClose }) {
                 style={{ border: `2px dashed ${dragging ? '#E73B2F' : '#CCC5B8'}`, padding: '36px 24px', textAlign: 'center', cursor: uploading ? 'wait' : 'pointer', background: dragging ? '#fff5f4' : '#F5F1E8', marginBottom: 16, transition: 'all 0.15s' }}
               >
                 <div style={{ fontSize: 28, color: '#CCC5B8', marginBottom: 8 }}>⊞</div>
-                <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>{uploading ? 'Uploading…' : 'Drop image here or click to browse'}</div>
+                <div style={{ fontFamily: "'Archivo Narrow', sans-serif", fontSize: 12, textTransform: 'uppercase', letterSpacing: '2px', color: '#8A8A8A' }}>{uploading ? 'Uploading…' : 'Drop, paste (Ctrl+V), or click to browse'}</div>
                 <div style={{ fontFamily: "'DM Sans', sans-serif", fontSize: 12, color: '#CCC5B8', marginTop: 4 }}>JPG, PNG, WebP, GIF</div>
               </div>
               <input ref={fileInputRef} type="file" accept="image/jpeg,image/png,image/webp,image/gif" style={{ display: 'none' }} onChange={(e) => handleFile(e.target.files[0])} />
@@ -317,6 +343,8 @@ export default function RichTextEditor({ value, onChange }) {
   const [imageModalOpen, setImageModalOpen] = useState(false)
   const [linkModalOpen, setLinkModalOpen] = useState(false)
 
+  const editorRef = useRef(null)
+
   const editor = useEditor({
     extensions: [
       StarterKit.configure({ heading: { levels: [2, 3, 4] } }),
@@ -331,8 +359,21 @@ export default function RichTextEditor({ value, onChange }) {
     immediatelyRender: false,
     content: value || '',
     onUpdate: ({ editor }) => onChange(editor.getHTML()),
-    editorProps: { attributes: { class: 'cn-editor-body' } },
+    editorProps: {
+      attributes: { class: 'cn-editor-body' },
+      // Pasting an image straight from the clipboard uploads it and inserts it at the cursor
+      handlePaste: (view, event) => {
+        const file = getClipboardImage(event)
+        if (!file) return false
+        event.preventDefault()
+        uploadImageToStorage(file)
+          .then(src => editorRef.current?.chain().focus().setImage({ src, width: '100%' }).run())
+          .catch(() => window.alert('Image upload failed. Please try again.'))
+        return true
+      },
+    },
   })
+  editorRef.current = editor
 
   const handleInsertImage = useCallback((src) => {
     editor?.chain().focus().setImage({ src, width: '100%' }).run()
