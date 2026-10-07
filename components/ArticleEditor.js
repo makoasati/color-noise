@@ -6,6 +6,7 @@ import { createClient } from '@/lib/supabase/client'
 import CoverImageField from './CoverImageField'
 import ComboInput from './ComboInput'
 import { slugify, legacyBodyToHtml } from '@/lib/utils'
+import { CHICAGO_NEIGHBORHOODS } from '@/lib/neighborhoods'
 import { STYLES, CATEGORIES, CATEGORY_LABELS } from '@/lib/styles'
 
 const RichTextEditor = dynamic(() => import('./RichTextEditor'), { ssr: false })
@@ -38,7 +39,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
       supabase.from('neighborhoods').select('name').order('name'),
       supabase.from('articles').select('neighborhood').not('neighborhood', 'is', null),
     ]).then(([{ data: nbhdRows }, { data: articleRows }]) => {
-      const names = new Set()
+      const names = new Set(CHICAGO_NEIGHBORHOODS)
       for (const r of nbhdRows  || []) if (r.name)         names.add(r.name.trim())
       for (const r of articleRows || []) if (r.neighborhood) names.add(r.neighborhood.trim())
       setNeighborhoodOptions([...names].sort())
