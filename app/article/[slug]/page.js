@@ -26,16 +26,15 @@ export async function generateMetadata({ params }) {
   }
 }
 
-export default async function ArticlePage({ params }) {
+export default async function ArticlePage({ params, searchParams }) {
   const { slug } = await params
+  const { preview } = await searchParams
   const supabase = await createClient()
 
-  const { data: article } = await supabase
-    .from('articles')
-    .select('*')
-    .eq('slug', slug)
-    .eq('status', 'published')
-    .single()
+  // ?preview lets the author/admin see an unpublished draft exactly as readers will
+  let query = supabase.from('articles').select('*').eq('slug', slug)
+  if (!preview) query = query.eq('status', 'published')
+  const { data: article } = await query.single()
 
   if (!article) notFound()
 
@@ -50,7 +49,9 @@ export default async function ArticlePage({ params }) {
     }
   }
 
-  const htmlBody =legacyBodyToHtml(article.body || article.excerpt)
+  if (article.status !== 'published' && !canEdit) notFound()
+
+  const htmlBody = legacyBodyToHtml(article.body || article.excerpt)
   const catColor = CATEGORY_COLOR[article.category] || '#8A8A8A'
 
   return (

@@ -76,6 +76,13 @@ export default function DashboardArticleList({ articles: initial }) {
               {a.status}
             </span>
             <Link
+              href={`/article/${a.slug}?preview=1`}
+              target="_blank"
+              style={{ ...STYLES.cmsCancelBtn, padding: '4px 14px', fontSize: 11, letterSpacing: '1.5px', textDecoration: 'none', display: 'inline-block' }}
+            >
+              Preview
+            </Link>
+            <Link
               href={`/dashboard/edit/${a.id}`}
               style={{ ...STYLES.cmsCancelBtn, padding: '4px 14px', fontSize: 11, letterSpacing: '1.5px', textDecoration: 'none', display: 'inline-block' }}
             >
