@@ -3,18 +3,26 @@ import { useState, useRef, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { getClipboardImage } from '@/components/RichTextEditor'
 import { STYLES } from '@/lib/styles'
+import { slugify } from '@/lib/utils'
 
-async function uploadToStorage(file) {
+// Saves as covers/<article-slug>-cover.<ext>, then -cover-2, -cover-3… if the name is taken
+async function uploadToStorage(file, articleSlug) {
   const supabase = createClient()
   const ext = (file.name && file.name.includes('.') ? file.name.split('.').pop() : file.type.split('/')[1]) || 'png'
-  const path = `covers/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-  const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
-  if (error) throw error
-  const { data } = supabase.storage.from('article-images').getPublicUrl(path)
-  return data.publicUrl
+  const base = `${articleSlug || 'untitled'}-cover`
+  for (let n = 1; n <= 50; n++) {
+    const path = `covers/${n === 1 ? base : `${base}-${n}`}.${ext.toLowerCase()}`
+    const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
+    if (error) {
+      if (String(error.statusCode) === '409' || /already exists/i.test(error.message || '')) continue
+      throw error
+    }
+    return supabase.storage.from('article-images').getPublicUrl(path).data.publicUrl
+  }
+  throw new Error('No free image name')
 }
 
-export default function CoverImageField({ value, onChange }) {
+export default function CoverImageField({ value, onChange, articleTitle = '' }) {
   const [dragging, setDragging] = useState(false)
   const [uploading, setUploading] = useState(false)
   const [uploadError, setUploadError] = useState(null)
@@ -25,7 +33,7 @@ export default function CoverImageField({ value, onChange }) {
     setUploading(true)
     setUploadError(null)
     try {
-      const url = await uploadToStorage(file)
+      const url = await uploadToStorage(file, slugify(articleTitle))
       onChange(url)
     } catch (err) {
       setUploadError('Upload failed. Please try again.')

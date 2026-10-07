@@ -1,6 +1,7 @@
 'use client'
 import { useState, useCallback, useRef, useEffect } from 'react'
 import { createClient } from '@/lib/supabase/client'
+import { slugify } from '@/lib/utils'
 import { useEditor, EditorContent, Extension, NodeViewWrapper, ReactNodeViewRenderer } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
 import Image from '@tiptap/extension-image'
@@ -205,17 +206,25 @@ export function getClipboardImage(event) {
   return item ? item.getAsFile() : null
 }
 
-async function uploadImageToStorage(file) {
+// Saves as body/<article-slug>-<picture number>.<ext>. If that name is taken
+// (e.g. a deleted picture, or another article with the same title) it moves on to the next number.
+export async function uploadImageToStorage(file, articleSlug, startNumber = 1) {
   const supabase = createClient()
   const ext = (file.name && file.name.includes('.') ? file.name.split('.').pop() : file.type.split('/')[1]) || 'png'
-  const path = `body/${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-  const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
-  if (error) throw error
-  const { data } = supabase.storage.from('article-images').getPublicUrl(path)
-  return data.publicUrl
+  const base = articleSlug || 'untitled'
+  for (let n = startNumber; n < startNumber + 50; n++) {
+    const path = `body/${base}-${n}.${ext.toLowerCase()}`
+    const { error } = await supabase.storage.from('article-images').upload(path, file, { upsert: false })
+    if (error) {
+      if (String(error.statusCode) === '409' || /already exists/i.test(error.message || '')) continue
+      throw error
+    }
+    return supabase.storage.from('article-images').getPublicUrl(path).data.publicUrl
+  }
+  throw new Error('No free image name')
 }
 
-function ImageModal({ onInsert, onClose }) {
+function ImageModal({ onInsert, onClose, upload }) {
   const [tab, setTab] = useState('upload')
   const [url, setUrl] = useState('')
   const [uploading, setUploading] = useState(false)
@@ -248,7 +257,7 @@ function ImageModal({ onInsert, onClose }) {
     reader.onload = (e) => setPreviewSrc(e.target.result)
     reader.readAsDataURL(file)
     try {
-      const publicUrl = await uploadImageToStorage(file)
+      const publicUrl = await upload(file)
       setUploadedUrl(publicUrl)
     } catch {
       setUploadError('Upload failed. Please try again.')
@@ -339,11 +348,20 @@ function LinkModal({ editor, onClose }) {
   )
 }
 
-export default function RichTextEditor({ value, onChange }) {
+export default function RichTextEditor({ value, onChange, articleTitle = '' }) {
   const [imageModalOpen, setImageModalOpen] = useState(false)
   const [linkModalOpen, setLinkModalOpen] = useState(false)
 
   const editorRef = useRef(null)
+  const titleRef = useRef(articleTitle)
+  titleRef.current = articleTitle
+
+  // Upload named <article title>-<next picture number>; reads refs so it's safe inside editorProps
+  const uploadImage = useCallback((file) => {
+    let count = 0
+    editorRef.current?.state.doc.descendants(node => { if (node.type.name === 'image') count++ })
+    return uploadImageToStorage(file, slugify(titleRef.current), count + 1)
+  }, [])
 
   const editor = useEditor({
     extensions: [
@@ -366,7 +384,7 @@ export default function RichTextEditor({ value, onChange }) {
         const file = getClipboardImage(event)
         if (!file) return false
         event.preventDefault()
-        uploadImageToStorage(file)
+        uploadImage(file)
           .then(src => editorRef.current?.chain().focus().setImage({ src, width: '100%' }).run())
           .catch(() => window.alert('Image upload failed. Please try again.'))
         return true
@@ -442,7 +460,7 @@ export default function RichTextEditor({ value, onChange }) {
       </div>
 
       <EditorContent editor={editor} />
-      {imageModalOpen && <ImageModal onInsert={handleInsertImage} onClose={() => setImageModalOpen(false)} />}
+      {imageModalOpen && <ImageModal upload={uploadImage} onInsert={handleInsertImage}onClose={() => setImageModalOpen(false)} />}
       {linkModalOpen && <LinkModal editor={editor} onClose={() => setLinkModalOpen(false)} />}
     </div>
   )

@@ -118,6 +118,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
         </div>
 
         <CoverImageField
+          articleTitle={form.title}
           value={form.cover_image}
           onChange={(val) => setForm(f => ({ ...f, cover_image: val }))}
         />
@@ -185,6 +186,7 @@ export default function ArticleEditor({ article, userId, authorName }) {
         <label style={{ ...STYLES.cmsLabel, marginTop: 28 }}>Body</label>
         <RichTextEditor
           key={article?.id || 'new'}
+          articleTitle={form.title}
           value={form.body}
           onChange={(html) => setForm(f => ({ ...f, body: html }))}
         />
