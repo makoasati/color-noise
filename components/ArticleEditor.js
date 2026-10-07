@@ -113,8 +113,17 @@ export default function ArticleEditor({ article, userId, authorName }) {
   return (
     <div style={{ padding: '28px 0' }}>
       <div style={STYLES.cmsForm}>
-        <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 22, color: '#E73B2F', marginBottom: 20 }}>
-          {isEdit ? 'Edit Article' : 'New Article'}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, marginBottom: 20 }}>
+          <div style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 22, color: '#E73B2F' }}>
+            {isEdit ? 'Edit Article' : 'New Article'}
+          </div>
+          <button
+            style={{ ...STYLES.cmsSaveBtn, opacity: saving ? 0.6 : 1, cursor: saving ? 'wait' : 'pointer', flexShrink: 0 }}
+            onClick={() => handleSave('published')}
+            disabled={saving}
+          >
+            {saving ? 'Saving…' : 'Publish'}
+          </button>
         </div>
 
         <CoverImageField
