@@ -214,8 +214,9 @@
 .cn-photo-grid { margin: 1.4em 0; }
 .cn-grid-items {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-width: 420px;
 }
 .cn-grid-item { min-width: 0; }
 .cn-grid-item img {
@@ -228,8 +229,8 @@
 .cn-grid-item span {
   display: block;
   font-family: 'DM Sans', sans-serif;
-  font-size: 12.5px;
-  line-height: 1.35;
+  font-size: 11.5px;
+  line-height: 1.3;
   color: #555555;
 }
 .cn-photo-grid figcaption {
@@ -246,7 +247,7 @@
   margin-top: 2px;
 }
 @media (max-width: 560px) {
-  .cn-grid-items { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .cn-grid-items { gap: 6px; }
 }
 
 
