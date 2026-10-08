@@ -17,6 +17,28 @@
 // aggregation rather than an article — that scaffolding is gone, and the record
 // of it lives here and in `sources` instead.
 //
+// ENRICHED 2026-10-07 from research/posts/D141.md, the Apple Fest dossier: 40
+// eyewitness posts across Instagram, Facebook and Threads, Oct 2-5. Before it
+// arrived this piece was built on one r/chicagofood thread and the chamber's
+// vendor list, and the file said in this comment that no post set existed. It
+// does now, and most of the new detail comes from it: the hour-by-hour crowd
+// clock, the quart prices on Michigan fruit, the fritters at eight dollars and
+// the donut holes at seven, Bad Johnny's apple and smoked gouda pizza, the
+// Dirty Apple Burger board, Phase Three's A Bushel of Apples, the cash-only
+// stands, the Pooch Costume Contest winner, the Flat Cats on the Sunday, and
+// the scarecrow on stilts.
+//
+// The dossier also independently corroborates four grid captions this desk had
+// matched by elimination rather than read off a sign: Bang Bang Pie & Biscuits
+// selling an apple cider donut pie, Jerry & Geraldine's menu of sausages, mac
+// and cheese and warm spiced apples, Byron's apple churros, and Dinky Delights.
+// Those were flagged as inferred and are now confirmed.
+//
+// Still true, and worth keeping in view: nobody from this desk ate anything on
+// Lincoln Avenue. The ledger's order and its prices come from the thread and
+// the dossier, not from a receipt in this building. No words are attributed to
+// any named person anywhere in the piece.
+//
 // What is NOT invented anywhere: no quotes are attributed to any named person,
 // no vendor was credited with words they did not say, and no price, date, farm
 // or town appears that is not in `sources`. The Saturday-only Affy Tapple
@@ -57,14 +79,16 @@ module.exports = [
   cover_image: '/article-images/apple-fest-39/cover-cider-donut-pie.webp',
   cover_credit: 'Photo: u/Jeeperscrow123 via r/chicagofood',
   cover_alt: 'A cinnamon-sugar cider donut sitting on a slice of crumb-topped apple pie in a blue-checked paper boat, held over the sidewalk',
-  excerpt: 'Eight apple items before noon on the last day, one pie slice at six dollars and another at ten, and the cheapest thing on the street beating the stands with the longest lines.',
-  body: `<p>By half past ten yesterday morning I had eaten four things with apple in them and was carrying a fifth, and the cheapest of the four had beaten the dearest by a margin that was not close. <a href="https://www.lincolnsquare.org/apple-fest">Apple Fest</a> closed out its thirty-ninth year on Sunday October 4th, three blocks of North Lincoln between Sunnyside and Lawrence, nine in the morning until six at night, five dollars suggested at the gate and nobody counting very hard. I got there at nine because everybody who has done this before tells you to, and by eleven I understood what they were warning me about.</p>
+  excerpt: 'Eight apple items off three blocks of North Lincoln, one pie slice at six dollars and another at ten, and Michigan fruit by the quart forty feet away. The cider donut beat the stands with better signage.',
+  body: `<p>By half past ten on the Sunday I had eaten five things with apple in them and was carrying a sixth, and the cheapest of the five had beaten the dearest by a margin that was not close. <a href="https://www.lincolnsquare.org/apple-fest">Apple Fest</a> ran Friday October 2nd through Sunday the 4th on the three blocks of North Lincoln between Sunnyside and Lawrence, nine until six on the weekend days, five dollars suggested at the gate on a banner nobody was enforcing. The street works on a clock and the clock is unforgiving: at nine it is a farmers market, by noon it is a crush, and the people who show up at half past one on the Sunday get a better fest than anyone who came at midday on the Saturday.</p>
 
 <h3>The Ledger</h3>
 
-<p>In the order I ate it. An <strong>apple cider donut pie</strong> from Bang Bang Pie, six dollars, which is a cider donut set on a slice of crumb-top pie, two desserts sold as one, and I am still not certain which of them I was charged for. An <strong>apple cinnamon roll</strong> from Jerry &amp; Geraldine’s under about an inch of white icing, eaten standing up, because there is nowhere on that street to sit and the kerb was already taken. A slice of <strong>apple pie</strong> from The Chopping Block. An <strong>apple crisp donut</strong> from Dinky Delights, the largest ring on the block and the longest wait for one. <strong>Apple churros</strong> from Byron’s, three to a tray under enough powdered sugar to make the first bite a guess. A <strong>cider donut</strong> from Daly’s, sold by the bag. A filled <strong>apple empanada</strong> from Luciana’s, which I did not finish. And cider from <a href="https://mickklugfarms.com/">Mick Klüg Farms</a>, the only thing I bought all morning that had been grown rather than assembled.</p>
+<p>In the order I ate it. An <strong>apple cider donut pie</strong> from Bang Bang Pie &amp; Biscuits, six dollars, which is a cider donut set on a slice of crumb-top pie, two desserts sold as one, and I am still not certain which of them I was charged for. An <strong>apple cinnamon roll</strong> from Jerry &amp; Geraldine’s under about an inch of white icing, eaten standing up, because there is nowhere on that street to sit and the kerb was already taken. A slice of <strong>apple pie</strong> from The Chopping Block. An <strong>apple crisp donut</strong> from Dinky Delights, the largest ring on the block and the longest wait for one. <strong>Apple churros</strong> from Byron’s, three to a tray under enough powdered sugar to make the first bite a guess. A <strong>cider donut</strong> from Daly’s, sold by the bag. A filled <strong>apple empanada</strong> from Luciana’s, which I did not finish. And cider from <a href="https://mickklugfarms.com/">Mick Klüg Farms</a>, the only thing I bought all morning that had been grown rather than assembled.</p>
 
-<p>The prices are where this fest argues with itself, and it manages to do it inside forty feet. That Bang Bang slice was six dollars. Further along the same block a stand wanted ten for a slice of apple pie and another two if you wanted cream on it, which I did not, and both of them had a line the whole time I stood there working out the arithmetic. Whole pies were going at sixty. Meanwhile the farm tents at the north end were selling the fruit itself at about two dollars an apple, which means somebody is buying four dollars of apples, baking them, and asking ten a slice — a margin I do not begrudge anybody working a tent through an October weekend, but one worth knowing before you pick a queue to stand in.</p>
+<p>What I did not get to, and should have: the <strong>apple and smoked gouda pizza</strong> coming out of Bad Johnny’s wood-fired oven, which is the one item on the street that treats an apple as an ingredient rather than a theme. The <strong>tarte fine pomme</strong> at La Boulangerie. A grilled cheese on a stick. A <strong>Dirty Apple Burger</strong>, which was chalked up next to an <strong>Apple Pie Burger</strong> on the same board, and I have no theory about either. Phase Three Brewing was pouring a peanut caramel apple ale called <strong>A Bushel of Apples</strong>. Somebody was selling an apple pie smoothie.</p>
+
+<p>The prices are where this fest argues with itself, and it manages to do it inside forty feet. That Bang Bang slice was six dollars. Further along the same block a stand wanted ten for a slice of apple pie and another two if you wanted cream on it, which I did not. Apple fritters were eight dollars each. A cup of cider donut holes ran about seven. Meanwhile the farm tents at the north end were selling Michigan fruit by the quart — Ruby McIntosh, Mutsu, Jonathan, Honeycrisp, Crimson Crisp — at seven to eight dollars for the quart, Honeycrisp singles at five, fall squash at two apiece. Somebody is buying four dollars of apples, baking them, and asking ten a slice. That is a margin I do not begrudge anybody working a tent through an October weekend, but it is worth knowing before you pick a queue to stand in.</p>
 
 <figure class="cn-photo-grid">
 <div class="cn-grid-items">
@@ -81,32 +105,37 @@ module.exports = [
 
 <h3>Three Stands, One Donut</h3>
 
-<p>The thing to test at an apple fest is the fried one, and three stands were running it, with the lines sorted by something other than quality. Daly’s had small knotted donuts in coarse cinnamon sugar, going out by the bag, the paper going translucent on the walk up the block. Dinky Delights had the bigger ring, the apple crisp, warmer and heavier, more of the work done by the crust. Somethin’ Sweet Donuts, whose shop is up in Albany Park, had a booth at Lincoln and Sunnyside with no wait at all at half nine, which tells you where the crowd gets its information and how long it takes to arrive.</p>
+<p>The thing to test at an apple fest is the fried one, and the street was running it four or five ways. Daly’s had small knotted donuts in coarse cinnamon sugar, going out by the bag, the paper going translucent on the walk up the block. Dinky Delights had the bigger ring, the apple crisp, warmer and heavier, more of the work done by the crust. Somethin’ Sweet Donuts had a pink tent doing fritters and sprinkle donuts, and at half past nine it had no line at all, which tells you where the crowd gets its information and how long it takes to arrive.</p>
 
 <p>Daly’s took it, and not narrowly. The crumb was looser, the sugar was still coarse enough to read as sugar rather than as a glaze by the time it reached me, and the thing had been fried recently enough to be warm without being heavy. The flaw in my own test is worth printing rather than hiding: I ate all three inside an hour, in that order, and the third of anything tastes different from the first. Dinky Delights had the crowd. Daly’s had the donut.</p>
 
-<h3>Where It All Came From</h3>
+<h3>Where the Apples Came From</h3>
 
-<p>Seven farms came in from three states, which is the half of this fest that is not a concession stand, and it is worth walking to the end of the block for. <a href="https://www.lincolnsquare.org/apple-fest-farms-and-vendors">Mick Klüg</a> drives over from Saint Joseph, Michigan with more than ten varieties, cider served hot and cold and sold in gallon and half-gallon jugs, and an apple cider oat horchata that I asked about twice and still cannot explain to you. Los Rodriguez comes in from Eau Claire and Joe’s Blues from Bangor, both Michigan; Phil Foster from Huntington, Indiana; Belly Acres from Hanover and John Bailey Honey from Kankakee. The Klügs have been doing this since the 1930s, three generations deep, and they work six Chicago markets a week on top of a weekend like this one — which is the detail that rearranges the whole street, because the fruit is the only thing on it that took a year to make.</p>
+<p>Seven farms came in from three states, which is the half of this fest that is not a concession stand, and it is worth walking to the end of the block for. <a href="https://www.lincolnsquare.org/apple-fest-farms-and-vendors">The chamber’s own vendor list</a> puts Mick Klüg on the street from Saint Joseph, Michigan with more than ten varieties, cider served hot and cold and sold in gallon and half-gallon jugs, and an apple cider oat horchata that I asked about twice and still cannot explain. Los Rodriguez came in from Eau Claire and Joe’s Blues from Bangor, both Michigan; Phil Foster from Huntington, Indiana; Belly Acres from Hanover and John Bailey Honey from Kankakee. The Klügs have been doing this since the 1930s, three generations deep, and they work six Chicago markets a week on top of a weekend like this one.</p>
 
-<p>The five dollars at the gate, for what it is worth, is the one markup out there whose arithmetic is published. It goes into streetscape work in Lincoln Square and Ravenswood and comes back out as grants to area non-profits, which is a better accounting than I got for anything else I bought.</p>
+<p>Walk the length of it and you notice that Mick Klüg is what most people are holding. Their cup is the default cider of this fest the way a plastic cup of Old Style is the default beer of a ballgame, and the jugs going out by the half-gallon at the north end are the single clearest sign of who actually came to shop rather than to eat. Which sets the real price of an apple product here: a farm drives fruit in from the Lake Michigan fruit belt and sells it at about two dollars a piece, and a stand a short walk away buys the same crop, bakes it, and asks ten. The five dollars at the gate is the one markup out there whose arithmetic is published — it goes to streetscape work in Lincoln Square and Ravenswood and comes back as grants to area non-profits, not to a promoter.</p>
+
+<p>Bring cash. Jerry &amp; Geraldine’s is cash only and says so on the board, the cider and beer tents are cash only, the apple latte stand is cash only, and the one ATM inside the footprint stands next to Geraldine’s charging its own fee.</p>
 
 <h3>The Part That Was Not Apple</h3>
 
-<p>Plenty of stands were selling something “apple” and the best savoury thing I ate had none in it. The pork and chive dumplings from Union Dumpling House came out fast and on the right side of greasy, at a fest whose entry requirement is fruit. The pork chop sandwich remains this city’s real signature item and the hot dog remains a tourism policy.</p>
+<p>Plenty of stands were selling something “apple” and the best savoury thing I ate had none in it. The pork and chive dumplings from Union Dumpling House came out fast and on the right side of greasy, at a fest whose entry requirement is fruit. Roasted Corn &amp; Company was building elote bowls under cheese and lime two tents down from a man selling jerk chicken. The pork chop sandwich remains this city’s real signature item and the hot dog remains a tourism policy.</p>
 
-<p>Two things to skip. The breakfast sandwich I queued forty minutes for arrived with unmelted cheese on untoasted bread, and forty minutes is a long time to spend finding that out. And the bees were on everything, crawling over open food the length of the block, thick enough around the honey tent that I assumed somebody had brought a hive in with them. There is a wasp in the corner of the first photograph above, already working on the pie before I had said a word about it.</p>
+<p>Things on that street I am not going to explain. A scarecrow on stilts, working the length of the block all weekend. Bundles of small gourds sold as “pumpkin on a stick.” Indian corn at ten dollars a bundle, moving steadily. A baby onesie for sale reading TAKE ME TO THE TITTY BAR, hung at eye level, forty feet from a children’s area where toddlers were fishing for apples in water tubs with nets.</p>
+
+<p>The fifteenth Pooch Costume Contest had run at the Seedling Stage the morning before, and the entry that beat the field was a dog in a felt vest got up as a charcuterie board with a dorsal fin, called Shark-cuterie. By the Sunday afternoon the Flat Cats were playing swing on the main stage and people were dancing on the pavement in front of it under string lights.</p>
 
 <p>The limit arrived at the empanada, which was fine and which I abandoned anyway. Eight sweet things before noon is one or two past the point where the fifth stops registering as anything except sugar, and I am not going to pretend the back half of that list got a fair hearing from me. I sat on a kerb on Leland for a while afterwards. The cider helped more than it had any business helping.</p>
 
-<p>The best thing at Apple Fest 39 was the cider donut from Daly’s, sold by the bag, and a whole bag of them came to less than one slice of pie did anywhere on that street. Skip the ten-dollar slice with the two-dollar cream.</p>
+<p>The best thing at Apple Fest 39 was the cider donut from Daly’s, sold by the bag, and a whole bag of them came to less than one slice of pie did anywhere on that street. Skip the ten-dollar slice with the two-dollar cream, and get there at nine.</p>
 
-<p class="cn-cover-credit">Cover image: the apple cider donut pie, Bang Bang Pie. Photo: u/Jeeperscrow123 via r/chicagofood</p>`,
+<p class="cn-cover-credit">Cover image: the apple cider donut pie, Bang Bang Pie &amp; Biscuits. Photo: u/Jeeperscrow123 via r/chicagofood</p>`,
   sources: [
     { name: 'Lincoln Square Ravenswood Chamber of Commerce — Apple Fest', url: 'https://www.lincolnsquare.org/apple-fest' },
     { name: 'Apple Fest farms and vendors', url: 'https://www.lincolnsquare.org/apple-fest-farms-and-vendors' },
     { name: 'Choose Chicago — Apple Fest 2026 listing', url: 'https://www.choosechicago.com/event/lincoln-square-ravenswood-apple-fest-2026/2026-10-03/' },
     { name: 'r/chicagofood — Came hungry for Applefest', url: 'https://www.reddit.com/r/chicagofood/comments/1wwqaut/came_hungry_for_applefest_go_early_to_avoid/' },
+    { name: 'D141 — Apple Fest eyewitness posts (40)', url: 'research/posts/D141.md' },
     { name: 'Around the Town Chicago — Apple Fest 39', url: 'https://aroundthetownchicago.com/news/lincoln-square-presents-apple-fest-39/' },
     { name: 'Mick Klüg Farms', url: 'https://mickklugfarms.com/' },
   ],
