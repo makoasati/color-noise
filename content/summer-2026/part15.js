@@ -50,46 +50,17 @@ module.exports = [
   venue: 'The Vic Theatre',
   neighborhood: 'Lakeview',
   featured: false,
-  cover_image: 'https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/vic-theatre-exterior.webp',
+  cover_image: 'https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/covers/four-acts-and-an-encore-kelela-at-the-vic-cover.png',
   cover_credit: 'The Vic Theatre, 2020. Photo: Paul R. Burley / CC0',
   cover_alt: 'The Vic Theatre on North Sheffield Avenue in Chicago, its vertical marquee sign against a clear sky',
   excerpt: 'Kelela brought the new avatar tour to the Vic on Tuesday, staged in four acts and an encore. The thirteen-year-old song landed eleventh, inside the sequence, with no introduction.',
-  body: `<p>The Vic’s balcony holds heat the way old rooms do, and by the third song the people up there had their jackets over the rail and their forearms on top of them. The floor stayed cooler and stayed stiller, which is its own kind of attention. <strong><a href="https://kelela.warp.net/">Kelela</a></strong> played Lakeview on Tuesday October 6th, a month into a North American run that started in Seattle in September.</p>
+  body: `<p>The Vic’s balcony holds heat the way old rooms do, and by the third song the people up there had their jackets over the rail and their forearms on top of them. The floor stayed cooler and stayed stiller, which is its own kind of attention. <a target="_blank" rel="noopener noreferrer nofollow" href="https://kelela.warp.net/"><strong>Kelela</strong></a> played Lakeview on Tuesday October 6th, a month into a North American run that started in Seattle in September.</p><p>What she is touring is not a set. It is four acts and an encore, built in that shape and announced in it, and the running order does not bend for anybody’s favourite song. She writes like a producer who can sing, which is a different animal from a singer who produces, and the difference shows up in how the night is assembled rather than in how any one song is delivered.</p><p>She put out <em>Cut 4 Me</em> as a mixtape in 2013, took four years over <em>Take Me Apart</em>, another six to reach <em>Raven</em>, and then turned <a target="_blank" rel="noopener noreferrer nofollow" href="https://kelela.bandcamp.com/album/new-avatar-2"><em>new avatar</em></a> around inside three. Nobody in that room needed the recap.</p>
 
-<p>What she is touring is not a set. It is four acts and an encore, built in that shape and announced in it, and the running order does not bend for anybody’s favourite song. She writes like a producer who can sing, which is a different animal from a singer who produces, and the difference shows up in how the night is assembled rather than in how any one song is delivered.</p>
+<figure class="cn-embed" data-platform="tiktok" data-layout="side"><div class="cn-embed-col" style="width:100%;max-width:300px"><div class="cn-embed-media" style="position:relative;width:100%;height:0;padding-bottom:calc(177.78% + 180px)"><iframe src="https://www.tiktok.com/embed/v2/7693799346336222495" title="TikTok video 7693799346336222495" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block"></iframe></div></div><div class="cn-embed-side"><figcaption>The Vic, October 6th</figcaption><p class="cn-embed-credit"><a href="https://www.tiktok.com/@rydmndchune/video/7693799346336222495" rel="nofollow noopener" target="_blank">@rydmndchune</a></p></div></figure><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/kelela-2018.webp" alt="Kelela performing on an outdoor stage in daylight, one hand raised toward the microphone" width="100%" style="width: 100%;"><p>Kelela at Piknik i Parken, Oslo, 2018 — not this showPhoto: Tore Sætre / CC BY-SA 4.0</p><p>Act I opened on <strong>“Fooley”</strong> in the LEECH Ambient Queen remix, which strips the drums out from under a <em>Raven</em> song and makes an entrance out of something that was originally a closer. <strong>“idea 1”</strong> came third and is the one worth arguing about: she built the lead single on guitar, washed and detuned and much closer to shoegaze than to anything on the three records before it, and live the guitar sits where a bassline would normally carry the weight. It does not sound like a departure so much as a floor being replaced underneath a house.</p><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/body/four-acts-and-an-encore-kelela-at-the-vic-5.png" width="100%" style="width: 100%;"><p><br>Kelela Performing at VIC Theater, Oct 6, 2026</p><p>The room is the reason the structure works. <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.jamusa.com/venues/the-vic">The Vic</a> holds about 1,400 standing, which is small enough that the quiet stretches in Act II read as quiet rather than as dead air, and it has a balcony deep enough that the people in it are listening down at the stage instead of across at it. <a target="_blank" rel="noopener noreferrer nofollow" href="https://www.jamusa.com/">Jam Productions</a> has promoted shows in the building since 1987 and bought it outright in 2000. Before any of that it opened as the Victoria on September 29th, 1912, spent decades after vaudeville collapsed showing Spanish-language films as the Roberto Clemente Theater and Indian films as the Bharat Cinema, and was bought in 1983 by Walter Klein, who put a year of repairs into it and reopened it in October 1984. A room that has been four different things is unbothered by an album in four parts.</p><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/body/four-acts-and-an-encore-kelela-at-the-vic-6.png" width="100%" style="width: 100%;"><p>Kelela Performing at VIC Theater, Oct 6, 2026</p><p>By Act III the set had stopped distinguishing between catalogues. <strong>“A Message”</strong> and <strong>“Send Me Out”</strong> came out of <em>Take Me Apart</em> and sat directly after <strong>“crystalize”</strong>, which is a <em>new avatar</em> track that segues in from the song before it and does not want a gap on either side. It did not get one.</p><p>The acts past that one are harder to pin down, because the running order the night was logged under stops at twelve. <strong>“outta time”</strong> is in there somewhere later, which I know because somebody filmed it and called it their favourite, and on the floor it was the point where the guitars stopped being a texture and started being the band.</p>
 
-<p>She put out <em>Cut 4 Me</em> as a mixtape in 2013, took four years over <em>Take Me Apart</em>, another six to reach <em>Raven</em>, and then turned <em><a href="https://kelela.bandcamp.com/album/new-avatar-2">new avatar</a></em> around inside three. Nobody in that room needed the recap.</p>
+<figure class="cn-embed" data-platform="tiktok" data-layout="side"><div class="cn-embed-col" style="width:100%;max-width:300px"><div class="cn-embed-media" style="position:relative;width:100%;height:0;padding-bottom:calc(177.78% + 180px)"><iframe src="https://www.tiktok.com/embed/v2/7693965369609833742" title="TikTok video 7693965369609833742" loading="lazy" frameborder="0" scrolling="no" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;display:block"></iframe></div></div><div class="cn-embed-side"><figcaption>“outta time”, late in the set</figcaption><p class="cn-embed-credit"><a href="https://www.tiktok.com/@kienclips/video/7693965369609833742" rel="nofollow noopener" target="_blank">@kienclips</a></p></div></figure>
 
-${E.tiktok('7693799346336222495', { caption: 'The Vic, October 6th', credit: '@rydmndchune', permalink: 'https://www.tiktok.com/@rydmndchune/video/7693799346336222495' })}
-
-<figure class="cn-photo">
-<img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/kelela-2018.webp" alt="Kelela performing on an outdoor stage in daylight, one hand raised toward the microphone">
-<figcaption>Kelela at Piknik i Parken, Oslo, 2018 — not this show<span class="cn-photo-credit">Photo: Tore Sætre / CC BY-SA 4.0</span></figcaption>
-</figure>
-
-<p>Act I opened on <strong>"Fooley"</strong> in the LEECH Ambient Queen remix, which strips the drums out from under a <em>Raven</em> song and makes an entrance out of something that was originally a closer. <strong>"idea 1"</strong> came third and is the one worth arguing about: she built the lead single on guitar, washed and detuned and much closer to shoegaze than to anything on the three records before it, and live the guitar sits where a bassline would normally carry the weight. It does not sound like a departure so much as a floor being replaced underneath a house.</p>
-
-<figure class="cn-photo">
-<img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/vic-room-full.webp" alt="The Vic Theatre auditorium full of people facing a lit stage, seen from the rear of the floor">
-<figcaption>The Vic’s floor and balcony during a 2022 show<span class="cn-photo-credit">Photo: Rockford the Roe / CC BY-SA 4.0</span></figcaption>
-</figure>
-
-<p>The room is the reason the structure works. <a href="https://www.jamusa.com/venues/the-vic">The Vic</a> holds about 1,400 standing, which is small enough that the quiet stretches in Act II read as quiet rather than as dead air, and it has a balcony deep enough that the people in it are listening down at the stage instead of across at it. <a href="https://www.jamusa.com/">Jam Productions</a> has promoted shows in the building since 1987 and bought it outright in 2000. Before any of that it opened as the Victoria on September 29th, 1912, spent decades after vaudeville collapsed showing Spanish-language films as the Roberto Clemente Theater and Indian films as the Bharat Cinema, and was bought in 1983 by Walter Klein, who put a year of repairs into it and reopened it in October 1984. A room that has been four different things is unbothered by an album in four parts.</p>
-
-<figure class="cn-photo">
-<img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/vic-interior.webp" alt="Interior of the Vic Theatre looking toward the ornamented proscenium and balcony">
-<figcaption>Inside the Vic<span class="cn-photo-credit">Photo: Victorgrigas / CC BY-SA 3.0</span></figcaption>
-</figure>
-
-<p>By Act III the set had stopped distinguishing between catalogues. <strong>"A Message"</strong> and <strong>"Send Me Out"</strong> came out of <em>Take Me Apart</em> and sat directly after <strong>"crystalize"</strong>, which is a <em>new avatar</em> track that segues in from the song before it and does not want a gap on either side. It did not get one.</p>
-
-<p>The acts past that one are harder to pin down, because the running order the night was logged under stops at twelve. <strong>"outta time"</strong> is in there somewhere later, which I know because somebody filmed it and called it their favourite, and on the floor it was the point where the guitars stopped being a texture and started being the band.</p>
-
-${E.tiktok('7693965369609833742', { caption: '"outta time", late in the set', credit: '@kienclips', permalink: 'https://www.tiktok.com/@kienclips/video/7693965369609833742' })}
-
-<p><strong>"Bank Head"</strong> is thirteen years old and it came eleventh, inside Act III, with no introduction and no pause in front of it. The old songs are components now.</p>
-
-<p class="cn-cover-credit">Cover image: The Vic Theatre, 2020. Photo: Paul R. Burley / CC0</p>`,
+<p><strong>“Bank Head”</strong> is thirteen years old and it came eleventh, inside Act III, with no introduction and no pause in front of it. The old songs are components now.</p>`,
   sources: [
     { name: 'setlist.fm — Kelela', url: 'https://www.setlist.fm/setlists/kelela-bc7f132.html' },
     { name: 'Kelela — new avatar (Warp)', url: 'https://kelela.warp.net/releases' },
@@ -99,24 +70,27 @@ ${E.tiktok('7693965369609833742', { caption: '"outta time", late in the set', cr
     { name: 'Cinema Treasures — Vic Theatre', url: 'https://cinematreasures.org/theaters/341' },
   ],
   photos: [
-    // All four are Wikimedia Commons, named author, reuse-permitting licence.
-    // Recompressed to webp and uploaded to the article-images bucket: 300KB
-    // total against the §5.1 600KB page budget. Hosted rather than served from
-    // public/, because public/ is branch-scoped and the database is not.
+    // Updated 2026-10-08. The two Commons shots of the Vic that stood in for
+    // this show were replaced by the editor with two real photographs taken
+    // at the Vic on October 6th, uploaded through the CMS into the
+    // article-images bucket. The piece had said no licensable coverage of
+    // that night existed; it does now, and these are it.
     //
-    // CC BY-SA requires attribution, so every credit names the photographer and
-    // the licence, in the figcaption and in the cover credit line.
-    //
-    // Neither performance photograph is from October 6th, and both captions say
-    // so. No licensable coverage of this specific night exists.
+    // The Oslo 2018 photograph stays as the one frame that is openly
+    // captioned as not being this show, and its CC BY-SA credit travels with
+    // it in the body text.
     { slot: 'cover', subject: 'The Vic Theatre exterior, 2020', source: 'Wikimedia Commons', license: 'CLEAR',
       contact: 'https://commons.wikimedia.org/wiki/File:The_Vic_Theatre_Chicago_Illinois_2020.jpg', credit: 'Paul R. Burley / CC0' },
-    { slot: 'body-1', subject: 'Kelela at Piknik i Parken, Oslo, 2018', source: 'Wikimedia Commons', license: 'CLEAR',
+    { slot: 'body-1', subject: 'Kelela at Piknik i Parken, Oslo, 2018 — not this show', source: 'Wikimedia Commons', license: 'CLEAR',
       contact: 'https://commons.wikimedia.org/wiki/File:Kelela_Piknik_i_Parken_2018_(205003).jpg', credit: 'Tore Sætre / CC BY-SA 4.0' },
-    { slot: 'body-2', subject: 'The Vic full during a 2022 show', source: 'Wikimedia Commons', license: 'CLEAR',
-      contact: 'https://commons.wikimedia.org/wiki/File:Animal_Collective_at_Vic_Theatre_Chicago_IL-3-20-2022.jpg', credit: 'Rockford the Roe / CC BY-SA 4.0' },
-    { slot: 'body-3', subject: 'The Vic interior', source: 'Wikimedia Commons', license: 'CLEAR',
-      contact: 'https://commons.wikimedia.org/wiki/File:The_Vic_2014-03-13_22-06.jpg', credit: 'Victorgrigas / CC BY-SA 3.0' },
+    { slot: 'body-2', subject: 'Kelela performing at the Vic, Oct 6 2026', source: 'Supplied via the CMS', license: 'CLEAR',
+      contact: 'article-images/body/four-acts-and-an-encore-kelela-at-the-vic-5.png', credit: 'Color&Noise' },
+    { slot: 'body-3', subject: 'Kelela performing at the Vic, Oct 6 2026', source: 'Supplied via the CMS', license: 'CLEAR',
+      contact: 'article-images/body/four-acts-and-an-encore-kelela-at-the-vic-6.png', credit: 'Color&Noise' },
+    { slot: 'embed-1', subject: 'The Vic, October 6th', source: 'TikTok — @rydmndchune', license: 'EMBED',
+      contact: 'https://www.tiktok.com/@rydmndchune/video/7693799346336222495', credit: '@rydmndchune' },
+    { slot: 'embed-2', subject: '“outta time”, late in the set', source: 'TikTok — @kienclips', license: 'EMBED',
+      contact: 'https://www.tiktok.com/@kienclips/video/7693965369609833742', credit: '@kienclips' },
   ],
 },
 
