@@ -211,6 +211,18 @@
 /* A contact sheet of the food, four across. Every cell is cropped to one
    aspect so the grid reads as a grid; the label under each is what the thing
    is, because a photograph of a donut cannot say which stall it came from. */
+/* A single captioned photograph in the body, as distinct from the contact
+   sheet below and the social embeds further down. */
+.cn-photo { margin: 1.4em 0; }
+.cn-photo img { margin: 0 0 8px; }
+.cn-photo figcaption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333333;
+  margin: 0;
+}
+
 .cn-photo-grid { margin: 1.4em 0; }
 .cn-grid-items {
   display: grid;
