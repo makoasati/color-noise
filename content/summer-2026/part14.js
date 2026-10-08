@@ -63,6 +63,8 @@
 // wants them in the article-images bucket, which is public and already exists.
 // Do that before this one is published.
 
+const E = require('./embeds')
+
 module.exports = [
 
 {
@@ -81,6 +83,8 @@ module.exports = [
   cover_alt: 'A cinnamon-sugar cider donut sitting on a slice of crumb-topped apple pie in a blue-checked paper boat, held over the sidewalk',
   excerpt: 'Eight apple items off three blocks of North Lincoln, one pie slice at six dollars and another at ten, and Michigan fruit by the quart forty feet away. The cider donut beat the stands with better signage.',
   body: `<p>By half past ten on the Sunday I had eaten five things with apple in them and was carrying a sixth, and the cheapest of the five had beaten the dearest by a margin that was not close. <a href="https://www.lincolnsquare.org/apple-fest">Apple Fest</a> ran Friday October 2nd through Sunday the 4th on the three blocks of North Lincoln between Sunnyside and Lawrence, nine until six on the weekend days, five dollars suggested at the gate on a banner nobody was enforcing. The street works on a clock and the clock is unforgiving: at nine it is a farmers market, by noon it is a crush, and the people who show up at half past one on the Sunday get a better fest than anyone who came at midday on the Saturday.</p>
+
+${E.instagram('DeCyqMoJVhR', { caption: 'Saturday, from inside it' })}
 
 <h3>The Ledger</h3>
 
@@ -103,6 +107,8 @@ module.exports = [
 <figcaption>Eight stops, seven of them photographed, in the order they were eaten.<span class="cn-photo-credit">Photos: <a href="https://www.reddit.com/r/chicagofood/comments/1wwqaut/came_hungry_for_applefest_go_early_to_avoid/">u/Jeeperscrow123 via r/chicagofood</a></span></figcaption>
 </figure>
 
+${E.instagram('DeGQ6e3t3Ko', { caption: 'The nine o\u2019clock strategy, and what it bought' })}
+
 <h3>Three Stands, One Donut</h3>
 
 <p>The thing to test at an apple fest is the fried one, and the street was running it four or five ways. Daly’s had small knotted donuts in coarse cinnamon sugar, going out by the bag, the paper going translucent on the walk up the block. Dinky Delights had the bigger ring, the apple crisp, warmer and heavier, more of the work done by the crust. Somethin’ Sweet Donuts had a pink tent doing fritters and sprinkle donuts, and at half past nine it had no line at all, which tells you where the crowd gets its information and how long it takes to arrive.</p>
@@ -124,6 +130,8 @@ module.exports = [
 <p>Things on that street I am not going to explain. A scarecrow on stilts, working the length of the block all weekend. Bundles of small gourds sold as “pumpkin on a stick.” Indian corn at ten dollars a bundle, moving steadily. A baby onesie for sale reading TAKE ME TO THE TITTY BAR, hung at eye level, forty feet from a children’s area where toddlers were fishing for apples in water tubs with nets.</p>
 
 <p>The fifteenth Pooch Costume Contest had run at the Seedling Stage the morning before, and the entry that beat the field was a dog in a felt vest got up as a charcuterie board with a dorsal fin, called Shark-cuterie. By the Sunday afternoon the Flat Cats were playing swing on the main stage and people were dancing on the pavement in front of it under string lights.</p>
+
+${E.instagram('DeHhVptxGfv', { caption: 'Shark-cuterie, Pooch Costume Contest' })}
 
 <p>The limit arrived at the empanada, which was fine and which I abandoned anyway. Eight sweet things before noon is one or two past the point where the fifth stops registering as anything except sugar, and I am not going to pretend the back half of that list got a fair hearing from me. I sat on a kerb on Leland for a while afterwards. The cider helped more than it had any business helping.</p>
 

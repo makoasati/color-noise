@@ -20,6 +20,7 @@ module.exports = [
 
 {
   ref: 'D123',
+  slug: 'foster-the-people-closed-northerly-island-for-the-season',
   title: 'Foster The People Closed Northerly Island for the Season',
   category: 'review',
   author_name: 'Jude',
@@ -74,6 +75,7 @@ ${E.instagram('Ddxe1HLlrhb', { caption: 'Closing night of the season' })}
 
 {
   ref: 'D122',
+  slug: 'tove-lo-played-an-unreleased-song-at-the-salt-shed',
   title: 'Tove Lo Played an Unreleased Song at the Salt Shed',
   category: 'review',
   author_name: 'Jude',
@@ -128,6 +130,7 @@ ${E.instagram('DdYODVyosZk', { caption: 'The unreleased track, from the crowd' }
 
 {
   ref: 'D119',
+  slug: 'the-fray-and-dashboard-confessional-split-a-lakefront-bill',
   title: 'The Fray and Dashboard Confessional Split a Lakefront Bill',
   category: 'review',
   author_name: 'Jude',
@@ -160,7 +163,7 @@ ${E.instagram('DcrFM0DRB3D', { caption: '"How to Save a Life", from the audience
 
 <p>Both of these bands are piano-and-acoustic propositions, which makes this a mismatch on paper. It worked anyway for the reason most legacy bills work outdoors: the audience supplies the missing frequencies.</p>
 
-${E.instagram('Dcpxyhjt385', { caption: 'A review filmed outside the venue', credit: '@wilddirky' })}
+${E.instagram('DcpRHfqugKt', { caption: 'Posted 2026-08-30', credit: '@husbandtiktok' })}
 
 ${E.instagram('DcrKdo5m06i', { caption: 'Multiple angles from the crowd' })}
 
@@ -175,13 +178,14 @@ ${E.instagram('DcrKdo5m06i', { caption: 'Multiple angles from the crowd' })}
   photos: [
     { slot: 'cover', subject: 'Northerly Island lakefront', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Northerly_Island_Beach_-_Chicago,_Illinois.JPG', credit: 'Wikimedia Commons' },
     { slot: 'body-1', subject: 'Headline song', source: 'Instagram — @eddiecovamusic', license: 'EMBED', contact: 'https://www.instagram.com/p/DcrFM0DRB3D/', credit: '@eddiecovamusic via Instagram' },
-    { slot: 'body-2', subject: 'Post-show review', source: 'Instagram — @wilddirky', license: 'EMBED', contact: 'https://www.instagram.com/p/Dcpxyhjt385/', credit: '@wilddirky via Instagram' },
+    { slot: 'body-2', subject: 'Post-show review', source: 'Instagram — @husbandtiktok', license: 'EMBED', contact: 'https://www.instagram.com/p/DcpRHfqugKt/', credit: '@husbandtiktok via Instagram' },
     { slot: 'body-3', subject: 'Crowd angles', source: 'Instagram — @thebestseats', license: 'EMBED', contact: 'https://www.instagram.com/p/DcrKdo5m06i/', credit: '@thebestseats via Instagram' },
   ],
 },
 
 {
   ref: 'D101',
+  slug: 'ok-go-fired-heart-shaped-confetti-over-gallagher-way',
   title: 'OK Go Fired Heart-Shaped Confetti Over Gallagher Way',
   category: 'review',
   author_name: 'Jude',

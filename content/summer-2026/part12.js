@@ -17,6 +17,7 @@ module.exports = [
 
 {
   ref: 'D60',
+  slug: 'the-randolph-street-market-is-not-on-maxwell-street',
   title: 'The Randolph Street Market Is Not on Maxwell Street',
   category: 'news',
   author_name: 'Mora',
@@ -71,6 +72,7 @@ ${E.instagram('DbWJ0AWpFV5', { caption: 'A grandmother and granddaughter spend t
 
 {
   ref: 'D61',
+  slug: 'a-seven-year-old-had-a-stall-at-maxwell-street-in-september',
   title: 'A Seven-Year-Old Had a Stall at Maxwell Street in September',
   category: 'news',
   author_name: 'Mora',
@@ -95,7 +97,7 @@ ${E.instagram('DbWJ0AWpFV5', { caption: 'A grandmother and granddaughter spend t
 
 <p>The Chicago maker <strong>Saint Bunni</strong> vended the August 9th market and announced it the night before with the particular urgency of somebody who had just confirmed a spot. That is the economy of this place: a booth you can get into at short notice, at a price a one-person operation can carry, which is almost extinct in this city.</p>
 
-${E.instagram('DdO7uZEjjhg', { caption: 'A seven-year-old vendor, September 13', credit: '@straw_berrry_moon' })}
+${E.instagram('DZQpo8bhBeV', { caption: 'Posted 2026-06-06', credit: '@joibilee_popping_co' })}
 
 <h3>What a University Took</h3>
 
@@ -119,7 +121,7 @@ ${E.instagram('DbtnJ0MjVGj', { caption: 'Rediscover Maxwell Street' })}
   ],
   photos: [
     { slot: 'cover', subject: 'Market stalls', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:New_Maxwell_Street_market_P1020788_(150997453).jpg', credit: 'Wikimedia Commons' },
-    { slot: 'body-1', subject: 'Kids Edition vendor', source: 'Instagram — @straw_berrry_moon', license: 'EMBED', contact: 'https://www.instagram.com/p/DdO7uZEjjhg/', credit: '@straw_berrry_moon via Instagram' },
+    { slot: 'body-1', subject: 'Kids Edition vendor', source: 'Instagram — @joibilee_popping_co', license: 'EMBED', contact: 'https://www.instagram.com/p/DZQpo8bhBeV/', credit: '@joibilee_popping_co via Instagram' },
     { slot: 'body-2', subject: 'Jim’s Original', source: 'Instagram — @maxwellstreetfoundation', license: 'EMBED', contact: 'https://www.instagram.com/p/Db0trX9FofK/', credit: 'Maxwell Street Foundation via Instagram' },
     { slot: 'body-3', subject: 'City promotion', source: 'Instagram — @chicagodcase', license: 'EMBED', contact: 'https://www.instagram.com/p/DbtnJ0MjVGj/', credit: '@chicagodcase via Instagram' },
   ],
@@ -127,6 +129,7 @@ ${E.instagram('DbtnJ0MjVGj', { caption: 'Rediscover Maxwell Street' })}
 
 {
   ref: 'D67',
+  slug: 'navy-pier-shot-fireworks-twice-a-week-and-nobody-mentions-it',
   title: 'Navy Pier Shot Fireworks Twice a Week and Nobody Mentions It',
   category: 'news',
   author_name: 'Mora',
@@ -159,7 +162,7 @@ ${E.instagram('DaS75MdgKmj', { caption: 'From the water, looking back at the pie
 
 ${E.instagram('Dc7oANGuz6O', { caption: 'The last show of the summer, September 5' })}
 
-${E.instagram('Dc4k1QKMzsk', { caption: 'From a window on the near North Side', credit: '@justdougkas' })}
+${E.instagram('DaaczMXJ141', { caption: 'Posted 2026-07-05', credit: '@dreverywoman' })}
 
 <p>The “noise” of a fireworks night downtown is mostly car horns and the pier's own PA, and from a mile north on the path you hear neither — just the delayed thump, about two seconds behind the light.</p>
 
@@ -175,7 +178,7 @@ ${E.instagram('Dc4k1QKMzsk', { caption: 'From a window on the near North Side', 
     { slot: 'cover', subject: 'Fireworks and Ferris wheel', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Navy_Pier_fireworks_(245157533).jpg', credit: 'Wikimedia Commons' },
     { slot: 'body-1', subject: 'From the water', source: 'Instagram — @penelope_314', license: 'EMBED', contact: 'https://www.instagram.com/p/DaS75MdgKmj/', credit: '@penelope_314 via Instagram' },
     { slot: 'body-2', subject: 'Final show of the season', source: 'Instagram — @maunaeats', license: 'EMBED', contact: 'https://www.instagram.com/p/Dc7oANGuz6O/', credit: '@maunaeats via Instagram' },
-    { slot: 'body-3', subject: 'From a north-side window', source: 'Instagram — @justdougkas', license: 'EMBED', contact: 'https://www.instagram.com/p/Dc4k1QKMzsk/', credit: '@justdougkas via Instagram' },
+    { slot: 'body-3', subject: 'From a north-side window', source: 'Instagram — @dreverywoman', license: 'EMBED', contact: 'https://www.instagram.com/p/DaaczMXJ141/', credit: '@dreverywoman via Instagram' },
   ],
 },
 

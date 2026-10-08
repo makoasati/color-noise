@@ -16,6 +16,7 @@ module.exports = [
 
 {
   ref: 'D73',
+  slug: 'forty-four-galleries-open-at-once-chicago-exhibition-week',
   title: 'Forty-Four Galleries Open at Once: Chicago Exhibition Week',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -71,6 +72,7 @@ ${E.instagram('Dde-gqbieQl', { caption: 'Four spaces in a day' })}
 
 {
   ref: 'D74',
+  slug: 'expo-chicago-refined-its-floor-plan-and-found-the-obama-center',
   title: 'EXPO Chicago Refined Its Floor Plan and Found the Obama Center',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -126,6 +128,7 @@ ${E.instagram('DW6PD2NkSqm', { caption: 'A first solo exhibition outside Brazil'
 
 {
   ref: 'D75',
+  slug: 'barely-fair-puts-thirty-galleries-in-dollhouse-booths',
   title: 'Barely Fair Puts Thirty Galleries in Dollhouse Booths',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -154,7 +157,7 @@ ${E.instagram('DXCH7aZiqMK', { caption: 'A two-inch linen dog' })}
 
 <p>Fabrication is the unglamorous half of this fair and nobody writes about it. Somebody built thirty identical boxes to tolerance, in a project space, for free.</p>
 
-${E.instagram('DXAObJ_jz4Y', { caption: 'Press coverage of the sixth edition', credit: '@m.tooley.parker' })}
+${E.instagram('DXQMQOVEcMT', { caption: 'Posted 2026-04-18', credit: '@mir.ka.sm' })}
 
 ${E.instagram('DXALQImk9gq', { caption: 'A work from the fair' })}
 
@@ -173,13 +176,14 @@ ${E.instagram('DXALQImk9gq', { caption: 'A work from the fair' })}
   photos: [
     { slot: 'cover', subject: 'McKinley Park lagoon', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:McKinley_Park_lagoon,_Chicago-feeding_ducks.JPG', credit: 'Wikimedia Commons' },
     { slot: 'body-1', subject: 'Miniature sculpture', source: 'Instagram — @good_naked', license: 'EMBED', contact: 'https://www.instagram.com/p/DXCH7aZiqMK/', credit: '@good_naked via Instagram' },
-    { slot: 'body-2', subject: 'Press coverage', source: 'Instagram — @m.tooley.parker', license: 'EMBED', contact: 'https://www.instagram.com/p/DXAObJ_jz4Y/', credit: '@m.tooley.parker via Instagram' },
+    { slot: 'body-2', subject: 'Press coverage', source: 'Instagram — @mir.ka.sm', license: 'EMBED', contact: 'https://www.instagram.com/p/DXQMQOVEcMT/', credit: '@mir.ka.sm via Instagram' },
   ],
 },
 
 {
   ref: 'D76',
-  title: 'Neighbors Staged an Art Fair in a Gold Coast Apartment',
+  slug: 'neighbors-staged-an-art-fair-in-a-gold-coast-apartment',
+  title: 'Neighbors, an Art Fair Staged in a Gold Coast Apartment',
   category: 'spotlight',
   author_name: 'Julian Vane',
   date: '2026-04-15',
@@ -202,7 +206,7 @@ ${E.instagram('DXALQImk9gq', { caption: 'A work from the fair' })}
 
 <p>A velvet panel saturated with cut fabric petals sat on a cream window sill with a garden blurred behind it — a work that would be invisible in Festival Hall and in a domestic window is almost unbearably specific. The hallway hang put two prints either side of the chandelier, which flatters the prints and tells you something about whose house this is.</p>
 
-${E.instagram('DXCYcewDgKn', { caption: 'A velvet panel on the window sill', credit: '@lettucelook' })}
+${E.instagram('DW4QFC3Fpro', { caption: 'Posted 2026-04-08', credit: '@feia.studio' })}
 
 <p>That is also the unresolved thing. A fair staged in a Gold Coast apartment on Astor Street, a block from the Charnley-Persky House, is making an argument about intimacy inside a form of domestic wealth that very few of the exhibiting artists have access to. The organisers did not pretend otherwise and did not address it either.</p>
 
@@ -226,7 +230,7 @@ ${E.instagram('DW5Nb8hjObN', { caption: 'Inside the apartment' })}
   ],
   photos: [
     { slot: 'cover', subject: 'Astor Street', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Charnley-Persky_House,_Astor_Street_and_Schiller_Street,_Gold_Coast,_Chicago,_IL_-_54195234930.jpg', credit: 'Wikimedia Commons' },
-    { slot: 'body-1', subject: 'Velvet panel', source: 'Instagram — @lettucelook', license: 'EMBED', contact: 'https://www.instagram.com/p/DXCYcewDgKn/', credit: '@lettucelook via Instagram' },
+    { slot: 'body-1', subject: 'Velvet panel', source: 'Instagram — @feia.studio', license: 'EMBED', contact: 'https://www.instagram.com/p/DW4QFC3Fpro/', credit: '@feia.studio via Instagram' },
     { slot: 'body-2', subject: 'Opening announcement', source: 'Instagram — @hansgoodrich', license: 'EMBED', contact: 'https://www.instagram.com/p/DW4PHKZkc0c/', credit: '@hansgoodrich via Instagram' },
     { slot: 'body-3', subject: 'Interior hang', source: 'Instagram — @artistsonthelam', license: 'EMBED', contact: 'https://www.instagram.com/p/DW5Nb8hjObN/', credit: 'Jenny Lam / @artistsonthelam via Instagram' },
   ],
@@ -234,6 +238,7 @@ ${E.instagram('DW5Nb8hjObN', { caption: 'Inside the apartment' })}
 
 {
   ref: 'D77',
+  slug: 'the-other-art-fair-sells-direct-in-a-ravenswood-warehouse',
   title: 'The Other Art Fair Sells Direct in a Ravenswood Warehouse',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -287,6 +292,7 @@ ${E.instagram('DW7aCWeEuso', { caption: 'An exhibiting booth' })}
 
 {
   ref: 'D78',
+  slug: 'second-fridays-is-the-only-free-art-night-that-never-stops',
   title: 'Second Fridays Is the Only Free Art Night That Never Stops',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -343,6 +349,7 @@ ${E.instagram('Dd4uKcvi6q4', { caption: 'A night market four blocks west' })}
 
 {
   ref: 'D79',
+  slug: 'third-fridays-opens-two-art-centres-on-one-bridgeport-block',
   title: 'Third Fridays Opens Two Art Centres on One Bridgeport Block',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -400,6 +407,7 @@ ${E.instagram('DbofHRdCR8R', { caption: 'Third Friday Concert Series flyer' })}
 
 {
   ref: 'D80',
+  slug: 'pilsen-open-studios-is-run-by-the-neighbourhood-not-a-landlord',
   title: 'Pilsen Open Studios Is Run by the Neighbourhood, Not a Landlord',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -456,6 +464,7 @@ ${E.instagram('DP92hWmkW2W', { caption: 'A past edition, reframed as La Lucha' }
 
 {
   ref: 'D81',
+  slug: 'comfort-station-programmes-a-one-room-building-all-year',
   title: 'Comfort Station Programmes a One-Room Building All Year',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -513,6 +522,7 @@ ${E.instagram('DbwL785FHlp', { caption: 'Dog Days of Summer market' })}
 
 {
   ref: 'D82',
+  slug: 'elastic-arts-pairs-dancers-with-improvisers-in-avondale',
   title: 'Elastic Arts Pairs Dancers With Improvisers in Avondale',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -569,6 +579,7 @@ ${E.instagram('DcbjCDRxifY', { caption: 'An August weekend series' })}
 
 {
   ref: 'D83',
+  slug: 'dancing-the-revolution-gave-the-mca-a-sound-system',
   title: 'Dancing the Revolution Gave the MCA a Sound System',
   category: 'spotlight',
   author_name: 'Julian Vane',
@@ -625,6 +636,7 @@ ${E.instagram('DXIxEX0Dcdo', { caption: 'Opening day' })}
 
 {
   ref: 'D85',
+  slug: 'ground-floor-shows-who-will-matter-in-chicago-art-next',
   title: 'Ground Floor Shows Who Will Matter in Chicago Art Next',
   category: 'spotlight',
   author_name: 'Julian Vane',

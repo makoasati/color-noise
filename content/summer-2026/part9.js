@@ -18,6 +18,7 @@ module.exports = [
 
 {
   ref: 'D111',
+  slug: 'karol-g-took-soldier-field-for-two-nights-in-july',
   title: 'Karol G Took Soldier Field for Two Nights in July',
   category: 'review',
   author_name: 'Jude',
@@ -74,6 +75,7 @@ ${E.instagram('DbOXl-MD8aS', { caption: 'Tropicoqueta staging, Soldier Field' })
 
 {
   ref: 'D114',
+  slug: 'foo-fighters-sixty-thousand-deep-on-a-saturday-in-august',
   title: 'Foo Fighters, Sixty Thousand Deep, on a Saturday in August',
   category: 'review',
   author_name: 'Jude',
@@ -130,6 +132,7 @@ ${E.instagram('Db1nWwoo4Qc', { caption: 'Late in the headline set' })}
 
 {
   ref: 'D115',
+  slug: 'chance-opened-the-coloring-book-tour-on-the-north-shore',
   title: 'Chance Opened the Coloring Book Tour on the North Shore',
   category: 'review',
   author_name: 'Jude',
@@ -188,6 +191,7 @@ ${E.instagram('Dbx1bE1DuAx', { caption: 'Stage view, August 8' })}
 
 {
   ref: 'D110',
+  slug: 'paul-simon-played-ravinia-twice-in-the-new-pavilion',
   title: 'Paul Simon Played Ravinia Twice in the New Pavilion',
   category: 'review',
   author_name: 'Jude',
@@ -244,6 +248,7 @@ ${E.instagram('Da8_hf7kfDP', { caption: 'Second night, July 18' })}
 
 {
   ref: 'D108',
+  slug: 'tyler-childers-sold-out-wrigley-with-a-jazz-bandleader-opening',
   title: 'Tyler Childers Sold Out Wrigley With a Jazz Bandleader Opening',
   category: 'review',
   author_name: 'Jude',
@@ -302,6 +307,7 @@ ${E.instagram('DavcrNbkUJ2', { caption: 'Marquee before doors' })}
 
 {
   ref: 'D104',
+  slug: 'bob-dylan-played-his-48th-show-of-the-year-on-northerly-island',
   title: 'Bob Dylan Played His 48th Show of the Year on Northerly Island',
   category: 'review',
   author_name: 'Jude',
@@ -326,7 +332,7 @@ ${E.instagram('DavcrNbkUJ2', { caption: 'Marquee before doors' })}
 
 <p>He plays the piano now rather than the guitar, which changes what the band has to do. The harmonica is still the only moment he reliably gets applause for simply picking something up.</p>
 
-${E.instagram('DalShnEletj', { caption: 'End of the show, July 8', credit: '@maggiesblues' })}
+${E.instagram('Dajy_9pFozn', { caption: 'Posted 2026-07-09', credit: '@eileen.tull' })}
 
 <h3>A Stage On Landfill</h3>
 
@@ -350,7 +356,7 @@ ${E.instagram('DalIorLlsSJ', { caption: 'Stage, late in the set' })}
   ],
   photos: [
     { slot: 'cover', subject: 'Northerly Island lakefront', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Northerly_Island_Beach_-_Chicago,_Illinois.JPG', credit: 'Wikimedia Commons' },
-    { slot: 'body-1', subject: 'End of show', source: 'Instagram — @maggiesblues', license: 'EMBED', contact: 'https://www.instagram.com/p/DalShnEletj/', credit: '@maggiesblues via Instagram' },
+    { slot: 'body-1', subject: 'End of show', source: 'Instagram — @eileen.tull', license: 'EMBED', contact: 'https://www.instagram.com/p/Dajy_9pFozn/', credit: '@eileen.tull via Instagram' },
     { slot: 'body-2', subject: 'Pavilion view', source: 'Instagram — @katie668405', license: 'EMBED', contact: 'https://www.instagram.com/p/DajE_bNpQs3/', credit: '@katie668405 via Instagram' },
     { slot: 'body-3', subject: 'Stage late in set', source: 'Instagram — @brendan_p_burke', license: 'EMBED', contact: 'https://www.instagram.com/p/DalIorLlsSJ/', credit: '@brendan_p_burke via Instagram' },
   ],
@@ -358,6 +364,7 @@ ${E.instagram('DalIorLlsSJ', { caption: 'Stage, late in the set' })}
 
 {
   ref: 'D116',
+  slug: 'kehlani-launched-a-world-tour-and-janet-jackson-came-to-watch',
   title: 'Kehlani Launched a World Tour and Janet Jackson Came to Watch',
   category: 'review',
   author_name: 'Jude',
@@ -412,6 +419,7 @@ ${E.instagram('Db4NgCkKPu4', { caption: 'Crowd, night one' })}
 
 {
   ref: 'D103',
+  slug: 'martin-garrix-took-northerly-island-for-three-nights-running',
   title: 'Martin Garrix Took Northerly Island for Three Nights Running',
   category: 'review',
   author_name: 'Jude',
@@ -444,7 +452,7 @@ ${E.instagram('DaJYsfDuFGk', { caption: 'LED structure, closing night' })}
 
 <p>This is Chicago Park District land — the same acreage the city took back from Meigs Field in 2003 and designated as a nature area, with prairie restoration on the southern end and a beach. Three nights of amplified dance music on a bird habitat is a trade the city makes willingly, and makes again for Beyond Wonderland in June and for everything else on that schedule. Nobody in the neighbourhood objects, because the neighbourhood is a planetarium and a museum.</p>
 
-${E.instagram('DaJG-9khAD9', { caption: 'Crowd and skyline', credit: '@reverbvisionz' })}
+${E.instagram('DaDhnbApHQu', { caption: 'Posted 2026-06-26', credit: '@pgadocha' })}
 
 <p>Sixty dollars a night, three nights, and a man who has been headlining since he was seventeen. The field bought all three.</p>
 
@@ -458,13 +466,14 @@ ${E.instagram('DaJG-9khAD9', { caption: 'Crowd and skyline', credit: '@reverbvis
     { slot: 'cover', subject: 'Northerly Island lakefront', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Northerly_Island_Beach_-_Chicago,_Illinois.JPG', credit: 'Wikimedia Commons' },
     { slot: 'body-1', subject: 'Third night', source: 'Instagram — @mofoninja8', license: 'EMBED', contact: 'https://www.instagram.com/p/DaHthXbFlb8/', credit: '@mofoninja8 via Instagram' },
     { slot: 'body-2', subject: 'LED structure', source: 'Instagram — @edmsven', license: 'EMBED', contact: 'https://www.instagram.com/p/DaJYsfDuFGk/', credit: '@edmsven via Instagram' },
-    { slot: 'body-3', subject: 'Crowd and skyline', source: 'Instagram — @reverbvisionz', license: 'EMBED', contact: 'https://www.instagram.com/p/DaJG-9khAD9/', credit: '@reverbvisionz via Instagram' },
+    { slot: 'body-3', subject: 'Crowd and skyline', source: 'Instagram — @pgadocha', license: 'EMBED', contact: 'https://www.instagram.com/p/DaDhnbApHQu/', credit: '@pgadocha via Instagram' },
   ],
 },
 
 {
   ref: 'D112',
-  title: 'Ben Folds, Seventy Players, and a Zero-Dollar Ticket',
+  slug: 'ben-folds-seventy-players-and-a-zero-dollar-ticket',
+  title: 'Ben Folds and Seventy Players at the Pritzker Pavilion',
   category: 'review',
   author_name: 'Jude',
   date: '2026-07-31',
@@ -518,6 +527,7 @@ ${E.instagram('DbZneDAFjh2', { caption: 'Pritzker Pavilion, Ben Folds night' })}
 
 {
   ref: 'D127',
+  slug: 'liz-phair-and-sleater-kinney-co-headlined-the-salt-shed',
   title: 'Liz Phair and Sleater-Kinney Co-Headlined the Salt Shed',
   category: 'review',
   author_name: 'Jude',

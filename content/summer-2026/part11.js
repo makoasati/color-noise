@@ -18,7 +18,8 @@ module.exports = [
 
 {
   ref: 'D105',
-  title: 'Lizzo Played Flute With the CSO to Open a $70 Million Hall',
+  slug: 'lizzo-opened-ravinias-new-hall-by-shutting-up',
+  title: 'Lizzo Opened Ravinia’s New Hall by Shutting Up',
   category: 'review',
   author_name: 'Jude',
   date: '2026-07-13',
@@ -80,6 +81,7 @@ ${E.instagram('Daoy5nmierQ', {
 
 {
   ref: 'D68',
+  slug: 'ravinia-reopened-its-pavilion-and-ran-ninety-concerts',
   title: 'Ravinia Reopened Its Pavilion and Ran Ninety Concerts',
   category: 'review',
   author_name: 'Jude',
@@ -136,6 +138,7 @@ ${E.instagram('DdG-gRzxhEP', { caption: 'A day in the Ravinia district' })}
 
 {
   ref: 'D107',
+  slug: 'billy-idol-brought-steve-stevens-and-seven-players-to-ravinia',
   title: 'Billy Idol Brought Steve Stevens and Seven Players to Ravinia',
   category: 'review',
   author_name: 'Jude',
@@ -170,7 +173,7 @@ ${E.instagram('DauBCJAhISn', { caption: 'Billy Idol on stage, July 12' })}
 
 <p><strong>THBand</strong> opened, fronted by <strong>Tom Hamilton Jr</strong>, who documented the day as a career milestone and was right to.</p>
 
-${E.instagram('Dauft6BHD5K', { caption: 'Opening for Idol and Stevens', credit: '@trhjunior' })}
+${E.instagram('Das0Qj9EW-Z', { caption: 'Posted 2026-07-12', credit: '@brixbellevie' })}
 
 ${E.instagram('Datwax4AHHH', { caption: 'On the lawn before the set' })}
 
@@ -185,13 +188,14 @@ ${E.instagram('Datwax4AHHH', { caption: 'On the lawn before the set' })}
   photos: [
     { slot: 'cover', subject: 'Ravinia entrance', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Ravinia_Festival_Grand_Entrance.jpg', credit: 'Wikimedia Commons' },
     { slot: 'body-1', subject: 'Idol on stage', source: 'Instagram — @danny_augustine', license: 'EMBED', contact: 'https://www.instagram.com/p/DauBCJAhISn/', credit: '@danny_augustine via Instagram' },
-    { slot: 'body-2', subject: 'Opening act', source: 'Instagram — @trhjunior', license: 'EMBED', contact: 'https://www.instagram.com/p/Dauft6BHD5K/', credit: 'Tom Hamilton Jr / @trhjunior via Instagram' },
+    { slot: 'body-2', subject: 'Opening act', source: 'Instagram — @brixbellevie', license: 'EMBED', contact: 'https://www.instagram.com/p/Das0Qj9EW-Z/', credit: 'Tom Hamilton Jr / @trhjunior via Instagram' },
     { slot: 'body-3', subject: 'On the lawn', source: 'Instagram — @wiskygirl4', license: 'EMBED', contact: 'https://www.instagram.com/p/Datwax4AHHH/', credit: '@wiskygirl4 via Instagram' },
   ],
 },
 
 {
   ref: 'D117',
+  slug: 'ricky-martin-made-his-ravinia-debut-at-fifty-four',
   title: 'Ricky Martin Made His Ravinia Debut at Fifty-Four',
   category: 'review',
   author_name: 'Jude',
@@ -246,6 +250,7 @@ ${E.instagram('DcUX8njxVKy', { caption: 'Local news on the debut' })}
 
 {
   ref: 'D121',
+  slug: 'ye-played-two-homecoming-nights-for-seventy-thousand',
   title: 'Ye Played Two Homecoming Nights for Seventy Thousand',
   category: 'review',
   author_name: 'Jude',
@@ -302,6 +307,7 @@ ${E.instagram('Dc6sdzlCK4p', { caption: 'From the floor' })}
 
 {
   ref: 'D118',
+  slug: 'usher-and-chris-brown-split-soldier-field-for-two-nights',
   title: 'Usher and Chris Brown Split Soldier Field for Two Nights',
   category: 'review',
   author_name: 'Jude',
@@ -358,6 +364,7 @@ ${E.instagram('DcWLXg6Ed_T', { caption: 'Night two, August 22' })}
 
 {
   ref: 'D109',
+  slug: 'lil-wayne-and-2-chainz-played-a-sponsored-series-on-the-lake',
   title: 'Lil Wayne and 2 Chainz Played a Sponsored Series on the Lake',
   category: 'review',
   author_name: 'Jude',
@@ -414,6 +421,7 @@ ${E.instagram('Da76qSUla65', { caption: 'From the field' })}
 
 {
   ref: 'D106',
+  slug: 'john-mulaney-was-the-first-comedian-to-play-wrigley-field',
   title: 'John Mulaney Was the First Comedian to Play Wrigley Field',
   category: 'review',
   author_name: 'Jude',
@@ -468,6 +476,7 @@ ${E.instagram('DatFCaYEWlD', { caption: 'Inside for Mister Whatever' })}
 
 {
   ref: 'D69',
+  slug: 'twenty-years-of-the-hyde-park-jazz-festival-still-free',
   title: 'Twenty Years of the Hyde Park Jazz Festival, Still Free',
   category: 'review',
   author_name: 'Jude',
@@ -524,6 +533,7 @@ ${E.instagram('Dd2WQiKFnM2', { caption: 'Performers in black and white' })}
 
 {
   ref: 'D72',
+  slug: 'the-world-music-festival-ran-ten-days-and-charged-nothing',
   title: 'The World Music Festival Ran Ten Days and Charged Nothing',
   category: 'review',
   author_name: 'Jude',
@@ -548,7 +558,7 @@ ${E.instagram('Dd2WQiKFnM2', { caption: 'Performers in black and white' })}
 
 <p>The weakness of the format is that a listener who wants to follow a thread cannot. Programming by country means consecutive sets with nothing in common but the building, and the audience turns over completely between them.</p>
 
-${E.instagram('DdvBKBYNj7o', { caption: 'Nine musicians under the arches', credit: '@joe_rauen' })}
+${E.instagram('Dd1kGvPGILW', { caption: 'Posted 2026-09-28', credit: '@dj_neon_grey' })}
 
 <p>Ten days is also long enough to expose the other problem, which is that nobody attends a ten-day festival. The audience arrives for one nation and leaves, and the programme never accumulates — there is no second night in which a listener hears the same ensemble differently. A city department can book the world and still not build a following for any of it.</p>
 
@@ -572,7 +582,7 @@ ${E.instagram('DdzXmLzhQFf', { caption: 'On stage at the Cultural Center' })}
   ],
   photos: [
     { slot: 'cover', subject: 'Preston Bradley Hall dome', source: 'Wikimedia Commons', license: 'CLEAR', contact: 'https://commons.wikimedia.org/wiki/File:Preston_Bradley_Hall_and_Tiffany_Glass_Dome_-_Chicago_Cultural_Center.jpg', credit: 'Wikimedia Commons' },
-    { slot: 'body-1', subject: 'Ensemble on stage', source: 'Instagram — @joe_rauen', license: 'EMBED', contact: 'https://www.instagram.com/p/DdvBKBYNj7o/', credit: '@joe_rauen via Instagram' },
+    { slot: 'body-1', subject: 'Ensemble on stage', source: 'Instagram — @dj_neon_grey', license: 'EMBED', contact: 'https://www.instagram.com/p/Dd1kGvPGILW/', credit: '@dj_neon_grey via Instagram' },
     { slot: 'body-2', subject: 'Festival weekend', source: 'Instagram — @nazgulmokeeva', license: 'EMBED', contact: 'https://www.instagram.com/p/Dd0RBSxjh8n/', credit: '@nazgulmokeeva via Instagram' },
     { slot: 'body-3', subject: 'Cultural Center stage', source: 'Instagram — @surreal_sir.reel', license: 'EMBED', contact: 'https://www.instagram.com/p/DdzXmLzhQFf/', credit: '@surreal_sir.reel via Instagram' },
   ],

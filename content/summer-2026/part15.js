@@ -36,6 +36,8 @@
 // say so plainly. No photographer covered the Vic on Oct 6 that this desk can
 // license, and a caption that implied otherwise would be the lie.
 
+const E = require('./embeds')
+
 module.exports = [
 
 {
@@ -58,6 +60,8 @@ module.exports = [
 
 <p>She put out <em>Cut 4 Me</em> as a mixtape in 2013, took four years over <em>Take Me Apart</em>, another six to reach <em>Raven</em>, and then turned <em><a href="https://kelela.bandcamp.com/album/new-avatar-2">new avatar</a></em> around inside three. Nobody in that room needed the recap.</p>
 
+${E.tiktok('7693799346336222495', { caption: 'The Vic, October 6th', credit: '@rydmndchune', permalink: 'https://www.tiktok.com/@rydmndchune/video/7693799346336222495' })}
+
 <figure class="cn-photo">
 <img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/kelela-vic-2026/kelela-2018.webp" alt="Kelela performing on an outdoor stage in daylight, one hand raised toward the microphone">
 <figcaption>Kelela at Piknik i Parken, Oslo, 2018 — not this show<span class="cn-photo-credit">Photo: Tore Sætre / CC BY-SA 4.0</span></figcaption>
@@ -78,6 +82,10 @@ module.exports = [
 </figure>
 
 <p>By Act III the set had stopped distinguishing between catalogues. <strong>"A Message"</strong> and <strong>"Send Me Out"</strong> came out of <em>Take Me Apart</em> and sat directly after <strong>"crystalize"</strong>, which is a <em>new avatar</em> track that segues in from the song before it and does not want a gap on either side. It did not get one.</p>
+
+<p>The acts past that one are harder to pin down, because the running order the night was logged under stops at twelve. <strong>"outta time"</strong> is in there somewhere later, which I know because somebody filmed it and called it their favourite, and on the floor it was the point where the guitars stopped being a texture and started being the band.</p>
+
+${E.tiktok('7693965369609833742', { caption: '"outta time", late in the set', credit: '@kienclips', permalink: 'https://www.tiktok.com/@kienclips/video/7693965369609833742' })}
 
 <p><strong>"Bank Head"</strong> is thirteen years old and it came eleventh, inside Act III, with no introduction and no pause in front of it. The old songs are components now.</p>
 
