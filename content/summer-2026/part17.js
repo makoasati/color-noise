@@ -62,14 +62,16 @@ module.exports = [
 
 <p>What arrived is not a story ballet and does not want to be. It is a run of regional dances, billed as the most emblematic of the past eighty years, and the evening is structured as a gauntlet rather than as an arc. The company was founded in 1945 by <strong>Iliko Sukhishvili</strong> and <strong>Nino Ramishvili</strong> and is run now by their grandchildren, <strong>Iliko Sukhishvili Jr.</strong> as artistic director and chief choreographer and <strong>Nino Sukhishvili</strong> as general director and costume designer. Nobody in that house needed the lineage explained.</p>
 
+<h3>What It Costs</h3>
+
 <p>Here is the thing worth understanding before anything else. The men dance on the points of their toes in soft leather boots, with no block and no shank in them, and they land jumps on the tops of their feet. In the finale they go down and spin across the full width of the stage on their knees. There is no trick to it and no padding that would survive a costume fitting. Everything in this show that looks effortless is a technique that is specifically destructive, performed by people who have decided to pay for it.</p>
 
 <figure class="cn-photo">
-<img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/sukhishvili-harris-2026/orchestra-drum.webp" alt="Two musicians seated on a raised platform in blue light, one with a stringed instrument and one with a hand drum beside a larger standing drum">
-<figcaption>The orchestra, upstage all night<span class="cn-photo-credit">Photo: Color&amp;Noise</span></figcaption>
+<img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/sukhishvili-harris-2026/drum-solo.webp" alt="Two drummers seated on a lit platform, both mid-strike on frame drums held across the knee, a third drum standing on a case beside them, the rest of the stage black">
+<figcaption>The two of them, mid-solo<span class="cn-photo-credit">Photo: Color&amp;Noise</span></figcaption>
 </figure>
 
-<p>The orchestra is the reason the evening works, and it is the part a Chicago audience is least prepared for. Accordion, duduk, stringed instruments, and drums that do not function as accompaniment so much as architecture. <strong>Khorumi</strong>, the men’s war dance, is built over a drumline that keeps accelerating under a five-beat count while the dancers drop to the floor as though crawling under fire and then vault onto each other’s shoulders. Somewhere in the second half one drummer took it alone for long enough that the dancing stopped being the thing you were watching. The company publishes no roster, and no individual musician is credited anywhere — not on its own site, not by the theatre — so I cannot tell you his name, which is a discourtesy to the best ninety seconds of the night.</p>
+<p>The orchestra is the reason the evening works, and it is the part a Chicago audience is least prepared for. Accordion, duduk, stringed instruments, and drums that do not function as accompaniment so much as architecture. <strong>Khorumi</strong>, the men’s war dance, is built over a drumline that keeps accelerating under a five-beat count while the dancers drop to the floor as though crawling under fire and then vault onto each other’s shoulders. Somewhere in the second half the stage went to two drummers and nothing else. They sat forward on the platform with the drum across one knee, traded a figure back and forth, and kept doubling it until the hands stopped reading as separate strikes. Nobody was dancing. Nobody needed to be. The company publishes no roster and credits no individual musician anywhere — not on its own site, not by the theatre — so I cannot give you either name, which is a discourtesy to the best ninety seconds of the night.</p>
 
 <h3>Three Women, One Queen</h3>
 
@@ -84,12 +86,12 @@ module.exports = [
 <figcaption>Samaia, three frames of the same dance<span class="cn-photo-credit">Photos: Color&amp;Noise</span></figcaption>
 </figure>
 
-<p>Against that, <strong>Kintouri</strong> is a joke and knows it. The kintos were Tbilisi street traders who carried their stock on their heads, and the dance keeps both the balancing and the swagger: a silk shawl pulled off a silver belt, a load carried without a hand near it, and a man moving as though the hardest part of his day is other people. It got the first real laugh of the night.</p>
+<p>Against that, <strong>Kintouri</strong> is a joke and knows it. The kintos were Tbilisi street traders who carried their stock on their heads, and the dance keeps both the balancing and the swagger: a silk shawl pulled off a silver belt, a full wine bottle balanced upright on top of his head with both hands nowhere near it, and a man moving as though the hardest part of his day is other people. It got the first real laugh of the night.</p>
 
 <figure class="cn-photo-grid">
 <div class="cn-grid-items cn-grid-2">
 <div class="cn-grid-item"><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/sukhishvili-harris-2026/kintouri-1.webp" alt="A dancer in a dark baggy costume leaps with arms spread while another stands behind holding a pink silk shawl, under purple light"><span>The shawl off the belt</span></div>
-<div class="cn-grid-item"><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/sukhishvili-harris-2026/kintouri-2.webp" alt="A dancer walks forward with arms open and a load balanced on his cap while others move behind him in purple light"><span>Carried without a hand near it</span></div>
+<div class="cn-grid-item"><img src="https://jojhqdfsuhwqugtgkppt.supabase.co/storage/v1/object/public/article-images/sukhishvili-harris-2026/kintouri-2.webp" alt="A dancer walks forward with arms open and a wine bottle balanced upright on his cap while others move behind him in purple light"><span>A wine bottle, balanced, hands free</span></div>
 </div>
 <figcaption>Kintouri, the merchants' dance<span class="cn-photo-credit">Photos: Color&amp;Noise</span></figcaption>
 </figure>
@@ -140,7 +142,7 @@ ${E.instagram('Devehz-uxeh', { caption: 'From the house, Tuesday night' })}
     // into rows rather than stacked. 364KB total against the §5.1 600KB budget.
     // Hosted in the article-images bucket, not public/, which is branch-scoped.
     { slot: 'cover', subject: 'The company in processional, court costume', source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
-    { slot: 'body-1', subject: 'The orchestra platform, drum and strings', source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
+    { slot: 'body-1', subject: 'The two doli players mid-solo, cropped to the lit band', source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
     { slot: 'row-samaia', subject: 'Samaia, three frames of the same dance', source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
     { slot: 'row-kintouri', subject: 'Kintouri, two frames', source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
     { slot: 'row-men-red', subject: "The men's red numbers, three frames", source: 'Editor, from the house', license: 'CLEAR', credit: 'Color&Noise' },
