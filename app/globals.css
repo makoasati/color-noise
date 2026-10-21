@@ -110,8 +110,13 @@ a { color: inherit; }
   color: #777777;
   margin-top: 2px;
 }
+/* Row variants: a set of frames from one dance, laid out in a line. */
+.cn-grid-items.cn-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.cn-grid-items.cn-grid-2 { grid-template-columns: repeat(2, 1fr); }
+
 @media (max-width: 560px) {
   .cn-grid-items { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+  .cn-grid-items.cn-grid-3 { grid-template-columns: repeat(3, 1fr); gap: 6px; }
 }
 
 .cn-article-body a { color: #2D4DFF; text-decoration: none; }
